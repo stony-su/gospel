@@ -20,7 +20,7 @@ import { useGospel, usePantryProjection } from '@/store/useGospel';
 import { grade, space, stroke } from '@/theme/tokens';
 import { Check, Segmented } from '@/ui/controls';
 import { formatMass } from '@/ui/data';
-import { Disclosure, Header, Row, Screen } from '@/ui/layout';
+import { Disclosure, Header, Pair, Screen, Tile } from '@/ui/layout';
 import { AnimatedNumber, Reveal } from '@/ui/motion';
 import { Figure, Label } from '@/ui/text';
 
@@ -77,20 +77,19 @@ export default function GroceryTab() {
       </Reveal>
 
       <Reveal index={1} style={styles.summary}>
-        <Row
-          left={<Label>estimated</Label>}
-          right={<AnimatedNumber value={cycle.totalCost} precision={2} prefix="£" color={grade[100]} />}
-        />
-        <Row
-          left={<Label>ticked</Label>}
-          right={<Figure color={grade[100]}>{`${done} / ${total}`}</Figure>}
-        />
-        {cycle.expiredGrams > 0 && (
-          <Row
-            left={<Label>expired</Label>}
-            right={<Figure color={grade[100]}>{formatMass(cycle.expiredGrams)}</Figure>}
-          />
-        )}
+        <Pair>
+          <Tile label="estimated">
+            <AnimatedNumber value={cycle.totalCost} precision={2} prefix="£" color={grade[96]} />
+          </Tile>
+          <Tile label="ticked">
+            <Figure color={grade[96]}>{`${done} / ${total}`}</Figure>
+          </Tile>
+          {cycle.expiredGrams > 0 && (
+            <Tile label="expired" wide>
+              <Figure color={grade[96]}>{formatMass(cycle.expiredGrams)}</Figure>
+            </Tile>
+          )}
+        </Pair>
       </Reveal>
 
       {activeCycle === 0 && projection.oneTimeItems.length > 0 && (

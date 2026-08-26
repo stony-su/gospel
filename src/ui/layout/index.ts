@@ -1,5 +1,6 @@
 export { Disclosure } from './Disclosure';
 export { Divider } from './Divider';
+export { Pair, Tile } from './Pair';
 export { Header } from './Header';
 export { Row } from './Row';
 export { Screen } from './Screen';

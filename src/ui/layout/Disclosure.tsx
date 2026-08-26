@@ -21,7 +21,7 @@ import { StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 
 import { useMotion } from '@/theme/motion';
-import { grade, radius, space, stroke, surface } from '@/theme/tokens';
+import { grade, radius, space, stroke, surface, surfaceFade } from '@/theme/tokens';
 import { Press, Reveal } from '@/ui/motion';
 import { Figure, Label } from '@/ui/text';
 
@@ -78,9 +78,9 @@ export function Disclosure({
         style={styles.header}
       >
         <Animated.View style={caret}>
-          <Label color={open ? grade[100] : grade[60]}>›</Label>
+          <Label color={open ? grade[96] : grade[60]}>›</Label>
         </Animated.View>
-        <Label color={open ? grade[100] : grade[80]}>{label}</Label>
+        <Label color={open ? grade[96] : grade[80]}>{label}</Label>
         <View style={styles.rule} />
         {meta ? (
           <Figure small color={grade[50]}>
@@ -105,7 +105,8 @@ const styles = StyleSheet.create({
   root: {
     marginBottom: space.md,
     backgroundColor: surface.panel,
-    borderRadius: radius.sm,
+    experimental_backgroundImage: surfaceFade.panel,
+    borderRadius: radius.lg,
     overflow: 'hidden',
   },
   header: {

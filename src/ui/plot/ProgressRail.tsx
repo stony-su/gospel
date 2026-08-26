@@ -43,7 +43,7 @@ function Tick({ x, done }: TickProps) {
       x1={x}
       y1={BASELINE}
       x2={x}
-      stroke={done ? grade[100] : grade[40]}
+      stroke={done ? grade[96] : grade[40]}
       strokeWidth={done ? stroke.thin : stroke.hair}
       animatedProps={animatedProps}
     />

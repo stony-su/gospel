@@ -11,7 +11,7 @@ import { StyleSheet, View } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 
 import { useMotion } from '@/theme/motion';
-import { grade, radius, space, stroke, surface } from '@/theme/tokens';
+import { grade, radius, space, stroke, surface, surfaceFade } from '@/theme/tokens';
 import { Press } from '@/ui/motion';
 import { Figure } from '@/ui/text';
 
@@ -65,7 +65,8 @@ export function Check({ label, meta, checked, onPress }: CheckProps) {
 const styles = StyleSheet.create({
   root: {
     backgroundColor: surface.row,
-    borderRadius: radius.sm,
+    experimental_backgroundImage: surfaceFade.row,
+    borderRadius: radius.md,
     marginBottom: space.xxs,
   },
   // A ticked line settles back toward the page rather than lifting off it.
@@ -82,6 +83,7 @@ const styles = StyleSheet.create({
   box: {
     width: BOX,
     height: BOX,
+    borderRadius: radius.sm,
     borderWidth: stroke.thin,
     borderColor: grade[50],
     alignItems: 'center',
@@ -90,7 +92,8 @@ const styles = StyleSheet.create({
   mark: {
     width: BOX - 6,
     height: BOX - 6,
-    backgroundColor: grade[100],
+    borderRadius: 2,
+    backgroundColor: grade[96],
   },
   label: {
     flex: 1,

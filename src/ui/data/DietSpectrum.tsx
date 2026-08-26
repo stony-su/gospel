@@ -148,7 +148,7 @@ export function DietSpectrum({ position, onChange }: DietSpectrumProps) {
         {anchors.map((anchor, index) => (
           <View key={anchor.diet_type} style={styles.labelSlot}>
             <Label
-              color={index === activeIndex ? grade[100] : grade[50]}
+              color={index === activeIndex ? grade[96] : grade[50]}
               style={styles.label}
             >
               {anchor.label.replace('Veganism', 'Vegan').replace('Vegetarianism', 'Veg')}
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     bottom: 2,
     left: 0,
     width: stroke.thin,
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
   },
   labels: {
     flexDirection: 'row',

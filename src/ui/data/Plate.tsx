@@ -16,7 +16,7 @@ import { useId } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Svg, { Defs, FeColorMatrix, Filter, Image as SvgImage } from 'react-native-svg';
 
-import { grade, stroke } from '@/theme/tokens';
+import { grade, radius, stroke } from '@/theme/tokens';
 import { Label } from '@/ui/text';
 
 interface PlateProps {
@@ -79,6 +79,7 @@ export function Plate({ uri, width, height, fallbackLabel }: PlateProps) {
 
 const styles = StyleSheet.create({
   frame: {
+    borderRadius: radius.lg,
     borderWidth: stroke.hair,
     borderColor: grade[40],
     overflow: 'hidden',
@@ -87,6 +88,7 @@ const styles = StyleSheet.create({
   // Same footprint as a real plate, so a missing photograph never shifts the
   // layout around it.
   fallback: {
+    borderRadius: radius.lg,
     borderWidth: stroke.hair,
     borderColor: grade[30],
     backgroundColor: grade[10],

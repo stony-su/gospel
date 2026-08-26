@@ -25,7 +25,7 @@ export function StatBlock({ label, value, unit, precision = 0, note }: StatBlock
     <View style={styles.root}>
       <Label>{label}</Label>
       <View style={styles.figure}>
-        <AnimatedNumber value={value} precision={precision} variant="display" color={grade[100]} />
+        <AnimatedNumber value={value} precision={precision} variant="display" color={grade[96]} />
         {unit ? <Figure color={grade[60]} style={styles.unit}>{unit}</Figure> : null}
       </View>
       {note ? <Figure small color={grade[60]}>{note}</Figure> : null}

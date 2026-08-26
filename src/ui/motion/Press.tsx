@@ -17,7 +17,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { useMotion } from '@/theme/motion';
-import { grade, stroke, surface } from '@/theme/tokens';
+import { grade, radius, stroke, surface, surfaceFade } from '@/theme/tokens';
 
 interface PressProps {
   children: ReactNode;
@@ -108,6 +108,8 @@ const styles = StyleSheet.create({
     bottom: 0,
     pointerEvents: 'none',
     backgroundColor: surface.raised,
+    experimental_backgroundImage: surfaceFade.raised,
+    borderRadius: radius.md,
   },
   rule: {
     position: 'absolute',
@@ -115,7 +117,7 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     width: RULE_WIDTH,
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
   },
 });
 

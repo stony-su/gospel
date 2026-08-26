@@ -18,7 +18,7 @@ import { ingredientsById } from '@/data/recipes';
 import { useGospel, usePantryProjection } from '@/store/useGospel';
 import { grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { formatMass } from '@/ui/data';
-import { Header, Row as LayoutRow, Screen } from '@/ui/layout';
+import { Header, Pair, Screen, Tile } from '@/ui/layout';
 import { AnimatedNumber, Reveal } from '@/ui/motion';
 import { Figure, Label } from '@/ui/text';
 
@@ -91,18 +91,17 @@ export default function PantryTab() {
       <Header title="Pantry" refButton right={<Label>{`${cycleCount} cycles`}</Label>} />
 
       <Reveal index={0} style={styles.summary}>
-        <LayoutRow
-          left={<Label>every cycle</Label>}
-          right={<AnimatedNumber value={everyCycle} color={grade[100]} />}
-        />
-        <LayoutRow
-          left={<Label>occasional</Label>}
-          right={<AnimatedNumber value={occasional} color={grade[100]} />}
-        />
-        <LayoutRow
-          left={<Label>one-time</Label>}
-          right={<AnimatedNumber value={projection.oneTimeItems.length} color={grade[100]} />}
-        />
+        <Pair>
+          <Tile label="every cycle">
+            <AnimatedNumber value={everyCycle} color={grade[96]} />
+          </Tile>
+          <Tile label="occasional">
+            <AnimatedNumber value={occasional} color={grade[96]} />
+          </Tile>
+          <Tile label="one-time" wide>
+            <AnimatedNumber value={projection.oneTimeItems.length} color={grade[96]} />
+          </Tile>
+        </Pair>
       </Reveal>
 
       <Reveal index={1} style={styles.axis}>
@@ -184,7 +183,7 @@ const styles = StyleSheet.create({
     height: 8,
   },
   cellBuy: {
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
   },
   cellHold: {
     borderWidth: stroke.hair,

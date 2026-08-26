@@ -21,7 +21,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring, withTiming } fr
 import Svg, { Rect } from 'react-native-svg';
 
 import { useMotion } from '@/theme/motion';
-import { grade, radius, space, stroke, surface } from '@/theme/tokens';
+import { grade, radius, space, stroke, surface, surfaceFade } from '@/theme/tokens';
 import { HATCH_FILL, Hatch } from '@/ui/plot';
 import { Press } from '@/ui/motion';
 import { Figure, Heading } from '@/ui/text';
@@ -79,8 +79,8 @@ export function NutrientBar({
   const body = (
     <View style={styles.root}>
       <View style={styles.head}>
-        <Heading color={inverted ? grade[100] : grade[90]}>{name}</Heading>
-        <Figure color={inverted ? grade[100] : grade[70]}>
+        <Heading color={inverted ? grade[96] : grade[90]}>{name}</Heading>
+        <Figure color={inverted ? grade[96] : grade[70]}>
           {`${formatAmount(intake)} / ${formatAmount(target)} ${unit}`}
         </Figure>
       </View>
@@ -120,9 +120,11 @@ const FILL_STYLE: Record<Mark, { backgroundColor: string }> = {
   hollow: { backgroundColor: grade[50] },
   // Nothing to fill: an absent measurement is not a zero one.
   unmeasured: { backgroundColor: 'transparent' },
+  // The one pure white in the app. A target met is the only thing that gets
+  // to be brighter than everything around it.
   solid: { backgroundColor: grade[100] },
-  hatch: { backgroundColor: grade[100] },
-  inverted: { backgroundColor: grade[100] },
+  hatch: { backgroundColor: grade[92] },
+  inverted: { backgroundColor: grade[96] },
 };
 
 const styles = StyleSheet.create({
@@ -132,8 +134,10 @@ const styles = StyleSheet.create({
   },
   root: {
     backgroundColor: surface.row,
-    borderRadius: radius.sm,
-    padding: space.sm,
+    experimental_backgroundImage: surfaceFade.row,
+    borderRadius: radius.md,
+    paddingVertical: space.sm,
+    paddingHorizontal: space.md,
     marginBottom: space.xxs,
   },
   head: {
@@ -148,6 +152,7 @@ const styles = StyleSheet.create({
     // A step below the row it sits on, so an unfilled bar still reads as a
     // well rather than as part of the surface.
     backgroundColor: grade[5],
+    borderRadius: radius.sm,
     position: 'relative',
     overflow: 'hidden',
   },

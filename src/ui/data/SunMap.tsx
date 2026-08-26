@@ -190,7 +190,7 @@ export function SunMap({ latitude, longitude, onPick }: SunMapProps) {
                 <SvgText
                   x={Math.min(project.x(longitude) + 8, width - 46)}
                   y={Math.max(project.y(latitude) - 7, 11)}
-                  fill={grade[100]}
+                  fill={grade[96]}
                   fontSize={registers.figureSmall.fontSize}
                   fontFamily={registers.figureSmall.fontFamily}
                 >
@@ -214,7 +214,7 @@ export function SunMap({ latitude, longitude, onPick }: SunMapProps) {
       {zone ? (
         <View style={styles.readout}>
           <View style={styles.readoutHead}>
-            <Label color={grade[100]}>{zone.label}</Label>
+            <Label color={grade[96]}>{zone.label}</Label>
             <Figure small>
               {`${zone.abs_latitude_min}–${zone.abs_latitude_max}° · vit D ×${zone.vitamin_d_multiplier}`}
             </Figure>
@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
     left: 0,
     top: 0,
     height: stroke.thin,
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
     opacity: 0.75,
   },
   crossV: {
@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
     left: 0,
     top: 0,
     width: stroke.thin,
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
     opacity: 0.4,
   },
   readout: {

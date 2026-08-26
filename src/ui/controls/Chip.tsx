@@ -39,11 +39,11 @@ export function Chip({ label, meta, selected, onPress }: ChipProps) {
 const styles = StyleSheet.create({
   root: {
     borderWidth: stroke.hair,
-    borderRadius: radius.sm,
+    borderRadius: radius.pill,
   },
   on: {
-    backgroundColor: grade[100],
-    borderColor: grade[100],
+    backgroundColor: grade[96],
+    borderColor: grade[96],
   },
   off: {
     backgroundColor: 'transparent',

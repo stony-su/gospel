@@ -8,7 +8,7 @@
 
 import { StyleSheet, View } from 'react-native';
 
-import { grade, space, stroke } from '@/theme/tokens';
+import { grade, radius, space, stroke } from '@/theme/tokens';
 import { AnimatedNumber, Press } from '@/ui/motion';
 import { Label } from '@/ui/text';
 
@@ -37,7 +37,7 @@ export function Stepper({ value, min, max, unit, onChange }: StepperProps) {
       </Press>
 
       <View style={styles.readout}>
-        <AnimatedNumber value={value} suffix={unit ? ` ${unit}` : ''} color={grade[100]} />
+        <AnimatedNumber value={value} suffix={unit ? ` ${unit}` : ''} color={grade[96]} />
       </View>
 
       <Press
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: stroke.hair,
     borderColor: grade[40],
+    borderRadius: radius.md,
     alignSelf: 'flex-start',
   },
   button: {

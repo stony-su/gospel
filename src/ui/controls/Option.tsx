@@ -9,7 +9,7 @@
 
 import { StyleSheet, View } from 'react-native';
 
-import { grade, radius, space, surface } from '@/theme/tokens';
+import { grade, radius, space, surface, surfaceFade } from '@/theme/tokens';
 import { Press } from '@/ui/motion';
 import { Figure, Heading } from '@/ui/text';
 
@@ -31,7 +31,7 @@ export function Option({ label, meta, selected, onPress }: OptionProps) {
       style={[styles.root, selected && styles.selected]}
     >
       <View style={styles.body}>
-        <Heading color={selected ? grade[100] : grade[80]}>{label}</Heading>
+        <Heading color={selected ? grade[96] : grade[80]}>{label}</Heading>
         {meta ? <Figure color={selected ? grade[80] : grade[60]}>{meta}</Figure> : null}
       </View>
     </Press>
@@ -41,11 +41,13 @@ export function Option({ label, meta, selected, onPress }: OptionProps) {
 const styles = StyleSheet.create({
   root: {
     backgroundColor: surface.row,
-    borderRadius: radius.sm,
-    marginBottom: space.xxs,
+    experimental_backgroundImage: surfaceFade.row,
+    borderRadius: radius.md,
+    marginBottom: space.xs,
   },
   selected: {
     backgroundColor: surface.raised,
+    experimental_backgroundImage: surfaceFade.raised,
   },
   body: {
     flexDirection: 'row',

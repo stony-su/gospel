@@ -57,10 +57,15 @@ export const duration = {
  */
 export const grade = {
   0: '#000000',
+  3: '#040404',
   5: '#060606',
-  10: '#0B0B0B',
-  15: '#111111',
-  20: '#171717',
+  8: '#0A0A0A',
+  10: '#0D0D0D',
+  12: '#101010',
+  15: '#131313',
+  18: '#171717',
+  20: '#1A1A1A',
+  25: '#212121',
   30: '#262626',
   35: '#303030',
   40: '#3D3D3D',
@@ -68,7 +73,10 @@ export const grade = {
   60: '#6E6E6E',
   70: '#909090',
   80: '#B4B4B4',
+  85: '#C4C4C4',
   90: '#D6D6D6',
+  92: '#E2E2E2',
+  96: '#F1F1F1',
   100: '#FFFFFF',
 } as const;
 
@@ -88,6 +96,11 @@ export const grade = {
  *
  * Deliberately narrow steps. These are all near-black, and the point is that
  * a panel separates from the page without ever announcing itself as a card.
+ *
+ * Each level has a flat colour and a gradient. Use both together: the flat
+ * value as `backgroundColor` and the gradient as `experimental_backgroundImage`,
+ * so a platform that does not render the gradient still gets the right level
+ * rather than nothing.
  */
 export const surface = {
   /** The page itself. */
@@ -98,6 +111,25 @@ export const surface = {
   row: grade[15],
   /** Pressed, selected, or otherwise the thing being acted on. */
   raised: grade[20],
+} as const;
+
+/**
+ * A vertical fade between two grades.
+ *
+ * Surfaces that fade across a few steps rather than sitting at one value are
+ * what stop the app reading as a stack of flat blocks. The range is small on
+ * purpose - two or three stops - so it registers as depth rather than as a
+ * decorative wash.
+ */
+export function fade(from: string, to: string): string {
+  return `linear-gradient(180deg, ${from} 0%, ${to} 100%)`;
+}
+
+/** Gradient fills matching the levels above. Pair with the flat colour. */
+export const surfaceFade = {
+  panel: fade(grade[12], grade[8]),
+  row: fade(grade[18], grade[12]),
+  raised: fade(grade[25], grade[18]),
 } as const;
 
 export const stroke = {
@@ -131,5 +163,11 @@ export const registers = {
  */
 export const radius = {
   none: 0,
-  sm: 2,
+  /** Ticks, bars, small marks. */
+  sm: 4,
+  /** Rows, chips, controls. */
+  md: 8,
+  /** Panels, cards, plates. */
+  lg: 14,
+  pill: 999,
 } as const;

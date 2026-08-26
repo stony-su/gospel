@@ -103,7 +103,7 @@ export default function NutritionTab() {
                   .map((value, index) => `${x(index + 1)},${y(value)}`)
                   .join(' ')}
                 fill="none"
-                stroke={grade[100]}
+                stroke={grade[96]}
                 strokeWidth={stroke.thin}
               />
             )}
@@ -183,6 +183,6 @@ const styles = StyleSheet.create({
   },
   fill: {
     height: '100%',
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
   },
 });

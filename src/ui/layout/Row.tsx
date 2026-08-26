@@ -11,16 +11,18 @@
 import type { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { radius, space, surface } from '@/theme/tokens';
+import { radius, space, surface, surfaceFade } from '@/theme/tokens';
 
 interface RowProps {
   left: ReactNode;
   right?: ReactNode;
+  /** Steps in from its container, breaking the flush column. */
+  inset?: boolean;
 }
 
-export function Row({ left, right }: RowProps) {
+export function Row({ left, right, inset = false }: RowProps) {
   return (
-    <View style={styles.root}>
+    <View style={[styles.root, inset && styles.inset]}>
       <View style={styles.left}>{left}</View>
       {right !== undefined && <View style={styles.right}>{right}</View>}
     </View>
@@ -33,10 +35,15 @@ const styles = StyleSheet.create({
     alignItems: 'baseline',
     justifyContent: 'space-between',
     backgroundColor: surface.row,
-    borderRadius: radius.sm,
+    experimental_backgroundImage: surfaceFade.row,
+    borderRadius: radius.md,
     paddingVertical: space.sm,
-    paddingHorizontal: space.sm,
+    paddingHorizontal: space.md,
+    marginBottom: space.xxs,
     gap: space.md,
+  },
+  inset: {
+    marginLeft: space.md,
   },
   left: {
     flexShrink: 1,

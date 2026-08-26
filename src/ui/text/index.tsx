@@ -10,6 +10,11 @@
  * Title, Heading and Label uppercase at the component rather than at the call
  * site, so the strings in the screens stay readable and a label can never be
  * shouted inconsistently.
+ *
+ * None of these is pure white. #FFFFFF is reserved for one thing - a nutrient
+ * that has reached its target - so that white means something again. When
+ * titles, numbers, fills and selected rows were all 100, a met target shouted
+ * exactly as loud as a screen heading, which is to say it did not shout.
  */
 
 import type { ReactNode } from 'react';
@@ -29,7 +34,7 @@ const upper = (children: ReactNode) =>
 /** The app's headline numbers. */
 export function Display({ children, color, style, ...rest }: BaseProps) {
   return (
-    <Text {...rest} style={[registers.display, { color: color ?? grade[100] }, style]}>
+    <Text {...rest} style={[registers.display, { color: color ?? grade[96] }, style]}>
       {children}
     </Text>
   );
@@ -37,7 +42,7 @@ export function Display({ children, color, style, ...rest }: BaseProps) {
 
 export function Title({ children, color, style, ...rest }: BaseProps) {
   return (
-    <Text {...rest} style={[registers.title, { color: color ?? grade[100] }, style]}>
+    <Text {...rest} style={[registers.title, { color: color ?? grade[92] }, style]}>
       {upper(children)}
     </Text>
   );
@@ -45,7 +50,7 @@ export function Title({ children, color, style, ...rest }: BaseProps) {
 
 export function Heading({ children, color, style, ...rest }: BaseProps) {
   return (
-    <Text {...rest} style={[registers.heading, { color: color ?? grade[90] }, style]}>
+    <Text {...rest} style={[registers.heading, { color: color ?? grade[85] }, style]}>
       {upper(children)}
     </Text>
   );

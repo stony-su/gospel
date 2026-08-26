@@ -30,14 +30,14 @@ export function Hatch() {
         <Rect x={0} y={0} width={TILE} height={TILE} fill={grade[0]} />
         {/* One diagonal, plus the two corner stubs that make it continuous
             across tile boundaries. */}
-        <Line x1={0} y1={TILE} x2={TILE} y2={0} stroke={grade[100]} strokeWidth={stroke.hair} />
-        <Line x1={-1} y1={1} x2={1} y2={-1} stroke={grade[100]} strokeWidth={stroke.hair} />
+        <Line x1={0} y1={TILE} x2={TILE} y2={0} stroke={grade[96]} strokeWidth={stroke.hair} />
+        <Line x1={-1} y1={1} x2={1} y2={-1} stroke={grade[96]} strokeWidth={stroke.hair} />
         <Line
           x1={TILE - 1}
           y1={TILE + 1}
           x2={TILE + 1}
           y2={TILE - 1}
-          stroke={grade[100]}
+          stroke={grade[96]}
           strokeWidth={stroke.hair}
         />
       </Pattern>

@@ -78,7 +78,7 @@ export default function TabsLayout() {
                 accessibilityState={{ selected: index === active }}
                 accessibilityLabel={tab.label}
               >
-                <Label color={index === active ? grade[100] : grade[50]}>{tab.label}</Label>
+                <Label color={index === active ? grade[96] : grade[50]}>{tab.label}</Label>
               </Pressable>
             </TabTrigger>
           ))}
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     left: 0,
     top: 0,
     height: stroke.medium,
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
   },
   tab: {
     flex: 1,

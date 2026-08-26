@@ -20,7 +20,7 @@ import { fatPercentOfEnergy } from '@/domain/planner/coverage';
 import { useGospel } from '@/store/useGospel';
 import { GUTTER, grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { Plate, formatMass } from '@/ui/data';
-import { Disclosure, Header, Row, Screen, Section } from '@/ui/layout';
+import { Disclosure, Header, Pair, Screen, Section, Tile } from '@/ui/layout';
 import { AnimatedNumber, Press, Reveal } from '@/ui/motion';
 import { Figure, Label, Prose } from '@/ui/text';
 
@@ -70,17 +70,28 @@ export default function RecipeDetail() {
         />
       </View>
 
-      <Reveal index={0} style={styles.stats}>
-        <Stat label="time" value={recipe.minutes} unit="min" />
-        <Stat label="difficulty" value={recipe.difficulty} unit="of 5" />
-        <Stat label="rating" value={recipe.rating} unit={`${recipe.reviews} rev`} precision={1} />
-        <Stat
-          label="cost"
-          value={recipe.cost_per_serving * servings}
-          unit="per portion"
-          precision={2}
-          prefix="£"
-        />
+      <Reveal index={0}>
+        <Pair>
+          <Tile label="time">
+            <AnimatedNumber value={recipe.minutes} color={grade[96]} suffix=" min" />
+          </Tile>
+          <Tile label="difficulty">
+            <AnimatedNumber value={recipe.difficulty} color={grade[96]} suffix=" / 5" />
+          </Tile>
+          <Tile label="rating">
+            <AnimatedNumber value={recipe.rating} precision={1} color={grade[96]} />
+            <Figure small color={grade[50]}>{`${recipe.reviews} reviews`}</Figure>
+          </Tile>
+          <Tile label="cost">
+            <AnimatedNumber
+              value={recipe.cost_per_serving * servings}
+              precision={2}
+              prefix="£"
+              color={grade[96]}
+            />
+            <Figure small color={grade[50]}>per portion</Figure>
+          </Tile>
+        </Pair>
       </Reveal>
 
       <Label color={grade[50]} style={styles.difficulty}>
@@ -88,56 +99,41 @@ export default function RecipeDetail() {
       </Label>
 
       <Section label="Per portion" index={1}>
-        <Row
-          left={<Label>energy</Label>}
-          right={
-            <Figure color={grade[100]}>
+        <Pair>
+          <Tile label="energy">
+            <Figure color={grade[92]}>
               {`${Math.round(recipe.nutrition.energy_kcal * servings)} kcal`}
             </Figure>
-          }
-        />
-        <Row
-          left={<Label>protein</Label>}
-          right={
-            <Figure color={grade[100]}>
+          </Tile>
+          <Tile label="protein">
+            <Figure color={grade[92]}>
               {`${Math.round(recipe.nutrition.protein_g * servings)} g`}
             </Figure>
-          }
-        />
-        <Row
-          left={<Label>carbohydrate</Label>}
-          right={
-            <Figure color={grade[100]}>
+          </Tile>
+          <Tile label="carbohydrate">
+            <Figure color={grade[92]}>
               {`${Math.round(recipe.nutrition.carbohydrate_g * servings)} g`}
             </Figure>
-          }
-        />
-        <Row
-          left={<Label>fat</Label>}
-          right={
-            <Figure color={grade[100]}>
-              {`${Math.round(recipe.nutrition.fat_g * servings)} g${
-                fatPercent !== null ? ` · ${Math.round(fatPercent)}% energy` : ''
-              }`}
+          </Tile>
+          <Tile label="fat">
+            <Figure color={grade[92]}>
+              {`${Math.round(recipe.nutrition.fat_g * servings)} g`}
             </Figure>
-          }
-        />
-        <Row
-          left={<Label>fibre</Label>}
-          right={
-            <Figure color={grade[100]}>
+            {fatPercent !== null ? (
+              <Figure small color={grade[50]}>{`${Math.round(fatPercent)}% energy`}</Figure>
+            ) : null}
+          </Tile>
+          <Tile label="fibre">
+            <Figure color={grade[92]}>
               {`${Math.round(recipe.nutrition.fiber_g * servings)} g`}
             </Figure>
-          }
-        />
-        <Row
-          left={<Label>sodium</Label>}
-          right={
-            <Figure color={grade[100]}>
+          </Tile>
+          <Tile label="sodium">
+            <Figure color={grade[92]}>
               {`${Math.round(recipe.nutrition.sodium_mg * servings)} mg`}
             </Figure>
-          }
-        />
+          </Tile>
+        </Pair>
       </Section>
 
       <Disclosure
@@ -207,30 +203,6 @@ export default function RecipeDetail() {
   );
 }
 
-function Stat({
-  label,
-  value,
-  unit,
-  precision = 0,
-  prefix,
-}: {
-  label: string;
-  value: number;
-  unit: string;
-  precision?: number;
-  prefix?: string;
-}) {
-  return (
-    <View style={styles.stat}>
-      <Label>{label}</Label>
-      <AnimatedNumber value={value} precision={precision} prefix={prefix} color={grade[100]} />
-      <Figure small color={grade[50]}>
-        {unit}
-      </Figure>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
   afterPlate: {
     marginTop: space.md,
@@ -239,14 +211,6 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     paddingVertical: space.xs,
     marginBottom: space.xs,
-  },
-  stats: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: space.lg,
-  },
-  stat: {
-    gap: space.xxs,
   },
   difficulty: {
     marginTop: space.sm,

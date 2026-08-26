@@ -11,7 +11,7 @@ import { Pressable, StyleSheet, View, type LayoutChangeEvent } from 'react-nativ
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 
 import { useMotion } from '@/theme/motion';
-import { grade, space, stroke } from '@/theme/tokens';
+import { grade, radius, space, stroke } from '@/theme/tokens';
 import { Label } from '@/ui/text';
 
 interface SegmentedProps<T extends string | number> {
@@ -71,13 +71,15 @@ const styles = StyleSheet.create({
     position: 'relative',
     borderWidth: stroke.hair,
     borderColor: grade[40],
+    borderRadius: radius.md,
+    overflow: 'hidden',
   },
   indicator: {
     position: 'absolute',
     top: 0,
     bottom: 0,
     left: 0,
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
   },
   segment: {
     flex: 1,

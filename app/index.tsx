@@ -31,7 +31,7 @@ export default function Landing() {
     <View style={styles.root}>
       <View style={styles.content}>
         <Reveal index={0}>
-          <Label color={grade[100]}>gospel</Label>
+          <Label color={grade[96]}>gospel</Label>
         </Reveal>
 
         <Reveal index={2} style={styles.figures}>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   },
   cta: {
     alignSelf: 'flex-start',
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
     paddingHorizontal: space.lg,
     paddingVertical: space.sm,
   },

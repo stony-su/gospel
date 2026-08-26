@@ -75,7 +75,7 @@ export function AnimatedNumber({
       style={[
         registers[variant],
         styles.reset,
-        { color: color ?? (variant === 'display' ? grade[100] : grade[70]) },
+        { color: color ?? (variant === 'display' ? grade[96] : grade[70]) },
         style,
       ]}
     />

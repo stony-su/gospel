@@ -36,6 +36,7 @@ import { Slider } from '@/ui/controls/Slider';
 import { Stepper } from '@/ui/controls/Stepper';
 import { Disclosure } from '@/ui/layout/Disclosure';
 import { Divider } from '@/ui/layout/Divider';
+import { Pair, Tile } from '@/ui/layout/Pair';
 import { Row } from '@/ui/layout/Row';
 import { Section } from '@/ui/layout/Section';
 import { AnimatedNumber, MorphText, Press, Reveal } from '@/ui/motion';
@@ -305,5 +306,37 @@ describe('disclosure', () => {
     );
 
     expect(screen.getByText('EQUIPMENT')).toBeTruthy();
+  });
+});
+
+describe('pair', () => {
+  it('renders its tiles side by side', () => {
+    render(
+      <Pair>
+        <Tile label="energy">
+          <Figure>2444 kcal</Figure>
+        </Tile>
+        <Tile label="protein">
+          <Figure>112 g</Figure>
+        </Tile>
+      </Pair>,
+    );
+
+    expect(screen.getByText('ENERGY')).toBeTruthy();
+    expect(screen.getByText('2444 kcal')).toBeTruthy();
+    expect(screen.getByText('PROTEIN')).toBeTruthy();
+    expect(screen.getByText('112 g')).toBeTruthy();
+  });
+
+  it('renders a wide tile', () => {
+    render(
+      <Pair>
+        <Tile label="cost" wide>
+          <Figure>£74/wk</Figure>
+        </Tile>
+      </Pair>,
+    );
+
+    expect(screen.getByText('£74/wk')).toBeTruthy();
   });
 });

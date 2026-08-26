@@ -100,7 +100,7 @@ export function Slider({
           value={value}
           precision={precision}
           suffix={unit ? ` ${unit}` : ''}
-          color={grade[100]}
+          color={grade[96]}
         />
       </View>
 
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
   ruleFilled: {
     right: undefined,
     height: stroke.thin,
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
   },
   tick: {
     position: 'absolute',
@@ -154,6 +154,6 @@ const styles = StyleSheet.create({
     top: 2,
     bottom: 2,
     width: THUMB,
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
   },
 });

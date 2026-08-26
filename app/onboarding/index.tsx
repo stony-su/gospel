@@ -359,7 +359,7 @@ function Resolution({ targets }: { targets: ReturnType<typeof resolveTargets> })
           {`basal ${formatAmount(targets.bmr_kcal)} × pal ${targets.pal_multiplier}`}
         </Label>
         <View style={styles.energyRow}>
-          <AnimatedNumber value={targets.energy_kcal} variant="display" color={grade[100]} />
+          <AnimatedNumber value={targets.energy_kcal} variant="display" color={grade[96]} />
           <Figure color={grade[70]}>kcal / day</Figure>
         </View>
       </View>
@@ -429,7 +429,7 @@ const styles = StyleSheet.create({
     marginTop: space.md,
     paddingLeft: space.sm,
     borderLeftWidth: stroke.medium,
-    borderLeftColor: grade[100],
+    borderLeftColor: grade[96],
     paddingVertical: space.xs,
   },
   chips: {
@@ -458,7 +458,7 @@ const styles = StyleSheet.create({
   },
   cta: {
     alignItems: 'center',
-    backgroundColor: grade[100],
+    backgroundColor: grade[96],
     paddingVertical: space.sm,
   },
   ctaDisabled: {

@@ -96,7 +96,7 @@ export default function NutrientDetail() {
 
       <Reveal index={0} style={styles.value}>
         <View style={styles.valueRow}>
-          <Figure color={grade[100]} style={styles.big}>
+          <Figure color={grade[96]} style={styles.big}>
             {formatAmount(resolved.value)}
           </Figure>
           <Figure color={grade[70]}>{`${row.unit} / day`}</Figure>
@@ -144,7 +144,7 @@ export default function NutrientDetail() {
       {row.ul_value !== null && (
         <Section label="Upper limit" index={3}>
           <Row
-            left={<Figure color={grade[100]}>{`${formatAmount(row.ul_value)} ${row.unit}`}</Figure>}
+            left={<Figure color={grade[96]}>{`${formatAmount(row.ul_value)} ${row.unit}`}</Figure>}
             right={
               resolved.pct_of_ul !== null ? (
                 <Figure small color={grade[70]}>

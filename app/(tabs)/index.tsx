@@ -21,7 +21,7 @@ import { useGospel, useTargets } from '@/store/useGospel';
 import { grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { Segmented } from '@/ui/controls';
 import { Plate, formatAmount } from '@/ui/data';
-import { Header, Row, Screen, Section } from '@/ui/layout';
+import { Header, Pair, Row, Screen, Section, Tile } from '@/ui/layout';
 import { AnimatedNumber, Press, Reveal } from '@/ui/motion';
 import { Figure, Heading, Label } from '@/ui/text';
 
@@ -86,47 +86,40 @@ export default function PlanTab() {
       </Reveal>
 
       <Section label="Per day" index={1}>
-        <Row
-          left={<Label>energy</Label>}
-          right={
-            <View style={styles.metric}>
-              <AnimatedNumber value={energyAchieved} color={grade[100]} suffix=" kcal" />
-              <Figure small color={grade[60]}>
-                {`${energyDelta >= 0 ? '+' : ''}${(energyDelta * 100).toFixed(0)}% vs ${Math.round(energyTarget)}`}
-              </Figure>
-            </View>
-          }
-        />
-        <Row
-          left={<Label>protein</Label>}
-          right={
-            <View style={styles.metric}>
-              <AnimatedNumber
-                value={plan.averageNutrition.protein_g ?? 0}
-                color={grade[100]}
-                suffix=" g"
-              />
-              <Figure small color={grade[60]}>{`target ${formatAmount(proteinTarget)}`}</Figure>
-            </View>
-          }
-        />
-        <Row
-          left={<Label>cost</Label>}
-          right={
-            <View style={styles.metric}>
-              <AnimatedNumber value={plan.costPerWeek} color={grade[100]} prefix="£" suffix="/wk" />
-              <Figure small color={grade[60]}>
-                {`£${plan.costPerCycle.toFixed(0)} per cycle`}
-              </Figure>
-            </View>
-          }
-        />
+        <Pair>
+          <Tile label="energy">
+            <AnimatedNumber value={energyAchieved} color={grade[96]} suffix=" kcal" />
+            <Figure small color={grade[60]}>
+              {`${energyDelta >= 0 ? '+' : ''}${(energyDelta * 100).toFixed(0)}% vs ${Math.round(energyTarget)}`}
+            </Figure>
+          </Tile>
+
+          <Tile label="protein">
+            <AnimatedNumber
+              value={plan.averageNutrition.protein_g ?? 0}
+              color={grade[96]}
+              suffix=" g"
+            />
+            <Figure small color={grade[60]}>{`target ${formatAmount(proteinTarget)}`}</Figure>
+          </Tile>
+
+          <Tile label="cost" wide>
+            <AnimatedNumber value={plan.costPerWeek} color={grade[96]} prefix="£" suffix="/wk" />
+            <Figure small color={grade[60]}>
+              {`£${plan.costPerCycle.toFixed(0)} per cycle`}
+            </Figure>
+          </Tile>
+        </Pair>
       </Section>
 
       {plan.warnings.length > 0 && (
         <Section label="Unmet" index={2}>
           {plan.warnings.map((warning) => (
-            <Row key={warning} left={<Figure small color={grade[70]}>{warning}</Figure>} />
+            <Row
+              key={warning}
+              inset
+              left={<Figure small color={grade[70]}>{warning}</Figure>}
+            />
           ))}
         </Section>
       )}
@@ -174,7 +167,7 @@ export default function PlanTab() {
                       {`${Math.round(recipe.nutrition.energy_kcal * meal.servings)} kcal`}
                     </Figure>
                     {meal.servings !== 1 && (
-                      <Figure small color={grade[100]}>{`×${meal.servings}`}</Figure>
+                      <Figure small color={grade[96]}>{`×${meal.servings}`}</Figure>
                     )}
                   </View>
                 </View>
