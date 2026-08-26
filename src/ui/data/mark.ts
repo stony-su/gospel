@@ -12,19 +12,26 @@
 
 import type { ResolvedNutrient } from '@/domain/nutrition/types';
 
-export type Mark = 'hollow' | 'solid' | 'hatch' | 'inverted';
+export type Mark = 'hollow' | 'solid' | 'hatch' | 'inverted' | 'unmeasured';
 
 /**
- * Precedence, highest first: over the upper limit, approaching it, target
- * met, short of target.
+ * Precedence, highest first: over the upper limit, approaching it,
+ * unmeasurable, target met, short of target.
  *
  * A breach outranks a met target because both are true at once whenever a
  * nutrient overshoots - and which of the two you need to know is never the
- * good news.
+ * good news. Both UL states outrank `unmeasured` because they are properties
+ * of the resolved target itself, not of intake, and so are worth reporting
+ * even when the plan cannot be measured against them.
+ *
+ * A null intake means the recipe data cannot measure this nutrient - true of
+ * most of the 48. It renders as an empty track rather than a zero, because a
+ * zero is a measurement and this is the absence of one.
  */
-export function markFor(nutrient: ResolvedNutrient, intake: number): Mark {
+export function markFor(nutrient: ResolvedNutrient, intake: number | null): Mark {
   if (nutrient.over_ul) return 'inverted';
   if (nutrient.approaching_ul) return 'hatch';
+  if (intake === null || !Number.isFinite(intake)) return 'unmeasured';
   if (intake >= nutrient.value) return 'solid';
   return 'hollow';
 }
@@ -48,8 +55,8 @@ export function barFraction(intake: number, target: number): number {
  * printing both to the same number of decimals makes one unreadable and the
  * other falsely precise.
  */
-export function formatAmount(value: number): string {
-  if (!Number.isFinite(value)) return '—';
+export function formatAmount(value: number | null): string {
+  if (value === null || !Number.isFinite(value)) return '—';
   if (Math.abs(value) >= 100) return value.toFixed(0);
   if (Math.abs(value) >= 10) return value.toFixed(1);
   return value.toFixed(2);

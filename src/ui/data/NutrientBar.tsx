@@ -8,6 +8,7 @@
  *   solid     a white fill, no outline - target met
  *   hatch     white, overlaid with diagonals - approaching the upper limit
  *   inverted  white, value knocked out in black, heavy rule at the UL - over
+ *   unmeasured an empty outlined track - the recipe data cannot measure it
  *
  * Width and state animate independently. A bar that grows while its status
  * changes is reporting two different facts, and coupling them would make the
@@ -29,7 +30,8 @@ import { barFraction, formatAmount, type Mark } from './mark';
 interface NutrientBarProps {
   name: string;
   unit: string;
-  intake: number;
+  /** Null when the recipe data cannot measure this nutrient. */
+  intake: number | null;
   target: number;
   mark: Mark;
   /** Upper limit, drawn as a heavy rule when the bar is inverted. */
@@ -50,7 +52,7 @@ export function NutrientBar({
 }: NutrientBarProps) {
   const motion = useMotion();
 
-  const fraction = barFraction(intake, target);
+  const fraction = barFraction(intake ?? 0, target);
   const fill = useSharedValue(fraction);
   const state = useSharedValue(0);
 
@@ -83,7 +85,12 @@ export function NutrientBar({
         </Figure>
       </View>
 
-      <View style={[styles.track, mark === 'hollow' && styles.tracked]}>
+      <View
+        style={[
+          styles.track,
+          (mark === 'hollow' || mark === 'unmeasured') && styles.tracked,
+        ]}
+      >
         <Animated.View style={[styles.fill, fillStyle, FILL_STYLE[mark]]} />
 
         {mark === 'hatch' && (
@@ -111,6 +118,8 @@ export function NutrientBar({
 
 const FILL_STYLE: Record<Mark, { backgroundColor: string }> = {
   hollow: { backgroundColor: grade[50] },
+  // Nothing to fill: an absent measurement is not a zero one.
+  unmeasured: { backgroundColor: 'transparent' },
   solid: { backgroundColor: grade[100] },
   hatch: { backgroundColor: grade[100] },
   inverted: { backgroundColor: grade[100] },

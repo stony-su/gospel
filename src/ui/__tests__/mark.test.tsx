@@ -98,3 +98,27 @@ describe('formatAmount', () => {
     expect(formatAmount(Number.NaN)).toBe('—');
   });
 });
+
+describe('markFor, unmeasured intake', () => {
+  it('is unmeasured when the recipe data cannot measure the nutrient', () => {
+    expect(markFor(nutrient({}), null)).toBe('unmeasured');
+  });
+
+  it('distinguishes unmeasured from a genuine zero intake', () => {
+    expect(markFor(nutrient({}), 0)).toBe('hollow');
+  });
+
+  it('still reports a target that breaches its UL when intake is unknown', () => {
+    expect(markFor(nutrient({ over_ul: true }), null)).toBe('inverted');
+  });
+
+  it('still reports an approaching UL when intake is unknown', () => {
+    expect(markFor(nutrient({ approaching_ul: true }), null)).toBe('hatch');
+  });
+});
+
+describe('formatAmount, absent values', () => {
+  it('renders a dash for null rather than a zero', () => {
+    expect(formatAmount(null)).toBe('—');
+  });
+});

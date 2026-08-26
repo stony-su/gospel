@@ -1,36 +1,32 @@
 /**
  * The Nutrition tab.
  *
- * Every one of the 48 resolved targets, grouped by category, each against what
- * the plan actually delivers. Where the recipe data cannot measure a nutrient,
- * the row says so instead of inventing a number - which is most of them, and
- * saying it plainly is the point.
+ * Every one of the 48 resolved targets, grouped by category, each against
+ * what the plan actually delivers. Where the recipe data cannot measure a
+ * nutrient, the bar is an empty track rather than a zero - most of them are,
+ * and drawing the absence is the point.
+ *
+ * This is the screen the monochrome decision has to survive. Status is fill,
+ * hatch and inversion; the only thing colour used to say that form does not
+ * is nothing.
  */
 
 import { useMemo } from 'react';
 import { useRouter } from 'expo-router';
-import { Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
+import { StyleSheet, View, useWindowDimensions } from 'react-native';
+import { Polyline } from 'react-native-svg';
 
-import { NutrientBar } from '@/components/charts/NutrientBar';
-import { TwineChart } from '@/components/charts/TwineChart';
-import { Screen } from '@/components/primitives/Screen';
-import {
-  Body,
-  Doctrine,
-  Eyebrow,
-  Figure,
-  Title,
-} from '@/components/primitives/Text';
 import { categoryRank } from '@/data/nutrition';
 import { recipesById } from '@/data/recipes';
-import {
-  MEASURED_NUTRIENTS,
-  UNTARGETED_MEASURES,
-  coverageFor,
-} from '@/domain/planner/coverage';
 import type { ResolvedNutrient } from '@/domain/nutrition/types';
-import { GUTTER, ink, radius, signal, space, text } from '@/theme/tokens';
+import { MEASURED_NUTRIENTS, coverageFor } from '@/domain/planner/coverage';
 import { useGospel, useTargets } from '@/store/useGospel';
+import { GUTTER, grade, space, stroke } from '@/theme/tokens';
+import { NutrientBar, markFor } from '@/ui/data';
+import { Header, Screen, Section } from '@/ui/layout';
+import { Reveal } from '@/ui/motion';
+import { Plot } from '@/ui/plot';
+import { Figure, Label } from '@/ui/text';
 
 const CATEGORY_LABELS: Record<string, string> = {
   energy: 'Energy',
@@ -41,13 +37,15 @@ const CATEGORY_LABELS: Record<string, string> = {
   mineral: 'Minerals',
 };
 
+const CHART_HEIGHT = 150;
+
 export default function NutritionTab() {
   const router = useRouter();
   const { width } = useWindowDimensions();
   const plan = useGospel((state) => state.plan);
   const targets = useTargets();
 
-  /** Per-day energy, for the only chart with a genuine sequence on its x axis. */
+  /** Per-day energy, the only series with a genuine sequence on its x axis. */
   const dailyEnergy = useMemo(() => {
     if (!plan) return [];
     const byDay = new Map<number, number>();
@@ -56,8 +54,7 @@ export default function NutritionTab() {
       if (!recipe) continue;
       byDay.set(
         meal.dayIndex,
-        (byDay.get(meal.dayIndex) ?? 0) +
-          recipe.nutrition.energy_kcal * meal.servings,
+        (byDay.get(meal.dayIndex) ?? 0) + recipe.nutrition.energy_kcal * meal.servings,
       );
     }
     return [...byDay.entries()].sort((a, b) => a[0] - b[0]).map(([, value]) => value);
@@ -71,23 +68,19 @@ export default function NutritionTab() {
       if (bucket) bucket.push(nutrient);
       else buckets.set(nutrient.category, [nutrient]);
     }
-    return [...buckets.entries()].sort(
-      (a, b) => categoryRank(a[0]) - categoryRank(b[0]),
-    );
+    return [...buckets.entries()].sort((a, b) => categoryRank(a[0]) - categoryRank(b[0]));
   }, [targets]);
 
   if (!targets || !plan) {
     return (
       <Screen bottomInset={70}>
-        <Title>Nutrition</Title>
-        <Body color={text.faint} style={styles.empty}>
-          Build a plan and this fills with your resolved targets.
-        </Body>
+        <Header title="Nutrition" refButton />
+        <Label color={grade[50]}>build a plan to resolve targets</Label>
       </Screen>
     );
   }
 
-  /** What the plan delivers for a given nutrient, or null if unmeasurable. */
+  /** What the plan delivers for a nutrient, or null if unmeasurable. */
   const achievedFor = (nutrient: ResolvedNutrient): number | null => {
     if ((MEASURED_NUTRIENTS as readonly string[]).includes(nutrient.nutrient_id)) {
       return plan.averageNutrition[nutrient.nutrient_id] ?? null;
@@ -106,152 +99,88 @@ export default function NutritionTab() {
   const measuredCount = targets.nutrients.filter(
     (nutrient) => coverageFor(nutrient.nutrient_id) !== 'awaiting_fdc',
   ).length;
-  const awaiting = targets.nutrients.length - measuredCount;
 
   const energyTarget = targets.byId.energy_kcal?.value ?? 0;
+  const plotWidth = width - GUTTER * 2;
+  const energyMax = Math.max(energyTarget, ...dailyEnergy) * 1.1;
 
   return (
-    <Screen bottomInset={70}>
-      <View style={styles.header}>
-        <Eyebrow color={signal.endpoint}>Against your targets</Eyebrow>
-        <Title>Nutrition</Title>
-        <Doctrine color={text.tertiary} style={styles.subtitle}>
-          Colour arrives only when a target does.
-        </Doctrine>
-      </View>
+    <Screen bottomInset={70} gridOpacity={0.6}>
+      <Header
+        title="Nutrition"
+        refButton
+        right={<Label>{`${measuredCount}/${targets.nutrients.length} measured`}</Label>}
+      />
 
       {dailyEnergy.length > 1 && (
-        <View style={styles.chartBlock}>
-          <Eyebrow>Energy across the cycle</Eyebrow>
-          <TwineChart
-            values={dailyEnergy}
+        <Section label="Energy across the cycle" index={0}>
+          <Plot
+            width={plotWidth}
+            height={CHART_HEIGHT}
+            xDomain={[1, dailyEnergy.length]}
+            yDomain={[0, energyMax]}
             target={energyTarget}
-            width={width - GUTTER * 2}
-          />
-        </View>
+            xTicks={Math.min(7, dailyEnergy.length)}
+            formatY={(v) => String(Math.round(v))}
+          >
+            {({ x, y }) => (
+              <Polyline
+                points={dailyEnergy
+                  .map((value, index) => `${x(index + 1)},${y(value)}`)
+                  .join(' ')}
+                fill="none"
+                stroke={grade[100]}
+                strokeWidth={stroke.thin}
+              />
+            )}
+          </Plot>
+        </Section>
       )}
 
-      <View style={styles.coverage}>
-        <View style={styles.coverageRow}>
-          <Figure color={text.primary}>{measuredCount}</Figure>
-          <Body small color={text.faint}>
-            of {targets.nutrients.length} targets can be measured from the recipe
-            data.
-          </Body>
-        </View>
-        <Body small color={text.faint} style={styles.coverageNote}>
-          The remaining {awaiting} need per-ingredient values from FoodData
-          Central. Their targets are resolved and shown; their intake is left
-          blank rather than estimated.
-        </Body>
-      </View>
-
-      {grouped.map(([category, items]) => (
-        <View key={category} style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <Eyebrow color={text.tertiary}>
-              {CATEGORY_LABELS[category] ?? category}
-            </Eyebrow>
-            <View style={styles.sectionRule} />
-            <Figure tiny color={ink.dim}>
-              {items.length}
+      {grouped.map(([category, items], position) => (
+        <Reveal key={category} index={1 + position} style={styles.group}>
+          <View style={styles.groupHead}>
+            <Label>{CATEGORY_LABELS[category] ?? category}</Label>
+            <View style={styles.groupRule} />
+            <Figure small color={grade[50]}>
+              {String(items.length)}
             </Figure>
           </View>
 
-          {items.map((nutrient) => (
-            <Pressable
-              key={nutrient.nutrient_id}
-              onPress={() => router.push(`/nutrient/${nutrient.nutrient_id}`)}
-              style={({ pressed }) => pressed && styles.pressed}
-              accessibilityRole="button"
-              accessibilityLabel={`${nutrient.nutrient_name} details`}
-            >
+          {items.map((nutrient) => {
+            const achieved = achievedFor(nutrient);
+            return (
               <NutrientBar
+                key={nutrient.nutrient_id}
                 name={nutrient.nutrient_name}
                 unit={nutrient.unit}
                 target={nutrient.value}
-                achieved={achievedFor(nutrient)}
-                coverage={coverageFor(nutrient.nutrient_id)}
-                ulValue={nutrient.ul_value}
-                overUl={nutrient.over_ul}
-                approachingUl={nutrient.approaching_ul}
-                lowConfidence={nutrient.lowest_confidence === 'low'}
+                intake={achieved}
+                mark={markFor(nutrient, achieved)}
+                ul={nutrient.ul_value}
+                onPress={() => router.push(`/nutrient/${nutrient.nutrient_id}`)}
               />
-            </Pressable>
-          ))}
-        </View>
+            );
+          })}
+        </Reveal>
       ))}
-
-      <View style={styles.section}>
-        <View style={styles.sectionHeader}>
-          <Eyebrow color={text.tertiary}>Measured without a target</Eyebrow>
-          <View style={styles.sectionRule} />
-        </View>
-        <Body small color={text.faint} style={styles.coverageNote}>
-          The recipe data reports these, but the workbook sets no reference
-          intake for them, so there is nothing to compare against.
-        </Body>
-        {UNTARGETED_MEASURES.map((measure) => (
-          <View key={measure.key} style={styles.plainRow}>
-            <Body small color={text.secondary}>
-              {measure.label}
-            </Body>
-            <Figure color={text.tertiary}>
-              {Math.round(plan.averageNutrition[measure.key] ?? 0)} {measure.unit}
-            </Figure>
-          </View>
-        ))}
-      </View>
-
-      {targets.flags.length > 0 && (
-        <View style={styles.section}>
-          <View style={styles.sectionHeader}>
-            <Eyebrow color={signal.caution}>Flags raised</Eyebrow>
-            <View style={styles.sectionRule} />
-          </View>
-          {targets.flags.map((flag) => (
-            <View key={flag} style={styles.flag}>
-              <Figure tiny color={signal.caution}>
-                {flag}
-              </Figure>
-            </View>
-          ))}
-        </View>
-      )}
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  header: { gap: space.xxs },
-  subtitle: { marginTop: space.xxs },
-  empty: { marginTop: space.md, lineHeight: 21 },
-  chartBlock: { marginTop: space.xl, gap: space.sm },
-  coverage: {
-    marginTop: space.xl,
-    padding: space.md,
-    backgroundColor: ink.card,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: ink.line,
-    gap: space.xs,
+  group: {
+    marginBottom: space.xl,
   },
-  coverageRow: { flexDirection: 'row', alignItems: 'baseline', gap: space.xs },
-  coverageNote: { lineHeight: 18 },
-  section: { marginTop: space.xl },
-  sectionHeader: {
+  groupHead: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: space.sm,
     marginBottom: space.xs,
   },
-  sectionRule: { flex: 1, height: 1, backgroundColor: ink.line },
-  pressed: { opacity: 0.6 },
-  plainRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'baseline',
-    paddingVertical: space.xs,
+  groupRule: {
+    flex: 1,
+    height: stroke.hair,
+    backgroundColor: grade[30],
   },
-  flag: { paddingVertical: 3 },
 });
