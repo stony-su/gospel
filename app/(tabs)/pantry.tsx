@@ -5,24 +5,24 @@
  * strip showing which of the next eight cycles it needs rebuying in, so the
  * rhythm behind the grocery list is inspectable rather than mysterious: this
  * is why sour cream skips two weeks and chicken never does.
+ *
+ * The strip is a plot, not a table of coloured cells. A filled cell is a
+ * purchase and an outlined one is a cycle the pantry covers, which is the
+ * same solid-versus-hollow distinction the nutrient bars use.
  */
 
 import { useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { Screen } from '@/components/primitives/Screen';
-import {
-  Body,
-  Doctrine,
-  Eyebrow,
-  Figure,
-  Title,
-} from '@/components/primitives/Text';
 import { ingredientsById } from '@/data/recipes';
-import { ink, radius, signal, space, text } from '@/theme/tokens';
 import { useGospel, usePantryProjection } from '@/store/useGospel';
+import { grade, space, stroke } from '@/theme/tokens';
+import { formatMass } from '@/ui/data';
+import { Header, Row as LayoutRow, Screen } from '@/ui/layout';
+import { AnimatedNumber, Reveal } from '@/ui/motion';
+import { Figure, Label } from '@/ui/text';
 
-interface Row {
+interface PantryRow {
   id: string;
   name: string;
   aisle: string;
@@ -38,11 +38,11 @@ export default function PantryTab() {
   const plan = useGospel((state) => state.plan);
   const projection = usePantryProjection();
 
-  const rows = useMemo<Row[]>(() => {
+  const rows = useMemo<PantryRow[]>(() => {
     if (!projection) return [];
 
     const cycleCount = projection.cycles.length;
-    const byIngredient = new Map<string, Row>();
+    const byIngredient = new Map<string, PantryRow>();
 
     for (const cycle of projection.cycles) {
       for (const line of cycle.lines) {
@@ -76,10 +76,8 @@ export default function PantryTab() {
   if (!plan || !projection) {
     return (
       <Screen bottomInset={70}>
-        <Title>Pantry</Title>
-        <Body color={text.faint} style={styles.empty}>
-          Build a plan and Gospel starts tracking what you have left.
-        </Body>
+        <Header title="Pantry" refButton />
+        <Label color={grade[50]}>build a plan to track what is left</Label>
       </Screen>
     );
   }
@@ -89,158 +87,104 @@ export default function PantryTab() {
   const occasional = rows.length - everyCycle;
 
   return (
-    <Screen bottomInset={70}>
-      <View style={styles.header}>
-        <Eyebrow color={signal.endpoint}>What lasts, and what does not</Eyebrow>
-        <Title>Pantry</Title>
-        <Doctrine color={text.tertiary} style={styles.subtitle}>
-          Shelf life decides the shopping, not the schedule.
-        </Doctrine>
-      </View>
+    <Screen bottomInset={70} gridOpacity={0.6}>
+      <Header title="Pantry" refButton right={<Label>{`${cycleCount} cycles`}</Label>} />
 
-      <View style={styles.summary}>
-        <View style={styles.summaryItem}>
-          <Figure color={text.bright} style={styles.summaryValue}>
-            {everyCycle}
-          </Figure>
-          <Eyebrow>every cycle</Eyebrow>
-        </View>
-        <View style={styles.summaryItem}>
-          <Figure color={signal.endpoint} style={styles.summaryValue}>
-            {occasional}
-          </Figure>
-          <Eyebrow>occasional</Eyebrow>
-        </View>
-        <View style={styles.summaryItem}>
-          <Figure color={text.bright} style={styles.summaryValue}>
-            {projection.oneTimeItems.length}
-          </Figure>
-          <Eyebrow>one-time</Eyebrow>
-        </View>
-      </View>
+      <Reveal index={0} style={styles.summary}>
+        <LayoutRow
+          left={<Label>every cycle</Label>}
+          right={<AnimatedNumber value={everyCycle} color={grade[100]} />}
+        />
+        <LayoutRow
+          left={<Label>occasional</Label>}
+          right={<AnimatedNumber value={occasional} color={grade[100]} />}
+        />
+        <LayoutRow
+          left={<Label>one-time</Label>}
+          right={<AnimatedNumber value={projection.oneTimeItems.length} color={grade[100]} />}
+        />
+      </Reveal>
 
-      <View style={styles.legend}>
-        <View style={styles.legendItem}>
-          <View style={[styles.cell, styles.cellBuy]} />
-          <Figure tiny color={text.faint}>
-            buy
-          </Figure>
+      <Reveal index={1} style={styles.axis}>
+        <View style={styles.axisSpacer} />
+        <View style={styles.axisTicks}>
+          {Array.from({ length: cycleCount }, (_, index) => (
+            <Label key={index} color={grade[50]} style={styles.axisTick}>
+              {String(index + 1)}
+            </Label>
+          ))}
         </View>
-        <View style={styles.legendItem}>
-          <View style={[styles.cell, styles.cellHold]} />
-          <Figure tiny color={text.faint}>
-            covered by stock
-          </Figure>
-        </View>
-      </View>
+      </Reveal>
 
-      <View style={styles.section}>
-        <View style={styles.tableHead}>
-          <Eyebrow color={text.tertiary} style={styles.nameColumn}>
-            Ingredient
-          </Eyebrow>
+      {rows.map((row, position) => (
+        <Reveal key={row.id} index={2 + position} style={styles.row}>
+          <View style={styles.rowHead}>
+            <Figure color={grade[90]} numberOfLines={1} style={styles.name}>
+              {row.name}
+            </Figure>
+            <Figure small color={grade[50]}>
+              {`${row.shelfLifeDays}d · ${formatMass(row.packG)}`}
+            </Figure>
+          </View>
+
           <View style={styles.strip}>
-            {Array.from({ length: cycleCount }).map((_, index) => (
-              <Figure key={index} tiny color={ink.dim} style={styles.cellLabel}>
-                {index + 1}
-              </Figure>
+            {row.purchases.map((buy, index) => (
+              <View key={index} style={[styles.cell, buy ? styles.cellBuy : styles.cellHold]} />
             ))}
           </View>
-        </View>
-
-        {rows.map((row) => (
-          <View key={row.id} style={styles.row}>
-            <View style={styles.nameColumn}>
-              <Body small color={text.primary} numberOfLines={1}>
-                {row.name}
-              </Body>
-              <Figure tiny color={ink.dim}>
-                {row.shelfLifeDays >= 365
-                  ? `${Math.round(row.shelfLifeDays / 365)}y`
-                  : `${row.shelfLifeDays}d`}{' '}
-                life · {row.packG >= 1000 ? `${row.packG / 1000}kg` : `${row.packG}g`} pack
-              </Figure>
-            </View>
-
-            <View style={styles.strip}>
-              {row.purchases.map((buy, index) => (
-                <View
-                  key={index}
-                  style={[styles.cell, buy ? styles.cellBuy : styles.cellHold]}
-                />
-              ))}
-            </View>
-          </View>
-        ))}
-      </View>
-
-      <View style={styles.section}>
-        <View style={styles.sectionHeader}>
-          <Eyebrow color={text.tertiary}>How this works</Eyebrow>
-          <View style={styles.sectionRule} />
-        </View>
-        <Body small color={text.faint} style={styles.explain}>
-          Each cycle the plan consumes a fixed amount of every ingredient. What
-          is left carries forward until either the quantity runs out or the
-          shelf life does, whichever comes first. A 300 g tub of sour cream
-          against 60 g a week is covered on quantity for five weeks, but its
-          21-day life expires first, so it returns to the list in cycle four.
-        </Body>
-        <Body small color={text.faint} style={styles.explain}>
-          Prices, shelf lives and pack sizes are estimates for common
-          supermarket items, not measured data.
-        </Body>
-      </View>
+        </Reveal>
+      ))}
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  header: { gap: space.xxs },
-  subtitle: { marginTop: space.xxs },
-  empty: { marginTop: space.md, lineHeight: 21 },
-  summary: { flexDirection: 'row', gap: space.xl, marginTop: space.lg },
-  summaryItem: { gap: 2 },
-  summaryValue: { fontFamily: 'IBMPlexMono_600SemiBold', fontSize: 20 },
-  legend: { flexDirection: 'row', gap: space.md, marginTop: space.lg },
-  legendItem: { flexDirection: 'row', alignItems: 'center', gap: space.xxs },
-  section: { marginTop: space.xl },
-  sectionHeader: {
+  summary: {
+    marginBottom: space.xl,
+  },
+  axis: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: space.sm,
     marginBottom: space.xs,
   },
-  sectionRule: { flex: 1, height: 1, backgroundColor: ink.line },
-  tableHead: {
+  axisSpacer: {
+    flex: 1,
+  },
+  axisTicks: {
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: space.sm,
-    marginBottom: space.xs,
+    width: 160,
+    gap: 2,
+  },
+  axisTick: {
+    flex: 1,
+    textAlign: 'center',
   },
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: space.sm,
-    paddingVertical: space.xs,
-    borderBottomWidth: 1,
-    borderBottomColor: ink.raised,
+    marginBottom: space.sm,
   },
-  nameColumn: { flex: 1, gap: 1 },
-  strip: { flexDirection: 'row', gap: 3 },
+  rowHead: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    justifyContent: 'space-between',
+    gap: space.sm,
+    marginBottom: space.xxs,
+  },
+  name: {
+    flex: 1,
+  },
+  strip: {
+    flexDirection: 'row',
+    gap: 2,
+  },
   cell: {
-    width: 12,
-    height: 12,
-    borderRadius: 2,
+    flex: 1,
+    height: 8,
   },
   cellBuy: {
-    backgroundColor: signal.endpoint,
+    backgroundColor: grade[100],
   },
   cellHold: {
-    backgroundColor: ink.elevated,
-    borderWidth: 1,
-    borderColor: ink.line,
+    borderWidth: stroke.hair,
+    borderColor: grade[40],
   },
-  cellLabel: { width: 12, textAlign: 'center' },
-  explain: { lineHeight: 19, marginTop: space.xs },
 });
