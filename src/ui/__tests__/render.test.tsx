@@ -24,6 +24,12 @@
 
 import { fireEvent, render, screen } from '@testing-library/react';
 
+// Imported from their own modules, not the barrel: the barrel also exports
+// Screen and Header, which reach expo-router and safe-area-context native
+// specs and cannot load in this environment.
+import { Divider } from '@/ui/layout/Divider';
+import { Row } from '@/ui/layout/Row';
+import { Section } from '@/ui/layout/Section';
 import { AnimatedNumber, MorphText, Press, Reveal } from '@/ui/motion';
 import { Display, Figure, Heading, Label, Prose, Title } from '@/ui/text';
 
@@ -132,5 +138,37 @@ describe('motion primitives', () => {
     fireEvent.click(screen.getByText('inert'));
 
     expect(onPress).not.toHaveBeenCalled();
+  });
+});
+
+describe('layout', () => {
+  it('renders a section with its label and body', () => {
+    render(
+      <Section label="Energy" index={1}>
+        <Figure>2444 kcal</Figure>
+      </Section>,
+    );
+
+    expect(screen.getByText('ENERGY')).toBeTruthy();
+    expect(screen.getByText('2444 kcal')).toBeTruthy();
+  });
+
+  it('renders a row with both sides', () => {
+    render(<Row left={<Figure>Iron</Figure>} right={<Figure>18 mg</Figure>} />);
+
+    expect(screen.getByText('Iron')).toBeTruthy();
+    expect(screen.getByText('18 mg')).toBeTruthy();
+  });
+
+  it('renders a row with no right side', () => {
+    render(<Row left={<Figure>Iron</Figure>} />);
+
+    expect(screen.getByText('Iron')).toBeTruthy();
+  });
+
+  it('renders a divider', () => {
+    const { container } = render(<Divider />);
+
+    expect(container.firstChild).toBeTruthy();
   });
 });
