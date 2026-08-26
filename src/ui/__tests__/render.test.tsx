@@ -9,6 +9,17 @@
  *
  * Animation is stubbed to its settled state by src/test/reanimatedMock.ts, so
  * what these assert is where a component comes to rest.
+ *
+ * Components built on react-native-svg are absent, and cannot be added. Under
+ * jest the package resolves to its TypeScript source, whose barrel reaches a
+ * Fabric native component and dies on untransformed react-native internals -
+ * and its `.web` entry re-exports the same barrel, so mapping to it changes
+ * nothing. That rules out Graticule, Plot, Axis, Rule, Hatch, ProgressRail,
+ * SunMap and the NutrientBar track.
+ *
+ * What those components risk getting wrong is their geometry, and that is
+ * pure and covered directly in src/theme/__tests__/plot.test.ts. What is left
+ * is declarative markup.
  */
 
 import { fireEvent, render, screen } from '@testing-library/react';
