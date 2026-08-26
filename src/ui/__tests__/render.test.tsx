@@ -27,6 +27,12 @@ import { fireEvent, render, screen } from '@testing-library/react';
 // Imported from their own modules, not the barrel: the barrel also exports
 // Screen and Header, which reach expo-router and safe-area-context native
 // specs and cannot load in this environment.
+import { Check } from '@/ui/controls/Check';
+import { Chip } from '@/ui/controls/Chip';
+import { Option } from '@/ui/controls/Option';
+import { Segmented } from '@/ui/controls/Segmented';
+import { Slider } from '@/ui/controls/Slider';
+import { Stepper } from '@/ui/controls/Stepper';
 import { Divider } from '@/ui/layout/Divider';
 import { Row } from '@/ui/layout/Row';
 import { Section } from '@/ui/layout/Section';
@@ -170,5 +176,71 @@ describe('layout', () => {
     const { container } = render(<Divider />);
 
     expect(container.firstChild).toBeTruthy();
+  });
+});
+
+describe('controls', () => {
+  it('fires an option and shows its meta', () => {
+    const onPress = jest.fn();
+    render(<Option label="Moderate" meta="x1.35" selected={false} onPress={onPress} />);
+
+    expect(screen.getByText('MODERATE')).toBeTruthy();
+    expect(screen.getByText('x1.35')).toBeTruthy();
+
+    fireEvent.click(screen.getByText('MODERATE'));
+    expect(onPress).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires a chip', () => {
+    const onPress = jest.fn();
+    render(<Chip label="Thai" meta="12" selected onPress={onPress} />);
+
+    fireEvent.click(screen.getByText('THAI'));
+    expect(onPress).toHaveBeenCalledTimes(1);
+  });
+
+  it('fires a check', () => {
+    const onPress = jest.fn();
+    render(<Check label="Olive oil" meta="500 ml" checked={false} onPress={onPress} />);
+
+    fireEvent.click(screen.getByText('Olive oil'));
+    expect(onPress).toHaveBeenCalledTimes(1);
+  });
+
+  it('reports the chosen segment', () => {
+    const onChange = jest.fn();
+    render(
+      <Segmented
+        options={[
+          { value: 7, label: '7 days' },
+          { value: 14, label: '14 days' },
+        ]}
+        value={7}
+        onChange={onChange}
+      />,
+    );
+
+    fireEvent.click(screen.getByText('14 DAYS'));
+    expect(onChange).toHaveBeenCalledWith(14);
+  });
+
+  it('renders a slider with its label and readout', () => {
+    render(
+      <Slider value={75} min={40} max={140} unit="kg" label="Weight" onChange={() => {}} />,
+    );
+
+    expect(screen.getByText('WEIGHT')).toBeTruthy();
+    expect(screen.getByDisplayValue('75 kg')).toBeTruthy();
+  });
+
+  it('steps within its bounds and refuses to leave them', () => {
+    const onChange = jest.fn();
+    render(<Stepper value={7} min={7} max={14} unit="days" onChange={onChange} />);
+
+    fireEvent.click(screen.getByLabelText('Decrease'));
+    expect(onChange).not.toHaveBeenCalled();
+
+    fireEvent.click(screen.getByLabelText('Increase'));
+    expect(onChange).toHaveBeenCalledWith(8);
   });
 });
