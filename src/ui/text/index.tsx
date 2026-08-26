@@ -40,9 +40,22 @@ export function Display({ children, color, style, ...rest }: BaseProps) {
   );
 }
 
-export function Title({ children, color, style, ...rest }: BaseProps) {
+export function Title({
+  children,
+  color,
+  style,
+  compact,
+  ...rest
+}: BaseProps & { compact?: boolean }) {
   return (
-    <Text {...rest} style={[registers.title, { color: color ?? grade[92] }, style]}>
+    <Text
+      {...rest}
+      style={[
+        compact ? registers.titleCompact : registers.title,
+        { color: color ?? grade[92] },
+        style,
+      ]}
+    >
       {upper(children)}
     </Text>
   );

@@ -144,11 +144,16 @@ export const stroke = {
  *
  * Mono carries everything the app measures, states or labels - which is
  * almost everything. Sans survives for the rare running sentence. Every line
- * height is a multiple of 4 so text sits on a consistent baseline.
+ * height is even, so a line of text centres cleanly against the hairlines
+ * and bar heights it sits beside. They are not all on a 4pt grid - label,
+ * figure and prose sit at 14, 18 and 22 - which is a loose end worth
+ * tightening, but not one to change quietly.
  */
 export const registers = {
   display: { fontFamily: font.monoSemi, fontSize: 34, lineHeight: 40, letterSpacing: -1.5 },
   title: { fontFamily: font.monoSemi, fontSize: 20, lineHeight: 28, letterSpacing: 0.5 },
+  /** For titles too long to sit beside their header's right-hand content. */
+  titleCompact: { fontFamily: font.monoSemi, fontSize: 14, lineHeight: 20, letterSpacing: 0.5 },
   heading: { fontFamily: font.monoMedium, fontSize: 14, lineHeight: 20, letterSpacing: 1 },
   label: { fontFamily: font.monoMedium, fontSize: 10, lineHeight: 14, letterSpacing: 2 },
   figure: { fontFamily: font.mono, fontSize: 13, lineHeight: 18, letterSpacing: -0.2 },

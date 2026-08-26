@@ -5,6 +5,12 @@
  * about food: [ REF ]. Every number this app shows comes from somewhere, and
  * one persistent route to the sources is what makes that checkable rather
  * than merely claimed.
+ *
+ * The title has to share its line with a count and that button, and the
+ * longest one in the app - "Indispensable amino acids" - is nearly twice the
+ * length of the next. So a long title steps down a register and the row is
+ * built so the title yields rather than the numbers beside it: a truncated
+ * heading is legible, an overlapped one is not.
  */
 
 import type { ReactNode } from 'react';
@@ -22,11 +28,20 @@ interface HeaderProps {
   right?: ReactNode;
 }
 
+/** Beyond this, a title cannot share its line at full size. */
+const LONG_TITLE = 16;
+
 export function Header({ title, refButton = false, right }: HeaderProps) {
+  const compact = title.length > LONG_TITLE;
+
   return (
     <View style={styles.root}>
       <View style={styles.row}>
-        <Title>{title}</Title>
+        <View style={styles.titleWrap}>
+          <Title compact={compact} numberOfLines={2}>
+            {title}
+          </Title>
+        </View>
         <View style={styles.right}>
           {right}
           {refButton && (
@@ -49,10 +64,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'baseline',
     justifyContent: 'space-between',
+    gap: space.sm,
+  },
+  // The title yields; the count and the ref button keep their width.
+  titleWrap: {
+    flexShrink: 1,
   },
   right: {
     flexDirection: 'row',
     alignItems: 'center',
+    flexShrink: 0,
     gap: space.sm,
   },
   ref: {

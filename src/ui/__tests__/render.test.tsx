@@ -340,3 +340,11 @@ describe('pair', () => {
     expect(screen.getByText('£74/wk')).toBeTruthy();
   });
 });
+
+describe('title', () => {
+  it('still renders the full text when compact', () => {
+    render(<Title compact>Indispensable amino acids</Title>);
+
+    expect(screen.getByText('INDISPENSABLE AMINO ACIDS')).toBeTruthy();
+  });
+});
