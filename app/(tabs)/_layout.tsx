@@ -78,7 +78,12 @@ export default function TabsLayout() {
                 accessibilityState={{ selected: index === active }}
                 accessibilityLabel={tab.label}
               >
-                <Label color={index === active ? grade[96] : grade[50]}>{tab.label}</Label>
+                <Label
+                  color={index === active ? grade[96] : grade[50]}
+                  style={styles.tabLabel}
+                >
+                  {tab.label}
+                </Label>
               </Pressable>
             </TabTrigger>
           ))}
@@ -122,6 +127,19 @@ const styles = StyleSheet.create({
   tab: {
     flex: 1,
     alignItems: 'center',
+    // Explicit, and load-bearing: TabTrigger applies its own
+    // `justifyContent: 'space-between'`, and expo-router's Slot merges styles
+    // per key rather than replacing them - so a value this style does not set
+    // is inherited from there. With one child, space-between pushes the label
+    // to the start, which is why the labels sat left of centre.
+    justifyContent: 'center',
     paddingVertical: space.xs,
+  },
+  tabLabel: {
+    textAlign: 'center',
+    // The label register tracks at 2, and letter-spacing is appended after
+    // the final character too. Without this the glyphs sit a pixel left of
+    // the box they are centred in.
+    marginRight: -2,
   },
 });
