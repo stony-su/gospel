@@ -10,7 +10,7 @@ import { useMemo } from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { StyleSheet } from 'react-native';
 
-import { useGospel, useTargets } from '@/store/useGospel';
+import { useGospel, useIntake, useTargets } from '@/store/useGospel';
 import { grade, space } from '@/theme/tokens';
 import { NutrientBar, achievedForNutrient, categoryLabel, markFor, metCount } from '@/ui/data';
 import { Header, Screen } from '@/ui/layout';
@@ -22,6 +22,7 @@ export default function NutrientCategory() {
   const router = useRouter();
   const targets = useTargets();
   const plan = useGospel((state) => state.plan);
+  const intake = useIntake();
 
   const items = useMemo(
     () => targets?.nutrients.filter((nutrient) => nutrient.category === category) ?? [],
@@ -39,7 +40,7 @@ export default function NutrientCategory() {
     );
   }
 
-  const met = metCount(plan, items);
+  const met = metCount(plan, items, intake);
 
   return (
     <Screen>
@@ -54,7 +55,7 @@ export default function NutrientCategory() {
       />
 
       {items.map((nutrient, position) => {
-        const achieved = achievedForNutrient(plan, nutrient);
+        const achieved = achievedForNutrient(plan, nutrient, intake);
         return (
           <Reveal key={nutrient.nutrient_id} index={position}>
             <NutrientBar

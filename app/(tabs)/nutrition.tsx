@@ -19,7 +19,7 @@ import { categoryRank } from '@/data/nutrition';
 import { recipesById } from '@/data/recipes';
 import type { ResolvedNutrient } from '@/domain/nutrition/types';
 import { coverageFor } from '@/domain/planner/coverage';
-import { useGospel, useTargets } from '@/store/useGospel';
+import { useGospel, useIntake, useTargets } from '@/store/useGospel';
 import { GUTTER, grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { categoryLabel, metCount } from '@/ui/data';
 import { Header, Screen, Section } from '@/ui/layout';
@@ -34,6 +34,7 @@ export default function NutritionTab() {
   const { width } = useWindowDimensions();
   const plan = useGospel((state) => state.plan);
   const targets = useTargets();
+  const intake = useIntake();
 
   /** Per-day energy, the only series with a genuine sequence on its x axis. */
   const dailyEnergy = useMemo(() => {
@@ -114,7 +115,7 @@ export default function NutritionTab() {
       <Label style={styles.groupsLabel}>Groups</Label>
 
       {grouped.map(([category, items], position) => {
-        const met = metCount(plan, items);
+        const met = metCount(plan, items, intake);
         return (
           <Reveal key={category} index={1 + position}>
             <Press

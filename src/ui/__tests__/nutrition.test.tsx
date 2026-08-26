@@ -93,3 +93,58 @@ describe('categoryLabel', () => {
     expect(categoryLabel('unheard_of')).toBe('unheard_of');
   });
 });
+
+describe('achievedForNutrient, with ingredient panels', () => {
+  const intake = {
+    perServing: { iron_mg: 12.4, aa_lysine_mg: 900, protein_g: 999 },
+    coverage: { iron_mg: 0.9, aa_lysine_mg: 0.4, protein_g: 1 },
+  };
+
+  it('reads a computed nutrient off the intake', () => {
+    const result = achievedForNutrient(
+      plan({}),
+      nutrient({ nutrient_id: 'iron_mg' }),
+      intake,
+    );
+
+    expect(result).toBe(12.4);
+  });
+
+  it('lets the corpus win for the nutrients it publishes', () => {
+    // The intake says 999; the corpus says 71. The corpus is what shows.
+    const result = achievedForNutrient(
+      plan({ protein_g: 71 }),
+      nutrient({ nutrient_id: 'protein_g' }),
+      intake,
+    );
+
+    expect(result).toBe(71);
+  });
+
+  it('still returns null for a nutrient neither source has', () => {
+    const result = achievedForNutrient(
+      plan({}),
+      nutrient({ nutrient_id: 'iodine_ug' }),
+      intake,
+    );
+
+    expect(result).toBeNull();
+  });
+
+  it('returns null when no intake is supplied at all', () => {
+    expect(achievedForNutrient(plan({}), nutrient({ nutrient_id: 'iron_mg' }))).toBeNull();
+  });
+
+  it('counts a computed nutrient toward met targets', () => {
+    const count = metCount(
+      plan({}),
+      [
+        nutrient({ nutrient_id: 'iron_mg', value: 8 }),
+        nutrient({ nutrient_id: 'aa_lysine_mg', value: 2400 }),
+      ],
+      intake,
+    );
+
+    expect(count).toBe(1);
+  });
+});

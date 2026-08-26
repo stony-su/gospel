@@ -12,7 +12,9 @@ import { useMemo } from 'react';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
+import { ingredientPanels } from '@/data/ingredientNutrition';
 import { ingredientsById, recipes, recipesById } from '@/data/recipes';
+import { averageDailyIntake, type IntakeResult } from '@/domain/nutrition/intake';
 import { resolveTargets } from '@/domain/nutrition/resolver';
 import type {
   ActivityLevel,
@@ -243,6 +245,32 @@ export function useProfile(): NutritionProfile | null {
 export function useTargets(): ResolvedTargets | null {
   const profile = useProfile();
   return useMemo(() => (profile ? resolveTargets(profile) : null), [profile]);
+}
+
+let intakeCache: { key: string; value: IntakeResult } | null = null;
+
+/**
+ * What the plan delivers across all 43 measurable nutrients.
+ *
+ * Cached on plan identity like the pantry projection: summing panels over
+ * every ingredient of every meal is far too much work to redo on each render.
+ */
+export function useIntake(): IntakeResult | null {
+  const plan = useGospel((state) => state.plan);
+  if (!plan) return null;
+
+  const key = `${plan.seed}:${plan.cycleDays}:${plan.meals.length}`;
+  if (intakeCache?.key === key) return intakeCache.value;
+
+  const value = averageDailyIntake(
+    plan.meals,
+    recipesById,
+    ingredientPanels,
+    plan.cycleDays,
+  );
+
+  intakeCache = { key, value };
+  return value;
 }
 
 let pantryCache: { key: string; value: PantrySimulation } | null = null;
