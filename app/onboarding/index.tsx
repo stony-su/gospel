@@ -234,7 +234,6 @@ export default function Onboarding() {
                 <Option
                   key={level}
                   label={DIFFICULTY_LABELS[level]}
-                  meta={`${level}/5`}
                   selected={answers.maxDifficulty === level}
                   onPress={() => setAnswer('maxDifficulty', level)}
                 />
@@ -276,7 +275,6 @@ export default function Onboarding() {
                 <Option
                   key={days}
                   label={CYCLE_LABELS[days as CycleLength]}
-                  meta={`${days}d`}
                   selected={cycleDays === days}
                   onPress={() => setCycleDaysRaw(days as CycleLength)}
                 />
