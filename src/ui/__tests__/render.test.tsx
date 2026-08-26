@@ -14,12 +14,12 @@
  * jest the package resolves to its TypeScript source, whose barrel reaches a
  * Fabric native component and dies on untransformed react-native internals -
  * and its `.web` entry re-exports the same barrel, so mapping to it changes
- * nothing. That rules out Graticule, Plot, Axis, Rule, Hatch, ProgressRail,
- * SunMap and the NutrientBar track.
+ * nothing. That rules out Field, Plot, Axis, Rule, Hatch, ProgressRail,
+ * Plate, SunMap and the NutrientBar track.
  *
  * What those components risk getting wrong is their geometry, and that is
- * pure and covered directly in src/theme/__tests__/plot.test.ts. What is left
- * is declarative markup.
+ * pure and covered directly in src/theme/__tests__/plot.test.ts and
+ * field.test.ts. What is left is declarative markup.
  */
 
 import { fireEvent, render, screen } from '@testing-library/react';

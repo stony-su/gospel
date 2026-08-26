@@ -20,7 +20,7 @@ import { fatPercentOfEnergy } from '@/domain/planner/coverage';
 import { useGospel } from '@/store/useGospel';
 import { GUTTER, grade, space, stroke } from '@/theme/tokens';
 import { Plate, formatMass } from '@/ui/data';
-import { Header, Row, Screen, Section } from '@/ui/layout';
+import { Disclosure, Header, Row, Screen, Section } from '@/ui/layout';
 import { AnimatedNumber, Press, Reveal } from '@/ui/motion';
 import { Figure, Label, Prose } from '@/ui/text';
 
@@ -140,8 +140,9 @@ export default function RecipeDetail() {
         />
       </Section>
 
-      <Section
-        label={`Ingredients · ${
+      <Disclosure
+        label="Ingredients"
+        meta={`${recipe.ingredients.length} · ${
           servings === 1 ? `serves ${recipe.servings}` : `${servings} of ${recipe.servings}`
         }`}
         index={2}
@@ -166,10 +167,10 @@ export default function RecipeDetail() {
             </View>
           );
         })}
-      </Section>
+      </Disclosure>
 
       {recipe.equipment.length > 0 && (
-        <Section label="Equipment" index={3}>
+        <Disclosure label="Equipment" meta={String(recipe.equipment.length)} index={3}>
           <View style={styles.equipment}>
             {recipe.equipment.map((item) => (
               <Label key={item} color={grade[80]} style={styles.chip}>
@@ -177,10 +178,16 @@ export default function RecipeDetail() {
               </Label>
             ))}
           </View>
-        </Section>
+        </Disclosure>
       )}
 
-      <Section label={`Method · ${recipe.instructions.length} steps`} index={4}>
+      {/* Open by default: the method is what the page was opened for. */}
+      <Disclosure
+        label="Method"
+        meta={`${recipe.instructions.length} steps`}
+        defaultOpen
+        index={4}
+      >
         {recipe.instructions.map((step, index) => (
           <View key={index} style={styles.step}>
             <Label color={grade[60]} style={styles.stepNumber}>
@@ -191,7 +198,7 @@ export default function RecipeDetail() {
             </Prose>
           </View>
         ))}
-      </Section>
+      </Disclosure>
 
       <Label color={grade[40]} style={styles.footnote}>
         {`food.com · recipe ${recipe.id}`}

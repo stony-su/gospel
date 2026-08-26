@@ -20,7 +20,7 @@ import { useGospel, usePantryProjection } from '@/store/useGospel';
 import { grade, space, stroke } from '@/theme/tokens';
 import { Check, Segmented } from '@/ui/controls';
 import { formatMass } from '@/ui/data';
-import { Header, Row, Screen } from '@/ui/layout';
+import { Disclosure, Header, Row, Screen } from '@/ui/layout';
 import { AnimatedNumber, Reveal } from '@/ui/motion';
 import { Figure, Label } from '@/ui/text';
 
@@ -94,13 +94,13 @@ export default function GroceryTab() {
       </Reveal>
 
       {activeCycle === 0 && projection.oneTimeItems.length > 0 && (
-        <Reveal index={2} style={styles.group}>
-          <GroupHead
-            label="One-time setup"
-            meta={`£${projection.oneTimeItems
-              .reduce((sum, item) => sum + item.cost, 0)
-              .toFixed(2)}`}
-          />
+        <Disclosure
+          label="One-time setup"
+          meta={`${projection.oneTimeItems.length} · £${projection.oneTimeItems
+            .reduce((sum, item) => sum + item.cost, 0)
+            .toFixed(2)}`}
+          index={2}
+        >
           {projection.oneTimeItems.map((line) => (
             <Check
               key={line.ingredientId}
@@ -110,12 +110,11 @@ export default function GroceryTab() {
               onPress={() => toggleChecked('setup', line.ingredientId)}
             />
           ))}
-        </Reveal>
+        </Disclosure>
       )}
 
       {activeCycle === 0 && projection.equipment.length > 0 && (
-        <Reveal index={3} style={styles.group}>
-          <GroupHead label="Equipment" meta={String(projection.equipment.length)} />
+        <Disclosure label="Equipment" meta={String(projection.equipment.length)} index={3}>
           {projection.equipment.map((item) => (
             <Check
               key={item}
@@ -124,7 +123,7 @@ export default function GroceryTab() {
               onPress={() => toggleChecked('equipment', item)}
             />
           ))}
-        </Reveal>
+        </Disclosure>
       )}
 
       {grouped.length === 0 ? (
@@ -133,11 +132,14 @@ export default function GroceryTab() {
         </Label>
       ) : (
         grouped.map(([aisle, lines], position) => (
-          <Reveal key={aisle} index={4 + position} style={styles.group}>
-            <GroupHead
-              label={aisle}
-              meta={`£${lines.reduce((sum, line) => sum + line.cost, 0).toFixed(2)}`}
-            />
+          <Disclosure
+            key={aisle}
+            label={aisle}
+            meta={`${lines.length} · £${lines
+              .reduce((sum, line) => sum + line.cost, 0)
+              .toFixed(2)}`}
+            index={4 + position}
+          >
             {lines.map((line) => (
               <Check
                 key={line.ingredientId}
@@ -149,7 +151,7 @@ export default function GroceryTab() {
                 onPress={() => toggleChecked(activeCycle, line.ingredientId)}
               />
             ))}
-          </Reveal>
+          </Disclosure>
         ))
       )}
 
@@ -168,38 +170,12 @@ export default function GroceryTab() {
   );
 }
 
-function GroupHead({ label, meta }: { label: string; meta: string }) {
-  return (
-    <View style={styles.groupHead}>
-      <Label>{label}</Label>
-      <View style={styles.groupRule} />
-      <Figure small color={grade[50]}>
-        {meta}
-      </Figure>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
   cycle: {
     marginBottom: space.lg,
   },
   summary: {
     marginBottom: space.xl,
-  },
-  group: {
-    marginBottom: space.xl,
-  },
-  groupHead: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: space.sm,
-    marginBottom: space.xs,
-  },
-  groupRule: {
-    flex: 1,
-    height: stroke.hair,
-    backgroundColor: grade[30],
   },
   nothing: {
     marginTop: space.lg,
