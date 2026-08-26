@@ -1,0 +1,2279 @@
+{
+ "personas": [
+  {
+   "persona_id": "P1_baseline_male",
+   "profile": {
+    "sex": "male",
+    "weight_kg": 70,
+    "age_years": 25,
+    "diet_type": "iifym",
+    "activity_level": "sedentary",
+    "sun_zone": "temperate"
+   },
+   "expected": [
+    {
+     "nutrient_id": "energy_kcal",
+     "unit": "kcal",
+     "value": 2444.666,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "water_ml",
+     "unit": "mL",
+     "value": 3703,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "protein_g",
+     "unit": "g",
+     "value": 56,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "ACT_P01"
+     ],
+     "flags": [
+      "BASELINE_DIET"
+     ]
+    },
+    {
+     "nutrient_id": "carbohydrate_g",
+     "unit": "g",
+     "value": 130,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fiber_g",
+     "unit": "g",
+     "value": 34.225,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fat_pct_energy_min",
+     "unit": "% energy",
+     "value": 20,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fat_pct_energy_max",
+     "unit": "% energy",
+     "value": 35,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "linoleic_acid_g",
+     "unit": "g",
+     "value": 17,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "ala_g",
+     "unit": "g",
+     "value": 1.6,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "epa_dha_mg",
+     "unit": "mg",
+     "value": 250,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_histidine_mg",
+     "unit": "mg",
+     "value": 980,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_isoleucine_mg",
+     "unit": "mg",
+     "value": 1330,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_leucine_mg",
+     "unit": "mg",
+     "value": 2940,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_lysine_mg",
+     "unit": "mg",
+     "value": 2660,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_met_cys_mg",
+     "unit": "mg",
+     "value": 1330,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_phe_tyr_mg",
+     "unit": "mg",
+     "value": 2310,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_threonine_mg",
+     "unit": "mg",
+     "value": 1400,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_tryptophan_mg",
+     "unit": "mg",
+     "value": 350,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_valine_mg",
+     "unit": "mg",
+     "value": 1680,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_a_ug_rae",
+     "unit": "ug RAE",
+     "value": 900,
+     "ul_value": 3000,
+     "pct_of_ul": 30,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_d_ug",
+     "unit": "ug",
+     "value": 15,
+     "ul_value": 100,
+     "pct_of_ul": 15,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "SUN_03"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_e_mg",
+     "unit": "mg",
+     "value": 15,
+     "ul_value": 1000,
+     "pct_of_ul": 1.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_k_ug",
+     "unit": "ug",
+     "value": 120,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_c_mg",
+     "unit": "mg",
+     "value": 90,
+     "ul_value": 2000,
+     "pct_of_ul": 4.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "thiamin_mg",
+     "unit": "mg",
+     "value": 1.2,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "riboflavin_mg",
+     "unit": "mg",
+     "value": 1.3,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "niacin_mg_ne",
+     "unit": "mg NE",
+     "value": 16,
+     "ul_value": 35,
+     "pct_of_ul": 45.7,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_b6_mg",
+     "unit": "mg",
+     "value": 1.3,
+     "ul_value": 100,
+     "pct_of_ul": 1.3,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "folate_ug_dfe",
+     "unit": "ug DFE",
+     "value": 400,
+     "ul_value": 1000,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_b12_ug",
+     "unit": "ug",
+     "value": 2.4,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "pantothenic_acid_mg",
+     "unit": "mg",
+     "value": 5,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "biotin_ug",
+     "unit": "ug",
+     "value": 30,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "choline_mg",
+     "unit": "mg",
+     "value": 550,
+     "ul_value": 3500,
+     "pct_of_ul": 15.7,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "calcium_mg",
+     "unit": "mg",
+     "value": 1000,
+     "ul_value": 2500,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "phosphorus_mg",
+     "unit": "mg",
+     "value": 700,
+     "ul_value": 4000,
+     "pct_of_ul": 17.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "magnesium_mg",
+     "unit": "mg",
+     "value": 400,
+     "ul_value": 350,
+     "pct_of_ul": 114.3,
+     "over_ul": true,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "sodium_mg",
+     "unit": "mg",
+     "value": 1500,
+     "ul_value": 2300,
+     "pct_of_ul": 65.2,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "potassium_mg",
+     "unit": "mg",
+     "value": 3400,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "chloride_mg",
+     "unit": "mg",
+     "value": 2300,
+     "ul_value": 3600,
+     "pct_of_ul": 63.9,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "iron_mg",
+     "unit": "mg",
+     "value": 8,
+     "ul_value": 45,
+     "pct_of_ul": 17.8,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "zinc_mg",
+     "unit": "mg",
+     "value": 11,
+     "ul_value": 40,
+     "pct_of_ul": 27.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "copper_ug",
+     "unit": "ug",
+     "value": 900,
+     "ul_value": 10000,
+     "pct_of_ul": 9,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "manganese_mg",
+     "unit": "mg",
+     "value": 2.3,
+     "ul_value": 11,
+     "pct_of_ul": 20.9,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "iodine_ug",
+     "unit": "ug",
+     "value": 150,
+     "ul_value": 1100,
+     "pct_of_ul": 13.6,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "selenium_ug",
+     "unit": "ug",
+     "value": 55,
+     "ul_value": 400,
+     "pct_of_ul": 13.8,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "molybdenum_ug",
+     "unit": "ug",
+     "value": 45,
+     "ul_value": 2000,
+     "pct_of_ul": 2.2,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "chromium_ug",
+     "unit": "ug",
+     "value": 35,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fluoride_mg",
+     "unit": "mg",
+     "value": 4,
+     "ul_value": 10,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    }
+   ]
+  },
+  {
+   "persona_id": "P2_vegan_active_female",
+   "profile": {
+    "sex": "female",
+    "weight_kg": 62,
+    "age_years": 29,
+    "diet_type": "vegan",
+    "activity_level": "active",
+    "sun_zone": "high_latitude"
+   },
+   "expected": [
+    {
+     "nutrient_id": "energy_kcal",
+     "unit": "kcal",
+     "value": 2670.1,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "water_ml",
+     "unit": "mL",
+     "value": 3938.8,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "ACT_W04"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "protein_g",
+     "unit": "g",
+     "value": 109.12,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "ACT_P04",
+      "DIET_V04"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "carbohydrate_g",
+     "unit": "g",
+     "value": 130,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fiber_g",
+     "unit": "g",
+     "value": 37.381,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fat_pct_energy_min",
+     "unit": "% energy",
+     "value": 20,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fat_pct_energy_max",
+     "unit": "% energy",
+     "value": 35,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "linoleic_acid_g",
+     "unit": "g",
+     "value": 12,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "ala_g",
+     "unit": "g",
+     "value": 1.375,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "DIET_V08"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "epa_dha_mg",
+     "unit": "mg",
+     "value": 250,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "EPA_DHA_ALGAL"
+     ]
+    },
+    {
+     "nutrient_id": "aa_histidine_mg",
+     "unit": "mg",
+     "value": 868,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_isoleucine_mg",
+     "unit": "mg",
+     "value": 1178,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_leucine_mg",
+     "unit": "mg",
+     "value": 2604,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_lysine_mg",
+     "unit": "mg",
+     "value": 2356,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_met_cys_mg",
+     "unit": "mg",
+     "value": 1178,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_phe_tyr_mg",
+     "unit": "mg",
+     "value": 2046,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_threonine_mg",
+     "unit": "mg",
+     "value": 1240,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_tryptophan_mg",
+     "unit": "mg",
+     "value": 310,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_valine_mg",
+     "unit": "mg",
+     "value": 1488,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_a_ug_rae",
+     "unit": "ug RAE",
+     "value": 700,
+     "ul_value": 3000,
+     "pct_of_ul": 23.3,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_d_ug",
+     "unit": "ug",
+     "value": 18,
+     "ul_value": 100,
+     "pct_of_ul": 18,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "SUN_04"
+     ],
+     "flags": [
+      "VITD_NO_ANIMAL_SOURCE",
+      "VITD_WINTER"
+     ]
+    },
+    {
+     "nutrient_id": "vitamin_e_mg",
+     "unit": "mg",
+     "value": 15,
+     "ul_value": 1000,
+     "pct_of_ul": 1.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_k_ug",
+     "unit": "ug",
+     "value": 90,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_c_mg",
+     "unit": "mg",
+     "value": 75,
+     "ul_value": 2000,
+     "pct_of_ul": 3.8,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "thiamin_mg",
+     "unit": "mg",
+     "value": 1.32,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "ACT_B1A"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "riboflavin_mg",
+     "unit": "mg",
+     "value": 1.32,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "ACT_B2A"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "niacin_mg_ne",
+     "unit": "mg NE",
+     "value": 14,
+     "ul_value": 35,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_b6_mg",
+     "unit": "mg",
+     "value": 1.3,
+     "ul_value": 100,
+     "pct_of_ul": 1.3,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "folate_ug_dfe",
+     "unit": "ug DFE",
+     "value": 400,
+     "ul_value": 1000,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "FOLIC_ACID_NTD"
+     ]
+    },
+    {
+     "nutrient_id": "vitamin_b12_ug",
+     "unit": "ug",
+     "value": 2.4,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "B12_MANDATORY_SUPPLEMENT"
+     ]
+    },
+    {
+     "nutrient_id": "pantothenic_acid_mg",
+     "unit": "mg",
+     "value": 5,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "biotin_ug",
+     "unit": "ug",
+     "value": 30,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "choline_mg",
+     "unit": "mg",
+     "value": 425,
+     "ul_value": 3500,
+     "pct_of_ul": 12.1,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "CHOLINE_LOW"
+     ]
+    },
+    {
+     "nutrient_id": "calcium_mg",
+     "unit": "mg",
+     "value": 1000,
+     "ul_value": 2500,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "CALCIUM_NO_DAIRY"
+     ]
+    },
+    {
+     "nutrient_id": "phosphorus_mg",
+     "unit": "mg",
+     "value": 700,
+     "ul_value": 4000,
+     "pct_of_ul": 17.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "magnesium_mg",
+     "unit": "mg",
+     "value": 310,
+     "ul_value": 350,
+     "pct_of_ul": 88.6,
+     "over_ul": false,
+     "approaching_ul": true,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "sodium_mg",
+     "unit": "mg",
+     "value": 2300,
+     "ul_value": 2300,
+     "pct_of_ul": 100,
+     "over_ul": false,
+     "approaching_ul": true,
+     "rules_applied": [
+      "ACT_NA04"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "potassium_mg",
+     "unit": "mg",
+     "value": 2600,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "chloride_mg",
+     "unit": "mg",
+     "value": 2300,
+     "ul_value": 3600,
+     "pct_of_ul": 63.9,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "iron_mg",
+     "unit": "mg",
+     "value": 42.12,
+     "ul_value": 45,
+     "pct_of_ul": 93.6,
+     "over_ul": false,
+     "approaching_ul": true,
+     "rules_applied": [
+      "ACT_FE1",
+      "DIET_V01"
+     ],
+     "flags": [
+      "IRON_MENSTRUAL"
+     ]
+    },
+    {
+     "nutrient_id": "zinc_mg",
+     "unit": "mg",
+     "value": 12,
+     "ul_value": 40,
+     "pct_of_ul": 30,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "DIET_V02"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "copper_ug",
+     "unit": "ug",
+     "value": 900,
+     "ul_value": 10000,
+     "pct_of_ul": 9,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "manganese_mg",
+     "unit": "mg",
+     "value": 1.8,
+     "ul_value": 11,
+     "pct_of_ul": 16.4,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "iodine_ug",
+     "unit": "ug",
+     "value": 150,
+     "ul_value": 1100,
+     "pct_of_ul": 13.6,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "IODINE_SOURCE"
+     ]
+    },
+    {
+     "nutrient_id": "selenium_ug",
+     "unit": "ug",
+     "value": 55,
+     "ul_value": 400,
+     "pct_of_ul": 13.8,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "molybdenum_ug",
+     "unit": "ug",
+     "value": 45,
+     "ul_value": 2000,
+     "pct_of_ul": 2.2,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "chromium_ug",
+     "unit": "ug",
+     "value": 25,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fluoride_mg",
+     "unit": "mg",
+     "value": 3,
+     "ul_value": 10,
+     "pct_of_ul": 30,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    }
+   ]
+  },
+  {
+   "persona_id": "P3_keto_male_midlife",
+   "profile": {
+    "sex": "male",
+    "weight_kg": 95,
+    "age_years": 58,
+    "diet_type": "keto",
+    "activity_level": "moderate",
+    "sun_zone": "subtropical"
+   },
+   "expected": [
+    {
+     "nutrient_id": "energy_kcal",
+     "unit": "kcal",
+     "value": 3435.145,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "water_ml",
+     "unit": "mL",
+     "value": 5525.5,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "ACT_W03"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "protein_g",
+     "unit": "g",
+     "value": 114,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "ACT_P03"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "carbohydrate_g",
+     "unit": "g",
+     "value": 0,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "DIET_K01"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fiber_g",
+     "unit": "g",
+     "value": 48.092,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "FIBER_LOW_RISK"
+     ]
+    },
+    {
+     "nutrient_id": "fat_pct_energy_min",
+     "unit": "% energy",
+     "value": 20,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fat_pct_energy_max",
+     "unit": "% energy",
+     "value": 35,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "linoleic_acid_g",
+     "unit": "g",
+     "value": 17,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "ala_g",
+     "unit": "g",
+     "value": 1.6,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "epa_dha_mg",
+     "unit": "mg",
+     "value": 250,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_histidine_mg",
+     "unit": "mg",
+     "value": 1330,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_isoleucine_mg",
+     "unit": "mg",
+     "value": 1805,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_leucine_mg",
+     "unit": "mg",
+     "value": 3990,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_lysine_mg",
+     "unit": "mg",
+     "value": 3610,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_met_cys_mg",
+     "unit": "mg",
+     "value": 1805,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_phe_tyr_mg",
+     "unit": "mg",
+     "value": 3135,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_threonine_mg",
+     "unit": "mg",
+     "value": 1900,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_tryptophan_mg",
+     "unit": "mg",
+     "value": 475,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_valine_mg",
+     "unit": "mg",
+     "value": 2280,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_a_ug_rae",
+     "unit": "ug RAE",
+     "value": 900,
+     "ul_value": 3000,
+     "pct_of_ul": 30,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_d_ug",
+     "unit": "ug",
+     "value": 10.5,
+     "ul_value": 100,
+     "pct_of_ul": 10.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "SUN_02"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_e_mg",
+     "unit": "mg",
+     "value": 15,
+     "ul_value": 1000,
+     "pct_of_ul": 1.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_k_ug",
+     "unit": "ug",
+     "value": 120,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_c_mg",
+     "unit": "mg",
+     "value": 90,
+     "ul_value": 2000,
+     "pct_of_ul": 4.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "thiamin_mg",
+     "unit": "mg",
+     "value": 1.2,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "THIAMIN_NO_FORTIFIED_GRAIN"
+     ]
+    },
+    {
+     "nutrient_id": "riboflavin_mg",
+     "unit": "mg",
+     "value": 1.3,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "niacin_mg_ne",
+     "unit": "mg NE",
+     "value": 16,
+     "ul_value": 35,
+     "pct_of_ul": 45.7,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_b6_mg",
+     "unit": "mg",
+     "value": 1.7,
+     "ul_value": 100,
+     "pct_of_ul": 1.7,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "AGE_003"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "folate_ug_dfe",
+     "unit": "ug DFE",
+     "value": 400,
+     "ul_value": 1000,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "FOLATE_NO_FORTIFIED_GRAIN"
+     ]
+    },
+    {
+     "nutrient_id": "vitamin_b12_ug",
+     "unit": "ug",
+     "value": 2.4,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "B12_FORM_AGE"
+     ]
+    },
+    {
+     "nutrient_id": "pantothenic_acid_mg",
+     "unit": "mg",
+     "value": 5,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "biotin_ug",
+     "unit": "ug",
+     "value": 30,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "choline_mg",
+     "unit": "mg",
+     "value": 550,
+     "ul_value": 3500,
+     "pct_of_ul": 15.7,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "calcium_mg",
+     "unit": "mg",
+     "value": 1000,
+     "ul_value": 2500,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "phosphorus_mg",
+     "unit": "mg",
+     "value": 700,
+     "ul_value": 4000,
+     "pct_of_ul": 17.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "magnesium_mg",
+     "unit": "mg",
+     "value": 504,
+     "ul_value": 350,
+     "pct_of_ul": 144,
+     "over_ul": true,
+     "approaching_ul": false,
+     "rules_applied": [
+      "AGE_001",
+      "DIET_K04"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "sodium_mg",
+     "unit": "mg",
+     "value": 2800,
+     "ul_value": 2300,
+     "pct_of_ul": 121.7,
+     "over_ul": true,
+     "approaching_ul": false,
+     "rules_applied": [
+      "ACT_NA03",
+      "DIET_K02"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "potassium_mg",
+     "unit": "mg",
+     "value": 3740,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "DIET_K03"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "chloride_mg",
+     "unit": "mg",
+     "value": 2300,
+     "ul_value": 3600,
+     "pct_of_ul": 63.9,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "iron_mg",
+     "unit": "mg",
+     "value": 8,
+     "ul_value": 45,
+     "pct_of_ul": 17.8,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "zinc_mg",
+     "unit": "mg",
+     "value": 11,
+     "ul_value": 40,
+     "pct_of_ul": 27.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "copper_ug",
+     "unit": "ug",
+     "value": 900,
+     "ul_value": 10000,
+     "pct_of_ul": 9,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "manganese_mg",
+     "unit": "mg",
+     "value": 2.3,
+     "ul_value": 11,
+     "pct_of_ul": 20.9,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "iodine_ug",
+     "unit": "ug",
+     "value": 150,
+     "ul_value": 1100,
+     "pct_of_ul": 13.6,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "selenium_ug",
+     "unit": "ug",
+     "value": 55,
+     "ul_value": 400,
+     "pct_of_ul": 13.8,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "molybdenum_ug",
+     "unit": "ug",
+     "value": 45,
+     "ul_value": 2000,
+     "pct_of_ul": 2.2,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "chromium_ug",
+     "unit": "ug",
+     "value": 35,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fluoride_mg",
+     "unit": "mg",
+     "value": 4,
+     "ul_value": 10,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    }
+   ]
+  },
+  {
+   "persona_id": "P4_carnivore_senior_female",
+   "profile": {
+    "sex": "female",
+    "weight_kg": 68,
+    "age_years": 72,
+    "diet_type": "carnivore",
+    "activity_level": "light",
+    "sun_zone": "very_high_latitude"
+   },
+   "expected": [
+    {
+     "nutrient_id": "energy_kcal",
+     "unit": "kcal",
+     "value": 2041.722,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "water_ml",
+     "unit": "mL",
+     "value": 3473.2,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "ACT_W02"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "protein_g",
+     "unit": "g",
+     "value": 81.6,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "AGE_010"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "carbohydrate_g",
+     "unit": "g",
+     "value": 0,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "DIET_K01"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fiber_g",
+     "unit": "g",
+     "value": 0,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "DIET_C01"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fat_pct_energy_min",
+     "unit": "% energy",
+     "value": 20,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fat_pct_energy_max",
+     "unit": "% energy",
+     "value": 35,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "linoleic_acid_g",
+     "unit": "g",
+     "value": 12,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "ala_g",
+     "unit": "g",
+     "value": 1.1,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "epa_dha_mg",
+     "unit": "mg",
+     "value": 250,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_histidine_mg",
+     "unit": "mg",
+     "value": 952,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_isoleucine_mg",
+     "unit": "mg",
+     "value": 1292,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_leucine_mg",
+     "unit": "mg",
+     "value": 2856,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_lysine_mg",
+     "unit": "mg",
+     "value": 2584,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_met_cys_mg",
+     "unit": "mg",
+     "value": 1292,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_phe_tyr_mg",
+     "unit": "mg",
+     "value": 2244,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_threonine_mg",
+     "unit": "mg",
+     "value": 1360,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_tryptophan_mg",
+     "unit": "mg",
+     "value": 340,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "aa_valine_mg",
+     "unit": "mg",
+     "value": 1632,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_a_ug_rae",
+     "unit": "ug RAE",
+     "value": 700,
+     "ul_value": 3000,
+     "pct_of_ul": 23.3,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_d_ug",
+     "unit": "ug",
+     "value": 30,
+     "ul_value": 100,
+     "pct_of_ul": 30,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "AGE_008",
+      "SUN_05"
+     ],
+     "flags": [
+      "VITD_WINTER"
+     ]
+    },
+    {
+     "nutrient_id": "vitamin_e_mg",
+     "unit": "mg",
+     "value": 15,
+     "ul_value": 1000,
+     "pct_of_ul": 1.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_k_ug",
+     "unit": "ug",
+     "value": 90,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_c_mg",
+     "unit": "mg",
+     "value": 75,
+     "ul_value": 2000,
+     "pct_of_ul": 3.8,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "VITC_SOURCE_RISK"
+     ]
+    },
+    {
+     "nutrient_id": "thiamin_mg",
+     "unit": "mg",
+     "value": 1.1,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "THIAMIN_NO_FORTIFIED_GRAIN"
+     ]
+    },
+    {
+     "nutrient_id": "riboflavin_mg",
+     "unit": "mg",
+     "value": 1.1,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "niacin_mg_ne",
+     "unit": "mg NE",
+     "value": 14,
+     "ul_value": 35,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "vitamin_b6_mg",
+     "unit": "mg",
+     "value": 1.5,
+     "ul_value": 100,
+     "pct_of_ul": 1.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "AGE_004"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "folate_ug_dfe",
+     "unit": "ug DFE",
+     "value": 400,
+     "ul_value": 1000,
+     "pct_of_ul": 40,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "FOLATE_NO_FORTIFIED_GRAIN"
+     ]
+    },
+    {
+     "nutrient_id": "vitamin_b12_ug",
+     "unit": "ug",
+     "value": 2.4,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "B12_FORM_AGE"
+     ]
+    },
+    {
+     "nutrient_id": "pantothenic_acid_mg",
+     "unit": "mg",
+     "value": 5,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "biotin_ug",
+     "unit": "ug",
+     "value": 30,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "choline_mg",
+     "unit": "mg",
+     "value": 425,
+     "ul_value": 3500,
+     "pct_of_ul": 12.1,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "calcium_mg",
+     "unit": "mg",
+     "value": 1200,
+     "ul_value": 2500,
+     "pct_of_ul": 48,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "AGE_006"
+     ],
+     "flags": [
+      "CALCIUM_NO_DAIRY"
+     ]
+    },
+    {
+     "nutrient_id": "phosphorus_mg",
+     "unit": "mg",
+     "value": 700,
+     "ul_value": 4000,
+     "pct_of_ul": 17.5,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "magnesium_mg",
+     "unit": "mg",
+     "value": 384,
+     "ul_value": 350,
+     "pct_of_ul": 109.7,
+     "over_ul": true,
+     "approaching_ul": false,
+     "rules_applied": [
+      "AGE_002",
+      "DIET_K04"
+     ],
+     "flags": [
+      "MAGNESIUM_LOW"
+     ]
+    },
+    {
+     "nutrient_id": "sodium_mg",
+     "unit": "mg",
+     "value": 2500,
+     "ul_value": 2300,
+     "pct_of_ul": 108.7,
+     "over_ul": true,
+     "approaching_ul": false,
+     "rules_applied": [
+      "DIET_K02"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "potassium_mg",
+     "unit": "mg",
+     "value": 2860,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "DIET_K03"
+     ],
+     "flags": [
+      "POTASSIUM_LOW"
+     ]
+    },
+    {
+     "nutrient_id": "chloride_mg",
+     "unit": "mg",
+     "value": 2300,
+     "ul_value": 3600,
+     "pct_of_ul": 63.9,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "iron_mg",
+     "unit": "mg",
+     "value": 8,
+     "ul_value": 45,
+     "pct_of_ul": 17.8,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [
+      "AGE_005"
+     ],
+     "flags": []
+    },
+    {
+     "nutrient_id": "zinc_mg",
+     "unit": "mg",
+     "value": 8,
+     "ul_value": 40,
+     "pct_of_ul": 20,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "copper_ug",
+     "unit": "ug",
+     "value": 900,
+     "ul_value": 10000,
+     "pct_of_ul": 9,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "manganese_mg",
+     "unit": "mg",
+     "value": 1.8,
+     "ul_value": 11,
+     "pct_of_ul": 16.4,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": [
+      "MANGANESE_LOW"
+     ]
+    },
+    {
+     "nutrient_id": "iodine_ug",
+     "unit": "ug",
+     "value": 150,
+     "ul_value": 1100,
+     "pct_of_ul": 13.6,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "selenium_ug",
+     "unit": "ug",
+     "value": 55,
+     "ul_value": 400,
+     "pct_of_ul": 13.8,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "molybdenum_ug",
+     "unit": "ug",
+     "value": 45,
+     "ul_value": 2000,
+     "pct_of_ul": 2.2,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "chromium_ug",
+     "unit": "ug",
+     "value": 25,
+     "ul_value": null,
+     "pct_of_ul": null,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    },
+    {
+     "nutrient_id": "fluoride_mg",
+     "unit": "mg",
+     "value": 3,
+     "ul_value": 10,
+     "pct_of_ul": 30,
+     "over_ul": false,
+     "approaching_ul": false,
+     "rules_applied": [],
+     "flags": []
+    }
+   ]
+  }
+ ]
+}

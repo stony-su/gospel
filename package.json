@@ -1,22 +1,135 @@
 {
-  "name": "scaffold",
+  "name": "gospel",
   "version": "1.0.0",
-  "main": "index.ts",
-  "dependencies": {
-    "expo": "~57.0.16",
-    "expo-status-bar": "~57.0.1",
-    "react": "19.2.3",
-    "react-native": "0.86.2"
-  },
-  "devDependencies": {
-    "@types/react": "~19.2.2",
-    "typescript": "~6.0.3"
-  },
+  "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "typecheck": "tsc --noEmit",
+    "data": "python scripts/build_nutrient_data.py && python scripts/build_recipe_subset.py"
+  },
+  "jest": {
+    "projects": [
+      {
+        "displayName": "domain",
+        "testEnvironment": "node",
+        "testMatch": [
+          "<rootDir>/src/domain/**/__tests__/**/*.test.ts",
+          "<rootDir>/src/theme/**/__tests__/**/*.test.ts"
+        ],
+        "moduleNameMapper": {
+          "^@/(.*)$": "<rootDir>/src/$1"
+        },
+        "transform": {
+          "^.+\\.[jt]sx?$": [
+            "babel-jest",
+            {
+              "presets": [
+                [
+                  "@babel/preset-env",
+                  {
+                    "targets": {
+                      "node": "current"
+                    }
+                  }
+                ],
+                "@babel/preset-typescript",
+                [
+                  "@babel/preset-react",
+                  {
+                    "runtime": "automatic"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "displayName": "ui",
+        "testEnvironment": "jsdom",
+        "testMatch": [
+          "<rootDir>/src/components/**/__tests__/**/*.test.tsx"
+        ],
+        "moduleNameMapper": {
+          "^@/(.*)$": "<rootDir>/src/$1",
+          "^react-native$": "react-native-web",
+          "^expo-haptics$": "<rootDir>/src/test/hapticsMock.ts"
+        },
+        "transform": {
+          "^.+\\.[jt]sx?$": [
+            "babel-jest",
+            {
+              "presets": [
+                [
+                  "@babel/preset-env",
+                  {
+                    "targets": {
+                      "node": "current"
+                    }
+                  }
+                ],
+                "@babel/preset-typescript",
+                [
+                  "@babel/preset-react",
+                  {
+                    "runtime": "automatic"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "transformIgnorePatterns": [
+          "node_modules/(?!(react-native-web|react-native-svg|@react-native|expo|@expo)/)"
+        ]
+      }
+    ]
+  },
+  "dependencies": {
+    "@expo-google-fonts/ibm-plex-mono": "^0.4.1",
+    "@expo-google-fonts/ibm-plex-sans": "^0.4.1",
+    "@expo-google-fonts/newsreader": "^0.4.1",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~57.0.16",
+    "expo-constants": "~57.0.14",
+    "expo-font": "~57.0.1",
+    "expo-haptics": "~57.0.1",
+    "expo-linking": "~57.0.7",
+    "expo-router": "~57.0.16",
+    "expo-splash-screen": "~57.0.8",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-dom": "^19.2.3",
+    "react-native": "0.86.2",
+    "react-native-gesture-handler": "~2.32.0",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-svg": "15.15.4",
+    "react-native-web": "^0.21.2",
+    "react-native-worklets": "^0.10.1",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^8.0.2",
+    "@babel/preset-react": "^8.0.1",
+    "@babel/preset-typescript": "^8.0.1",
+    "@react-native/jest-preset": "^0.86.3",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/jest": "^29.5.14",
+    "@types/react": "~19.2.2",
+    "babel-jest": "^30.4.1",
+    "babel-preset-expo": "^57.0.8",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.4.1",
+    "jest-expo": "^57.0.4",
+    "typescript": "~6.0.3"
   },
   "private": true
 }

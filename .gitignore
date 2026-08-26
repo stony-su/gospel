@@ -39,3 +39,12 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Gospel
+data-source/
+*.xlsx
+*.parquet
+recipes.csv
+
+# Build output
+dist/
