@@ -27,6 +27,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 // Imported from their own modules, not the barrel: the barrel also exports
 // Screen and Header, which reach expo-router and safe-area-context native
 // specs and cannot load in this environment.
+import { StatBlock } from '@/ui/data/StatBlock';
 import { Check } from '@/ui/controls/Check';
 import { Chip } from '@/ui/controls/Chip';
 import { Option } from '@/ui/controls/Option';
@@ -242,5 +243,21 @@ describe('controls', () => {
 
     fireEvent.click(screen.getByLabelText('Increase'));
     expect(onChange).toHaveBeenCalledWith(8);
+  });
+});
+
+describe('data', () => {
+  // NutrientBar, SunMap and DietSpectrum all import react-native-svg and so
+  // cannot load here. What they risk getting wrong is arithmetic - the fill
+  // fraction, the amount precision, the status precedence - and that is pure
+  // and covered in mark.test.tsx.
+  it('renders a stat block with its note', () => {
+    render(
+      <StatBlock label="Energy" value={2444} unit="kcal" note="BMR 1810 x 1.35" />,
+    );
+
+    expect(screen.getByText('ENERGY')).toBeTruthy();
+    expect(screen.getByDisplayValue('2444')).toBeTruthy();
+    expect(screen.getByText('BMR 1810 x 1.35')).toBeTruthy();
   });
 });
