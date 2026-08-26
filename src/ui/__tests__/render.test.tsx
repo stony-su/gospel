@@ -11,8 +11,9 @@
  * what these assert is where a component comes to rest.
  */
 
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
+import { AnimatedNumber, MorphText, Press, Reveal } from '@/ui/motion';
 import { Display, Figure, Heading, Label, Prose, Title } from '@/ui/text';
 
 describe('text registers', () => {
@@ -54,5 +55,71 @@ describe('text registers', () => {
     );
 
     expect(screen.getByText('2444')).toBeTruthy();
+  });
+});
+
+describe('motion primitives', () => {
+  it('reveals its children', () => {
+    render(
+      <Reveal index={2}>
+        <Figure>revealed</Figure>
+      </Reveal>,
+    );
+
+    expect(screen.getByText('revealed')).toBeTruthy();
+  });
+
+  it('renders an animated number at its settled value', () => {
+    render(<AnimatedNumber value={2444} suffix=" kcal" />);
+
+    expect(screen.getByDisplayValue('2444 kcal')).toBeTruthy();
+  });
+
+  it('honours precision on an animated number', () => {
+    render(<AnimatedNumber value={1.35} precision={2} prefix="x" />);
+
+    expect(screen.getByDisplayValue('x1.35')).toBeTruthy();
+  });
+
+  it('renders morphing text in the requested register', () => {
+    render(<MorphText variant="label">temperate</MorphText>);
+
+    expect(screen.getByText('TEMPERATE')).toBeTruthy();
+  });
+
+  it('fires a press', () => {
+    const onPress = jest.fn();
+    render(
+      <Press onPress={onPress} accessibilityLabel="pick">
+        <Figure>tap me</Figure>
+      </Press>,
+    );
+
+    fireEvent.click(screen.getByText('tap me'));
+
+    expect(onPress).toHaveBeenCalledTimes(1);
+  });
+
+  it('still renders its children when selected', () => {
+    render(
+      <Press onPress={() => {}} selected accessibilityLabel="chosen">
+        <Figure>chosen</Figure>
+      </Press>,
+    );
+
+    expect(screen.getByText('chosen')).toBeTruthy();
+  });
+
+  it('does not fire when disabled', () => {
+    const onPress = jest.fn();
+    render(
+      <Press onPress={onPress} disabled accessibilityLabel="inert">
+        <Figure>inert</Figure>
+      </Press>,
+    );
+
+    fireEvent.click(screen.getByText('inert'));
+
+    expect(onPress).not.toHaveBeenCalled();
   });
 });
