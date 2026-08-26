@@ -11,13 +11,13 @@
 
 import { render, screen } from '@testing-library/react';
 
-import { Readout } from '@/components/primitives/Text';
+import { Display } from '@/ui/text';
 import { useGospel, useProfile, useTargets } from '@/store/useGospel';
 
 function Probe() {
   const profile = useProfile();
   const targets = useTargets();
-  return <Readout>{profile ? String(targets?.energy_kcal ?? 'no targets') : 'no profile'}</Readout>;
+  return <Display>{profile ? String(targets?.energy_kcal ?? 'no targets') : 'no profile'}</Display>;
 }
 
 describe('useProfile / useTargets', () => {

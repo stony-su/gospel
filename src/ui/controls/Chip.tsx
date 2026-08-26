@@ -8,7 +8,7 @@
 
 import { StyleSheet, View } from 'react-native';
 
-import { grade, sharp, space, stroke } from '@/theme/tokens';
+import { grade, radius, space, stroke } from '@/theme/tokens';
 import { Press } from '@/ui/motion';
 import { Figure, Label } from '@/ui/text';
 
@@ -39,7 +39,7 @@ export function Chip({ label, meta, selected, onPress }: ChipProps) {
 const styles = StyleSheet.create({
   root: {
     borderWidth: stroke.hair,
-    borderRadius: sharp.sm,
+    borderRadius: radius.sm,
   },
   on: {
     backgroundColor: grade[100],
