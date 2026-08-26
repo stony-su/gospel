@@ -127,3 +127,73 @@ export const duration = {
   slow: 480,
   reveal: 900,
 } as const;
+
+// --- Monochrome rebuild ------------------------------------------------------
+// Added alongside the palette above rather than replacing it: every existing
+// component still imports `ink`/`text`/`signal`, and they are deleted only
+// once nothing does. New code uses the names below and nothing else.
+
+/**
+ * The grade ramp - the entire palette.
+ *
+ * Neutral rather than the cool-tinted black above. Cool greys read as screen;
+ * neutral greys read as ink on paper, which is what a sheet of graph paper
+ * wants to be. Numbered by approximate lightness so a call site says how far
+ * up the ramp it is rather than inventing a name for every step.
+ */
+export const grade = {
+  0: '#000000',
+  5: '#060606',
+  10: '#0B0B0B',
+  15: '#111111',
+  20: '#171717',
+  30: '#262626',
+  35: '#303030',
+  40: '#3D3D3D',
+  50: '#565656',
+  60: '#6E6E6E',
+  70: '#909090',
+  80: '#B4B4B4',
+  90: '#D6D6D6',
+  100: '#FFFFFF',
+} as const;
+
+/**
+ * Line weights.
+ *
+ * With colour gone, weight is what separates a gridline from a rule from a
+ * breach marker, so the weights need names as much as the greys do.
+ */
+export const stroke = {
+  hair: 0.5,
+  thin: 1,
+  medium: 1.5,
+  heavy: 2,
+} as const;
+
+/**
+ * The type registers.
+ *
+ * Mono carries everything the app measures, states or labels - which is
+ * almost everything. Sans survives for the rare running sentence. Every line
+ * height is a multiple of 4 so text sits on the graticule's minor grid.
+ */
+export const registers = {
+  display: { fontFamily: font.monoSemi, fontSize: 34, lineHeight: 40, letterSpacing: -1.5 },
+  title: { fontFamily: font.monoSemi, fontSize: 20, lineHeight: 28, letterSpacing: 0.5 },
+  heading: { fontFamily: font.monoMedium, fontSize: 14, lineHeight: 20, letterSpacing: 1 },
+  label: { fontFamily: font.monoMedium, fontSize: 10, lineHeight: 14, letterSpacing: 2 },
+  figure: { fontFamily: font.mono, fontSize: 13, lineHeight: 18, letterSpacing: -0.2 },
+  figureSmall: { fontFamily: font.mono, fontSize: 11, lineHeight: 16, letterSpacing: 0 },
+  prose: { fontFamily: font.ui, fontSize: 14, lineHeight: 22, letterSpacing: 0 },
+} as const;
+
+/**
+ * Corner radii, such as they are.
+ *
+ * Rounded shapes read as consumer software. An instrument has corners.
+ */
+export const sharp = {
+  none: 0,
+  sm: 2,
+} as const;
