@@ -345,8 +345,6 @@ function Resolution({ targets }: { targets: ReturnType<typeof resolveTargets> })
     'calcium_mg',
   ];
 
-  const breaches = targets.nutrients.filter((nutrient) => nutrient.over_ul);
-
   return (
     <View style={styles.question}>
       <Title>Your daily targets</Title>
@@ -381,12 +379,6 @@ function Resolution({ targets }: { targets: ReturnType<typeof resolveTargets> })
           );
         })}
       </View>
-
-      {breaches.length > 0 && (
-        <Note>
-          {`${breaches.map((n) => n.nutrient_name).join(', ')} resolve above the upper limit — speak to a clinician`}
-        </Note>
-      )}
     </View>
   );
 }
