@@ -48,3 +48,14 @@ recipes.csv
 
 # Build output
 dist/
+
+# API keys and local env
+.env
+.env.local
+
+# API response cache
+cache/
+
+# Python bytecode
+__pycache__/
+*.pyc
