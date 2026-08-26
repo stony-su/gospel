@@ -42,6 +42,18 @@ export interface Recipe {
   id: number;
   name: string;
   description: string;
+  /**
+   * First Food.com photograph, or null for the ~7% that have none.
+   *
+   * Display only - nothing in the planner, resolver or pantry ledger reads
+   * it. Added by scripts/add_recipe_images.py, which looks the id up in the
+   * corpus rather than re-running the subset builder.
+   *
+   * Optional rather than required: a Recipe built in a test has no
+   * photograph, and making the field mandatory would force every fixture to
+   * carry a null it does not care about. Call sites coalesce.
+   */
+  image?: string | null;
   minutes: number;
   prep_minutes: number;
   servings: number;
