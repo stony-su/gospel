@@ -13,6 +13,32 @@
 
 import type { RecipeNutrition } from './types';
 
+/**
+ * Targets no source can measure, and which are therefore not shown.
+ *
+ * FoodData Central does not carry these nutrients at all - not sparsely, but
+ * absent from its schema, on every one of the ~1,100 ingredient panels
+ * fetched. The workbook still resolves a target for each, and the resolver
+ * still computes it; they are filtered at the point of display rather than
+ * deleted, so the derivation stays intact and restoring one is a single-line
+ * change here.
+ *
+ * Biotin is a vitamin, the other four are minerals. They are the complete set
+ * of workbook targets with no possible intake figure.
+ */
+export const UNMEASURABLE_NUTRIENTS = [
+  'iodine_ug',
+  'chloride_mg',
+  'chromium_ug',
+  'molybdenum_ug',
+  'biotin_ug',
+] as const;
+
+/** True when no data source can ever supply an intake for this nutrient. */
+export function isUnmeasurable(nutrientId: string): boolean {
+  return (UNMEASURABLE_NUTRIENTS as readonly string[]).includes(nutrientId);
+}
+
 /** Nutrient ids the recipe dataset can measure directly. */
 export const MEASURED_NUTRIENTS = [
   'energy_kcal',

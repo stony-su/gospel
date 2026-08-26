@@ -7,6 +7,7 @@
 
 import type { MealPlan } from '@/domain/planner/types';
 import type { ResolvedNutrient } from '@/domain/nutrition/types';
+import { UNMEASURABLE_NUTRIENTS, isUnmeasurable } from '@/domain/planner/coverage';
 import { achievedForNutrient, categoryLabel, metCount } from '@/ui/data/nutrition';
 
 const nutrient = (over: Partial<ResolvedNutrient>): ResolvedNutrient =>
@@ -146,5 +147,29 @@ describe('achievedForNutrient, with ingredient panels', () => {
     );
 
     expect(count).toBe(1);
+  });
+});
+
+describe('unmeasurable targets', () => {
+  it('names exactly the nutrients FDC carries no data for', () => {
+    expect([...UNMEASURABLE_NUTRIENTS].sort()).toEqual([
+      'biotin_ug',
+      'chloride_mg',
+      'chromium_ug',
+      'iodine_ug',
+      'molybdenum_ug',
+    ]);
+  });
+
+  it('recognises each of them', () => {
+    for (const id of UNMEASURABLE_NUTRIENTS) {
+      expect(isUnmeasurable(id)).toBe(true);
+    }
+  });
+
+  it('leaves measurable nutrients alone', () => {
+    for (const id of ['iron_mg', 'vitamin_c_mg', 'selenium_ug', 'fluoride_mg']) {
+      expect({ id, unmeasurable: isUnmeasurable(id) }).toEqual({ id, unmeasurable: false });
+    }
   });
 });

@@ -16,6 +16,7 @@ import { ingredientPanels } from '@/data/ingredientNutrition';
 import { ingredientsById, recipes, recipesById } from '@/data/recipes';
 import { averageDailyIntake, type IntakeResult } from '@/domain/nutrition/intake';
 import { resolveTargets } from '@/domain/nutrition/resolver';
+import { isUnmeasurable } from '@/domain/planner/coverage';
 import type {
   ActivityLevel,
   DietType,
@@ -244,7 +245,25 @@ export function useProfile(): NutritionProfile | null {
 
 export function useTargets(): ResolvedTargets | null {
   const profile = useProfile();
-  return useMemo(() => (profile ? resolveTargets(profile) : null), [profile]);
+
+  return useMemo(() => {
+    if (!profile) return null;
+    const resolved = resolveTargets(profile);
+
+    // Drop the targets nothing can ever measure. The resolver still computes
+    // them - the workbook's derivation is untouched - but a row that can only
+    // ever read "unmeasured" tells the reader nothing except that the app
+    // cannot answer, which is not worth a line on the screen.
+    const nutrients = resolved.nutrients.filter(
+      (nutrient) => !isUnmeasurable(nutrient.nutrient_id),
+    );
+
+    const byId = Object.fromEntries(
+      nutrients.map((nutrient) => [nutrient.nutrient_id, nutrient]),
+    );
+
+    return { ...resolved, nutrients, byId };
+  }, [profile]);
 }
 
 let intakeCache: { key: string; value: IntakeResult } | null = null;
