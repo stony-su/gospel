@@ -180,8 +180,10 @@ export default function Onboarding() {
               {activityLevels.map((level) => (
                 <Option
                   key={level.activity_level}
+                  // No PAL multiplier: it is the resolver's coefficient, not a
+                  // fact about the person answering. Showing it invites the
+                  // reader to pick the bigger number rather than the true one.
                   label={level.label}
-                  meta={`×${level.pal_multiplier}`}
                   selected={answers.activity_level === level.activity_level}
                   onPress={() => setAnswer('activity_level', level.activity_level)}
                 />
