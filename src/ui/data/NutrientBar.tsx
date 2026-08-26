@@ -21,7 +21,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring, withTiming } fr
 import Svg, { Rect } from 'react-native-svg';
 
 import { useMotion } from '@/theme/motion';
-import { grade, space, stroke } from '@/theme/tokens';
+import { grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { HATCH_FILL, Hatch } from '@/ui/plot';
 import { Press } from '@/ui/motion';
 import { Figure, Heading } from '@/ui/text';
@@ -131,7 +131,10 @@ const styles = StyleSheet.create({
     pointerEvents: 'none',
   },
   root: {
-    paddingVertical: space.sm,
+    backgroundColor: surface.row,
+    borderRadius: radius.sm,
+    padding: space.sm,
+    marginBottom: space.xxs,
   },
   head: {
     flexDirection: 'row',
@@ -142,7 +145,9 @@ const styles = StyleSheet.create({
   },
   track: {
     height: HEIGHT,
-    backgroundColor: grade[15],
+    // A step below the row it sits on, so an unfilled bar still reads as a
+    // well rather than as part of the surface.
+    backgroundColor: grade[5],
     position: 'relative',
     overflow: 'hidden',
   },

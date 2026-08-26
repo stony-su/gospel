@@ -3,12 +3,15 @@
  *
  * The most common shape in the app: a name on the left, a measurement on the
  * right, aligned on a baseline so a column of them reads as a table.
+ *
+ * One step above its panel, so a stack of rows reads as separate lines
+ * without a rule between each pair.
  */
 
 import type { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { space } from '@/theme/tokens';
+import { radius, space, surface } from '@/theme/tokens';
 
 interface RowProps {
   left: ReactNode;
@@ -29,7 +32,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'baseline',
     justifyContent: 'space-between',
-    paddingVertical: space.xs,
+    backgroundColor: surface.row,
+    borderRadius: radius.sm,
+    paddingVertical: space.sm,
+    paddingHorizontal: space.sm,
     gap: space.md,
   },
   left: {

@@ -1,11 +1,11 @@
 /**
  * The page shell.
  *
- * Every screen sits on the same black ground with a field of marks behind it,
- * so moving between tabs feels like moving around one instrument rather than
- * between separate documents. The field cannot be turned off - a screen
- * without it would read as a different application - but each screen chooses
- * a composition suited to how much it is already carrying.
+ * Every screen sits on the same black ground. Nothing is drawn behind the
+ * content: an earlier version put a field of grid marks back there and it
+ * competed with the rules, axes and bar edges in front of it, which are all
+ * hairlines too. Depth comes from surfaces now - see `surface` in tokens.ts -
+ * where a shade means a level rather than a texture.
  */
 
 import type { ReactNode } from 'react';
@@ -13,15 +13,12 @@ import {
   ScrollView,
   StyleSheet,
   View,
-  useWindowDimensions,
   type StyleProp,
   type ViewStyle,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import type { FieldName } from '@/theme/field';
 import { GUTTER, grade, space } from '@/theme/tokens';
-import { Field } from '@/ui/plot';
 
 interface ScreenProps {
   children: ReactNode;
@@ -29,8 +26,6 @@ interface ScreenProps {
   scroll?: boolean;
   /** Extra bottom padding, e.g. to clear a tab bar. */
   bottomInset?: number;
-  /** Which background composition to draw. Dense screens want `dense`. */
-  field?: FieldName;
   contentStyle?: StyleProp<ViewStyle>;
 }
 
@@ -38,10 +33,8 @@ export function Screen({
   children,
   scroll = true,
   bottomInset = 0,
-  field = 'detail',
   contentStyle,
 }: ScreenProps) {
-  const { width, height } = useWindowDimensions();
   const insets = useSafeAreaInsets();
 
   const padding = {
@@ -63,7 +56,6 @@ export function Screen({
 
   return (
     <View style={styles.root}>
-      <Field name={field} width={width} height={height} />
       {body}
     </View>
   );

@@ -18,7 +18,7 @@ import { StyleSheet, View, useWindowDimensions } from 'react-native';
 import { cuisineLabels, ingredientsById, recipesById } from '@/data/recipes';
 import { fatPercentOfEnergy } from '@/domain/planner/coverage';
 import { useGospel } from '@/store/useGospel';
-import { GUTTER, grade, space, stroke } from '@/theme/tokens';
+import { GUTTER, grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { Plate, formatMass } from '@/ui/data';
 import { Disclosure, Header, Row, Screen, Section } from '@/ui/layout';
 import { AnimatedNumber, Press, Reveal } from '@/ui/motion';
@@ -257,9 +257,10 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'space-between',
     gap: space.md,
-    paddingVertical: space.xs,
-    borderBottomWidth: stroke.hair,
-    borderBottomColor: grade[20],
+    backgroundColor: surface.row,
+    borderRadius: radius.sm,
+    padding: space.sm,
+    marginBottom: space.xxs,
   },
   ingredientMain: {
     flex: 1,

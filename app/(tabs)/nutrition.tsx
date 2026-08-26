@@ -20,7 +20,7 @@ import { recipesById } from '@/data/recipes';
 import type { ResolvedNutrient } from '@/domain/nutrition/types';
 import { coverageFor } from '@/domain/planner/coverage';
 import { useGospel, useTargets } from '@/store/useGospel';
-import { GUTTER, grade, space, stroke } from '@/theme/tokens';
+import { GUTTER, grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { categoryLabel, metCount } from '@/ui/data';
 import { Header, Screen, Section } from '@/ui/layout';
 import { Press, Reveal } from '@/ui/motion';
@@ -79,7 +79,7 @@ export default function NutritionTab() {
   const energyMax = Math.max(energyTarget, ...dailyEnergy) * 1.1;
 
   return (
-    <Screen bottomInset={70} field="dense">
+    <Screen bottomInset={70}>
       <Header
         title="Nutrition"
         refButton
@@ -159,7 +159,10 @@ const styles = StyleSheet.create({
     marginBottom: space.sm,
   },
   row: {
-    paddingVertical: space.sm,
+    backgroundColor: surface.row,
+    borderRadius: radius.sm,
+    padding: space.sm,
+    marginBottom: space.xxs,
   },
   rowHead: {
     flexDirection: 'row',

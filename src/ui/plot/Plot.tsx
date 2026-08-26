@@ -3,8 +3,10 @@
  *
  * Owns the box, the gridlines, the axes and the optional target rule, then
  * hands its scales to the caller as a render prop. Callers plot in data
- * space - millgrams, days, degrees - and never touch a pixel, which is what
- * keeps a chart and the graticule behind it provably on the same grid.
+ * space - milligrams, days, degrees - and never touch a pixel.
+ *
+ * These gridlines stayed when the background field was deleted: they are how
+ * a value is read off a plot, not decoration behind one.
  */
 
 import type { ReactNode } from 'react';

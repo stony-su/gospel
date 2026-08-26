@@ -78,6 +78,28 @@ export const grade = {
  * With colour gone, weight is what separates a gridline from a rule from a
  * breach marker, so the weights need names as much as the greys do.
  */
+/**
+ * Elevation.
+ *
+ * With no colour and no background texture, depth is the only structural tool
+ * left, so it has to be used consistently: a shade means a level, and the same
+ * level looks the same everywhere in the app. A row is a row whether it is in
+ * the grocery list or the nutrient detail.
+ *
+ * Deliberately narrow steps. These are all near-black, and the point is that
+ * a panel separates from the page without ever announcing itself as a card.
+ */
+export const surface = {
+  /** The page itself. */
+  ground: grade[0],
+  /** A grouped block of related content. */
+  panel: grade[10],
+  /** One line within a block. */
+  row: grade[15],
+  /** Pressed, selected, or otherwise the thing being acted on. */
+  raised: grade[20],
+} as const;
+
 export const stroke = {
   hair: 0.5,
   thin: 1,
@@ -90,7 +112,7 @@ export const stroke = {
  *
  * Mono carries everything the app measures, states or labels - which is
  * almost everything. Sans survives for the rare running sentence. Every line
- * height is a multiple of 4 so text sits on the graticule's minor grid.
+ * height is a multiple of 4 so text sits on a consistent baseline.
  */
 export const registers = {
   display: { fontFamily: font.monoSemi, fontSize: 34, lineHeight: 40, letterSpacing: -1.5 },

@@ -15,7 +15,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { TabList, TabSlot, TabTrigger, Tabs } from 'expo-router/ui';
 
 import { useMotion } from '@/theme/motion';
-import { grade, space, stroke } from '@/theme/tokens';
+import { grade, space, stroke, surface } from '@/theme/tokens';
 import { Label } from '@/ui/text';
 
 const TABS = [
@@ -91,7 +91,9 @@ export default function TabsLayout() {
 const styles = StyleSheet.create({
   bar: {
     flexDirection: 'row',
-    backgroundColor: grade[0],
+    // A step above the page, so the bar reads as a fixed chrome rather than
+    // as the bottom of whatever is scrolling behind it.
+    backgroundColor: surface.panel,
     paddingTop: space.sm,
     position: 'relative',
   },

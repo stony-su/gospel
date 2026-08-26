@@ -17,7 +17,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { useMotion } from '@/theme/motion';
-import { grade, stroke } from '@/theme/tokens';
+import { grade, stroke, surface } from '@/theme/tokens';
 
 interface PressProps {
   children: ReactNode;
@@ -47,6 +47,7 @@ export function Press({
   const motion = useMotion();
   const scale = useSharedValue(1);
   const rule = useSharedValue(selected ? 1 : 0);
+  const lift = useSharedValue(0);
 
   useEffect(() => {
     rule.value = withTiming(selected ? 1 : 0, {
@@ -55,7 +56,13 @@ export function Press({
     });
   }, [rule, selected, motion]);
 
-  const surface = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
+  const body = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
+
+  // Presses lift a step as well as scaling: with no colour, a change of level
+  // is the clearest way to say "this one". Drawn as an overlay rather than as
+  // a background, so it composes with whatever surface the caller set instead
+  // of replacing it.
+  const liftStyle = useAnimatedStyle(() => ({ opacity: lift.value }));
 
   // Scales from the left edge, so it reads as sweeping in rather than growing
   // out of its own middle.
@@ -69,16 +76,19 @@ export function Press({
       onPress={onPress}
       onPressIn={() => {
         scale.value = withSpring(0.98, motion.spring);
+        lift.value = withTiming(1, { duration: motion.duration.instant });
       }}
       onPressOut={() => {
         scale.value = withSpring(1, motion.spring);
+        lift.value = withTiming(0, { duration: motion.duration.fast });
       }}
       disabled={disabled}
       accessibilityRole={accessibilityRole}
       accessibilityLabel={accessibilityLabel}
       accessibilityState={{ selected, disabled }}
     >
-      <Animated.View style={[styles.row, style, surface]}>
+      <Animated.View style={[styles.row, style, body]}>
+        <Animated.View style={[styles.lift, liftStyle]} />
         {!plain && <Animated.View style={[styles.rule, ruleStyle]} />}
         {children}
       </Animated.View>
@@ -89,6 +99,15 @@ export function Press({
 const styles = StyleSheet.create({
   row: {
     position: 'relative',
+  },
+  lift: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    pointerEvents: 'none',
+    backgroundColor: surface.raised,
   },
   rule: {
     position: 'absolute',

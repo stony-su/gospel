@@ -16,7 +16,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { ingredientsById } from '@/data/recipes';
 import { useGospel, usePantryProjection } from '@/store/useGospel';
-import { grade, space, stroke } from '@/theme/tokens';
+import { grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { formatMass } from '@/ui/data';
 import { Header, Row as LayoutRow, Screen } from '@/ui/layout';
 import { AnimatedNumber, Reveal } from '@/ui/motion';
@@ -87,7 +87,7 @@ export default function PantryTab() {
   const occasional = rows.length - everyCycle;
 
   return (
-    <Screen bottomInset={70} field="dense">
+    <Screen bottomInset={70}>
       <Header title="Pantry" refButton right={<Label>{`${cycleCount} cycles`}</Label>} />
 
       <Reveal index={0} style={styles.summary}>
@@ -160,7 +160,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   row: {
-    marginBottom: space.sm,
+    backgroundColor: surface.row,
+    borderRadius: radius.sm,
+    padding: space.sm,
+    marginBottom: space.xxs,
   },
   rowHead: {
     flexDirection: 'row',

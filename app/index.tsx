@@ -12,27 +12,23 @@
  */
 
 import { Redirect, useRouter } from 'expo-router';
-import { StyleSheet, View, useWindowDimensions } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { nutrients } from '@/data/nutrition';
 import { recipes } from '@/data/recipes';
 import { useGospel } from '@/store/useGospel';
 import { grade, space, stroke } from '@/theme/tokens';
 import { Press, Reveal } from '@/ui/motion';
-import { Field } from '@/ui/plot';
 import { Display, Label } from '@/ui/text';
 
 export default function Landing() {
   const router = useRouter();
   const complete = useGospel((state) => state.onboardingComplete);
-  const { width, height } = useWindowDimensions();
 
   if (complete) return <Redirect href="/(tabs)" />;
 
   return (
     <View style={styles.root}>
-      <Field name="landing" width={width} height={height} />
-
       <View style={styles.content}>
         <Reveal index={0}>
           <Label color={grade[100]}>gospel</Label>

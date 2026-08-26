@@ -11,7 +11,7 @@ import { StyleSheet, View } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 
 import { useMotion } from '@/theme/motion';
-import { grade, space, stroke } from '@/theme/tokens';
+import { grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { Press } from '@/ui/motion';
 import { Figure } from '@/ui/text';
 
@@ -47,7 +47,7 @@ export function Check({ label, meta, checked, onPress }: CheckProps) {
       plain
       accessibilityRole="checkbox"
       accessibilityLabel={label}
-      style={styles.root}
+      style={[styles.root, checked && styles.done]}
     >
       <View style={styles.body}>
         <View style={styles.box}>
@@ -64,13 +64,19 @@ export function Check({ label, meta, checked, onPress }: CheckProps) {
 
 const styles = StyleSheet.create({
   root: {
-    borderBottomWidth: stroke.hair,
-    borderBottomColor: grade[30],
+    backgroundColor: surface.row,
+    borderRadius: radius.sm,
+    marginBottom: space.xxs,
+  },
+  // A ticked line settles back toward the page rather than lifting off it.
+  done: {
+    backgroundColor: surface.ground,
   },
   body: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: space.sm,
+    paddingHorizontal: space.sm,
     gap: space.sm,
   },
   box: {

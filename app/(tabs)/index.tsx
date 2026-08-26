@@ -18,10 +18,10 @@ import { StyleSheet, View } from 'react-native';
 import { recipesById } from '@/data/recipes';
 import { CYCLE_LABELS, type CycleLength, type MealSlot } from '@/domain/planner/types';
 import { useGospel, useTargets } from '@/store/useGospel';
-import { grade, space, stroke } from '@/theme/tokens';
+import { grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { Segmented } from '@/ui/controls';
 import { Plate, formatAmount } from '@/ui/data';
-import { Divider, Header, Row, Screen, Section } from '@/ui/layout';
+import { Header, Row, Screen, Section } from '@/ui/layout';
 import { AnimatedNumber, Press, Reveal } from '@/ui/motion';
 import { Figure, Heading, Label } from '@/ui/text';
 
@@ -65,7 +65,7 @@ export default function PlanTab() {
 
   if (!plan || !targets) {
     return (
-      <Screen bottomInset={70} field="plan">
+      <Screen bottomInset={70}>
         <Header title="No plan" />
         <Label color={grade[50]}>finish onboarding to resolve targets</Label>
       </Screen>
@@ -78,7 +78,7 @@ export default function PlanTab() {
   const proteinTarget = targets.byId.protein_g?.value ?? 0;
 
   return (
-    <Screen bottomInset={70} field="plan">
+    <Screen bottomInset={70}>
       <Header title={`${CYCLE_LABELS[plan.cycleDays]} plan`} refButton />
 
       <Reveal index={0} style={styles.cycle}>
@@ -97,7 +97,6 @@ export default function PlanTab() {
             </View>
           }
         />
-        <Divider />
         <Row
           left={<Label>protein</Label>}
           right={
@@ -111,7 +110,6 @@ export default function PlanTab() {
             </View>
           }
         />
-        <Divider />
         <Row
           left={<Label>cost</Label>}
           right={
@@ -222,10 +220,11 @@ const styles = StyleSheet.create({
   meal: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    paddingVertical: space.sm,
+    backgroundColor: surface.row,
+    borderRadius: radius.sm,
+    padding: space.sm,
+    marginBottom: space.xxs,
     gap: space.sm,
-    borderBottomWidth: stroke.hair,
-    borderBottomColor: grade[20],
   },
   mealBody: {
     flex: 1,
@@ -241,7 +240,7 @@ const styles = StyleSheet.create({
     marginTop: space.md,
     paddingVertical: space.sm,
     paddingHorizontal: space.md,
-    borderWidth: stroke.hair,
-    borderColor: grade[40],
+    backgroundColor: surface.row,
+    borderRadius: radius.sm,
   },
 });

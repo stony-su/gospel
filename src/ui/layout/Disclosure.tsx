@@ -21,7 +21,7 @@ import { StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 
 import { useMotion } from '@/theme/motion';
-import { grade, space, stroke } from '@/theme/tokens';
+import { grade, radius, space, stroke, surface } from '@/theme/tokens';
 import { Press, Reveal } from '@/ui/motion';
 import { Figure, Label } from '@/ui/text';
 
@@ -104,12 +104,16 @@ export function Disclosure({
 const styles = StyleSheet.create({
   root: {
     marginBottom: space.md,
+    backgroundColor: surface.panel,
+    borderRadius: radius.sm,
+    overflow: 'hidden',
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: space.sm,
-    paddingVertical: space.xs,
+    paddingVertical: space.sm,
+    paddingHorizontal: space.md,
   },
   rule: {
     flex: 1,
@@ -120,11 +124,12 @@ const styles = StyleSheet.create({
     pointerEvents: 'none',
     position: 'absolute',
     opacity: 0,
-    left: 0,
-    right: 0,
+    left: space.md,
+    right: space.md,
     top: 0,
   },
   body: {
     overflow: 'hidden',
+    paddingHorizontal: space.md,
   },
 });

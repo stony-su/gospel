@@ -9,7 +9,7 @@
 
 import { StyleSheet, View } from 'react-native';
 
-import { grade, space, stroke } from '@/theme/tokens';
+import { grade, radius, space, surface } from '@/theme/tokens';
 import { Press } from '@/ui/motion';
 import { Figure, Heading } from '@/ui/text';
 
@@ -28,7 +28,7 @@ export function Option({ label, meta, selected, onPress }: OptionProps) {
       selected={selected}
       accessibilityRole="radio"
       accessibilityLabel={label}
-      style={styles.root}
+      style={[styles.root, selected && styles.selected]}
     >
       <View style={styles.body}>
         <Heading color={selected ? grade[100] : grade[80]}>{label}</Heading>
@@ -40,8 +40,12 @@ export function Option({ label, meta, selected, onPress }: OptionProps) {
 
 const styles = StyleSheet.create({
   root: {
-    borderBottomWidth: stroke.hair,
-    borderBottomColor: grade[30],
+    backgroundColor: surface.row,
+    borderRadius: radius.sm,
+    marginBottom: space.xxs,
+  },
+  selected: {
+    backgroundColor: surface.raised,
   },
   body: {
     flexDirection: 'row',

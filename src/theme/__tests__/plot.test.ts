@@ -1,14 +1,14 @@
 /**
  * Plot geometry.
  *
- * The graticule and every axis in the app are drawn from these three
- * functions, so their edge cases are the app's edge cases: a zero-width
+ * Every axis in the app is drawn from these two functions, so their edge
+ * cases are the app's edge cases: a zero-width
  * domain (one nutrient, one reading), an inverted range (every screen y-axis,
  * where pixels grow downward), and tick values that must never surface a
  * float artefact to the user.
  */
 
-import { graticule, linearScale, niceTicks } from '@/theme/plot';
+import { linearScale, niceTicks } from '@/theme/plot';
 
 describe('linearScale', () => {
   it('maps the domain onto the range', () => {
@@ -68,26 +68,5 @@ describe('niceTicks', () => {
     const ticks = niceTicks(3, 97, 5);
     expect(ticks[0]).toBeLessThanOrEqual(3);
     expect(ticks[ticks.length - 1]).toBeGreaterThanOrEqual(97);
-  });
-});
-
-describe('graticule', () => {
-  it('spaces minor and major lines across the box', () => {
-    const g = graticule(80, 40, 8, 40);
-    expect(g.minorX).toEqual([0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80]);
-    expect(g.minorY).toEqual([0, 8, 16, 24, 32, 40]);
-    expect(g.majorX).toEqual([0, 40, 80]);
-    expect(g.majorY).toEqual([0, 40]);
-  });
-
-  it('stops short of a bound the spacing does not divide', () => {
-    const g = graticule(20, 20, 8, 40);
-    expect(g.minorX).toEqual([0, 8, 16]);
-  });
-
-  it('returns empty arrays for a zero-sized box', () => {
-    const g = graticule(0, 0);
-    expect(g.minorX).toEqual([]);
-    expect(g.majorY).toEqual([]);
   });
 });

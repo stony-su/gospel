@@ -48,7 +48,7 @@ export default function GroceryTab() {
 
   if (!plan || !projection || !cycle) {
     return (
-      <Screen bottomInset={70} field="list">
+      <Screen bottomInset={70}>
         <Header title="Grocery" refButton />
         <Label color={grade[50]}>build a plan to generate a list</Label>
       </Screen>
@@ -65,7 +65,7 @@ export default function GroceryTab() {
     .map((_, index) => ({ value: index, label: String(index + 1) }));
 
   return (
-    <Screen bottomInset={70} field="list">
+    <Screen bottomInset={70}>
       <Header
         title="Grocery"
         refButton

@@ -1,12 +1,10 @@
 /**
  * Plot geometry - the mathematics the interface is drawn on.
  *
- * Every ruled line in the app comes from here: the graticule behind each
- * screen, the axes on the nutrition and pantry plots, the tick marks under a
- * slider. Keeping it pure and separate means the geometry can be reasoned
- * about and tested without rendering anything, and it means a chart and the
- * background it sits on are provably the same grid rather than two sets of
- * numbers that happen to look aligned.
+ * Every ruled line in the app comes from here: the axes on the nutrition and
+ * pantry plots, their gridlines, the tick marks under a slider. Keeping it
+ * pure and separate means the geometry can be reasoned about and tested
+ * without rendering anything.
  *
  * Pure geometry, no rendering. Callers feed the results to react-native-svg.
  */
@@ -83,43 +81,4 @@ export function niceTicks(min: number, max: number, count = 5): number[] {
   }
 
   return ticks;
-}
-
-export interface GraticuleLines {
-  minorX: number[];
-  minorY: number[];
-  majorX: number[];
-  majorY: number[];
-}
-
-/**
- * Graph-paper line positions for a box.
- *
- * Minor lines carry the texture, major lines carry the structure. Both are
- * emitted from the origin outward and stop at the last multiple that fits, so
- * a box whose size the spacing does not divide simply ends short rather than
- * drawing a line outside itself.
- */
-export function graticule(
-  width: number,
-  height: number,
-  minor = 8,
-  major = 40,
-): GraticuleLines {
-  if (width <= 0 || height <= 0 || minor <= 0 || major <= 0) {
-    return { minorX: [], minorY: [], majorX: [], majorY: [] };
-  }
-
-  const series = (bound: number, spacing: number) => {
-    const lines: number[] = [];
-    for (let i = 0; i * spacing <= bound; i += 1) lines.push(i * spacing);
-    return lines;
-  };
-
-  return {
-    minorX: series(width, minor),
-    minorY: series(height, minor),
-    majorX: series(width, major),
-    majorY: series(height, major),
-  };
 }
