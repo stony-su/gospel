@@ -7,7 +7,13 @@
 
 import { dataset } from '@/data/nutrition';
 import type { SourceRow } from '@/domain/nutrition/types';
-import { citationText, hostOf, referenceIndex } from '@/ui/data/citation';
+import {
+  citationText,
+  hostOf,
+  orderedSources,
+  referenceIndex,
+  referenceLabelFor,
+} from '@/ui/data/citation';
 
 const row = (over: Partial<SourceRow>): SourceRow => ({
   source_id: 'TEST',
@@ -79,5 +85,25 @@ describe('referenceIndex', () => {
   it('pads to a fixed width so the column does not shift', () => {
     expect(referenceIndex(0)).toBe('[01]');
     expect(referenceIndex(19)).toBe('[20]');
+  });
+});
+
+describe('reference numbering', () => {
+  it('numbers every dataset source exactly once', () => {
+    const labels = orderedSources.map((source) => referenceLabelFor(source.source_id));
+
+    expect(labels).toHaveLength(dataset.sources.length);
+    expect(new Set(labels).size).toBe(labels.length);
+    expect(labels[0]).toBe('[01]');
+  });
+
+  it('agrees with the position a source holds in the ordered list', () => {
+    orderedSources.forEach((source, index) => {
+      expect(referenceLabelFor(source.source_id)).toBe(referenceIndex(index));
+    });
+  });
+
+  it('returns null for an unknown source rather than inventing a number', () => {
+    expect(referenceLabelFor('NOT_A_SOURCE')).toBeNull();
   });
 });

@@ -12,6 +12,7 @@
  * noticed by looking.
  */
 
+import { dataset } from '@/data/nutrition';
 import type { SourceRow } from '@/domain/nutrition/types';
 
 /** Trailing `*...*` note the workbook appends to most citations. */
@@ -60,4 +61,29 @@ export function hostOf(url: string | null): string | null {
 /** `[01]`-style index, so the numbering column stays the same width. */
 export function referenceIndex(position: number): string {
   return `[${String(position + 1).padStart(2, '0')}]`;
+}
+
+/**
+ * The canonical reference ordering.
+ *
+ * The references page and every bracketed number that points at it must agree
+ * on which source is [03]. Deriving both from one sorted list is what makes
+ * that true by construction rather than by two call sites happening to sort
+ * the same way.
+ */
+export const orderedSources: SourceRow[] = [...dataset.sources].sort((a, b) =>
+  a.source_id.localeCompare(b.source_id),
+);
+
+const POSITIONS = new Map(orderedSources.map((source, index) => [source.source_id, index]));
+
+/**
+ * The `[NN]` label for a source id, or null if the id is not in the dataset.
+ *
+ * Returning null rather than a placeholder matters: a citation pointing at a
+ * reference that does not exist should disappear, not render as [00].
+ */
+export function referenceLabelFor(sourceId: string): string | null {
+  const position = POSITIONS.get(sourceId);
+  return position === undefined ? null : referenceIndex(position);
 }

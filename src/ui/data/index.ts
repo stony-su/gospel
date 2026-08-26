@@ -1,4 +1,10 @@
-export { citationText, hostOf, referenceIndex } from './citation';
+export {
+  citationText,
+  hostOf,
+  orderedSources,
+  referenceIndex,
+  referenceLabelFor,
+} from './citation';
 export { DietSpectrum } from './DietSpectrum';
 export { barFraction, formatAmount, markFor, type Mark } from './mark';
 export { NutrientBar } from './NutrientBar';

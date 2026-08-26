@@ -12,21 +12,18 @@
 
 import { Linking, StyleSheet, View } from 'react-native';
 
-import { dataset } from '@/data/nutrition';
 import { grade, space } from '@/theme/tokens';
-import { citationText, hostOf, referenceIndex } from '@/ui/data/citation';
+import { citationText, hostOf, orderedSources, referenceIndex } from '@/ui/data/citation';
 import { Divider, Header, Screen } from '@/ui/layout';
 import { Press, Reveal } from '@/ui/motion';
 import { Figure, Label, Prose } from '@/ui/text';
 
-const sources = [...dataset.sources].sort((a, b) => a.source_id.localeCompare(b.source_id));
-
 export default function References() {
   return (
     <Screen>
-      <Header title="References" right={<Label>{`${sources.length} sources`}</Label>} />
+      <Header title="References" right={<Label>{`${orderedSources.length} sources`}</Label>} />
 
-      {sources.map((source, position) => {
+      {orderedSources.map((source, position) => {
         const host = hostOf(source.url);
         const body = (
           <View style={styles.entry}>

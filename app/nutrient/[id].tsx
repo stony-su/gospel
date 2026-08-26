@@ -1,28 +1,28 @@
 /**
  * Nutrient detail.
  *
- * Where a number gets to explain itself: the base value, every rule that fired
- * to change it, the upper limit, and the citations behind all of it. The motto
- * is only earned if the sources are one tap away.
+ * Where a number gets to explain itself: the base value, every rule that
+ * fired to change it, the upper limit, and what backs all of it.
+ *
+ * This is the one screen where prose earns its place. Everywhere else the
+ * app's job is to show a measurement; here it is to justify one, and a
+ * justification is made of sentences. What is gone is the decoration around
+ * them - the epigraph, the coloured callouts - and the full citations, which
+ * now appear as bracketed numbers pointing at the references page rather than
+ * as three lines of bibliography per rule.
  */
 
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { Linking, Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { formatValue } from '@/components/charts/NutrientBar';
-import { Screen } from '@/components/primitives/Screen';
-import {
-  Body,
-  Doctrine,
-  Eyebrow,
-  Figure,
-  Title,
-} from '@/components/primitives/Text';
-import { nutrients, sourcesById } from '@/data/nutrition';
-import { modifiers } from '@/data/nutrition';
+import { modifiers, nutrients } from '@/data/nutrition';
 import { COVERAGE_LABEL, coverageFor } from '@/domain/planner/coverage';
-import { ink, radius, signal, space, text } from '@/theme/tokens';
 import { useGospel, useTargets } from '@/store/useGospel';
+import { grade, space, stroke } from '@/theme/tokens';
+import { NutrientBar, formatAmount, markFor, referenceLabelFor } from '@/ui/data';
+import { Divider, Header, Row, Screen, Section } from '@/ui/layout';
+import { Press, Reveal } from '@/ui/motion';
+import { Figure, Label, Prose } from '@/ui/text';
 
 const BASIS_EXPLAIN: Record<string, string> = {
   RDA: 'Recommended Dietary Allowance: meets the needs of 97-98% of healthy people.',
@@ -50,17 +50,15 @@ export default function NutrientDetail() {
   if (!row || !resolved) {
     return (
       <Screen>
-        <Title>Nutrient not found</Title>
-        <Pressable onPress={() => router.back()} style={styles.close}>
-          <Eyebrow color={text.faint}>Close</Eyebrow>
-        </Pressable>
+        <Header title="Not found" />
+        <Press onPress={() => router.back()} plain accessibilityLabel="Close">
+          <Label color={grade[70]}>close</Label>
+        </Press>
       </Screen>
     );
   }
 
-  const appliedRules = modifiers.filter((rule) =>
-    resolved.rules_applied.includes(rule.rule_id),
-  );
+  const appliedRules = modifiers.filter((rule) => resolved.rules_applied.includes(rule.rule_id));
   const flagRules = modifiers.filter(
     (rule) =>
       rule.nutrient_id === row.nutrient_id &&
@@ -70,311 +68,175 @@ export default function NutrientDetail() {
 
   const coverage = coverageFor(row.nutrient_id);
   const achieved =
-    coverage !== 'awaiting_fdc' && plan
-      ? plan.averageNutrition[row.nutrient_id]
-      : null;
+    coverage !== 'awaiting_fdc' && plan ? (plan.averageNutrition[row.nutrient_id] ?? null) : null;
 
-  const sourceIds = new Set<string>([
-    ...(row.source_ids ?? []),
-    ...appliedRules.flatMap((rule) => rule.source_ids ?? []),
-  ]);
+  // Every source behind this number: the nutrient's own, plus each rule that
+  // fired. Rendered as the numbers they hold on the references page.
+  const references = [
+    ...new Set<string>([
+      ...(row.source_ids ?? []),
+      ...appliedRules.flatMap((rule) => rule.source_ids ?? []),
+    ]),
+  ]
+    .map((sourceId) => referenceLabelFor(sourceId))
+    .filter((label): label is string => label !== null)
+    .sort();
 
   return (
     <Screen>
-      <Pressable onPress={() => router.back()} style={styles.close} hitSlop={12}>
-        <Eyebrow color={text.faint}>Close</Eyebrow>
-      </Pressable>
+      <Press onPress={() => router.back()} plain accessibilityLabel="Close" style={styles.close}>
+        <Label color={grade[70]}>close</Label>
+      </Press>
 
-      <View style={styles.header}>
-        <Eyebrow color={signal.endpoint}>{row.category.replace('_', ' ')}</Eyebrow>
-        <Title style={styles.title}>{row.nutrient_name}</Title>
-      </View>
+      <Header
+        title={row.nutrient_name}
+        refButton
+        right={<Label>{row.category.replace('_', ' ')}</Label>}
+      />
 
-      <View style={styles.valueBlock}>
+      <Reveal index={0} style={styles.value}>
         <View style={styles.valueRow}>
-          <Figure color={signal.endpoint} style={styles.bigValue}>
-            {formatValue(resolved.value)}
+          <Figure color={grade[100]} style={styles.big}>
+            {formatAmount(resolved.value)}
           </Figure>
-          <Figure color={text.tertiary} style={styles.unit}>
-            {row.unit} / day
-          </Figure>
+          <Figure color={grade[70]}>{`${row.unit} / day`}</Figure>
         </View>
-        <Figure tiny color={text.faint}>
-          {row.basis} · {COVERAGE_LABEL[coverage]}
-        </Figure>
-      </View>
-
-      {achieved !== null && achieved !== undefined && (
-        <View style={styles.achievedBlock}>
-          <Eyebrow>Your plan delivers</Eyebrow>
-          <View style={styles.valueRow}>
-            <Figure color={text.bright} style={styles.mediumValue}>
-              {formatValue(achieved)}
-            </Figure>
-            <Figure tiny color={text.faint}>
-              {row.unit} · {Math.round((achieved / resolved.value) * 100)}% of target
-            </Figure>
-          </View>
-        </View>
-      )}
-
-      {coverage === 'awaiting_fdc' && (
-        <View style={styles.callout}>
-          <Body small color={text.faint} style={styles.calloutText}>
-            The recipe dataset does not publish this nutrient. Populating it
-            needs per-ingredient values from FoodData Central, which is not part
-            of this build. The target above is fully resolved; only the intake
-            side is missing.
-          </Body>
-        </View>
-      )}
-
-      {BASIS_EXPLAIN[row.basis] && (
-        <Section label="Basis">
-          <Body small color={text.secondary} style={styles.prose}>
+        <Label color={grade[50]}>{`${row.basis} · ${COVERAGE_LABEL[coverage]}`}</Label>
+        {BASIS_EXPLAIN[row.basis] ? (
+          <Prose color={grade[70]} style={styles.explain}>
             {BASIS_EXPLAIN[row.basis]}
-          </Body>
+          </Prose>
+        ) : null}
+      </Reveal>
+
+      {achieved !== null && (
+        <Section label="Your plan delivers" index={1}>
+          <NutrientBar
+            name={row.nutrient_name}
+            unit={row.unit}
+            target={resolved.value}
+            intake={achieved}
+            mark={markFor(resolved, achieved)}
+            ul={row.ul_value}
+          />
         </Section>
       )}
 
-      <Section label="How this was derived">
-        <View style={styles.derivation}>
-          <DerivationStep
-            label="Base"
-            detail={
-              row.nutrient_id === 'energy_kcal'
-                ? `Schofield BMR ${formatValue(targets.bmr_kcal)} kcal × PAL ${targets.pal_multiplier}`
-                : row.derived_from
-                  ? `${row.derived_coef_per_1000kcal} ${row.unit} per 1000 kcal of energy intake`
-                  : row.scales_with_bodyweight
-                    ? 'Per kilogram of body weight'
-                    : 'Fixed reference value for your sex'
-            }
-          />
+      {appliedRules.length > 0 && (
+        <Section label="Rules applied" index={2}>
           {appliedRules.map((rule) => (
-            <DerivationStep
-              key={rule.rule_id}
-              label={rule.rule_id}
-              detail={rule.note ?? `${rule.effect_type} ${rule.effect_value ?? ''}`}
-              confidence={rule.confidence}
-            />
+            <View key={rule.rule_id}>
+              <Row
+                left={<Figure color={grade[90]}>{rule.rule_id}</Figure>}
+                right={<Figure small color={grade[70]}>{rule.effect_type}</Figure>}
+              />
+              {rule.note ? (
+                <Prose color={grade[70]} style={styles.explain}>
+                  {rule.note}
+                </Prose>
+              ) : null}
+              <Divider />
+            </View>
           ))}
-          {appliedRules.length === 0 && (
-            <Body small color={text.faint} style={styles.prose}>
-              No modifiers applied. This is the baseline value.
-            </Body>
-          )}
-        </View>
-      </Section>
+        </Section>
+      )}
 
       {row.ul_value !== null && (
-        <Section label="Upper limit">
-          <View style={styles.ulRow}>
-            <Figure color={resolved.over_ul ? signal.breach : text.primary}>
-              {formatValue(row.ul_value)} {row.unit}
-            </Figure>
-            {resolved.pct_of_ul !== null && (
-              <Figure
-                tiny
-                color={
-                  resolved.over_ul
-                    ? signal.breach
-                    : resolved.approaching_ul
-                      ? signal.caution
-                      : text.faint
-                }
-              >
-                your target is {Math.round(resolved.pct_of_ul)}% of it
-              </Figure>
-            )}
-          </View>
-          {row.ul_applies_to && (
-            <Body small color={text.faint} style={styles.prose}>
-              Applies to {row.ul_applies_to}.
-            </Body>
-          )}
-          {resolved.over_ul && (
-            <View style={[styles.callout, styles.calloutBreach]}>
-              <Body small color={signal.breach} style={styles.calloutText}>
-                Your modifiers compound above the upper limit. The workbook
-                treats this as a prompt to seek clinical advice, not as a
-                target to shop for.
-              </Body>
-            </View>
-          )}
+        <Section label="Upper limit" index={3}>
+          <Row
+            left={<Figure color={grade[100]}>{`${formatAmount(row.ul_value)} ${row.unit}`}</Figure>}
+            right={
+              resolved.pct_of_ul !== null ? (
+                <Figure small color={grade[70]}>
+                  {`${resolved.pct_of_ul.toFixed(0)}% of UL`}
+                </Figure>
+              ) : undefined
+            }
+          />
+          {row.ul_applies_to ? (
+            <Prose color={grade[70]} style={styles.explain}>
+              {`Applies to ${row.ul_applies_to}.`}
+            </Prose>
+          ) : null}
         </Section>
       )}
 
       {flagRules.length > 0 && (
-        <Section label="Flags">
+        <Section label="Flags" index={4}>
           {flagRules.map((rule) => (
-            <View key={rule.rule_id} style={styles.flag}>
-              <Figure tiny color={signal.caution}>
-                {rule.flag_code}
-              </Figure>
-              {rule.note && (
-                <Body small color={text.faint} style={styles.prose}>
+            <View key={rule.rule_id}>
+              <Label color={grade[90]}>{rule.flag_code ?? ''}</Label>
+              {rule.note ? (
+                <Prose color={grade[70]} style={styles.explain}>
                   {rule.note}
-                </Body>
-              )}
+                </Prose>
+              ) : null}
             </View>
           ))}
         </Section>
       )}
 
-      {row.notes && (
-        <Section label="Note">
-          <Body small color={text.secondary} style={styles.prose}>
-            {row.notes}
-          </Body>
-        </Section>
-      )}
-
       {resolved.lowest_confidence && (
-        <Section label="Confidence">
-          <Body small color={text.secondary} style={styles.prose}>
+        <Section label="Confidence" index={5}>
+          <Label color={grade[90]}>{resolved.lowest_confidence}</Label>
+          <Prose color={grade[70]} style={styles.explain}>
             {CONFIDENCE_EXPLAIN[resolved.lowest_confidence]}
-          </Body>
+          </Prose>
         </Section>
       )}
 
-      <Section label="Sources" meta={`${sourceIds.size}`}>
-        {[...sourceIds].map((sourceId) => {
-          const source = sourcesById[sourceId];
-          if (!source) return null;
-          return (
-            <Pressable
-              key={sourceId}
-              onPress={() => source.url && Linking.openURL(source.url).catch(() => {})}
-              style={({ pressed }) => [styles.source, pressed && styles.pressed]}
-              accessibilityRole="link"
-            >
-              <Figure tiny color={signal.endpoint}>
-                {sourceId}
-              </Figure>
-              <Body small color={text.secondary} style={styles.citation}>
-                {source.full_citation ?? source.citation}
-              </Body>
-              {source.url && (
-                <Figure tiny color={ink.dim} numberOfLines={1}>
-                  {source.url}
-                </Figure>
-              )}
-            </Pressable>
-          );
-        })}
-      </Section>
-
-      <Doctrine color={ink.dim} style={styles.motto}>
-        Let science be my gospel and life be my creed.
-      </Doctrine>
+      {references.length > 0 && (
+        <Section label="Sources" index={6}>
+          <Press
+            onPress={() => router.push('/references')}
+            plain
+            accessibilityRole="link"
+            accessibilityLabel="Open references"
+          >
+            <View style={styles.refs}>
+              {references.map((label) => (
+                <Label key={label} color={grade[90]} style={styles.ref}>
+                  {label}
+                </Label>
+              ))}
+            </View>
+          </Press>
+        </Section>
+      )}
     </Screen>
   );
 }
 
-function DerivationStep({
-  label,
-  detail,
-  confidence,
-}: {
-  label: string;
-  detail: string;
-  confidence?: string;
-}) {
-  return (
-    <View style={styles.derivationStep}>
-      <View style={styles.derivationMarker} />
-      <View style={styles.derivationBody}>
-        <View style={styles.derivationHead}>
-          <Figure tiny color={text.tertiary}>
-            {label}
-          </Figure>
-          {confidence && confidence !== 'high' && (
-            <Figure tiny color={confidence === 'low' ? signal.caution : ink.dim}>
-              {confidence} confidence
-            </Figure>
-          )}
-        </View>
-        <Body small color={text.secondary} style={styles.prose}>
-          {detail}
-        </Body>
-      </View>
-    </View>
-  );
-}
-
-function Section({
-  label,
-  meta,
-  children,
-}: {
-  label: string;
-  meta?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <View style={styles.section}>
-      <View style={styles.sectionHeader}>
-        <Eyebrow color={text.tertiary}>{label}</Eyebrow>
-        <View style={styles.sectionRule} />
-        {meta && <Figure tiny color={ink.dim}>{meta}</Figure>}
-      </View>
-      {children}
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
-  close: { alignSelf: 'flex-start', paddingVertical: space.xs },
-  header: { gap: space.xxs, marginTop: space.sm },
-  title: { marginTop: space.xxs },
-  valueBlock: { marginTop: space.lg, gap: space.xxs },
-  valueRow: { flexDirection: 'row', alignItems: 'baseline', gap: space.xs },
-  bigValue: { fontFamily: 'IBMPlexMono_600SemiBold', fontSize: 40, letterSpacing: -1.5 },
-  mediumValue: { fontFamily: 'IBMPlexMono_500Medium', fontSize: 22 },
-  unit: { marginBottom: 4 },
-  achievedBlock: { marginTop: space.lg, gap: space.xxs },
-  section: { marginTop: space.xl },
-  sectionHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: space.sm,
-    marginBottom: space.sm,
-  },
-  sectionRule: { flex: 1, height: 1, backgroundColor: ink.line },
-  prose: { lineHeight: 19 },
-  derivation: { gap: space.sm },
-  derivationStep: { flexDirection: 'row', gap: space.sm },
-  derivationMarker: {
-    width: 2,
-    alignSelf: 'stretch',
-    backgroundColor: ink.lineHot,
-    borderRadius: radius.pill,
-  },
-  derivationBody: { flex: 1, gap: 2 },
-  derivationHead: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: space.sm,
-  },
-  ulRow: { flexDirection: 'row', alignItems: 'baseline', gap: space.sm },
-  callout: {
-    marginTop: space.md,
-    borderLeftWidth: 2,
-    borderLeftColor: ink.lineHot,
-    paddingLeft: space.sm,
+  close: {
+    alignSelf: 'flex-start',
     paddingVertical: space.xs,
+    marginBottom: space.xs,
   },
-  calloutBreach: { borderLeftColor: signal.breach },
-  calloutText: { lineHeight: 19 },
-  flag: { marginBottom: space.sm, gap: 2 },
-  source: {
-    paddingVertical: space.sm,
-    borderBottomWidth: 1,
-    borderBottomColor: ink.raised,
-    gap: 3,
+  value: {
+    marginBottom: space.xl,
   },
-  citation: { lineHeight: 18 },
-  pressed: { opacity: 0.6 },
-  motto: { marginTop: space.xxl, textAlign: 'center' },
+  valueRow: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    gap: space.xs,
+  },
+  big: {
+    fontSize: 34,
+    lineHeight: 40,
+  },
+  explain: {
+    marginTop: space.xs,
+  },
+  refs: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: space.xs,
+  },
+  ref: {
+    borderWidth: stroke.hair,
+    borderColor: grade[40],
+    paddingHorizontal: space.xs,
+    paddingVertical: space.xxs,
+  },
 });
