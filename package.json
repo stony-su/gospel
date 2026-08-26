@@ -53,12 +53,14 @@
         "displayName": "ui",
         "testEnvironment": "jsdom",
         "testMatch": [
-          "<rootDir>/src/components/**/__tests__/**/*.test.tsx"
+          "<rootDir>/src/components/**/__tests__/**/*.test.tsx",
+          "<rootDir>/src/ui/**/__tests__/**/*.test.tsx"
         ],
         "moduleNameMapper": {
           "^@/(.*)$": "<rootDir>/src/$1",
           "^react-native$": "react-native-web",
-          "^expo-haptics$": "<rootDir>/src/test/hapticsMock.ts"
+          "^expo-haptics$": "<rootDir>/src/test/hapticsMock.ts",
+          "^react-native-reanimated$": "<rootDir>/src/test/reanimatedMock.ts"
         },
         "transform": {
           "^.+\\.[jt]sx?$": [
