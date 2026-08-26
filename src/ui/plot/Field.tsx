@@ -52,7 +52,7 @@ export function Field({ name, width, height }: FieldProps) {
   if (patches.length === 0) return null;
 
   return (
-    <Animated.View style={[StyleSheet.absoluteFill, animated]} pointerEvents="none">
+    <Animated.View style={[StyleSheet.absoluteFill, styles.inert, animated]}>
       <Svg width={width} height={height}>
         {patches.map((patch, index) => (
           <G key={index} x={patch.x} y={patch.y}>
@@ -170,3 +170,10 @@ function RulePatch({ w }: { w: number }) {
     </G>
   );
 }
+
+const styles = StyleSheet.create({
+  // pointerEvents belongs in style now; the prop form is deprecated.
+  inert: {
+    pointerEvents: 'none',
+  },
+});

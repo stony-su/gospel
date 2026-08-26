@@ -34,6 +34,7 @@ import { Option } from '@/ui/controls/Option';
 import { Segmented } from '@/ui/controls/Segmented';
 import { Slider } from '@/ui/controls/Slider';
 import { Stepper } from '@/ui/controls/Stepper';
+import { Disclosure } from '@/ui/layout/Disclosure';
 import { Divider } from '@/ui/layout/Divider';
 import { Row } from '@/ui/layout/Row';
 import { Section } from '@/ui/layout/Section';
@@ -259,5 +260,50 @@ describe('data', () => {
     expect(screen.getByText('ENERGY')).toBeTruthy();
     expect(screen.getByDisplayValue('2444')).toBeTruthy();
     expect(screen.getByText('BMR 1810 x 1.35')).toBeTruthy();
+  });
+});
+
+describe('disclosure', () => {
+  it('states what is inside and how much of it, before you open it', () => {
+    render(
+      <Disclosure label="Ingredients" meta="12">
+        <Figure>olive oil</Figure>
+      </Disclosure>,
+    );
+
+    expect(screen.getByText('INGREDIENTS')).toBeTruthy();
+    expect(screen.getByText('12')).toBeTruthy();
+  });
+
+  it('opens on press', () => {
+    render(
+      <Disclosure label="Ingredients">
+        <Figure>olive oil</Figure>
+      </Disclosure>,
+    );
+
+    fireEvent.click(screen.getByText('INGREDIENTS'));
+
+    expect(screen.getAllByText('olive oil').length).toBeGreaterThan(0);
+  });
+
+  it('starts open when asked to', () => {
+    render(
+      <Disclosure label="Method" defaultOpen>
+        <Figure>step one</Figure>
+      </Disclosure>,
+    );
+
+    expect(screen.getAllByText('step one').length).toBeGreaterThan(0);
+  });
+
+  it('renders without a meta', () => {
+    render(
+      <Disclosure label="Equipment">
+        <Figure>loaf pan</Figure>
+      </Disclosure>,
+    );
+
+    expect(screen.getByText('EQUIPMENT')).toBeTruthy();
   });
 });

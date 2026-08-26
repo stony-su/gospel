@@ -203,8 +203,8 @@ export function SunMap({ latitude, longitude, onPick }: SunMapProps) {
                 without re-rendering the whole map on every frame. */}
             {latitude !== null && longitude !== null && (
               <>
-                <Animated.View style={[styles.crossH, { width }, crossH]} pointerEvents="none" />
-                <Animated.View style={[styles.crossV, { height }, crossV]} pointerEvents="none" />
+                <Animated.View style={[styles.crossH, { width }, crossH]} />
+                <Animated.View style={[styles.crossV, { height }, crossV]} />
               </>
             )}
           </>
@@ -244,6 +244,7 @@ const styles = StyleSheet.create({
     borderColor: grade[40],
   },
   crossH: {
+    pointerEvents: 'none',
     position: 'absolute',
     left: 0,
     top: 0,
@@ -252,6 +253,7 @@ const styles = StyleSheet.create({
     opacity: 0.75,
   },
   crossV: {
+    pointerEvents: 'none',
     position: 'absolute',
     left: 0,
     top: 0,

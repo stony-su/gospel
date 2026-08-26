@@ -94,7 +94,7 @@ export function NutrientBar({
         <Animated.View style={[styles.fill, fillStyle, FILL_STYLE[mark]]} />
 
         {mark === 'hatch' && (
-          <Animated.View style={[StyleSheet.absoluteFill, overlayStyle]} pointerEvents="none">
+          <Animated.View style={[StyleSheet.absoluteFill, styles.inert, overlayStyle]}>
             <Svg width="100%" height={HEIGHT}>
               <Hatch />
               <Rect x={0} y={0} width="100%" height={HEIGHT} fill={HATCH_FILL} />
@@ -126,6 +126,10 @@ const FILL_STYLE: Record<Mark, { backgroundColor: string }> = {
 };
 
 const styles = StyleSheet.create({
+  // pointerEvents belongs in style now; the prop form is deprecated.
+  inert: {
+    pointerEvents: 'none',
+  },
   root: {
     paddingVertical: space.sm,
   },
