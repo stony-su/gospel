@@ -1,81 +1,87 @@
 /**
- * Tab shell.
+ * The tab bar, as a ruled axis.
  *
- * A text-only tab bar: mono labels with a magenta rule under the active one.
- * Icons would add a second visual language for no gain in a four-tab app, and
- * the labels sit in the same typographic register as the rest of the
- * interface.
- *
- * Built on expo-router's headless `ui` tabs rather than the default tab
- * navigator, which is the supported way to supply a custom bar in SDK 57.
+ * Four stops on a hairline, with one indicator that slides between them. The
+ * indicator is a single element rather than a per-tab underline that fades in
+ * and out: sliding reports that the selection moved, which is what happened,
+ * and it also means the bar reads as an axis with a needle on it rather than
+ * four independent buttons.
  */
 
-import { forwardRef } from 'react';
-import { Pressable, StyleSheet, View, type PressableProps } from 'react-native';
+import { useCallback, useState } from 'react';
+import { Pressable, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { TabList, TabSlot, TabTrigger, Tabs } from 'expo-router/ui';
-import * as Haptics from 'expo-haptics';
 
-import { Eyebrow } from '@/components/primitives/Text';
-import { ink, signal, space, text } from '@/theme/tokens';
+import { useMotion } from '@/theme/motion';
+import { grade, space, stroke } from '@/theme/tokens';
+import { Label } from '@/ui/text';
 
-type TabButtonProps = PressableProps & {
-  label: string;
-  isFocused?: boolean;
-};
-
-/**
- * `asChild` on TabTrigger forwards navigation props and `isFocused` down to
- * whatever it wraps, so the button only has to render.
- */
-const TabButton = forwardRef<View, TabButtonProps>(
-  ({ label, isFocused, onPress, ...rest }, ref) => (
-    <Pressable
-      ref={ref}
-      {...rest}
-      onPress={(event) => {
-        Haptics.selectionAsync().catch(() => {});
-        onPress?.(event);
-      }}
-      style={styles.tab}
-      accessibilityRole="tab"
-      accessibilityState={{ selected: isFocused }}
-      accessibilityLabel={label}
-    >
-      <Eyebrow color={isFocused ? signal.endpoint : text.faint}>{label}</Eyebrow>
-      <View style={[styles.rule, isFocused && styles.ruleActive]} />
-    </Pressable>
-  ),
-);
-
-TabButton.displayName = 'TabButton';
+const TABS = [
+  { name: 'index', href: '/', label: 'Plan' },
+  { name: 'nutrition', href: '/nutrition', label: 'Nutrition' },
+  { name: 'grocery', href: '/grocery', label: 'Grocery' },
+  { name: 'pantry', href: '/pantry', label: 'Pantry' },
+] as const;
 
 export default function TabsLayout() {
   const insets = useSafeAreaInsets();
+  const motion = useMotion();
+
+  const [barWidth, setBarWidth] = useState(0);
+  const [active, setActive] = useState(0);
+  const position = useSharedValue(0);
+
+  const segment = barWidth / TABS.length;
+
+  const select = useCallback(
+    (index: number) => {
+      setActive(index);
+      position.value = withSpring(index, motion.spring);
+    },
+    [position, motion],
+  );
+
+  const indicator = useAnimatedStyle(() => ({
+    width: segment,
+    transform: [{ translateX: position.value * segment }],
+  }));
+
+  const onLayout = (event: LayoutChangeEvent) => setBarWidth(event.nativeEvent.layout.width);
 
   return (
     <Tabs>
       <TabSlot />
 
       <TabList asChild>
+        {/* Flattened: expo-router's Slot shim throws on an array style, and it
+            does so on every platform, not only web. */}
         <View
           style={StyleSheet.flatten([
             styles.bar,
             { paddingBottom: insets.bottom + space.xs },
           ])}
         >
-          <TabTrigger name="index" href="/" asChild>
-            <TabButton label="Plan" />
-          </TabTrigger>
-          <TabTrigger name="nutrition" href="/nutrition" asChild>
-            <TabButton label="Nutrition" />
-          </TabTrigger>
-          <TabTrigger name="grocery" href="/grocery" asChild>
-            <TabButton label="Grocery" />
-          </TabTrigger>
-          <TabTrigger name="pantry" href="/pantry" asChild>
-            <TabButton label="Pantry" />
-          </TabTrigger>
+          <View style={styles.rule} />
+
+          <View style={styles.track} onLayout={onLayout}>
+            {barWidth > 0 && <Animated.View style={[styles.indicator, indicator]} />}
+          </View>
+
+          {TABS.map((tab, index) => (
+            <TabTrigger key={tab.name} name={tab.name} href={tab.href} asChild>
+              <Pressable
+                onPress={() => select(index)}
+                style={styles.tab}
+                accessibilityRole="tab"
+                accessibilityState={{ selected: index === active }}
+                accessibilityLabel={tab.label}
+              >
+                <Label color={index === active ? grade[100] : grade[50]}>{tab.label}</Label>
+              </Pressable>
+            </TabTrigger>
+          ))}
         </View>
       </TabList>
     </Tabs>
@@ -85,22 +91,35 @@ export default function TabsLayout() {
 const styles = StyleSheet.create({
   bar: {
     flexDirection: 'row',
-    backgroundColor: ink.abyss,
-    borderTopWidth: 1,
-    borderTopColor: ink.line,
+    backgroundColor: grade[0],
     paddingTop: space.sm,
+    position: 'relative',
+  },
+  rule: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: stroke.hair,
+    backgroundColor: grade[40],
+  },
+  track: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: stroke.medium,
+  },
+  indicator: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    height: stroke.medium,
+    backgroundColor: grade[100],
   },
   tab: {
     flex: 1,
     alignItems: 'center',
-    gap: space.xs,
-  },
-  rule: {
-    height: 1,
-    width: 22,
-    backgroundColor: 'transparent',
-  },
-  ruleActive: {
-    backgroundColor: signal.endpoint,
+    paddingVertical: space.xs,
   },
 });
