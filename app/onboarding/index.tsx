@@ -8,47 +8,39 @@
  * A single stepper rather than twelve routes: the questions share a frame, a
  * progress rail and a back stack, and splitting them across files would spread
  * one flow over twelve places for no benefit.
+ *
+ * Every question used to carry a paragraph explaining what it fed. Those are
+ * gone. A question with a title, a control and a unit is answerable; the
+ * explanation of which nutrients it scales belongs on the nutrient screens,
+ * where it can be read against the number it changed. What survives is the
+ * handful of notes that change the answer rather than describe it - an
+ * under-19 warning, a thin recipe library - and those are stated as one line.
  */
 
 import { useMemo, useState } from 'react';
 import { useRouter } from 'expo-router';
-import {
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  View,
-  useWindowDimensions,
-} from 'react-native';
+import { ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Animated, { FadeIn, FadeInRight } from 'react-native-reanimated';
+import Animated, { FadeInRight } from 'react-native-reanimated';
 
-import { DietSpectrum } from '@/components/DietSpectrum';
-import { SunMap } from '@/components/SunMap';
-import { TwineRail } from '@/components/charts/TwineRail';
-import { Chip, OptionRow, Segmented } from '@/components/primitives/Choice';
-import { InstrumentSlider } from '@/components/primitives/InstrumentSlider';
-import {
-  Body,
-  Doctrine,
-  Eyebrow,
-  Figure,
-  Title,
-} from '@/components/primitives/Text';
-import { NutrientBar, formatValue } from '@/components/charts/NutrientBar';
-import { activityLevels, dietAnchors } from '@/data/nutrition';
+import { activityLevels } from '@/data/nutrition';
 import { availableCuisines, isLibraryThin, recipeCountForDiet } from '@/data/recipes';
 import { resolveTargets } from '@/domain/nutrition/resolver';
-import { coverageFor } from '@/domain/planner/coverage';
 import { CYCLE_LABELS, type CycleLength } from '@/domain/planner/types';
 import { profileFrom, useGospel } from '@/store/useGospel';
-import { GUTTER, ink, radius, signal, space, text } from '@/theme/tokens';
+import { GUTTER, grade, space, stroke } from '@/theme/tokens';
+import { Chip, Option, Slider } from '@/ui/controls';
+import { DietSpectrum, NutrientBar, SunMap, formatAmount, markFor } from '@/ui/data';
+import { AnimatedNumber, Press } from '@/ui/motion';
+import { ProgressRail } from '@/ui/plot';
+import { Figure, Label, Title } from '@/ui/text';
 
-const DIFFICULTY_LABELS: Record<number, { label: string; description: string }> = {
-  1: { label: 'Assembly', description: 'Almost no technique. Combine and serve.' },
-  2: { label: 'Simple', description: 'One pan, few steps, nothing to time carefully.' },
-  3: { label: 'Standard', description: 'Normal home cooking with a little multitasking.' },
-  4: { label: 'Involved', description: 'Several components, real technique, some timing pressure.' },
-  5: { label: 'Ambitious', description: 'Long builds and advanced technique. Cook because you want to.' },
+const DIFFICULTY_LABELS: Record<number, string> = {
+  1: 'Assembly',
+  2: 'Simple',
+  3: 'Standard',
+  4: 'Involved',
+  5: 'Ambitious',
 };
 
 const STEP_COUNT = 12;
@@ -68,10 +60,7 @@ export default function Onboarding() {
   const [dietPosition, setDietPosition] = useState(3);
 
   const profile = profileFrom(answers);
-  const targets = useMemo(
-    () => (profile ? resolveTargets(profile) : null),
-    [profile],
-  );
+  const targets = useMemo(() => (profile ? resolveTargets(profile) : null), [profile]);
 
   const canAdvance = ((): boolean => {
     switch (step) {
@@ -110,37 +99,30 @@ export default function Onboarding() {
     <View style={styles.root}>
       <View style={[styles.header, { paddingTop: insets.top + space.sm }]}>
         <View style={styles.headerRow}>
-          <Pressable onPress={goBack} hitSlop={12} accessibilityRole="button">
-            <Eyebrow color={text.faint}>{step === 0 ? 'Back' : 'Previous'}</Eyebrow>
-          </Pressable>
-          <Figure tiny color={text.faint}>
-            {String(step + 1).padStart(2, '0')} / {STEP_COUNT}
+          <Press onPress={goBack} plain accessibilityLabel="Previous">
+            <Label color={grade[60]}>{step === 0 ? 'back' : 'previous'}</Label>
+          </Press>
+          <Figure small color={grade[60]}>
+            {`${String(step + 1).padStart(2, '0')} / ${STEP_COUNT}`}
           </Figure>
         </View>
-        <TwineRail width={width - GUTTER * 2} progress={step / (STEP_COUNT - 1)} />
+        <ProgressRail total={STEP_COUNT} answered={step + 1} width={width - GUTTER * 2} />
       </View>
 
       <ScrollView
         style={styles.flex}
-        contentContainerStyle={[
-          styles.content,
-          { paddingBottom: insets.bottom + 120 },
-        ]}
+        contentContainerStyle={[styles.content, { paddingBottom: insets.bottom + 120 }]}
         showsVerticalScrollIndicator={false}
       >
         <Animated.View key={step} entering={FadeInRight.duration(280)} style={styles.step}>
           {step === 0 && (
-            <Question
-              eyebrow="Question one"
-              title="Biological sex"
-              note="Selects the base column for every nutrient. The workbook publishes separate values for male and female across most of the 48 targets."
-            >
-              <OptionRow
+            <Question title="Biological sex">
+              <Option
                 label="Male"
                 selected={answers.sex === 'male'}
                 onPress={() => setAnswer('sex', 'male')}
               />
-              <OptionRow
+              <Option
                 label="Female"
                 selected={answers.sex === 'female'}
                 onPress={() => setAnswer('sex', 'female')}
@@ -149,53 +131,34 @@ export default function Onboarding() {
           )}
 
           {step === 1 && (
-            <Question
-              eyebrow="Question two"
-              title="Age"
-              note="Several targets step at 31, 51, 65 and 71 years. Below 19 the dataset makes no claim."
-            >
-              <InstrumentSlider
+            <Question title="Age">
+              <Slider
                 value={answers.age_years ?? 30}
                 onChange={(value) => setAnswer('age_years', value)}
                 min={16}
                 max={100}
                 unit="years"
-                minLabel="16"
-                maxLabel="100"
+                label="age"
               />
-              {underAge && (
-                <Callout tone="breach">
-                  Under 19 is outside this dataset&apos;s scope. Targets shown
-                  after this point would not be supported by the sources.
-                </Callout>
-              )}
+              {underAge && <Note>outside dataset scope — targets unsupported below 19</Note>}
             </Question>
           )}
 
           {step === 2 && (
-            <Question
-              eyebrow="Question three"
-              title="Weight"
-              note="Scales energy, water, protein and the nine indispensable amino acids. Vitamins and minerals are never scaled by body mass."
-            >
-              <InstrumentSlider
+            <Question title="Weight">
+              <Slider
                 value={answers.weight_kg ?? 70}
                 onChange={(value) => setAnswer('weight_kg', value)}
                 min={35}
                 max={200}
                 unit="kg"
-                minLabel="35 kg"
-                maxLabel="200 kg"
+                label="weight"
               />
             </Question>
           )}
 
           {step === 3 && (
-            <Question
-              eyebrow="Question four"
-              title="Diet"
-              note="A spectrum, not a category. Plant-heavy positions raise iron, zinc and B12 targets because the baseline assumes an omnivorous diet."
-            >
+            <Question title="Diet">
               <DietSpectrum
                 position={dietPosition}
                 onChange={(position, dietType, fraction) => {
@@ -205,26 +168,19 @@ export default function Onboarding() {
                 }}
               />
               {answers.diet_type && isLibraryThin(answers.diet_type) && (
-                <Callout tone="caution">
-                  Only {recipeCountForDiet(answers.diet_type)} recipes in the
-                  library fit this diet, so the plan will repeat more than
-                  usual. Moving one notch along the spectrum opens it up.
-                </Callout>
+                <Note>
+                  {`only ${recipeCountForDiet(answers.diet_type)} recipes fit — the plan will repeat`}
+                </Note>
               )}
             </Question>
           )}
 
           {step === 4 && (
-            <Question
-              eyebrow="Question five"
-              title="Activity"
-              note="Sets the PAL multiplier on basal metabolic rate, and raises protein and several B vitamins."
-            >
+            <Question title="Activity">
               {activityLevels.map((level) => (
-                <OptionRow
+                <Option
                   key={level.activity_level}
                   label={level.label}
-                  description={level.description}
                   meta={`×${level.pal_multiplier}`}
                   selected={answers.activity_level === level.activity_level}
                   onPress={() => setAnswer('activity_level', level.activity_level)}
@@ -234,11 +190,7 @@ export default function Onboarding() {
           )}
 
           {step === 5 && (
-            <Question
-              eyebrow="Question six"
-              title="Sun exposure"
-              note="Only latitude matters. It sets the vitamin D multiplier and how many months a year synthesis is not possible."
-            >
+            <Question title="Sun exposure" note="latitude only">
               <SunMap
                 latitude={answers.latitude}
                 longitude={answers.longitude}
@@ -252,11 +204,7 @@ export default function Onboarding() {
           )}
 
           {step === 6 && (
-            <Question
-              eyebrow="Question seven"
-              title="Cuisines"
-              note="A pull, not a filter. Nutrition targets always win, so a narrow choice never makes the plan unreachable."
-            >
+            <Question title="Cuisines" note="optional">
               <View style={styles.chips}>
                 {availableCuisines.map((cuisine) => (
                   <Chip
@@ -275,23 +223,15 @@ export default function Onboarding() {
                   />
                 ))}
               </View>
-              <Body small color={text.faint} style={styles.hint}>
-                Leave all unselected for no preference.
-              </Body>
             </Question>
           )}
 
           {step === 7 && (
-            <Question
-              eyebrow="Question eight"
-              title="Difficulty ceiling"
-              note="Derived per recipe from ingredient count, step count, time and technique."
-            >
+            <Question title="Difficulty ceiling">
               {[1, 2, 3, 4, 5].map((level) => (
-                <OptionRow
+                <Option
                   key={level}
-                  label={DIFFICULTY_LABELS[level].label}
-                  description={DIFFICULTY_LABELS[level].description}
+                  label={DIFFICULTY_LABELS[level]}
                   meta={`${level}/5`}
                   selected={answers.maxDifficulty === level}
                   onPress={() => setAnswer('maxDifficulty', level)}
@@ -301,144 +241,101 @@ export default function Onboarding() {
           )}
 
           {step === 8 && (
-            <Question
-              eyebrow="Question nine"
-              title="Time per meal"
-              note="Total time, including preparation. Recipes above this are excluded outright."
-            >
-              <InstrumentSlider
+            <Question title="Time per meal">
+              <Slider
                 value={answers.maxMinutes ?? 45}
                 onChange={(value) => setAnswer('maxMinutes', value)}
                 min={10}
                 max={180}
                 step={5}
-                format={(value) =>
-                  value >= 60
-                    ? `${Math.floor(value / 60)}h ${value % 60 ? `${value % 60}m` : ''}`.trim()
-                    : `${value} min`
-                }
-                minLabel="10 min"
-                maxLabel="3 hours"
+                unit="min"
+                label="ceiling"
               />
             </Question>
           )}
 
           {step === 9 && (
-            <Question
-              eyebrow="Question ten"
-              title="Weekly budget"
-              note="Ingredient cost is estimated from supermarket averages, so treat it as a guide rather than a quote."
-            >
-              <InstrumentSlider
+            <Question title="Weekly budget">
+              <Slider
                 value={answers.weeklyBudget ?? 70}
                 onChange={(value) => setAnswer('weeklyBudget', value)}
                 min={20}
                 max={250}
                 step={5}
-                format={(value) => `£${value}`}
-                minLabel="£20"
-                maxLabel="£250"
+                unit="£"
+                label="per week"
               />
             </Question>
           )}
 
           {step === 10 && (
-            <Question
-              eyebrow="Question eleven"
-              title="How often it repeats"
-              note="The schedule is fixed for a full cycle and then repeats. A shorter cycle is easier to shop for; a longer one gives more variety."
-            >
-              <View style={styles.cycleGrid}>
-                {(Object.keys(CYCLE_LABELS) as unknown as string[])
-                  .map(Number)
-                  .map((days) => (
-                    <OptionRow
-                      key={days}
-                      label={CYCLE_LABELS[days as CycleLength]}
-                      description={
-                        days === 1
-                          ? 'The same three meals every single day.'
-                          : `${days} days of meals, repeating.`
-                      }
-                      meta={`${days}d`}
-                      selected={cycleDays === days}
-                      onPress={() => setCycleDaysRaw(days as CycleLength)}
-                    />
-                  ))}
-              </View>
+            <Question title="How often it repeats">
+              {(Object.keys(CYCLE_LABELS) as unknown as string[]).map(Number).map((days) => (
+                <Option
+                  key={days}
+                  label={CYCLE_LABELS[days as CycleLength]}
+                  meta={`${days}d`}
+                  selected={cycleDays === days}
+                  onPress={() => setCycleDaysRaw(days as CycleLength)}
+                />
+              ))}
             </Question>
           )}
 
-          {step === 11 && targets && (
-            <Reveal targets={targets} />
-          )}
+          {step === 11 && targets && <Resolution targets={targets} />}
         </Animated.View>
       </ScrollView>
 
       <View style={[styles.footer, { paddingBottom: insets.bottom + space.md }]}>
-        <Pressable
+        <Press
           onPress={advance}
+          plain
           disabled={!canAdvance}
-          style={({ pressed }) => [
-            styles.cta,
-            !canAdvance && styles.ctaDisabled,
-            pressed && styles.ctaPressed,
-          ]}
-          accessibilityRole="button"
+          accessibilityLabel={step === STEP_COUNT - 1 ? 'Build my plan' : 'Continue'}
+          style={[styles.cta, !canAdvance && styles.ctaDisabled]}
         >
-          <Eyebrow color={canAdvance ? ink.void : text.faint}>
-            {step === STEP_COUNT - 1 ? 'Build my plan' : 'Continue'}
-          </Eyebrow>
-        </Pressable>
+          <Label color={canAdvance ? grade[0] : grade[50]}>
+            {step === STEP_COUNT - 1 ? 'build my plan' : 'continue'}
+          </Label>
+        </Press>
       </View>
     </View>
   );
 }
 
 function Question({
-  eyebrow,
   title,
   note,
   children,
 }: {
-  eyebrow: string;
   title: string;
   note?: string;
   children: React.ReactNode;
 }) {
   return (
     <View style={styles.question}>
-      <Eyebrow color={signal.endpoint}>{eyebrow}</Eyebrow>
-      <Title style={styles.questionTitle}>{title}</Title>
-      {note && (
-        <Body small color={text.faint} style={styles.note}>
+      <Title>{title}</Title>
+      {note ? (
+        <Label color={grade[50]} style={styles.questionNote}>
           {note}
-        </Body>
-      )}
+        </Label>
+      ) : null}
       <View style={styles.questionBody}>{children}</View>
     </View>
   );
 }
 
-function Callout({
-  tone,
-  children,
-}: {
-  tone: 'caution' | 'breach';
-  children: React.ReactNode;
-}) {
-  const colour = tone === 'breach' ? signal.breach : signal.caution;
+/** A note that changes the answer, rather than describing the question. */
+function Note({ children }: { children: string }) {
   return (
-    <View style={[styles.callout, { borderLeftColor: colour }]}>
-      <Body small color={colour} style={styles.calloutText}>
-        {children}
-      </Body>
+    <View style={styles.note}>
+      <Label color={grade[90]}>{children}</Label>
     </View>
   );
 }
 
 /** The payoff: the six inputs become 48 resolved targets. */
-function Reveal({ targets }: { targets: ReturnType<typeof resolveTargets> }) {
+function Resolution({ targets }: { targets: ReturnType<typeof resolveTargets> }) {
   const highlights = [
     'energy_kcal',
     'protein_g',
@@ -452,27 +349,22 @@ function Reveal({ targets }: { targets: ReturnType<typeof resolveTargets> }) {
 
   return (
     <View style={styles.question}>
-      <Eyebrow color={signal.endpoint}>Resolved</Eyebrow>
-      <Title style={styles.questionTitle}>Your daily targets</Title>
-      <Doctrine color={text.tertiary} style={styles.revealDoctrine}>
-        Forty-eight values, derived from your six answers.
-      </Doctrine>
+      <Title>Your daily targets</Title>
+      <Label color={grade[50]} style={styles.questionNote}>
+        {`${targets.nutrients.length} resolved`}
+      </Label>
 
-      <View style={styles.energyBlock}>
-        <Figure tiny color={text.faint}>
-          BASAL {formatValue(targets.bmr_kcal)} kcal × PAL {targets.pal_multiplier}
-        </Figure>
+      <View style={styles.energy}>
+        <Label color={grade[60]}>
+          {`basal ${formatAmount(targets.bmr_kcal)} × pal ${targets.pal_multiplier}`}
+        </Label>
         <View style={styles.energyRow}>
-          <Animated.Text entering={FadeIn.delay(200)} style={styles.energyValue}>
-            {formatValue(targets.energy_kcal)}
-          </Animated.Text>
-          <Figure color={text.tertiary} style={styles.energyUnit}>
-            kcal / day
-          </Figure>
+          <AnimatedNumber value={targets.energy_kcal} variant="display" color={grade[100]} />
+          <Figure color={grade[70]}>kcal / day</Figure>
         </View>
       </View>
 
-      <View style={styles.revealList}>
+      <View style={styles.highlights}>
         {highlights.map((id) => {
           const nutrient = targets.byId[id];
           if (!nutrient) return null;
@@ -482,92 +374,94 @@ function Reveal({ targets }: { targets: ReturnType<typeof resolveTargets> }) {
               name={nutrient.nutrient_name}
               unit={nutrient.unit}
               target={nutrient.value}
-              achieved={null}
-              coverage={coverageFor(id)}
-              compact
+              intake={null}
+              mark={markFor(nutrient, null)}
+              ul={nutrient.ul_value}
             />
           );
         })}
       </View>
 
       {breaches.length > 0 && (
-        <Callout tone="breach">
-          {breaches.map((n) => n.nutrient_name).join(', ')}{' '}
-          {breaches.length === 1 ? 'resolves' : 'resolve'} above the tolerable
-          upper intake level once your modifiers compound. Treat that as a
-          prompt to speak to a clinician, not as a shopping target.
-        </Callout>
+        <Note>
+          {`${breaches.map((n) => n.nutrient_name).join(', ')} resolve above the upper limit — speak to a clinician`}
+        </Note>
       )}
-
-      <Body small color={text.faint} style={styles.disclaimer}>
-        Gospel implements published intake guidance. It is not medical advice
-        and does not model pregnancy, lactation, medication or disease.
-      </Body>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: ink.base },
-  flex: { flex: 1 },
+  root: {
+    flex: 1,
+    backgroundColor: grade[0],
+  },
+  flex: {
+    flex: 1,
+  },
   header: {
     paddingHorizontal: GUTTER,
-    gap: space.xs,
-    backgroundColor: ink.base,
+    paddingBottom: space.sm,
   },
   headerRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: space.sm,
   },
   content: {
     paddingHorizontal: GUTTER,
     paddingTop: space.lg,
   },
-  step: { flex: 1 },
-  question: { gap: space.xs },
-  questionTitle: { marginTop: space.xxs },
-  note: { lineHeight: 19, marginTop: space.xxs },
-  questionBody: { marginTop: space.lg, gap: space.xs },
-  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: space.xs },
-  hint: { marginTop: space.sm },
-  cycleGrid: { gap: 0 },
-  callout: {
-    borderLeftWidth: 2,
-    paddingLeft: space.sm,
-    paddingVertical: space.xs,
+  step: {
+    flex: 1,
+  },
+  question: {
+    gap: space.xs,
+  },
+  questionNote: {
+    marginTop: space.xxs,
+  },
+  questionBody: {
+    marginTop: space.lg,
+  },
+  note: {
     marginTop: space.md,
+    paddingLeft: space.sm,
+    borderLeftWidth: stroke.medium,
+    borderLeftColor: grade[100],
+    paddingVertical: space.xs,
   },
-  calloutText: { lineHeight: 19 },
-  revealDoctrine: { marginTop: space.xs },
-  energyBlock: { marginTop: space.lg, gap: space.xxs },
-  energyRow: { flexDirection: 'row', alignItems: 'baseline', gap: space.xs },
-  energyValue: {
-    fontFamily: 'IBMPlexMono_600SemiBold',
-    fontSize: 46,
-    letterSpacing: -2,
-    color: signal.endpoint,
+  chips: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: space.xs,
   },
-  energyUnit: { marginBottom: 6 },
-  revealList: { marginTop: space.lg },
-  disclaimer: { marginTop: space.lg, lineHeight: 18 },
+  energy: {
+    marginTop: space.lg,
+    marginBottom: space.md,
+  },
+  energyRow: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    gap: space.xs,
+  },
+  highlights: {
+    marginTop: space.sm,
+  },
   footer: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
     paddingHorizontal: GUTTER,
     paddingTop: space.md,
-    backgroundColor: ink.base,
-    borderTopWidth: 1,
-    borderTopColor: ink.line,
+    borderTopWidth: stroke.hair,
+    borderTopColor: grade[40],
+    backgroundColor: grade[0],
   },
   cta: {
     alignItems: 'center',
-    backgroundColor: signal.endpoint,
-    paddingVertical: space.sm + 3,
-    borderRadius: radius.pill,
+    backgroundColor: grade[100],
+    paddingVertical: space.sm,
   },
-  ctaDisabled: { backgroundColor: ink.elevated },
-  ctaPressed: { opacity: 0.75 },
+  ctaDisabled: {
+    backgroundColor: grade[20],
+  },
 });
