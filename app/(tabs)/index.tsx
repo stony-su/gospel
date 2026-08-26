@@ -2,39 +2,38 @@
  * The Plan tab.
  *
  * The schedule is the product, so it opens here. Days run as a vertical list
- * of meal cards; the cycle selector at the top changes how long the schedule
- * runs before repeating, which regenerates it.
+ * of meals; the cycle selector changes how long the schedule runs before
+ * repeating, which regenerates it.
+ *
+ * Every sentence that used to sit under the title is gone. A plan is a table
+ * of days and dishes, and saying "the same meals every day" under a heading
+ * that already reads DAILY PLAN was telling the reader something the screen
+ * had just told them.
  */
 
 import { useMemo } from 'react';
 import { useRouter } from 'expo-router';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { Screen } from '@/components/primitives/Screen';
-import { Segmented } from '@/components/primitives/Choice';
-import {
-  Body,
-  Doctrine,
-  Eyebrow,
-  Figure,
-  Heading,
-  Title,
-} from '@/components/primitives/Text';
 import { recipesById } from '@/data/recipes';
 import { CYCLE_LABELS, type CycleLength, type MealSlot } from '@/domain/planner/types';
 import { useGospel, useTargets } from '@/store/useGospel';
-import { ink, radius, signal, space, text } from '@/theme/tokens';
+import { grade, space, stroke } from '@/theme/tokens';
+import { Segmented } from '@/ui/controls';
+import { formatAmount } from '@/ui/data';
+import { Divider, Header, Row, Screen, Section } from '@/ui/layout';
+import { AnimatedNumber, Press, Reveal } from '@/ui/motion';
+import { Figure, Heading, Label } from '@/ui/text';
 
 const CYCLE_OPTIONS: { value: CycleLength; label: string }[] = [
-  { value: 1, label: 'Daily' },
-  { value: 7, label: 'Weekly' },
-  { value: 14, label: '2 wk' },
-  { value: 21, label: '3 wk' },
-  { value: 28, label: 'Month' },
+  { value: 1, label: '1d' },
+  { value: 7, label: '7d' },
+  { value: 14, label: '14d' },
+  { value: 21, label: '21d' },
+  { value: 28, label: '28d' },
 ];
 
 const SLOT_ORDER: MealSlot[] = ['breakfast', 'lunch', 'dinner', 'snack'];
-
 const DAY_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 export default function PlanTab() {
@@ -57,20 +56,15 @@ export default function PlanTab() {
       .sort((a, b) => a[0] - b[0])
       .map(([dayIndex, meals]) => ({
         dayIndex,
-        meals: [...meals].sort(
-          (a, b) => SLOT_ORDER.indexOf(a.slot) - SLOT_ORDER.indexOf(b.slot),
-        ),
+        meals: [...meals].sort((a, b) => SLOT_ORDER.indexOf(a.slot) - SLOT_ORDER.indexOf(b.slot)),
       }));
   }, [plan]);
 
   if (!plan || !targets) {
     return (
       <Screen bottomInset={70}>
-        <Title>No plan yet</Title>
-        <Body color={text.faint} style={styles.empty}>
-          Finish onboarding and Gospel will resolve your targets and build a
-          schedule.
-        </Body>
+        <Header title="No plan" />
+        <Label color={grade[50]}>finish onboarding to resolve targets</Label>
       </Screen>
     );
   }
@@ -78,218 +72,173 @@ export default function PlanTab() {
   const energyTarget = targets.byId.energy_kcal?.value ?? 0;
   const energyAchieved = plan.averageNutrition.energy_kcal ?? 0;
   const energyDelta = energyTarget ? (energyAchieved - energyTarget) / energyTarget : 0;
+  const proteinTarget = targets.byId.protein_g?.value ?? 0;
 
   return (
     <Screen bottomInset={70}>
-      <View style={styles.header}>
-        <Eyebrow color={signal.endpoint}>The schedule</Eyebrow>
-        <Title>{CYCLE_LABELS[plan.cycleDays]} plan</Title>
-        <Doctrine color={text.tertiary} style={styles.subtitle}>
-          {plan.cycleDays === 1
-            ? 'The same meals every day.'
-            : `${plan.cycleDays} days, then it begins again.`}
-        </Doctrine>
-      </View>
+      <Header title={`${CYCLE_LABELS[plan.cycleDays]} plan`} refButton />
 
-      <View style={styles.cycleRow}>
-        <Segmented
-          options={CYCLE_OPTIONS}
-          value={cycleDays}
-          onChange={(value) => setCycleDays(value)}
-        />
-      </View>
+      <Reveal index={0} style={styles.cycle}>
+        <Segmented options={CYCLE_OPTIONS} value={cycleDays} onChange={setCycleDays} />
+      </Reveal>
 
-      <View style={styles.summary}>
-        <Metric
-          label="Energy"
-          value={`${Math.round(energyAchieved)}`}
-          unit="kcal/day"
-          tone={Math.abs(energyDelta) < 0.08 ? 'endpoint' : 'neutral'}
-          note={`${energyDelta >= 0 ? '+' : ''}${(energyDelta * 100).toFixed(0)}% vs target`}
+      <Section label="Per day" index={1}>
+        <Row
+          left={<Label>energy</Label>}
+          right={
+            <View style={styles.metric}>
+              <AnimatedNumber value={energyAchieved} color={grade[100]} suffix=" kcal" />
+              <Figure small color={grade[60]}>
+                {`${energyDelta >= 0 ? '+' : ''}${(energyDelta * 100).toFixed(0)}% vs ${Math.round(energyTarget)}`}
+              </Figure>
+            </View>
+          }
         />
-        <Metric
-          label="Cost"
-          value={`£${plan.costPerWeek.toFixed(0)}`}
-          unit="per week"
-          tone="neutral"
-          note={`£${plan.costPerCycle.toFixed(0)} per cycle`}
+        <Divider />
+        <Row
+          left={<Label>protein</Label>}
+          right={
+            <View style={styles.metric}>
+              <AnimatedNumber
+                value={plan.averageNutrition.protein_g ?? 0}
+                color={grade[100]}
+                suffix=" g"
+              />
+              <Figure small color={grade[60]}>{`target ${formatAmount(proteinTarget)}`}</Figure>
+            </View>
+          }
         />
-        <Metric
-          label="Protein"
-          value={`${Math.round(plan.averageNutrition.protein_g ?? 0)}`}
-          unit="g/day"
-          tone="neutral"
-          note={`target ${Math.round(targets.byId.protein_g?.value ?? 0)} g`}
+        <Divider />
+        <Row
+          left={<Label>cost</Label>}
+          right={
+            <View style={styles.metric}>
+              <AnimatedNumber value={plan.costPerWeek} color={grade[100]} prefix="£" suffix="/wk" />
+              <Figure small color={grade[60]}>
+                {`£${plan.costPerCycle.toFixed(0)} per cycle`}
+              </Figure>
+            </View>
+          }
         />
-      </View>
+      </Section>
 
       {plan.warnings.length > 0 && (
-        <View style={styles.warnings}>
+        <Section label="Unmet" index={2}>
           {plan.warnings.map((warning) => (
-            <View key={warning} style={styles.warning}>
-              <Body small color={signal.caution} style={styles.warningText}>
-                {warning}
-              </Body>
-            </View>
+            <Row key={warning} left={<Figure small color={grade[70]}>{warning}</Figure>} />
           ))}
-        </View>
+        </Section>
       )}
 
-      <View style={styles.days}>
-        {days.map(({ dayIndex, meals }) => (
-          <View key={dayIndex} style={styles.day}>
-            <View style={styles.dayHeader}>
-              <Eyebrow color={text.tertiary}>
-                {plan.cycleDays === 1
-                  ? 'Every day'
-                  : plan.cycleDays === 7
-                    ? DAY_NAMES[dayIndex % 7]
-                    : `Day ${String(dayIndex + 1).padStart(2, '0')}`}
-              </Eyebrow>
-              <View style={styles.dayRule} />
-            </View>
-
-            {meals.map((meal) => {
-              const recipe = recipesById.get(meal.recipeId);
-              if (!recipe) return null;
-              return (
-                <Pressable
-                  key={`${meal.dayIndex}-${meal.slot}`}
-                  onPress={() => router.push(`/recipe/${recipe.id}`)}
-                  style={({ pressed }) => [styles.meal, pressed && styles.mealPressed]}
-                  accessibilityRole="button"
-                >
-                  <View style={styles.mealSlot}>
-                    <Eyebrow color={text.faint}>{meal.slot.slice(0, 3)}</Eyebrow>
-                  </View>
-
-                  <View style={styles.mealBody}>
-                    <Heading color={text.primary} numberOfLines={2}>
-                      {recipe.name}
-                    </Heading>
-                    <View style={styles.mealMeta}>
-                      <Figure tiny color={text.faint}>
-                        {recipe.minutes} min
-                      </Figure>
-                      <Figure tiny color={text.faint}>
-                        L{recipe.difficulty}
-                      </Figure>
-                      <Figure tiny color={text.faint}>
-                        {Math.round(recipe.nutrition.energy_kcal * meal.servings)} kcal
-                      </Figure>
-                      {meal.servings !== 1 && (
-                        <Figure tiny color={signal.endpoint}>
-                          ×{meal.servings}
-                        </Figure>
-                      )}
-                    </View>
-                  </View>
-                </Pressable>
-              );
-            })}
+      {days.map(({ dayIndex, meals }, position) => (
+        <Reveal key={dayIndex} index={3 + position} style={styles.day}>
+          <View style={styles.dayHead}>
+            <Label>
+              {plan.cycleDays === 1
+                ? 'every day'
+                : plan.cycleDays === 7
+                  ? DAY_NAMES[dayIndex % 7]
+                  : `day ${String(dayIndex + 1).padStart(2, '0')}`}
+            </Label>
+            <View style={styles.dayRule} />
           </View>
-        ))}
-      </View>
 
-      <Pressable
+          {meals.map((meal) => {
+            const recipe = recipesById.get(meal.recipeId);
+            if (!recipe) return null;
+            return (
+              <Press
+                key={`${meal.dayIndex}-${meal.slot}`}
+                onPress={() => router.push(`/recipe/${recipe.id}`)}
+                plain
+                accessibilityLabel={recipe.name}
+                style={styles.meal}
+              >
+                <View style={styles.slot}>
+                  <Label color={grade[50]}>{meal.slot.slice(0, 3)}</Label>
+                </View>
+                <View style={styles.mealBody}>
+                  {/* The recipe description is never rendered. It is dataset
+                      copy - "simple, easy, and tastes great" - and it says
+                      nothing the name and the figures do not. */}
+                  <Heading numberOfLines={2}>{recipe.name}</Heading>
+                  <View style={styles.mealMeta}>
+                    <Figure small color={grade[60]}>{`${recipe.minutes} min`}</Figure>
+                    <Figure small color={grade[60]}>{`L${recipe.difficulty}`}</Figure>
+                    <Figure small color={grade[60]}>
+                      {`${Math.round(recipe.nutrition.energy_kcal * meal.servings)} kcal`}
+                    </Figure>
+                    {meal.servings !== 1 && (
+                      <Figure small color={grade[100]}>{`×${meal.servings}`}</Figure>
+                    )}
+                  </View>
+                </View>
+              </Press>
+            );
+          })}
+        </Reveal>
+      ))}
+
+      <Press
         onPress={() => regeneratePlan()}
-        style={({ pressed }) => [styles.regenerate, pressed && styles.mealPressed]}
-        accessibilityRole="button"
+        plain
+        accessibilityLabel="Build a different plan"
+        style={styles.regenerate}
       >
-        <Eyebrow color={text.tertiary}>Build a different plan</Eyebrow>
-      </Pressable>
-
-      <Figure tiny color={ink.dim} style={styles.seed}>
-        seed {plan.seed}
-      </Figure>
+        <Label color={grade[90]}>rebuild</Label>
+      </Press>
     </Screen>
   );
 }
 
-function Metric({
-  label,
-  value,
-  unit,
-  note,
-  tone,
-}: {
-  label: string;
-  value: string;
-  unit: string;
-  note: string;
-  tone: 'endpoint' | 'neutral';
-}) {
-  return (
-    <View style={styles.metric}>
-      <Eyebrow>{label}</Eyebrow>
-      <View style={styles.metricValueRow}>
-        <Body
-          style={styles.metricValue}
-          color={tone === 'endpoint' ? signal.endpoint : text.bright}
-        >
-          {value}
-        </Body>
-      </View>
-      <Figure tiny color={text.faint}>
-        {unit}
-      </Figure>
-      <Figure tiny color={ink.dim}>
-        {note}
-      </Figure>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
-  header: { gap: space.xxs },
-  subtitle: { marginTop: space.xxs },
-  empty: { marginTop: space.md, lineHeight: 21 },
-  cycleRow: { marginTop: space.lg },
-  summary: {
+  cycle: {
+    marginBottom: space.xl,
+  },
+  metric: {
+    alignItems: 'flex-end',
+  },
+  day: {
+    marginBottom: space.lg,
+  },
+  dayHead: {
     flexDirection: 'row',
-    marginTop: space.lg,
-    gap: space.md,
+    alignItems: 'center',
+    gap: space.sm,
+    marginBottom: space.xs,
   },
-  metric: { flex: 1, gap: 2 },
-  metricValueRow: { flexDirection: 'row', alignItems: 'baseline' },
-  metricValue: {
-    fontFamily: 'IBMPlexMono_600SemiBold',
-    fontSize: 22,
-    letterSpacing: -0.8,
+  dayRule: {
+    flex: 1,
+    height: stroke.hair,
+    backgroundColor: grade[30],
   },
-  warnings: { marginTop: space.lg, gap: space.xs },
-  warning: {
-    borderLeftWidth: 2,
-    borderLeftColor: signal.caution,
-    paddingLeft: space.sm,
-    paddingVertical: space.xxs,
-  },
-  warningText: { lineHeight: 18 },
-  days: { marginTop: space.xl, gap: space.lg },
-  day: { gap: space.xs },
-  dayHeader: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
-  dayRule: { flex: 1, height: 1, backgroundColor: ink.line },
   meal: {
     flexDirection: 'row',
-    gap: space.sm,
+    alignItems: 'flex-start',
     paddingVertical: space.sm,
-    paddingHorizontal: space.sm,
-    backgroundColor: ink.card,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: ink.line,
+    paddingLeft: space.sm,
+    gap: space.sm,
+    borderBottomWidth: stroke.hair,
+    borderBottomColor: grade[20],
   },
-  mealPressed: { opacity: 0.65 },
-  mealSlot: { width: 34, paddingTop: 3 },
-  mealBody: { flex: 1, gap: space.xxs },
-  mealMeta: { flexDirection: 'row', gap: space.sm, flexWrap: 'wrap' },
+  slot: {
+    width: 34,
+    paddingTop: space.xxs,
+  },
+  mealBody: {
+    flex: 1,
+    gap: space.xxs,
+  },
+  mealMeta: {
+    flexDirection: 'row',
+    gap: space.sm,
+  },
   regenerate: {
-    marginTop: space.xl,
-    alignItems: 'center',
-    paddingVertical: space.sm + 2,
-    borderRadius: radius.pill,
-    borderWidth: 1,
-    borderColor: ink.line,
+    alignSelf: 'flex-start',
+    marginTop: space.md,
+    paddingVertical: space.sm,
+    paddingHorizontal: space.md,
+    borderWidth: stroke.hair,
+    borderColor: grade[40],
   },
-  seed: { marginTop: space.sm, textAlign: 'center' },
 });
