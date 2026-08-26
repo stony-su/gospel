@@ -1,14 +1,13 @@
 /**
- * The Nutrition tab.
+ * The Nutrition tab, as an index.
  *
- * Every one of the 48 resolved targets, grouped by category, each against
- * what the plan actually delivers. Where the recipe data cannot measure a
- * nutrient, the bar is an empty track rather than a zero - most of them are,
- * and drawing the absence is the point.
+ * Forty-eight targets on one scroll was a wall. What a reader wants first is
+ * the shape of the answer - which groups are covered and which are not - and
+ * only then the rows. So this screen answers that in six lines and hands off
+ * to a page per category.
  *
- * This is the screen the monochrome decision has to survive. Status is fill,
- * hatch and inversion; the only thing colour used to say that form does not
- * is nothing.
+ * The energy plot stays here because it is the one genuinely cross-cutting
+ * view: it belongs to no category and reads against all of them.
  */
 
 import { useMemo } from 'react';
@@ -19,23 +18,14 @@ import { Polyline } from 'react-native-svg';
 import { categoryRank } from '@/data/nutrition';
 import { recipesById } from '@/data/recipes';
 import type { ResolvedNutrient } from '@/domain/nutrition/types';
-import { MEASURED_NUTRIENTS, coverageFor } from '@/domain/planner/coverage';
+import { coverageFor } from '@/domain/planner/coverage';
 import { useGospel, useTargets } from '@/store/useGospel';
 import { GUTTER, grade, space, stroke } from '@/theme/tokens';
-import { NutrientBar, markFor } from '@/ui/data';
+import { categoryLabel, metCount } from '@/ui/data';
 import { Header, Screen, Section } from '@/ui/layout';
-import { Reveal } from '@/ui/motion';
+import { Press, Reveal } from '@/ui/motion';
 import { Plot } from '@/ui/plot';
 import { Figure, Label } from '@/ui/text';
-
-const CATEGORY_LABELS: Record<string, string> = {
-  energy: 'Energy',
-  macronutrient: 'Macronutrients',
-  water: 'Water',
-  amino_acid: 'Indispensable amino acids',
-  vitamin: 'Vitamins',
-  mineral: 'Minerals',
-};
 
 const CHART_HEIGHT = 150;
 
@@ -80,22 +70,6 @@ export default function NutritionTab() {
     );
   }
 
-  /** What the plan delivers for a nutrient, or null if unmeasurable. */
-  const achievedFor = (nutrient: ResolvedNutrient): number | null => {
-    if ((MEASURED_NUTRIENTS as readonly string[]).includes(nutrient.nutrient_id)) {
-      return plan.averageNutrition[nutrient.nutrient_id] ?? null;
-    }
-    if (
-      nutrient.nutrient_id === 'fat_pct_energy_min' ||
-      nutrient.nutrient_id === 'fat_pct_energy_max'
-    ) {
-      const energy = plan.averageNutrition.energy_kcal ?? 0;
-      const fat = plan.averageNutrition.fat_g ?? 0;
-      return energy > 0 ? ((fat * 9) / energy) * 100 : null;
-    }
-    return null;
-  };
-
   const measuredCount = targets.nutrients.filter(
     (nutrient) => coverageFor(nutrient.nutrient_id) !== 'awaiting_fdc',
   ).length;
@@ -137,50 +111,75 @@ export default function NutritionTab() {
         </Section>
       )}
 
-      {grouped.map(([category, items], position) => (
-        <Reveal key={category} index={1 + position} style={styles.group}>
-          <View style={styles.groupHead}>
-            <Label>{CATEGORY_LABELS[category] ?? category}</Label>
-            <View style={styles.groupRule} />
-            <Figure small color={grade[50]}>
-              {String(items.length)}
-            </Figure>
-          </View>
+      <Label style={styles.groupsLabel}>Groups</Label>
 
-          {items.map((nutrient) => {
-            const achieved = achievedFor(nutrient);
-            return (
-              <NutrientBar
-                key={nutrient.nutrient_id}
-                name={nutrient.nutrient_name}
-                unit={nutrient.unit}
-                target={nutrient.value}
-                intake={achieved}
-                mark={markFor(nutrient, achieved)}
-                ul={nutrient.ul_value}
-                onPress={() => router.push(`/nutrient/${nutrient.nutrient_id}`)}
-              />
-            );
-          })}
-        </Reveal>
-      ))}
+      {grouped.map(([category, items], position) => {
+        const met = metCount(plan, items);
+        return (
+          <Reveal key={category} index={1 + position}>
+            <Press
+              // Object form: `/nutrition` is also a tab route, so typed
+              // routes emit the category page as a static pathname rather
+              // than a template. This is the canonical syntax regardless.
+              onPress={() =>
+                router.push({ pathname: '/nutrition/[category]', params: { category } })
+              }
+              plain
+              accessibilityLabel={categoryLabel(category)}
+              style={styles.row}
+            >
+              <View style={styles.rowHead}>
+                <Label color={grade[90]}>{categoryLabel(category)}</Label>
+                <View style={styles.rowRule} />
+                <Figure small color={grade[70]}>{`${met}/${items.length}`}</Figure>
+                <Label color={grade[50]}>›</Label>
+              </View>
+
+              {/* One bar per group: how much of it the plan reaches. The
+                  detail is a tap away; this is the shape of the answer. */}
+              <View style={styles.track}>
+                <View
+                  style={[
+                    styles.fill,
+                    { width: `${items.length > 0 ? (met / items.length) * 100 : 0}%` },
+                  ]}
+                />
+              </View>
+            </Press>
+          </Reveal>
+        );
+      })}
+
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  group: {
-    marginBottom: space.xl,
+  groupsLabel: {
+    marginBottom: space.sm,
   },
-  groupHead: {
+  row: {
+    paddingVertical: space.sm,
+  },
+  rowHead: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: space.sm,
     marginBottom: space.xs,
   },
-  groupRule: {
+  rowRule: {
     flex: 1,
     height: stroke.hair,
     backgroundColor: grade[30],
+  },
+  track: {
+    height: 6,
+    borderWidth: stroke.hair,
+    borderColor: grade[40],
+    overflow: 'hidden',
+  },
+  fill: {
+    height: '100%',
+    backgroundColor: grade[100],
   },
 });

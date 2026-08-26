@@ -8,6 +8,12 @@ export {
 export { DietSpectrum } from './DietSpectrum';
 export { barFraction, formatAmount, markFor, type Mark } from './mark';
 export { NutrientBar } from './NutrientBar';
+export {
+  CATEGORY_LABELS,
+  achievedForNutrient,
+  categoryLabel,
+  metCount,
+} from './nutrition';
 export { Plate } from './Plate';
 export { StatBlock } from './StatBlock';
 export { formatMass } from './units';

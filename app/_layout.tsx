@@ -86,6 +86,7 @@ export default function RootLayout() {
             name="nutrient/[id]"
             options={{ presentation: 'modal', animation: 'slide_from_bottom' }}
           />
+          <Stack.Screen name="nutrition/[category]" />
         </Stack>
       </SafeAreaProvider>
     </GestureHandlerRootView>
