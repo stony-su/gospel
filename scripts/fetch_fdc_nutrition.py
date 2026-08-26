@@ -39,6 +39,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 INGREDIENTS = ROOT / "src" / "data" / "generated" / "ingredients.json"
 OUT = ROOT / "src" / "data" / "generated" / "ingredient_nutrition.json"
+OVERRIDES = ROOT / "src" / "data" / "generated" / "fdc_overrides.json"
 CACHE = ROOT / "cache" / "fdc"
 DETAIL_CACHE = ROOT / "cache" / "fdc-detail"
 
@@ -314,7 +315,22 @@ def main() -> None:
     print(f"searched: {len(list(CACHE.glob('*.json')))} / {len(ingredients)}", flush=True)
 
     # --- Phase 2: full panels, in batches ----------------------------------
+    #
+    # Overrides are loaded here, not at assembly, because their fdcIds need
+    # queueing like any other. An override pointing at a food whose panel was
+    # never fetched yields no nutrients at all, which is worse than the wrong
+    # match it replaced.
+    overrides = (
+        json.loads(OVERRIDES.read_text(encoding="utf-8")) if OVERRIDES.exists() else {}
+    )
+    if overrides:
+        print(f"overrides: {len(overrides)}", flush=True)
+
     wanted: list[int] = []
+    for override in overrides.values():
+        fdc_id = override.get("fdc_id")
+        if fdc_id and not (DETAIL_CACHE / f"{fdc_id}.json").exists():
+            wanted.append(int(fdc_id))
     for ingredient in ingredients:
         path = CACHE / f"{slug(ingredient['id'])}.json"
         if not path.exists():
@@ -340,6 +356,11 @@ def main() -> None:
         time.sleep(DELAY_SECONDS)
 
     # --- Phase 3: assemble whatever the caches hold ------------------------
+    #
+    # Overrides are applied ahead of the auto-match, not instead of it. FDC's
+    # relevance ranking optimises for text similarity rather than for being the
+    # same food, and refine_fdc_matches.py re-ranks the ingredients carrying
+    # most of the corpus's weight. The automatic path still covers the tail.
     result: dict[str, dict] = {}
     for ingredient in ingredients:
         path = CACHE / f"{slug(ingredient['id'])}.json"
@@ -347,6 +368,16 @@ def main() -> None:
             continue
 
         hit = json.loads(path.read_text(encoding="utf-8"))
+
+        override = overrides.get(ingredient["id"])
+        if override and override.get("fdc_id"):
+            hit = {
+                "fdcId": override["fdc_id"],
+                "description": override.get("match_description"),
+                "dataType": override.get("data_type"),
+                "score": override.get("rank_score"),
+            }
+
         fdc_id = hit.get("fdcId")
         if not fdc_id:
             continue
@@ -357,6 +388,17 @@ def main() -> None:
         source = json.loads(detail_path.read_text(encoding="utf-8")) if detail_path.exists() else hit
 
         nutrients = panel(source)
+        if not nutrients and override:
+            # The override's panel never arrived. Fall back to the automatic
+            # match rather than leaving the ingredient with nothing.
+            auto = json.loads(path.read_text(encoding="utf-8"))
+            auto_id = auto.get("fdcId")
+            auto_path = DETAIL_CACHE / f"{auto_id}.json" if auto_id else None
+            if auto_path and auto_path.exists():
+                source = json.loads(auto_path.read_text(encoding="utf-8"))
+                hit = auto
+                nutrients = panel(source)
+
         if not nutrients:
             continue
 
@@ -367,6 +409,7 @@ def main() -> None:
             "match_description": hit.get("description"),
             "match_score": round(float(hit.get("score") or 0), 3),
             "data_type": hit.get("dataType"),
+            "overridden": bool(override and override.get("fdc_id")),
             "full_panel": detail_path.exists(),
             "per_100g": nutrients,
         }
