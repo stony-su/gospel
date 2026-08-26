@@ -13,13 +13,13 @@
  */
 
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, useWindowDimensions } from 'react-native';
 
 import { cuisineLabels, ingredientsById, recipesById } from '@/data/recipes';
 import { fatPercentOfEnergy } from '@/domain/planner/coverage';
 import { useGospel } from '@/store/useGospel';
-import { grade, space, stroke } from '@/theme/tokens';
-import { formatMass } from '@/ui/data';
+import { GUTTER, grade, space, stroke } from '@/theme/tokens';
+import { Plate, formatMass } from '@/ui/data';
 import { Header, Row, Screen, Section } from '@/ui/layout';
 import { AnimatedNumber, Press, Reveal } from '@/ui/motion';
 import { Figure, Label, Prose } from '@/ui/text';
@@ -30,6 +30,7 @@ export default function RecipeDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const plan = useGospel((state) => state.plan);
+  const { width } = useWindowDimensions();
 
   const recipe = recipesById.get(Number(id));
 
@@ -55,10 +56,19 @@ export default function RecipeDetail() {
         <Label color={grade[70]}>close</Label>
       </Press>
 
-      <Header
-        title={recipe.name}
-        right={<Label>{cuisineLabels[recipe.cuisine] ?? recipe.cuisine}</Label>}
+      <Plate
+        uri={recipe.image ?? null}
+        width={width - GUTTER * 2}
+        height={(width - GUTTER * 2) * 0.6}
+        fallbackLabel="no photograph"
       />
+
+      <View style={styles.afterPlate}>
+        <Header
+          title={recipe.name}
+          right={<Label>{cuisineLabels[recipe.cuisine] ?? recipe.cuisine}</Label>}
+        />
+      </View>
 
       <Reveal index={0} style={styles.stats}>
         <Stat label="time" value={recipe.minutes} unit="min" />
@@ -215,6 +225,9 @@ function Stat({
 }
 
 const styles = StyleSheet.create({
+  afterPlate: {
+    marginTop: space.md,
+  },
   close: {
     alignSelf: 'flex-start',
     paddingVertical: space.xs,

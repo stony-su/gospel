@@ -20,7 +20,7 @@ import { CYCLE_LABELS, type CycleLength, type MealSlot } from '@/domain/planner/
 import { useGospel, useTargets } from '@/store/useGospel';
 import { grade, space, stroke } from '@/theme/tokens';
 import { Segmented } from '@/ui/controls';
-import { formatAmount } from '@/ui/data';
+import { Plate, formatAmount } from '@/ui/data';
 import { Divider, Header, Row, Screen, Section } from '@/ui/layout';
 import { AnimatedNumber, Press, Reveal } from '@/ui/motion';
 import { Figure, Heading, Label } from '@/ui/text';
@@ -35,6 +35,9 @@ const CYCLE_OPTIONS: { value: CycleLength; label: string }[] = [
 
 const SLOT_ORDER: MealSlot[] = ['breakfast', 'lunch', 'dinner', 'snack'];
 const DAY_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+/** Small enough that a 28-day cycle is not 84 image requests of consequence. */
+const PLATE = 44;
 
 export default function PlanTab() {
   const router = useRouter();
@@ -154,15 +157,19 @@ export default function PlanTab() {
                 accessibilityLabel={recipe.name}
                 style={styles.meal}
               >
-                <View style={styles.slot}>
-                  <Label color={grade[50]}>{meal.slot.slice(0, 3)}</Label>
-                </View>
+                <Plate
+                  uri={recipe.image ?? null}
+                  width={PLATE}
+                  height={PLATE}
+                  fallbackLabel={meal.slot.slice(0, 3)}
+                />
                 <View style={styles.mealBody}>
                   {/* The recipe description is never rendered. It is dataset
                       copy - "simple, easy, and tastes great" - and it says
                       nothing the name and the figures do not. */}
                   <Heading numberOfLines={2}>{recipe.name}</Heading>
                   <View style={styles.mealMeta}>
+                    <Label color={grade[50]}>{meal.slot.slice(0, 3)}</Label>
                     <Figure small color={grade[60]}>{`${recipe.minutes} min`}</Figure>
                     <Figure small color={grade[60]}>{`L${recipe.difficulty}`}</Figure>
                     <Figure small color={grade[60]}>
@@ -216,14 +223,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     paddingVertical: space.sm,
-    paddingLeft: space.sm,
     gap: space.sm,
     borderBottomWidth: stroke.hair,
     borderBottomColor: grade[20],
-  },
-  slot: {
-    width: 34,
-    paddingTop: space.xxs,
   },
   mealBody: {
     flex: 1,
@@ -231,6 +233,7 @@ const styles = StyleSheet.create({
   },
   mealMeta: {
     flexDirection: 'row',
+    alignItems: 'baseline',
     gap: space.sm,
   },
   regenerate: {
