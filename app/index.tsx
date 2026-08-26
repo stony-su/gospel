@@ -2,68 +2,64 @@
  * The title screen, and the gate.
  *
  * Returning users are sent straight to their plan. First-time users get the
- * motto, which is the only place in the app where the type is allowed to be
- * the whole point.
+ * one screen in the app that is allowed to be mostly empty: a name, two
+ * counts, and a way in.
+ *
+ * The motto that used to sit here is gone with the serif that set it. What
+ * replaces it is the only claim worth making up front - how many published
+ * targets and how many recipes are actually behind this - stated as figures
+ * rather than as a sentence about figures.
  */
 
-import { useEffect } from 'react';
 import { Redirect, useRouter } from 'expo-router';
-import { Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
-import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
+import { StyleSheet, View, useWindowDimensions } from 'react-native';
 
-import { TwineField } from '@/components/charts/TwineField';
-import { Body, Doctrine, Eyebrow } from '@/components/primitives/Text';
-import { recipes } from '@/data/recipes';
 import { nutrients } from '@/data/nutrition';
+import { recipes } from '@/data/recipes';
 import { useGospel } from '@/store/useGospel';
-import { ink, radius, signal, space, text } from '@/theme/tokens';
+import { grade, space, stroke } from '@/theme/tokens';
+import { Press, Reveal } from '@/ui/motion';
+import { Graticule } from '@/ui/plot';
+import { Display, Label } from '@/ui/text';
 
 export default function Landing() {
   const router = useRouter();
   const complete = useGospel((state) => state.onboardingComplete);
   const { width, height } = useWindowDimensions();
 
-  useEffect(() => {
-    // Nothing to prefetch; the datasets are bundled and parsed on import.
-  }, []);
-
   if (complete) return <Redirect href="/(tabs)" />;
 
   return (
     <View style={styles.root}>
-      <TwineField width={width} height={height} intensity={1.8} liveNodes bands={7} />
+      <Graticule width={width} height={height} />
 
       <View style={styles.content}>
-        <Animated.View entering={FadeIn.duration(700)}>
-          <Eyebrow color={signal.endpoint}>Gospel</Eyebrow>
-        </Animated.View>
+        <Reveal index={0}>
+          <Label color={grade[100]}>gospel</Label>
+        </Reveal>
 
-        <Animated.View entering={FadeInDown.delay(220).duration(800)}>
-          <Doctrine large color={text.primary} style={styles.motto}>
-            Let science be my gospel{'\n'}and life be my creed
-          </Doctrine>
-        </Animated.View>
-
-        <Animated.View entering={FadeIn.delay(700).duration(700)} style={styles.stats}>
-          <View style={styles.statRow}>
-            <Eyebrow>{nutrients.length} nutrient targets</Eyebrow>
-            <Eyebrow>{recipes.length.toLocaleString('en-GB')} recipes</Eyebrow>
+        <Reveal index={2} style={styles.figures}>
+          <View style={styles.figure}>
+            <Display>{String(nutrients.length)}</Display>
+            <Label>nutrient targets</Label>
           </View>
-          <Body small color={text.faint} style={styles.blurb}>
-            A meal schedule that repeats, built from published intake standards
-            and sized to your body. Answer eleven questions and it resolves.
-          </Body>
-        </Animated.View>
+          <View style={styles.rule} />
+          <View style={styles.figure}>
+            <Display>{recipes.length.toLocaleString('en-GB')}</Display>
+            <Label>recipes</Label>
+          </View>
+        </Reveal>
 
-        <Animated.View entering={FadeInDown.delay(950).duration(700)}>
-          <Pressable
+        <Reveal index={5}>
+          <Press
             onPress={() => router.push('/onboarding')}
-            style={({ pressed }) => [styles.cta, pressed && styles.ctaPressed]}
-            accessibilityRole="button"
+            plain
+            accessibilityLabel="Begin"
+            style={styles.cta}
           >
-            <Eyebrow color={ink.void}>Begin</Eyebrow>
-          </Pressable>
-        </Animated.View>
+            <Label color={grade[0]}>begin</Label>
+          </Press>
+        </Reveal>
       </View>
     </View>
   );
@@ -72,36 +68,31 @@ export default function Landing() {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: ink.base,
+    backgroundColor: grade[0],
   },
   content: {
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: space.lg,
-    gap: space.xl,
+    gap: space.xxl,
   },
-  motto: {
-    marginTop: space.md,
-  },
-  stats: {
-    gap: space.sm,
-  },
-  statRow: {
+  figures: {
     flexDirection: 'row',
-    gap: space.md,
+    alignItems: 'flex-start',
+    gap: space.lg,
   },
-  blurb: {
-    lineHeight: 21,
-    maxWidth: 320,
+  figure: {
+    gap: space.xxs,
+  },
+  rule: {
+    width: stroke.hair,
+    alignSelf: 'stretch',
+    backgroundColor: grade[40],
   },
   cta: {
     alignSelf: 'flex-start',
-    backgroundColor: signal.endpoint,
+    backgroundColor: grade[100],
     paddingHorizontal: space.lg,
-    paddingVertical: space.sm + 2,
-    borderRadius: radius.pill,
-  },
-  ctaPressed: {
-    opacity: 0.75,
+    paddingVertical: space.sm,
   },
 });
