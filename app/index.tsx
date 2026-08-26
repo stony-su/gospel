@@ -19,7 +19,7 @@ import { recipes } from '@/data/recipes';
 import { useGospel } from '@/store/useGospel';
 import { grade, space, stroke } from '@/theme/tokens';
 import { Press, Reveal } from '@/ui/motion';
-import { Graticule } from '@/ui/plot';
+import { Field } from '@/ui/plot';
 import { Display, Label } from '@/ui/text';
 
 export default function Landing() {
@@ -31,7 +31,7 @@ export default function Landing() {
 
   return (
     <View style={styles.root}>
-      <Graticule width={width} height={height} />
+      <Field name="landing" width={width} height={height} />
 
       <View style={styles.content}>
         <Reveal index={0}>

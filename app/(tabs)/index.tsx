@@ -62,7 +62,7 @@ export default function PlanTab() {
 
   if (!plan || !targets) {
     return (
-      <Screen bottomInset={70}>
+      <Screen bottomInset={70} field="plan">
         <Header title="No plan" />
         <Label color={grade[50]}>finish onboarding to resolve targets</Label>
       </Screen>
@@ -75,7 +75,7 @@ export default function PlanTab() {
   const proteinTarget = targets.byId.protein_g?.value ?? 0;
 
   return (
-    <Screen bottomInset={70}>
+    <Screen bottomInset={70} field="plan">
       <Header title={`${CYCLE_LABELS[plan.cycleDays]} plan`} refButton />
 
       <Reveal index={0} style={styles.cycle}>

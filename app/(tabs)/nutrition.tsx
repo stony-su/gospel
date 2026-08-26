@@ -105,7 +105,7 @@ export default function NutritionTab() {
   const energyMax = Math.max(energyTarget, ...dailyEnergy) * 1.1;
 
   return (
-    <Screen bottomInset={70} gridOpacity={0.6}>
+    <Screen bottomInset={70} field="dense">
       <Header
         title="Nutrition"
         refButton

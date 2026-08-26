@@ -87,7 +87,7 @@ export default function PantryTab() {
   const occasional = rows.length - everyCycle;
 
   return (
-    <Screen bottomInset={70} gridOpacity={0.6}>
+    <Screen bottomInset={70} field="dense">
       <Header title="Pantry" refButton right={<Label>{`${cycleCount} cycles`}</Label>} />
 
       <Reveal index={0} style={styles.summary}>

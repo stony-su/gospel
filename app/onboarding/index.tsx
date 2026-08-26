@@ -32,7 +32,7 @@ import { GUTTER, grade, space, stroke } from '@/theme/tokens';
 import { Chip, Option, Slider } from '@/ui/controls';
 import { DietSpectrum, NutrientBar, SunMap, formatAmount, markFor } from '@/ui/data';
 import { AnimatedNumber, Press } from '@/ui/motion';
-import { ProgressRail } from '@/ui/plot';
+import { Field, ProgressRail } from '@/ui/plot';
 import { Figure, Label, Title } from '@/ui/text';
 
 const DIFFICULTY_LABELS: Record<number, string> = {
@@ -48,7 +48,7 @@ const STEP_COUNT = 12;
 export default function Onboarding() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
 
   const answers = useGospel((state) => state.answers);
   const setAnswer = useGospel((state) => state.setAnswer);
@@ -97,6 +97,8 @@ export default function Onboarding() {
 
   return (
     <View style={styles.root}>
+      <Field name="onboarding" width={width} height={height} />
+
       <View style={[styles.header, { paddingTop: insets.top + space.sm }]}>
         <View style={styles.headerRow}>
           <Press onPress={goBack} plain accessibilityLabel="Previous">

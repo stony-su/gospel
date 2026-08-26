@@ -1,10 +1,11 @@
 /**
  * The page shell.
  *
- * Every screen sits on the same black ground with the same graticule behind
- * it, so moving between tabs feels like moving around one instrument rather
- * than between separate documents. There is no way to turn the grid off: a
- * screen without it would read as a different application.
+ * Every screen sits on the same black ground with a field of marks behind it,
+ * so moving between tabs feels like moving around one instrument rather than
+ * between separate documents. The field cannot be turned off - a screen
+ * without it would read as a different application - but each screen chooses
+ * a composition suited to how much it is already carrying.
  */
 
 import type { ReactNode } from 'react';
@@ -18,8 +19,9 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import type { FieldName } from '@/theme/field';
 import { GUTTER, grade, space } from '@/theme/tokens';
-import { Graticule } from '@/ui/plot';
+import { Field } from '@/ui/plot';
 
 interface ScreenProps {
   children: ReactNode;
@@ -27,8 +29,8 @@ interface ScreenProps {
   scroll?: boolean;
   /** Extra bottom padding, e.g. to clear a tab bar. */
   bottomInset?: number;
-  /** Lower the grid under unusually dense content. */
-  gridOpacity?: number;
+  /** Which background composition to draw. Dense screens want `dense`. */
+  field?: FieldName;
   contentStyle?: StyleProp<ViewStyle>;
 }
 
@@ -36,7 +38,7 @@ export function Screen({
   children,
   scroll = true,
   bottomInset = 0,
-  gridOpacity = 1,
+  field = 'detail',
   contentStyle,
 }: ScreenProps) {
   const { width, height } = useWindowDimensions();
@@ -61,7 +63,7 @@ export function Screen({
 
   return (
     <View style={styles.root}>
-      <Graticule width={width} height={height} opacity={gridOpacity} />
+      <Field name={field} width={width} height={height} />
       {body}
     </View>
   );
