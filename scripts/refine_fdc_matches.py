@@ -65,6 +65,9 @@ CONCENTRATED = [
     # Prepared and packaged forms, for the same reason: a recipe asking for
     # potatoes does not mean a frozen potato-and-pepper dish.
     "frozen", "canned", "roll", "battered", "breaded", "seasoned",
+    # Dry and cubed forms of what a recipe uses as a liquid. A stock cube is
+    # 24,000 mg of sodium per 100 g; the broth made from it is about 300.
+    "cubed", "cube", "cubes", "dry", "instant", "mix", "condensed",
 ]
 
 # Forms that indicate the plain, as-purchased food.
@@ -103,6 +106,34 @@ STAPLE_QUERIES: dict[str, str] = {
     "potatoes": "potatoes, flesh and skin, raw",
     "cheddar cheese": "cheese, cheddar",
     "vegetable oil": "oil, vegetable",
+    # Found by scripts/audit_data.py, which flagged each of these as
+    # physically or categorically impossible before anyone had to notice it
+    # on screen. Cod at 30,000 ug of vitamin A is cod liver oil; bourbon at
+    # 514 kcal was a rum ball.
+    "cod steaks": "fish, cod, atlantic, raw",
+    "cod fish fillet": "fish, cod, atlantic, raw",
+    "cod fish fillets": "fish, cod, atlantic, raw",
+    "bourbon": "alcoholic beverage, distilled, all",
+    "2 milk": "milk, reduced fat, fluid, 2%",
+    "ahi tuna steaks": "fish, tuna, fresh, yellowfin, raw",
+    "chicken bouillon": "soup, chicken broth, canned, prepared",
+    "chicken bouillon cube": "soup, chicken broth, canned, prepared",
+    "chicken bouillon cubes": "soup, chicken broth, canned, prepared",
+    "chicken bouillon granule": "soup, chicken broth, canned, prepared",
+    "chicken bouillon granules": "soup, chicken broth, canned, prepared",
+    "chicken bouillon powder": "soup, chicken broth, canned, prepared",
+    "artificial vanilla flavoring": "vanilla extract",
+    "amarula cream liqueur": "alcoholic beverage, liqueur, coffee with cream",
+    "baileys irish cream": "alcoholic beverage, liqueur, coffee with cream",
+    "creme de cacao": "alcoholic beverage, liqueur, coffee, 63 proof",
+    "triple sec": "alcoholic beverage, liqueur, coffee, 63 proof",
+    # Second audit pass: each of these was physically impossible for what it
+    # claims to be. Chicken broth at 900 kcal per 100 g was chicken fat.
+    "fat free chicken broth": "soup, chicken broth, canned, prepared",
+    "italian tomatoes": "tomatoes, red, ripe, canned",
+    "italian-style tomatoes": "tomatoes, red, ripe, canned",
+    "lemon rind": "lemon peel, raw",
+    "lemon rind of": "lemon peel, raw",
 }
 
 
@@ -196,6 +227,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--top", type=int, default=250, help="ingredients to re-match")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--only", default="", help="comma-separated ingredient ids")
     args = parser.parse_args()
 
     recipes = json.loads(RECIPES.read_text(encoding="utf-8"))
@@ -215,10 +247,15 @@ def main() -> None:
             )
 
     ranked = sorted(mass.items(), key=lambda kv: -kv[1])[: args.top]
+    if args.only:
+        wanted_ids = {i.strip() for i in args.only.split(",") if i.strip()}
+        ranked = [(i, mass.get(i, 0.0)) for i in wanted_ids]
     print(f"re-matching the top {len(ranked)} ingredients by corpus mass")
 
     key = api_key()
-    overrides: dict[str, dict] = {}
+    overrides: dict[str, dict] = (
+        json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() and args.only else {}
+    )
     rejected: list[str] = []
     improved = 0
 
@@ -229,19 +266,32 @@ def main() -> None:
         # name - scoring against the query itself compares a description to a
         # description and rejects the very match it was written to select.
         plain = query_for(name)
-        query = STAPLE_QUERIES.get(ingredient_id) or STAPLE_QUERIES.get(name) or plain
+        stated = STAPLE_QUERIES.get(ingredient_id) or STAPLE_QUERIES.get(name.lower())
+        query = stated or plain
         foods = search_candidates(query, key)
         if not foods:
             time.sleep(DELAY_SECONDS)
             continue
 
-        best = max(foods, key=lambda f: score(plain, f.get("description", "")))
-        best_score = score(plain, best.get("description", ""))
+        if stated:
+            # The query names the food precisely, so FDC's own ranking is the
+            # thing to trust. Re-scoring against the plain ingredient name
+            # would let a worse candidate win the very search written to
+            # avoid it - "triple sec" scored light beer above the liqueur.
+            best = foods[0]
+            best_score = score(plain, best.get("description", ""))
+        else:
+            best = max(foods, key=lambda f: score(plain, f.get("description", "")))
+            best_score = score(plain, best.get("description", ""))
 
         # Below the floor, no candidate is a confident answer. Leaving the
         # auto-match in place is better than replacing one wrong food with
         # another and calling it a correction.
-        if best_score < MIN_SCORE:
+        # The floor guards automatic matches. A stated query is a judgement
+        # already made by hand, and "Fish, cod, Atlantic, raw" scoring 25
+        # against the name "cod steaks" is the scorer's limitation, not a
+        # reason to refuse the right answer.
+        if best_score < MIN_SCORE and not stated:
             rejected.append(f"{name} (best {best_score}: {best.get('description', '')[:40]})")
             time.sleep(DELAY_SECONDS)
             continue
