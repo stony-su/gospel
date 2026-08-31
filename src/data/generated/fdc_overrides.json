@@ -13,13 +13,6 @@
   "rank_score": 99,
   "corpus_grams": 74699.9
  },
- "tomatoes": {
-  "fdc_id": 321360,
-  "match_description": "Tomatoes, grape, raw",
-  "data_type": "Foundation",
-  "rank_score": 107,
-  "corpus_grams": 63960.0
- },
  "water": {
   "fdc_id": 174158,
   "match_description": "Water, bottled, generic",
@@ -41,26 +34,12 @@
   "rank_score": 99,
   "corpus_grams": 53433.3
  },
- "potatoes": {
-  "fdc_id": 170032,
-  "match_description": "Potatoes, raw, skin",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 53075.0
- },
  "sugar": {
   "fdc_id": 170674,
   "match_description": "Sugar, turbinado",
   "data_type": "SR Legacy",
   "rank_score": 100,
   "corpus_grams": 47466.1
- },
- "garlic": {
-  "fdc_id": 1104647,
-  "match_description": "Garlic, raw",
-  "data_type": "Foundation",
-  "rank_score": 108,
-  "corpus_grams": 46824.9
  },
  "eggs": {
   "fdc_id": 171287,
@@ -75,13 +54,6 @@
   "data_type": "SR Legacy",
   "rank_score": 108,
   "corpus_grams": 33599.8
- },
- "chicken broth": {
-  "fdc_id": 174536,
-  "match_description": "Soup, chicken broth, ready-to-serve",
-  "data_type": "SR Legacy",
-  "rank_score": 75,
-  "corpus_grams": 24641.7
  },
  "sour cream": {
   "fdc_id": 173443,
@@ -111,20 +83,6 @@
   "rank_score": 74,
   "corpus_grams": 20983.2
  },
- "chicken breast halves": {
-  "fdc_id": 2727569,
-  "match_description": "Chicken, breast, meat and skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 20475.0
- },
- "cream cheese": {
-  "fdc_id": 2346385,
-  "match_description": "Cream cheese, full fat, block",
-  "data_type": "Foundation",
-  "rank_score": 99,
-  "corpus_grams": 19058.3
- },
  "bacon": {
   "fdc_id": 174592,
   "match_description": "Bacon, turkey, unprepared",
@@ -138,13 +96,6 @@
   "data_type": "SR Legacy",
   "rank_score": 88,
   "corpus_grams": 18287.5
- },
- "cheddar cheese": {
-  "fdc_id": 328637,
-  "match_description": "Cheese, cheddar",
-  "data_type": "Foundation",
-  "rank_score": 88,
-  "corpus_grams": 17062.5
  },
  "olive oil": {
   "fdc_id": 167737,
@@ -202,40 +153,12 @@
   "rank_score": 87,
   "corpus_grams": 11183.3
  },
- "bananas": {
-  "fdc_id": 173944,
-  "match_description": "Bananas, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 10820.0
- },
- "lime juice": {
-  "fdc_id": 168156,
-  "match_description": "Lime juice, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 10408.3
- },
  "beef": {
   "fdc_id": 169430,
   "match_description": "Beef, carcass, separable lean and fat, choice, raw",
   "data_type": "SR Legacy",
   "rank_score": 94,
   "corpus_grams": 10200.0
- },
- "heavy cream": {
-  "fdc_id": 2346386,
-  "match_description": "Cream, heavy",
-  "data_type": "Foundation",
-  "rank_score": 88,
-  "corpus_grams": 9983.3
- },
- "self raising flour": {
-  "fdc_id": 2003586,
-  "match_description": "Flour, 00",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 9000.0
  },
  "chicken": {
   "fdc_id": 171116,
@@ -272,33 +195,12 @@
   "rank_score": 78,
   "corpus_grams": 8183.3
  },
- "monterey jack cheese": {
-  "fdc_id": 2647438,
-  "match_description": "Cheese, monterey jack, solid",
-  "data_type": "Foundation",
-  "rank_score": 105,
-  "corpus_grams": 8150.0
- },
  "rice": {
   "fdc_id": 2512380,
   "match_description": "Rice, brown, long grain, unenriched, raw",
   "data_type": "Foundation",
   "rank_score": 106,
   "corpus_grams": 7312.5
- },
- "mozzarella cheese": {
-  "fdc_id": 169051,
-  "match_description": "Cheese, mozzarella, nonfat",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 7250.0
- },
- "green pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 7053.3
  },
  "flour tortillas": {
   "fdc_id": 167535,
@@ -307,54 +209,12 @@
   "rank_score": 94,
   "corpus_grams": 6950.0
  },
- "russet potatoes": {
-  "fdc_id": 2346401,
-  "match_description": "Potatoes, russet, without skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 6950.0
- },
- "vegetable broth": {
-  "fdc_id": 171180,
-  "match_description": "Soup, SWANSON, vegetable broth",
-  "data_type": "SR Legacy",
-  "rank_score": 83,
-  "corpus_grams": 6675.0
- },
  "caster sugar": {
   "fdc_id": 170674,
   "match_description": "Sugar, turbinado",
   "data_type": "SR Legacy",
   "rank_score": 70,
   "corpus_grams": 6575.0
- },
- "apples": {
-  "fdc_id": 1750340,
-  "match_description": "Apples, fuji, with skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 107,
-  "corpus_grams": 6250.0
- },
- "yogurt": {
-  "fdc_id": 2647437,
-  "match_description": "Yogurt, plain, nonfat",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 6008.3
- },
- "potato": {
-  "fdc_id": 168446,
-  "match_description": "Potato flour",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 5950.0
- },
- "asparagus spears": {
-  "fdc_id": 168389,
-  "match_description": "Asparagus, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 5950.0
  },
  "egg": {
   "fdc_id": 171287,
@@ -377,61 +237,12 @@
   "rank_score": 70,
   "corpus_grams": 5825.0
  },
- "tomato sauce": {
-  "fdc_id": 171825,
-  "match_description": "Sauce, steak, tomato based",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 5500.0
- },
- "chicken breast": {
-  "fdc_id": 172962,
-  "match_description": "Chicken breast, fat-free, mesquite flavor, sliced",
-  "data_type": "SR Legacy",
-  "rank_score": 98,
-  "corpus_grams": 5220.0
- },
- "cucumbers": {
-  "fdc_id": 169225,
-  "match_description": "Cucumber, peeled, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 97,
-  "corpus_grams": 5125.0
- },
- "cherry tomatoes": {
-  "fdc_id": 321360,
-  "match_description": "Tomatoes, grape, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 5075.0
- },
  "lemon": {
   "fdc_id": 167747,
   "match_description": "Lemon juice, raw",
   "data_type": "SR Legacy",
   "rank_score": 78,
   "corpus_grams": 5000.0
- },
- "plum tomatoes": {
-  "fdc_id": 170501,
-  "match_description": "Tomatoes, crushed, canned",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 4900.0
- },
- "sweet potatoes": {
-  "fdc_id": 2346404,
-  "match_description": "Sweet potatoes, orange flesh, without skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 106,
-  "corpus_grams": 4900.0
- },
- "swiss cheese": {
-  "fdc_id": 746767,
-  "match_description": "Cheese, swiss",
-  "data_type": "Foundation",
-  "rank_score": 88,
-  "corpus_grams": 4900.0
  },
  "raisins": {
   "fdc_id": 168166,
@@ -446,13 +257,6 @@
   "data_type": "SR Legacy",
   "rank_score": 77,
   "corpus_grams": 4800.0
- },
- "asparagus": {
-  "fdc_id": 168389,
-  "match_description": "Asparagus, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 4650.0
  },
  "buttermilk": {
   "fdc_id": 2259792,
@@ -475,13 +279,6 @@
   "rank_score": 113,
   "corpus_grams": 4325.0
  },
- "broth": {
-  "fdc_id": 171606,
-  "match_description": "Fish broth",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 4300.0
- },
  "carrot": {
   "fdc_id": 170393,
   "match_description": "Carrots, raw",
@@ -489,26 +286,12 @@
   "rank_score": 98,
   "corpus_grams": 4071.7
  },
- "sharp cheddar cheese": {
-  "fdc_id": 170899,
-  "match_description": "Cheese, cheddar, sharp, sliced",
-  "data_type": "SR Legacy",
-  "rank_score": 105,
-  "corpus_grams": 4000.0
- },
  "cheese": {
   "fdc_id": 173413,
   "match_description": "Cheese, caraway",
   "data_type": "SR Legacy",
   "rank_score": 108,
   "corpus_grams": 3983.3
- },
- "velveeta cheese": {
-  "fdc_id": 173413,
-  "match_description": "Cheese, caraway",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 3950.0
  },
  "bok choy": {
   "fdc_id": 2685572,
@@ -524,13 +307,6 @@
   "rank_score": 108,
   "corpus_grams": 3816.6
  },
- "pumpkin puree": {
-  "fdc_id": 170527,
-  "match_description": "Pumpkin, canned, with salt",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 3800.0
- },
  "limes": {
   "fdc_id": 168155,
   "match_description": "Limes, raw",
@@ -545,32 +321,11 @@
   "rank_score": 108,
   "corpus_grams": 3710.3
  },
- "beef broth": {
-  "fdc_id": 171179,
-  "match_description": "Soup, SWANSON, beef broth, lower sodium",
-  "data_type": "SR Legacy",
-  "rank_score": 75,
-  "corpus_grams": 3650.0
- },
- "elbow macaroni": {
-  "fdc_id": 168904,
-  "match_description": "Macaroni, vegetable, enriched, cooked",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 3650.0
- },
  "macaroni": {
   "fdc_id": 168904,
   "match_description": "Macaroni, vegetable, enriched, cooked",
   "data_type": "SR Legacy",
   "rank_score": 107,
-  "corpus_grams": 3625.0
- },
- "smoked ham": {
-  "fdc_id": 174611,
-  "match_description": "Ham, honey, smoked, cooked",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
   "corpus_grams": 3625.0
  },
  "white sugar": {
@@ -580,26 +335,12 @@
   "rank_score": 70,
   "corpus_grams": 3500.0
  },
- "blueberries": {
-  "fdc_id": 2346411,
-  "match_description": "Blueberries, raw",
-  "data_type": "Foundation",
-  "rank_score": 108,
-  "corpus_grams": 3491.7
- },
  "sesame seeds": {
   "fdc_id": 169410,
   "match_description": "Seeds, sesame butter, tahini, from raw and stone ground kernels",
   "data_type": "SR Legacy",
   "rank_score": 93,
   "corpus_grams": 3458.3
- },
- "corn": {
-  "fdc_id": 169998,
-  "match_description": "Corn, sweet, yellow, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 3375.0
  },
  "garlic cloves": {
   "fdc_id": 1104647,
@@ -608,34 +349,6 @@
   "rank_score": 78,
   "corpus_grams": 3345.2
  },
- "papayas": {
-  "fdc_id": 169926,
-  "match_description": "Papayas, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 3300.0
- },
- "green olives": {
-  "fdc_id": 332791,
-  "match_description": "Olives, green, Manzanilla, stuffed with pimiento",
-  "data_type": "Foundation",
-  "rank_score": 86,
-  "corpus_grams": 3300.0
- },
- "cranberries": {
-  "fdc_id": 171722,
-  "match_description": "Cranberries, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 3225.0
- },
- "chick-peas": {
-  "fdc_id": 170013,
-  "match_description": "Peas, green (includes baby and lesuer types), canned, drained solids, unprepared",
-  "data_type": "SR Legacy",
-  "rank_score": 92,
-  "corpus_grams": 3200.0
- },
  "lettuce": {
   "fdc_id": 2346388,
   "match_description": "Lettuce, iceberg, raw",
@@ -643,124 +356,12 @@
   "rank_score": 107,
   "corpus_grams": 3050.0
  },
- "jumbo pasta shells": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 3000.0
- },
- "caerphilly cheese": {
-  "fdc_id": 173413,
-  "match_description": "Cheese, caraway",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 3000.0
- },
- "lancashire cheese": {
-  "fdc_id": 173413,
-  "match_description": "Cheese, caraway",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 3000.0
- },
- "mushroom caps": {
-  "fdc_id": 2003603,
-  "match_description": "Mushroom, beech",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 3000.0
- },
- "greek feta cheese": {
-  "fdc_id": 173420,
-  "match_description": "Cheese, feta",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 3000.0
- },
- "yellow lentils": {
-  "fdc_id": 172420,
-  "match_description": "Lentils, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 3000.0
- },
- "chicken breast fillets": {
-  "fdc_id": 2727569,
-  "match_description": "Chicken, breast, meat and skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 3000.0
- },
- "broccoli": {
-  "fdc_id": 747447,
-  "match_description": "Broccoli, raw",
-  "data_type": "Foundation",
-  "rank_score": 108,
-  "corpus_grams": 2900.0
- },
  "soy sauce": {
   "fdc_id": 172474,
   "match_description": "Soy sauce, reduced sodium, made from hydrolyzed vegetable protein",
   "data_type": "SR Legacy",
   "rank_score": 105,
   "corpus_grams": 2891.2
- },
- "canola oil": {
-  "fdc_id": 171033,
-  "match_description": "Oil, vegetable, Natreon canola, high stability, non trans, high oleic (70%)",
-  "data_type": "SR Legacy",
-  "rank_score": 93,
-  "corpus_grams": 2885.2
- },
- "green peppers": {
-  "fdc_id": 2258588,
-  "match_description": "Peppers, bell, green, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 2850.0
- },
- "italian-style tomatoes": {
-  "fdc_id": 333281,
-  "match_description": "Tomatoes, canned, red, ripe, diced",
-  "data_type": "Foundation",
-  "rank_score": 24,
-  "corpus_grams": 2800.0
- },
- "chicken pieces": {
-  "fdc_id": 171116,
-  "match_description": "Chicken, ground, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 2800.0
- },
- "strawberries": {
-  "fdc_id": 167762,
-  "match_description": "Strawberries, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 2783.3
- },
- "half-and-half": {
-  "fdc_id": 171255,
-  "match_description": "Cream, fluid, half and half",
-  "data_type": "SR Legacy",
-  "rank_score": 93,
-  "corpus_grams": 2758.3
- },
- "evaporated milk": {
-  "fdc_id": 171302,
-  "match_description": "Milk, evaporated, 2% fat, with added vitamin A and vitamin D",
-  "data_type": "SR Legacy",
-  "rank_score": 85,
-  "corpus_grams": 2750.0
- },
- "peanut butter": {
-  "fdc_id": 2262072,
-  "match_description": "Peanut butter, creamy",
-  "data_type": "Foundation",
-  "rank_score": 99,
-  "corpus_grams": 2683.3
  },
  "mushroom": {
   "fdc_id": 2003603,
@@ -776,110 +377,12 @@
   "rank_score": 96,
   "corpus_grams": 2535.1
  },
- "chili sauce": {
-  "fdc_id": 171595,
-  "match_description": "Sauce, tomato chili sauce, bottled, with salt",
-  "data_type": "SR Legacy",
-  "rank_score": 86,
-  "corpus_grams": 2525.0
- },
- "angel hair pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 2475.0
- },
  "spaghetti": {
   "fdc_id": 168912,
   "match_description": "Spaghetti, spinach, cooked",
   "data_type": "SR Legacy",
   "rank_score": 99,
   "corpus_grams": 2450.0
- },
- "celery ribs": {
-  "fdc_id": 2346405,
-  "match_description": "Celery, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 2375.0
- },
- "italian sausage": {
-  "fdc_id": 171631,
-  "match_description": "Sausage, Italian, pork, mild, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 2350.0
- },
- "chicken bouillon cubes": {
-  "fdc_id": 174551,
-  "match_description": "Soup, chicken broth, canned, prepared with equal volume water",
-  "data_type": "SR Legacy",
-  "rank_score": -30,
-  "corpus_grams": 2350.0
- },
- "kale": {
-  "fdc_id": 168421,
-  "match_description": "Kale, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 2325.0
- },
- "deli ham": {
-  "fdc_id": 168092,
-  "match_description": "Ham, turkey, sliced, extra lean, prepackaged or deli",
-  "data_type": "SR Legacy",
-  "rank_score": 86,
-  "corpus_grams": 2250.0
- },
- "grape tomatoes": {
-  "fdc_id": 321360,
-  "match_description": "Tomatoes, grape, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 2250.0
- },
- "onion powder": {
-  "fdc_id": 171327,
-  "match_description": "Spices, onion powder",
-  "data_type": "SR Legacy",
-  "rank_score": 75,
-  "corpus_grams": 2237.5
- },
- "english muffins": {
-  "fdc_id": 172828,
-  "match_description": "English muffins, plain, unenriched, with calcium propionate (includes sourdough)",
-  "data_type": "SR Legacy",
-  "rank_score": 104,
-  "corpus_grams": 2200.0
- },
- "-sodium chicken broth": {
-  "fdc_id": 172888,
-  "match_description": "Soup, chicken broth, less/reduced sodium, ready to serve",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 2175.0
- },
- "pork chops": {
-  "fdc_id": 168238,
-  "match_description": "Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 101,
-  "corpus_grams": 2150.0
- },
- "broccoli florets": {
-  "fdc_id": 747447,
-  "match_description": "Broccoli, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 2150.0
- },
- "long grain rice": {
-  "fdc_id": 2512380,
-  "match_description": "Rice, brown, long grain, unenriched, raw",
-  "data_type": "Foundation",
-  "rank_score": 112,
-  "corpus_grams": 2133.3
  },
  "white flour": {
   "fdc_id": 790214,
@@ -895,96 +398,12 @@
   "rank_score": 95,
   "corpus_grams": 2125.0
  },
- "couscous": {
-  "fdc_id": 169700,
-  "match_description": "Couscous, cooked",
-  "data_type": "SR Legacy",
-  "rank_score": 100,
-  "corpus_grams": 2100.0
- },
- "wheat flour": {
-  "fdc_id": 168944,
-  "match_description": "Wheat flour, whole-grain, soft wheat",
-  "data_type": "SR Legacy",
-  "rank_score": 99,
-  "corpus_grams": 2050.0
- },
- "orzo pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 2025.0
- },
- "tortilla chips": {
-  "fdc_id": 173143,
-  "match_description": "Tortilla chips, yellow, plain, salted",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 1950.0
- },
- "unbleached flour": {
-  "fdc_id": 1104913,
-  "match_description": "Flour, pastry, unenriched, unbleached",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 1925.0
- },
- "pumpkin": {
-  "fdc_id": 168448,
-  "match_description": "Pumpkin, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 1916.7
- },
- "baby red potatoes": {
-  "fdc_id": 170029,
-  "match_description": "Potatoes, red, flesh and skin, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 1900.0
- },
- "english cucumber": {
-  "fdc_id": 169225,
-  "match_description": "Cucumber, peeled, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 1875.0
- },
- "rhubarb": {
-  "fdc_id": 167758,
-  "match_description": "Rhubarb, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 1850.0
- },
  "firm tofu": {
   "fdc_id": 172475,
   "match_description": "Tofu, raw, firm, prepared with calcium sulfate",
   "data_type": "SR Legacy",
   "rank_score": 94,
   "corpus_grams": 1800.0
- },
- "blue cheese": {
-  "fdc_id": 172175,
-  "match_description": "Cheese, blue",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 1800.0
- },
- "leeks": {
-  "fdc_id": 169246,
-  "match_description": "Leeks, (bulb and lower leaf-portion), raw",
-  "data_type": "SR Legacy",
-  "rank_score": 106,
-  "corpus_grams": 1750.0
- },
- "cornmeal": {
-  "fdc_id": 168868,
-  "match_description": "Cornmeal, yellow, self-rising, bolted, plain, enriched",
-  "data_type": "SR Legacy",
-  "rank_score": 106,
-  "corpus_grams": 1725.0
  },
  "powdered sugar": {
   "fdc_id": 170674,
@@ -993,75 +412,12 @@
   "rank_score": 70,
   "corpus_grams": 1700.0
  },
- "chicken wings": {
-  "fdc_id": 2727568,
-  "match_description": "Chicken, wing, meat and skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 1700.0
- },
- "wheat flour tortillas": {
-  "fdc_id": 167535,
-  "match_description": "Tortillas, ready-to-bake or -fry, flour, shelf stable",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 1700.0
- },
- "granny smith apples": {
-  "fdc_id": 1750342,
-  "match_description": "Apples, granny smith, with skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 113,
-  "corpus_grams": 1700.0
- },
- "sun- tomatoes": {
-  "fdc_id": 168567,
-  "match_description": "Tomatoes, sun-dried",
-  "data_type": "SR Legacy",
-  "rank_score": 106,
-  "corpus_grams": 1650.0
- },
  "apple": {
   "fdc_id": 1750340,
   "match_description": "Apples, fuji, with skin, raw",
   "data_type": "Foundation",
   "rank_score": 97,
   "corpus_grams": 1620.0
- },
- "oranges": {
-  "fdc_id": 169918,
-  "match_description": "Oranges, raw, Florida",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 1600.0
- },
- "penne pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 1600.0
- },
- "pineapple": {
-  "fdc_id": 2346398,
-  "match_description": "Pineapple, raw",
-  "data_type": "Foundation",
-  "rank_score": 108,
-  "corpus_grams": 1600.0
- },
- "pork cutlets": {
-  "fdc_id": 167811,
-  "match_description": "Pork, fresh, backfat, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 85,
-  "corpus_grams": 1600.0
- },
- "lamb loin chops": {
-  "fdc_id": 172517,
-  "match_description": "Lamb, New Zealand, imported, loin chop, separable lean and fat, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 93,
-  "corpus_grams": 1600.0
  },
  "pine nuts": {
   "fdc_id": 2346392,
@@ -1077,27 +433,6 @@
   "rank_score": 87,
   "corpus_grams": 1520.0
  },
- "lettuce leaf": {
-  "fdc_id": 169249,
-  "match_description": "Lettuce, green leaf, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 1425.0
- },
- "turkey": {
-  "fdc_id": 171505,
-  "match_description": "Turkey, Ground, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 1408.3
- },
- "self-raising flour": {
-  "fdc_id": 2003586,
-  "match_description": "Flour, 00",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 1400.0
- },
  "avocados": {
   "fdc_id": 171706,
   "match_description": "Avocados, raw, California",
@@ -1105,81 +440,11 @@
   "rank_score": 107,
   "corpus_grams": 1400.0
  },
- "roma tomatoes": {
-  "fdc_id": 321360,
-  "match_description": "Tomatoes, grape, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 1400.0
- },
- "watermelon": {
-  "fdc_id": 167765,
-  "match_description": "Watermelon, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 1400.0
- },
- "mayonnaise": {
-  "fdc_id": 2758986,
-  "match_description": "Mayonnaise, Regular",
-  "data_type": "Foundation",
-  "rank_score": 100,
-  "corpus_grams": 1379.9
- },
- "bread flour": {
-  "fdc_id": 174102,
-  "match_description": "Bread, gluten-free, whole grain, made with tapioca starch and brown rice flour",
-  "data_type": "SR Legacy",
-  "rank_score": 85,
-  "corpus_grams": 1350.0
- },
- "confectioners' sugar": {
-  "fdc_id": 170674,
-  "match_description": "Sugar, turbinado",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 1350.0
- },
- "canadian bacon": {
-  "fdc_id": 167869,
-  "match_description": "Canadian bacon, unprepared",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 1350.0
- },
- "pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 114,
-  "corpus_grams": 1275.0
- },
- "white rice": {
-  "fdc_id": 2512381,
-  "match_description": "Rice, white, long grain, unenriched, raw",
-  "data_type": "Foundation",
-  "rank_score": 94,
-  "corpus_grams": 1250.0
- },
  "peanuts": {
   "fdc_id": 2515376,
   "match_description": "Peanuts, raw",
   "data_type": "Foundation",
   "rank_score": 108,
-  "corpus_grams": 1250.0
- },
- "cauliflower": {
-  "fdc_id": 2685573,
-  "match_description": "Cauliflower, raw",
-  "data_type": "Foundation",
-  "rank_score": 108,
-  "corpus_grams": 1250.0
- },
- "provolone cheese": {
-  "fdc_id": 170850,
-  "match_description": "Cheese, provolone",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
   "corpus_grams": 1250.0
  },
  "shallots": {
@@ -1189,117 +454,12 @@
   "rank_score": 108,
   "corpus_grams": 1230.0
  },
- "red kidney beans": {
-  "fdc_id": 2644289,
-  "match_description": "Beans, kidney, dark red, canned, sodium added, sugar added, drained and rinsed",
-  "data_type": "Foundation",
-  "rank_score": 121,
-  "corpus_grams": 1225.0
- },
- "ricotta cheese": {
-  "fdc_id": 746766,
-  "match_description": "Cheese, ricotta, whole milk",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 1225.0
- },
- "eggplants": {
-  "fdc_id": 169228,
-  "match_description": "Eggplant, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 98,
-  "corpus_grams": 1225.0
- },
- "yukon gold potatoes": {
-  "fdc_id": 2346403,
-  "match_description": "Potatoes, gold, without skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 1200.0
- },
- "miniature bagels": {
-  "fdc_id": 174899,
-  "match_description": "Bagels, plain, enriched, with calcium propionate (includes onion, poppy, sesame)",
-  "data_type": "SR Legacy",
-  "rank_score": 74,
-  "corpus_grams": 1200.0
- },
- "red baking apples": {
-  "fdc_id": 1750339,
-  "match_description": "Apples, red delicious, with skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 1200.0
- },
- "wheat tortillas": {
-  "fdc_id": 174081,
-  "match_description": "Tortillas, ready-to-bake or -fry, whole wheat",
-  "data_type": "SR Legacy",
-  "rank_score": 86,
-  "corpus_grams": 1200.0
- },
- "tofu": {
-  "fdc_id": 172475,
-  "match_description": "Tofu, raw, firm, prepared with calcium sulfate",
-  "data_type": "SR Legacy",
-  "rank_score": 106,
-  "corpus_grams": 1200.0
- },
- "-fat cheddar cheese": {
-  "fdc_id": 171292,
-  "match_description": "Cheese, cheddar, reduced fat (Includes foods for USDA's Food Distribution Program)",
-  "data_type": "SR Legacy",
-  "rank_score": 120,
-  "corpus_grams": 1200.0
- },
- "bulk sausage": {
-  "fdc_id": 167694,
-  "match_description": "Sausage, turkey and pork, fresh, bulk, patty or link, cooked",
-  "data_type": "SR Legacy",
-  "rank_score": 93,
-  "corpus_grams": 1200.0
- },
- "splenda sugar substitute": {
-  "fdc_id": 170674,
-  "match_description": "Sugar, turbinado",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 1187.5
- },
- "soya sauce": {
-  "fdc_id": 174523,
-  "match_description": "Sauce, barbecue",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 1175.0
- },
- "asiago cheese": {
-  "fdc_id": 173413,
-  "match_description": "Cheese, caraway",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 1175.0
- },
  "mild cheddar cheese": {
   "fdc_id": 328637,
   "match_description": "Cheese, cheddar",
   "data_type": "Foundation",
   "rank_score": 88,
   "corpus_grams": 1175.0
- },
- "red onions": {
-  "fdc_id": 790577,
-  "match_description": "Onions, red, raw",
-  "data_type": "Foundation",
-  "rank_score": 96,
-  "corpus_grams": 1150.0
- },
- "soymilk": {
-  "fdc_id": 174293,
-  "match_description": "Soymilk, chocolate, unfortified",
-  "data_type": "SR Legacy",
-  "rank_score": 99,
-  "corpus_grams": 1150.0
  },
  "bell peppers": {
   "fdc_id": 2258588,
@@ -1308,61 +468,12 @@
   "rank_score": 95,
   "corpus_grams": 1150.0
  },
- "radishes": {
-  "fdc_id": 169276,
-  "match_description": "Radishes, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 1125.0
- },
- "green cabbage": {
-  "fdc_id": 2346407,
-  "match_description": "Cabbage, green, raw",
-  "data_type": "Foundation",
-  "rank_score": 96,
-  "corpus_grams": 1125.0
- },
  "white potatoes": {
   "fdc_id": 170028,
   "match_description": "Potatoes, white, flesh and skin, raw",
   "data_type": "SR Legacy",
   "rank_score": 95,
   "corpus_grams": 1100.0
- },
- "cottage cheese": {
-  "fdc_id": 2346384,
-  "match_description": "Cottage cheese, full fat, large or small curd",
-  "data_type": "Foundation",
-  "rank_score": 98,
-  "corpus_grams": 1100.0
- },
- "orange": {
-  "fdc_id": 169918,
-  "match_description": "Oranges, raw, Florida",
-  "data_type": "SR Legacy",
-  "rank_score": 97,
-  "corpus_grams": 1087.5
- },
- "brown rice": {
-  "fdc_id": 2512380,
-  "match_description": "Rice, brown, long grain, unenriched, raw",
-  "data_type": "Foundation",
-  "rank_score": 94,
-  "corpus_grams": 1075.0
- },
- "lentils": {
-  "fdc_id": 172420,
-  "match_description": "Lentils, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 1050.0
- },
- "crouton": {
-  "fdc_id": 172751,
-  "match_description": "Croutons, plain",
-  "data_type": "SR Legacy",
-  "rank_score": 98,
-  "corpus_grams": 1050.0
  },
  "romaine lettuce": {
   "fdc_id": 169247,
@@ -1371,145 +482,12 @@
   "rank_score": 95,
   "corpus_grams": 1000.0
  },
- "philadelphia cream cheese": {
-  "fdc_id": 173418,
-  "match_description": "Cheese, cream",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 1000.0
- },
- "kielbasa": {
-  "fdc_id": 173877,
-  "match_description": "Kielbasa, fully cooked, grilled",
-  "data_type": "SR Legacy",
-  "rank_score": 99,
-  "corpus_grams": 1000.0
- },
- "sausage": {
-  "fdc_id": 174617,
-  "match_description": "Sausage, turkey, fresh, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 115,
-  "corpus_grams": 1000.0
- },
- "6-inch flour tortillas": {
-  "fdc_id": 167535,
-  "match_description": "Tortillas, ready-to-bake or -fry, flour, shelf stable",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 1000.0
- },
- "beets": {
-  "fdc_id": 2685576,
-  "match_description": "Beets, raw",
-  "data_type": "Foundation",
-  "rank_score": 108,
-  "corpus_grams": 1000.0
- },
- "green chili peppers": {
-  "fdc_id": 170497,
-  "match_description": "Peppers, hot chili, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 113,
-  "corpus_grams": 1000.0
- },
- "beef steaks": {
-  "fdc_id": 169429,
-  "match_description": "Beef, grass-fed, strip steaks, lean only, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 950.0
- },
- "cod fish fillets": {
-  "fdc_id": 171955,
-  "match_description": "Fish, cod, Atlantic, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 950.0
- },
- "garbanzo beans": {
-  "fdc_id": 168574,
-  "match_description": "Beans, fava, in pod, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 933.3
- },
- "lime": {
-  "fdc_id": 168155,
-  "match_description": "Limes, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 98,
-  "corpus_grams": 910.0
- },
- "fat free chicken broth": {
-  "fdc_id": 174551,
-  "match_description": "Soup, chicken broth, canned, prepared with equal volume water",
-  "data_type": "SR Legacy",
-  "rank_score": -12,
-  "corpus_grams": 900.0
- },
- "pineapple chunks": {
-  "fdc_id": 2346398,
-  "match_description": "Pineapple, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 900.0
- },
  "red bell peppers": {
   "fdc_id": 2258590,
   "match_description": "Peppers, bell, red, raw",
   "data_type": "Foundation",
   "rank_score": 113,
   "corpus_grams": 900.0
- },
- "irish cream": {
-  "fdc_id": 170857,
-  "match_description": "Cream, fluid, light (coffee cream or table cream)",
-  "data_type": "SR Legacy",
-  "rank_score": 76,
-  "corpus_grams": 900.0
- },
- "rotel tomatoes": {
-  "fdc_id": 321360,
-  "match_description": "Tomatoes, grape, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 900.0
- },
- "beef bouillon cubes": {
-  "fdc_id": 170199,
-  "match_description": "Beef, cured, corned beef, brisket, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 900.0
- },
- "sweet italian sausage links": {
-  "fdc_id": 172952,
-  "match_description": "Sausage, Italian, sweet, links",
-  "data_type": "SR Legacy",
-  "rank_score": 123,
-  "corpus_grams": 900.0
- },
- "center-cut pork chops": {
-  "fdc_id": 167829,
-  "match_description": "Pork, fresh, loin, center loin (chops), bone-in, separable lean only, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 119,
-  "corpus_grams": 900.0
- },
- "long grain white rice": {
-  "fdc_id": 2512381,
-  "match_description": "Rice, white, long grain, unenriched, raw",
-  "data_type": "Foundation",
-  "rank_score": 130,
-  "corpus_grams": 850.0
- },
- "banana": {
-  "fdc_id": 173944,
-  "match_description": "Bananas, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 98,
-  "corpus_grams": 840.0
  },
  "long-grain rice": {
   "fdc_id": 2512380,
@@ -1518,27 +496,6 @@
   "rank_score": 112,
   "corpus_grams": 825.0
  },
- "catsup": {
-  "fdc_id": 168556,
-  "match_description": "Catsup",
-  "data_type": "SR Legacy",
-  "rank_score": 100,
-  "corpus_grams": 816.7
- },
- "green onion": {
-  "fdc_id": 2727585,
-  "match_description": "Green onion, (scallion), bulb and greens, root removed, raw",
-  "data_type": "Foundation",
-  "rank_score": 106,
-  "corpus_grams": 816.7
- },
- "shell pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 800.0
- },
  "avocado": {
   "fdc_id": 2710824,
   "match_description": "Avocado, Hass, peeled, raw",
@@ -1546,95 +503,11 @@
   "rank_score": 107,
   "corpus_grams": 800.0
  },
- "pears": {
-  "fdc_id": 169118,
-  "match_description": "Pears, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 800.0
- },
- "bell pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 800.0
- },
- "chicken drumsticks": {
-  "fdc_id": 172855,
-  "match_description": "Chicken, skin (drumsticks and thighs), raw",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 800.0
- },
- "bamboo shoot": {
-  "fdc_id": 169210,
-  "match_description": "Bamboo shoots, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 98,
-  "corpus_grams": 800.0
- },
  "oyster sauce": {
   "fdc_id": 174529,
   "match_description": "Sauce, oyster, ready-to-serve",
   "data_type": "SR Legacy",
   "rank_score": 87,
-  "corpus_grams": 800.0
- },
- "cream of coconut": {
-  "fdc_id": 170857,
-  "match_description": "Cream, fluid, light (coffee cream or table cream)",
-  "data_type": "SR Legacy",
-  "rank_score": 76,
-  "corpus_grams": 800.0
- },
- "turkey broth": {
-  "fdc_id": 171505,
-  "match_description": "Turkey, Ground, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 800.0
- },
- "lamb rib chops": {
-  "fdc_id": 174414,
-  "match_description": "Lamb, Australian, imported, fresh, rib chop/rack roast, frenched, bone-in, separable lean and fat, trimmed to 1/8\" fat, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 100,
-  "corpus_grams": 800.0
- },
- "baby portabella mushrooms": {
-  "fdc_id": 169255,
-  "match_description": "Mushrooms, portabella, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 800.0
- },
- "kale leaves": {
-  "fdc_id": 168421,
-  "match_description": "Kale, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 800.0
- },
- "smoked bacon": {
-  "fdc_id": 174592,
-  "match_description": "Bacon, turkey, unprepared",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 800.0
- },
- "arugula leaves": {
-  "fdc_id": 169387,
-  "match_description": "Arugula, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 800.0
- },
- "leaf lettuce": {
-  "fdc_id": 169249,
-  "match_description": "Lettuce, green leaf, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
   "corpus_grams": 800.0
  },
  "ketchup": {
@@ -1651,40 +524,12 @@
   "rank_score": 74,
   "corpus_grams": 782.7
  },
- "amarula cream liqueur": {
-  "fdc_id": 175098,
-  "match_description": "Alcoholic beverage, liqueur, coffee with cream, 34 proof",
-  "data_type": "SR Legacy",
-  "rank_score": 34,
-  "corpus_grams": 775.0
- },
- "red wine vinegar": {
-  "fdc_id": 172240,
-  "match_description": "Vinegar, red wine",
-  "data_type": "SR Legacy",
-  "rank_score": 106,
-  "corpus_grams": 769.0
- },
- "bow tie pasta": {
-  "fdc_id": 169736,
-  "match_description": "Pasta, dry, enriched",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 750.0
- },
  "mustard": {
   "fdc_id": 326698,
   "match_description": "Mustard, prepared, yellow",
   "data_type": "Foundation",
   "rank_score": 99,
   "corpus_grams": 739.3
- },
- "shallot": {
-  "fdc_id": 170499,
-  "match_description": "Shallots, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 98,
-  "corpus_grams": 735.0
  },
  "green bell peppers": {
   "fdc_id": 2258588,
@@ -1693,68 +538,12 @@
   "rank_score": 113,
   "corpus_grams": 733.3
  },
- "flax seeds": {
-  "fdc_id": 170144,
-  "match_description": "Seeds, breadfruit seeds, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 725.0
- },
  "maple syrup": {
   "fdc_id": 170276,
   "match_description": "Syrup, maple, Canadian",
   "data_type": "SR Legacy",
   "rank_score": 87,
   "corpus_grams": 725.0
- },
- "condensed milk": {
-  "fdc_id": 2758990,
-  "match_description": "Sweetened condensed milk",
-  "data_type": "Foundation",
-  "rank_score": 99,
-  "corpus_grams": 712.5
- },
- "chicken bouillon cube": {
-  "fdc_id": 174551,
-  "match_description": "Soup, chicken broth, canned, prepared with equal volume water",
-  "data_type": "SR Legacy",
-  "rank_score": -30,
-  "corpus_grams": 700.0
- },
- "poppy seeds": {
-  "fdc_id": 170144,
-  "match_description": "Seeds, breadfruit seeds, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 700.0
- },
- "chicken bouillon": {
-  "fdc_id": 174551,
-  "match_description": "Soup, chicken broth, canned, prepared with equal volume water",
-  "data_type": "SR Legacy",
-  "rank_score": -30,
-  "corpus_grams": 700.0
- },
- "tea": {
-  "fdc_id": 169828,
-  "match_description": "Tea, herbal, brewed, Hohoysi (Hopi)",
-  "data_type": "SR Legacy",
-  "rank_score": 99,
-  "corpus_grams": 700.0
- },
- "pork loin roast": {
-  "fdc_id": 168314,
-  "match_description": "Pork, fresh, loin, top loin (roasts), boneless, separable lean and fat, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 101,
-  "corpus_grams": 700.0
- },
- "glutinous-rice flour": {
-  "fdc_id": 1104867,
-  "match_description": "Flour, rice, glutinous",
-  "data_type": "Foundation",
-  "rank_score": 105,
-  "corpus_grams": 700.0
  },
  "kidney beans": {
   "fdc_id": 169885,
@@ -1763,47 +552,12 @@
   "rank_score": 87,
   "corpus_grams": 700.0
  },
- "mandarin oranges": {
-  "fdc_id": 169105,
-  "match_description": "Tangerines, (mandarin oranges), raw",
-  "data_type": "SR Legacy",
-  "rank_score": 83,
-  "corpus_grams": 700.0
- },
- "graham cracker crumbs": {
-  "fdc_id": 172750,
-  "match_description": "Cracker, meal",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 700.0
- },
- "pineapple tidbits": {
-  "fdc_id": 2346398,
-  "match_description": "Pineapple, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 700.0
- },
- "strawberry": {
-  "fdc_id": 175228,
-  "match_description": "SILK Strawberry soy yogurt",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 691.6
- },
  "worcestershire sauce": {
   "fdc_id": 171610,
   "match_description": "Sauce, worcestershire",
   "data_type": "SR Legacy",
   "rank_score": 87,
   "corpus_grams": 684.0
- },
- "half-and-half cream": {
-  "fdc_id": 171255,
-  "match_description": "Cream, fluid, half and half",
-  "data_type": "SR Legacy",
-  "rank_score": 123,
-  "corpus_grams": 675.0
  },
  "rolled oats": {
   "fdc_id": 2346396,
@@ -1812,145 +566,12 @@
   "rank_score": 86,
   "corpus_grams": 650.0
  },
- "pork": {
-  "fdc_id": 167811,
-  "match_description": "Pork, fresh, backfat, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 115,
-  "corpus_grams": 650.0
- },
- "colby-monterey jack cheese": {
-  "fdc_id": 2647438,
-  "match_description": "Cheese, monterey jack, solid",
-  "data_type": "Foundation",
-  "rank_score": 105,
-  "corpus_grams": 650.0
- },
- "long-grain white rice": {
-  "fdc_id": 2512381,
-  "match_description": "Rice, white, long grain, unenriched, raw",
-  "data_type": "Foundation",
-  "rank_score": 130,
-  "corpus_grams": 625.0
- },
- "gouda cheese": {
-  "fdc_id": 171241,
-  "match_description": "Cheese, gouda",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 625.0
- },
- "pickle": {
-  "fdc_id": 169379,
-  "match_description": "Pickles, cucumber, sour",
-  "data_type": "SR Legacy",
-  "rank_score": 89,
-  "corpus_grams": 625.0
- },
  "parsley": {
   "fdc_id": 170416,
   "match_description": "Parsley, fresh",
   "data_type": "SR Legacy",
   "rank_score": 108,
   "corpus_grams": 622.1
- },
- "applesauce": {
-  "fdc_id": 2346414,
-  "match_description": "Applesauce, unsweetened, with added vitamin C",
-  "data_type": "Foundation",
-  "rank_score": 98,
-  "corpus_grams": 608.3
- },
- "cooking onions": {
-  "fdc_id": 170000,
-  "match_description": "Onions, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 600.0
- },
- "smoked sausage": {
-  "fdc_id": 174584,
-  "match_description": "Sausage, smoked link sausage, pork",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 600.0
- },
- "bacon drippings": {
-  "fdc_id": 174592,
-  "match_description": "Bacon, turkey, unprepared",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 600.0
- },
- "turnips": {
-  "fdc_id": 170465,
-  "match_description": "Turnips, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 600.0
- },
- "corn tortilla": {
-  "fdc_id": 2758997,
-  "match_description": "Tortilla, corn, shelf stable",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 600.0
- },
- "ice cream": {
-  "fdc_id": 173465,
-  "match_description": "Ice cream, soft serve, chocolate",
-  "data_type": "SR Legacy",
-  "rank_score": 99,
-  "corpus_grams": 600.0
- },
- "mild italian sausage": {
-  "fdc_id": 171631,
-  "match_description": "Sausage, Italian, pork, mild, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 113,
-  "corpus_grams": 600.0
- },
- "mashed potatoes": {
-  "fdc_id": 169768,
-  "match_description": "Potatoes, mashed, ready-to-eat",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 600.0
- },
- "sweet onions": {
-  "fdc_id": 170008,
-  "match_description": "Onions, sweet, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 96,
-  "corpus_grams": 600.0
- },
- "watermelon wedges": {
-  "fdc_id": 167765,
-  "match_description": "Watermelon, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 600.0
- },
- "low sodium beef broth": {
-  "fdc_id": 168118,
-  "match_description": "Beef, bologna, reduced sodium",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 600.0
- },
- "white mushrooms": {
-  "fdc_id": 169251,
-  "match_description": "Mushrooms, white, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 600.0
- },
- "white corn": {
-  "fdc_id": 2710826,
-  "match_description": "Corn, sweet, yellow and white kernels,  fresh, raw",
-  "data_type": "Foundation",
-  "rank_score": 102,
-  "corpus_grams": 600.0
  },
  "raspberries": {
   "fdc_id": 2346410,
@@ -1959,61 +580,12 @@
   "rank_score": 108,
   "corpus_grams": 600.0
  },
- "burrito-size flour tortillas": {
-  "fdc_id": 167535,
-  "match_description": "Tortillas, ready-to-bake or -fry, flour, shelf stable",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 600.0
- },
- "okra": {
-  "fdc_id": 169260,
-  "match_description": "Okra, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 600.0
- },
- "iceberg lettuce": {
-  "fdc_id": 2346388,
-  "match_description": "Lettuce, iceberg, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 583.3
- },
  "garlic clove": {
   "fdc_id": 1104647,
   "match_description": "Garlic, raw",
   "data_type": "Foundation",
   "rank_score": 78,
   "corpus_grams": 551.9
- },
- "mango": {
-  "fdc_id": 2710834,
-  "match_description": "Mango, Ataulfo, peeled, raw",
-  "data_type": "Foundation",
-  "rank_score": 107,
-  "corpus_grams": 550.0
- },
- "tart apples": {
-  "fdc_id": 1750340,
-  "match_description": "Apples, fuji, with skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 550.0
- },
- "wasabi paste": {
-  "fdc_id": 168583,
-  "match_description": "Wasabi, root, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 550.0
- },
- "red grapes": {
-  "fdc_id": 2346412,
-  "match_description": "Grapes, red, seedless, raw",
-  "data_type": "Foundation",
-  "rank_score": 113,
-  "corpus_grams": 550.0
  },
  "molasses": {
   "fdc_id": 168820,
@@ -2022,131 +594,12 @@
   "rank_score": 100,
   "corpus_grams": 550.0
  },
- "cauliflower florets": {
-  "fdc_id": 2685573,
-  "match_description": "Cauliflower, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 550.0
- },
- "red bliss potatoes": {
-  "fdc_id": 170029,
-  "match_description": "Potatoes, red, flesh and skin, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 525.0
- },
- "heavy whipping cream": {
-  "fdc_id": 170859,
-  "match_description": "Cream, fluid, heavy whipping",
-  "data_type": "SR Legacy",
-  "rank_score": 105,
-  "corpus_grams": 500.0
- },
- "cake flour": {
-  "fdc_id": 2003586,
-  "match_description": "Flour, 00",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 500.0
- },
- "tomato puree": {
-  "fdc_id": 1999634,
-  "match_description": "Tomato, roma",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 500.0
- },
- "romano cheese": {
-  "fdc_id": 171249,
-  "match_description": "Cheese, romano",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 500.0
- },
  "eggplant": {
   "fdc_id": 169228,
   "match_description": "Eggplant, raw",
   "data_type": "SR Legacy",
   "rank_score": 108,
   "corpus_grams": 500.0
- },
- "stewed tomatoes": {
-  "fdc_id": 170089,
-  "match_description": "Tomatoes, red, ripe, cooked, stewed",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 500.0
- },
- "pure maple syrup": {
-  "fdc_id": 170276,
-  "match_description": "Syrup, maple, Canadian",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 500.0
- },
- "lemon peel": {
-  "fdc_id": 167749,
-  "match_description": "Lemon peel, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 500.0
- },
- "italian tomatoes": {
-  "fdc_id": 333281,
-  "match_description": "Tomatoes, canned, red, ripe, diced",
-  "data_type": "Foundation",
-  "rank_score": 24,
-  "corpus_grams": 500.0
- },
- "rotel tomatoes chilies": {
-  "fdc_id": 321360,
-  "match_description": "Tomatoes, grape, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 500.0
- },
- "anise seed": {
-  "fdc_id": 171316,
-  "match_description": "Spices, anise seed",
-  "data_type": "SR Legacy",
-  "rank_score": 76,
-  "corpus_grams": 500.0
- },
- "halloumi cheese": {
-  "fdc_id": 173413,
-  "match_description": "Cheese, caraway",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 500.0
- },
- "american cheese": {
-  "fdc_id": 747429,
-  "match_description": "Cheese, American, restaurant",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 500.0
- },
- "arugula": {
-  "fdc_id": 169387,
-  "match_description": "Arugula, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 500.0
- },
- "nectarines": {
-  "fdc_id": 169914,
-  "match_description": "Nectarines, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 500.0
- },
- "tabasco sauce": {
-  "fdc_id": 174528,
-  "match_description": "Sauce, ready-to-serve, pepper, TABASCO",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 494.0
  },
  "peas": {
   "fdc_id": 170419,
@@ -2162,172 +615,11 @@
   "rank_score": 87,
   "corpus_grams": 472.0
  },
- "irish soda bread": {
-  "fdc_id": 174912,
-  "match_description": "Bread, irish soda, prepared from recipe",
-  "data_type": "SR Legacy",
-  "rank_score": 105,
-  "corpus_grams": 450.0
- },
- "idaho potatoes": {
-  "fdc_id": 170032,
-  "match_description": "Potatoes, raw, skin",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 450.0
- },
- "limes juice of": {
-  "fdc_id": 168155,
-  "match_description": "Limes, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 450.0
- },
- "chocolate chips": {
-  "fdc_id": 174097,
-  "match_description": "Cookies, marshmallow, with rice cereal and chocolate chips",
-  "data_type": "SR Legacy",
-  "rank_score": 74,
-  "corpus_grams": 408.3
- },
- "yellow onions": {
-  "fdc_id": 790646,
-  "match_description": "Onions, yellow, raw",
-  "data_type": "Foundation",
-  "rank_score": 96,
-  "corpus_grams": 400.0
- },
- "stilton cheese": {
-  "fdc_id": 173413,
-  "match_description": "Cheese, caraway",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 400.0
- },
- "lamb": {
-  "fdc_id": 172608,
-  "match_description": "Lamb, Australian, ground,  85% lean / 15% fat, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 400.0
- },
- "tomatoes and green chilies": {
-  "fdc_id": 170456,
-  "match_description": "Tomatoes, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 400.0
- },
- "flour tortilla": {
-  "fdc_id": 2758996,
-  "match_description": "Tortilla, wheat flour, shelf stable",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 400.0
- },
  "spring onions": {
   "fdc_id": 170005,
   "match_description": "Onions, spring or scallions (includes tops and bulb), raw",
   "data_type": "SR Legacy",
   "rank_score": 94,
-  "corpus_grams": 400.0
- },
- "fennel bulb": {
-  "fdc_id": 2747655,
-  "match_description": "Fennel, bulb, raw",
-  "data_type": "Foundation",
-  "rank_score": 96,
-  "corpus_grams": 400.0
- },
- "stuffed green olives": {
-  "fdc_id": 332791,
-  "match_description": "Olives, green, Manzanilla, stuffed with pimiento",
-  "data_type": "Foundation",
-  "rank_score": 104,
-  "corpus_grams": 400.0
- },
- "center cut pork chops": {
-  "fdc_id": 167829,
-  "match_description": "Pork, fresh, loin, center loin (chops), bone-in, separable lean only, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 119,
-  "corpus_grams": 400.0
- },
- "turkey meat": {
-  "fdc_id": 171488,
-  "match_description": "Turkey, dark meat, meat and skin, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 400.0
- },
- "red swiss chard": {
-  "fdc_id": 169991,
-  "match_description": "Chard, swiss, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 96,
-  "corpus_grams": 400.0
- },
- "chicken meat": {
-  "fdc_id": 2727569,
-  "match_description": "Chicken, breast, meat and skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 400.0
- },
- "cherries": {
-  "fdc_id": 171719,
-  "match_description": "Cherries, sweet, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 400.0
- },
- "button mushroom": {
-  "fdc_id": 2003603,
-  "match_description": "Mushroom, beech",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 400.0
- },
- "bacon fat": {
-  "fdc_id": 174592,
-  "match_description": "Bacon, turkey, unprepared",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 400.0
- },
- "apricots": {
-  "fdc_id": 171697,
-  "match_description": "Apricots, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 400.0
- },
- "rotelle pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 400.0
- },
- "boston lettuce leaves": {
-  "fdc_id": 168429,
-  "match_description": "Lettuce, butterhead (includes boston and bibb types), raw",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 400.0
- },
- "squash": {
-  "fdc_id": 168040,
-  "match_description": "Squash, Indian, raw (Navajo)",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 400.0
- },
- "colby cheese": {
-  "fdc_id": 173416,
-  "match_description": "Cheese, colby",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
   "corpus_grams": 400.0
  },
  "serrano ham": {
@@ -2344,68 +636,12 @@
   "rank_score": 70,
   "corpus_grams": 392.0
  },
- "low fat cottage cheese": {
-  "fdc_id": 169079,
-  "match_description": "Cheese, cream, low fat",
-  "data_type": "SR Legacy",
-  "rank_score": 105,
-  "corpus_grams": 375.0
- },
- "dates": {
-  "fdc_id": 168191,
-  "match_description": "Dates, medjool",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 375.0
- },
- "beef chuck": {
-  "fdc_id": 2646174,
-  "match_description": "Beef, chuck, roast, boneless, choice, raw",
-  "data_type": "Foundation",
-  "rank_score": 94,
-  "corpus_grams": 350.0
- },
- "red potatoes": {
-  "fdc_id": 170029,
-  "match_description": "Potatoes, red, flesh and skin, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 350.0
- },
- "beef chuck roast": {
-  "fdc_id": 2646174,
-  "match_description": "Beef, chuck, roast, boneless, choice, raw",
-  "data_type": "Foundation",
-  "rank_score": 112,
-  "corpus_grams": 350.0
- },
- "beef tenderloin": {
-  "fdc_id": 2727573,
-  "match_description": "Beef, tenderloin steak, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 350.0
- },
- "black pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 342.9
- },
  "cider vinegar": {
   "fdc_id": 173469,
   "match_description": "Vinegar, cider",
   "data_type": "SR Legacy",
   "rank_score": 88,
   "corpus_grams": 332.5
- },
- "white vinegar": {
-  "fdc_id": 172241,
-  "match_description": "Vinegar, balsamic",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 330.9
  },
  "vinegar": {
   "fdc_id": 172241,
@@ -2421,208 +657,12 @@
   "rank_score": 108,
   "corpus_grams": 315.2
  },
- "chili peppers": {
-  "fdc_id": 170497,
-  "match_description": "Peppers, hot chili, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 300.0
- },
- "sunflower seeds": {
-  "fdc_id": 2515381,
-  "match_description": "Seeds, sunflower seed, kernel, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 300.0
- },
- "bulgur": {
-  "fdc_id": 170287,
-  "match_description": "Bulgur, cooked",
-  "data_type": "SR Legacy",
-  "rank_score": 100,
-  "corpus_grams": 300.0
- },
- "miso": {
-  "fdc_id": 172442,
-  "match_description": "Miso",
-  "data_type": "SR Legacy",
-  "rank_score": 100,
-  "corpus_grams": 300.0
- },
  "semolina": {
   "fdc_id": 169715,
   "match_description": "Semolina, enriched",
   "data_type": "SR Legacy",
   "rank_score": 100,
   "corpus_grams": 300.0
- },
- "leek": {
-  "fdc_id": 169246,
-  "match_description": "Leeks, (bulb and lower leaf-portion), raw",
-  "data_type": "SR Legacy",
-  "rank_score": 96,
-  "corpus_grams": 300.0
- },
- "white bread flour": {
-  "fdc_id": 790146,
-  "match_description": "Flour, bread, white, enriched, unbleached",
-  "data_type": "Foundation",
-  "rank_score": 104,
-  "corpus_grams": 300.0
- },
- "snow peas": {
-  "fdc_id": 170419,
-  "match_description": "Peas, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 300.0
- },
- "cannellini beans": {
-  "fdc_id": 168574,
-  "match_description": "Beans, fava, in pod, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 300.0
- },
- "beef bouillon granules": {
-  "fdc_id": 170199,
-  "match_description": "Beef, cured, corned beef, brisket, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 300.0
- },
- "milk ricotta cheese": {
-  "fdc_id": 746766,
-  "match_description": "Cheese, ricotta, whole milk",
-  "data_type": "Foundation",
-  "rank_score": 105,
-  "corpus_grams": 300.0
- },
- "adobo sauce": {
-  "fdc_id": 174523,
-  "match_description": "Sauce, barbecue",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 300.0
- },
- "green lentils": {
-  "fdc_id": 2644283,
-  "match_description": "Lentils, dry",
-  "data_type": "Foundation",
-  "rank_score": 88,
-  "corpus_grams": 300.0
- },
- "cherry pie filling": {
-  "fdc_id": 172780,
-  "match_description": "Pie, cherry, commercially prepared",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 300.0
- },
- "mandarin orange segments": {
-  "fdc_id": 2710832,
-  "match_description": "Mandarin, seedless, peeled, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 300.0
- },
- "portabella mushrooms": {
-  "fdc_id": 169255,
-  "match_description": "Mushrooms, portabella, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 300.0
- },
- "liquid honey": {
-  "fdc_id": 169640,
-  "match_description": "Honey",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 300.0
- },
- "white sauce": {
-  "fdc_id": 174525,
-  "match_description": "Sauce, homemade, white, medium",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 300.0
- },
- "corn syrup": {
-  "fdc_id": 167743,
-  "match_description": "Syrup, Cane",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 300.0
- },
- "brown lentils": {
-  "fdc_id": 172420,
-  "match_description": "Lentils, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 300.0
- },
- "apple pie spice": {
-  "fdc_id": 175012,
-  "match_description": "Pie, apple, prepared from recipe",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 300.0
- },
- "bibb lettuce": {
-  "fdc_id": 168429,
-  "match_description": "Lettuce, butterhead (includes boston and bibb types), raw",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 300.0
- },
- "hearts of palm": {
-  "fdc_id": 167714,
-  "match_description": "Hearts of palm, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 300.0
- },
- "beef top sirloin steaks": {
-  "fdc_id": 2727574,
-  "match_description": "Beef, top sirloin steak, raw",
-  "data_type": "Foundation",
-  "rank_score": 113,
-  "corpus_grams": 300.0
- },
- "oven-roasted deli chicken": {
-  "fdc_id": 173635,
-  "match_description": "Chicken, roasting, meat and skin, cooked, roasted",
-  "data_type": "SR Legacy",
-  "rank_score": 86,
-  "corpus_grams": 300.0
- },
- "wondra flour": {
-  "fdc_id": 2003586,
-  "match_description": "Flour, 00",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 300.0
- },
- "roasted peanuts": {
-  "fdc_id": 174262,
-  "match_description": "Peanuts, all types, dry-roasted, with salt",
-  "data_type": "SR Legacy",
-  "rank_score": 104,
-  "corpus_grams": 283.3
- },
- "celery seed": {
-  "fdc_id": 2346405,
-  "match_description": "Celery, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 275.0
- },
- "wheat pastry flour": {
-  "fdc_id": 1104913,
-  "match_description": "Flour, pastry, unenriched, unbleached",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 275.0
  },
  "ginger": {
   "fdc_id": 169231,
@@ -2631,152 +671,12 @@
   "rank_score": 78,
   "corpus_grams": 253.1
  },
- "baking soda": {
-  "fdc_id": 175040,
-  "match_description": "Leavening agents, baking soda",
-  "data_type": "SR Legacy",
-  "rank_score": 75,
-  "corpus_grams": 252.0
- },
- "poultry seasoning": {
-  "fdc_id": 171106,
-  "match_description": "Poultry, mechanically deboned, from mature hens, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 76,
-  "corpus_grams": 250.0
- },
- "long grain brown rice": {
-  "fdc_id": 2512380,
-  "match_description": "Rice, brown, long grain, unenriched, raw",
-  "data_type": "Foundation",
-  "rank_score": 130,
-  "corpus_grams": 250.0
- },
  "napa cabbage": {
   "fdc_id": 2727583,
   "match_description": "Cabbage, napa, leaf, destemmed, raw",
   "data_type": "Foundation",
   "rank_score": 95,
   "corpus_grams": 250.0
- },
- "roma tomato": {
-  "fdc_id": 1999634,
-  "match_description": "Tomato, roma",
-  "data_type": "Foundation",
-  "rank_score": 88,
-  "corpus_grams": 250.0
- },
- "back bacon": {
-  "fdc_id": 172439,
-  "match_description": "Bacon, meatless",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 250.0
- },
- "celery leaves": {
-  "fdc_id": 2346405,
-  "match_description": "Celery, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 250.0
- },
- "easy hollandaise sauce": {
-  "fdc_id": 174523,
-  "match_description": "Sauce, barbecue",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 250.0
- },
- "plantains": {
-  "fdc_id": 168215,
-  "match_description": "Plantains, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 250.0
- },
- "pear": {
-  "fdc_id": 2710836,
-  "match_description": "Pear, Anjou, green, with skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 107,
-  "corpus_grams": 250.0
- },
- "icing sugar": {
-  "fdc_id": 170674,
-  "match_description": "Sugar, turbinado",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 250.0
- },
- "gruyere cheese": {
-  "fdc_id": 171242,
-  "match_description": "Cheese, gruyere",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 250.0
- },
- "spaghetti squash": {
-  "fdc_id": 169298,
-  "match_description": "Squash, winter, spaghetti, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 250.0
- },
- "quinoa": {
-  "fdc_id": 168917,
-  "match_description": "Quinoa, cooked",
-  "data_type": "SR Legacy",
-  "rank_score": 100,
-  "corpus_grams": 250.0
- },
- "olive oil flavored cooking spray": {
-  "fdc_id": 171430,
-  "match_description": "Oil, PAM cooking spray, original",
-  "data_type": "SR Legacy",
-  "rank_score": 105,
-  "corpus_grams": 245.0
- },
- "unbleached white flour": {
-  "fdc_id": 790146,
-  "match_description": "Flour, bread, white, enriched, unbleached",
-  "data_type": "Foundation",
-  "rank_score": 104,
-  "corpus_grams": 241.7
- },
- "low sodium soy sauce": {
-  "fdc_id": 171597,
-  "match_description": "Sauce, pasta, spaghetti/marinara, ready-to-serve, low sodium",
-  "data_type": "SR Legacy",
-  "rank_score": 103,
-  "corpus_grams": 241.3
- },
- "pearl barley": {
-  "fdc_id": 170284,
-  "match_description": "Barley, pearled, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 233.3
- },
- "hazelnuts": {
-  "fdc_id": 169827,
-  "match_description": "Hazelnuts, beaked (Northern Plains Indians)",
-  "data_type": "SR Legacy",
-  "rank_score": 106,
-  "corpus_grams": 225.0
- },
- "wild rice": {
-  "fdc_id": 169726,
-  "match_description": "Wild rice, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 225.0
- },
- "bacon grease": {
-  "fdc_id": 174592,
-  "match_description": "Bacon, turkey, unprepared",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 225.0
  },
  "hoisin sauce": {
   "fdc_id": 172886,
@@ -2785,298 +685,11 @@
   "rank_score": 87,
   "corpus_grams": 224.0
  },
- "baileys irish cream": {
-  "fdc_id": 175098,
-  "match_description": "Alcoholic beverage, liqueur, coffee with cream, 34 proof",
-  "data_type": "SR Legacy",
-  "rank_score": 16,
-  "corpus_grams": 200.0
- },
- "tomatoes with onion and garlic": {
-  "fdc_id": 1104647,
-  "match_description": "Garlic, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 200.0
- },
- "mineral water": {
-  "fdc_id": 174827,
-  "match_description": "Beverages, GEROLSTEINER BRUNNEN GmbH & Co. KG,Gerolsteiner naturally sparkling mineral water,",
-  "data_type": "SR Legacy",
-  "rank_score": 72,
-  "corpus_grams": 200.0
- },
- "broccoli floret": {
-  "fdc_id": 747447,
-  "match_description": "Broccoli, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 200.0
- },
  "shiitake mushrooms": {
   "fdc_id": 169242,
   "match_description": "Mushrooms, shiitake, raw",
   "data_type": "SR Legacy",
   "rank_score": 95,
-  "corpus_grams": 200.0
- },
- "chicken piece": {
-  "fdc_id": 171116,
-  "match_description": "Chicken, ground, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 200.0
- },
- "fire-roasted tomatoes": {
-  "fdc_id": 321360,
-  "match_description": "Tomatoes, grape, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 200.0
- },
- "sugar substitute": {
-  "fdc_id": 170675,
-  "match_description": "Sweeteners, sugar substitute, granulated, brown",
-  "data_type": "SR Legacy",
-  "rank_score": 74,
-  "corpus_grams": 200.0
- },
- "golden raisins": {
-  "fdc_id": 168164,
-  "match_description": "Raisins, golden, seedless",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 200.0
- },
- "shiitake mushroom": {
-  "fdc_id": 2003603,
-  "match_description": "Mushroom, beech",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 200.0
- },
- "roasted garlic": {
-  "fdc_id": 1104647,
-  "match_description": "Garlic, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 200.0
- },
- "white shoepeg corn": {
-  "fdc_id": 2710826,
-  "match_description": "Corn, sweet, yellow and white kernels,  fresh, raw",
-  "data_type": "Foundation",
-  "rank_score": 102,
-  "corpus_grams": 200.0
- },
- "farfalle pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 200.0
- },
- "beef round": {
-  "fdc_id": 169534,
-  "match_description": "Beef, round, top round, separable lean and fat, trimmed to 1/8\" fat, prime, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 111,
-  "corpus_grams": 200.0
- },
- "short-grain rice": {
-  "fdc_id": 2512380,
-  "match_description": "Rice, brown, long grain, unenriched, raw",
-  "data_type": "Foundation",
-  "rank_score": 94,
-  "corpus_grams": 200.0
- },
- "corned beef": {
-  "fdc_id": 170199,
-  "match_description": "Beef, cured, corned beef, brisket, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 200.0
- },
- "classico alfredo with sun tomatoes": {
-  "fdc_id": 168567,
-  "match_description": "Tomatoes, sun-dried",
-  "data_type": "SR Legacy",
-  "rank_score": 106,
-  "corpus_grams": 200.0
- },
- "celery rib": {
-  "fdc_id": 2346405,
-  "match_description": "Celery, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 200.0
- },
- "green plantains": {
-  "fdc_id": 168215,
-  "match_description": "Plantains, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 200.0
- },
- "bulgar wheat": {
-  "fdc_id": 169721,
-  "match_description": "Wheat, durum",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 200.0
- },
- "tapioca starch": {
-  "fdc_id": 174102,
-  "match_description": "Bread, gluten-free, whole grain, made with tapioca starch and brown rice flour",
-  "data_type": "SR Legacy",
-  "rank_score": 73,
-  "corpus_grams": 200.0
- },
- "yellow sweet onions": {
-  "fdc_id": 790646,
-  "match_description": "Onions, yellow, raw",
-  "data_type": "Foundation",
-  "rank_score": 96,
-  "corpus_grams": 200.0
- },
- "white swiss chard": {
-  "fdc_id": 169991,
-  "match_description": "Chard, swiss, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 96,
-  "corpus_grams": 200.0
- },
- "-cooking barley": {
-  "fdc_id": 170284,
-  "match_description": "Barley, pearled, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 200.0
- },
- "yellow bell peppers": {
-  "fdc_id": 2258589,
-  "match_description": "Peppers, bell, yellow, raw",
-  "data_type": "Foundation",
-  "rank_score": 113,
-  "corpus_grams": 200.0
- },
- "swiss chard": {
-  "fdc_id": 169991,
-  "match_description": "Chard, swiss, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 96,
-  "corpus_grams": 200.0
- },
- "baking chocolate": {
-  "fdc_id": 167999,
-  "match_description": "Baking chocolate, mexican, squares",
-  "data_type": "SR Legacy",
-  "rank_score": 99,
-  "corpus_grams": 200.0
- },
- "black sesame seeds": {
-  "fdc_id": 169410,
-  "match_description": "Seeds, sesame butter, tahini, from raw and stone ground kernels",
-  "data_type": "SR Legacy",
-  "rank_score": 93,
-  "corpus_grams": 200.0
- },
- "semolina flour": {
-  "fdc_id": 2003589,
-  "match_description": "Flour, semolina, fine",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 200.0
- },
- "-fat milk": {
-  "fdc_id": 167697,
-  "match_description": "Milk, buttermilk, fluid, cultured, reduced fat",
-  "data_type": "SR Legacy",
-  "rank_score": 104,
-  "corpus_grams": 200.0
- },
- "cut okra": {
-  "fdc_id": 169260,
-  "match_description": "Okra, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 200.0
- },
- "tortillas": {
-  "fdc_id": 167535,
-  "match_description": "Tortillas, ready-to-bake or -fry, flour, shelf stable",
-  "data_type": "SR Legacy",
-  "rank_score": 106,
-  "corpus_grams": 200.0
- },
- "red apples": {
-  "fdc_id": 1750339,
-  "match_description": "Apples, red delicious, with skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 200.0
- },
- "sugar snap peas": {
-  "fdc_id": 170419,
-  "match_description": "Peas, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 200.0
- },
- "tomatoes with green chilies": {
-  "fdc_id": 170456,
-  "match_description": "Tomatoes, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 200.0
- },
- "mild sausage": {
-  "fdc_id": 171631,
-  "match_description": "Sausage, Italian, pork, mild, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 200.0
- },
- "black-eyed peas": {
-  "fdc_id": 170419,
-  "match_description": "Peas, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 200.0
- },
- "roquefort cheese": {
-  "fdc_id": 171250,
-  "match_description": "Cheese, roquefort",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 200.0
- },
- "plums": {
-  "fdc_id": 169949,
-  "match_description": "Plums, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 200.0
- },
- "fat free cream cheese": {
-  "fdc_id": 172207,
-  "match_description": "Cheese, cream, fat free",
-  "data_type": "SR Legacy",
-  "rank_score": 123,
-  "corpus_grams": 200.0
- },
- "red pear tomatoes": {
-  "fdc_id": 170457,
-  "match_description": "Tomatoes, red, ripe, raw, year round average",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 200.0
- },
- "white cabbage": {
-  "fdc_id": 169335,
-  "match_description": "Cabbage, common (danish, domestic, and pointed types), freshly harvest, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 83,
   "corpus_grams": 200.0
  },
  "broad beans": {
@@ -3086,62 +699,6 @@
   "rank_score": 77,
   "corpus_grams": 200.0
  },
- "beef tenderloin steaks": {
-  "fdc_id": 2727573,
-  "match_description": "Beef, tenderloin steak, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 200.0
- },
- "hash browns": {
-  "fdc_id": 169025,
-  "match_description": "DENNY'S, hash browns",
-  "data_type": "SR Legacy",
-  "rank_score": 75,
-  "corpus_grams": 200.0
- },
- "white cornmeal": {
-  "fdc_id": 168923,
-  "match_description": "Cornmeal, white, self-rising, bolted, plain, enriched",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 200.0
- },
- "spanish onions": {
-  "fdc_id": 170000,
-  "match_description": "Onions, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 200.0
- },
- "toasted sesame seeds": {
-  "fdc_id": 170151,
-  "match_description": "Seeds, sesame seeds, whole, roasted and toasted",
-  "data_type": "SR Legacy",
-  "rank_score": 104,
-  "corpus_grams": 200.0
- },
- "portabella mushroom caps": {
-  "fdc_id": 2003598,
-  "match_description": "Mushroom, portabella",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 200.0
- },
- "white wine vinegar": {
-  "fdc_id": 172240,
-  "match_description": "Vinegar, red wine",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 197.8
- },
- "barley": {
-  "fdc_id": 170284,
-  "match_description": "Barley, pearled, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 187.5
- },
  "parmigiano-reggiano cheese": {
   "fdc_id": 173413,
   "match_description": "Cheese, caraway",
@@ -3149,102 +706,11 @@
   "rank_score": 78,
   "corpus_grams": 175.0
  },
- "celery seeds": {
-  "fdc_id": 2346405,
-  "match_description": "Celery, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 175.0
- },
- "sun- tomatoes in oil": {
-  "fdc_id": 169384,
-  "match_description": "Tomatoes, sun-dried, packed in oil, drained",
-  "data_type": "SR Legacy",
-  "rank_score": 158,
-  "corpus_grams": 168.0
- },
- "miracle whip": {
-  "fdc_id": 171004,
-  "match_description": "Salad dressing, KRAFT MIRACLE WHIP FREE Nonfat Dressing",
-  "data_type": "SR Legacy",
-  "rank_score": 74,
-  "corpus_grams": 150.0
- },
- "italian-style stewed tomatoes": {
-  "fdc_id": 170089,
-  "match_description": "Tomatoes, red, ripe, cooked, stewed",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 150.0
- },
  "pecorino romano cheese": {
   "fdc_id": 171249,
   "match_description": "Cheese, romano",
   "data_type": "SR Legacy",
   "rank_score": 88,
-  "corpus_grams": 150.0
- },
- "pork sausage": {
-  "fdc_id": 172934,
-  "match_description": "Pork sausage, link/patty, unprepared",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 150.0
- },
- "beef bouillon cube": {
-  "fdc_id": 170199,
-  "match_description": "Beef, cured, corned beef, brisket, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 150.0
- },
- "chinese chili sauce": {
-  "fdc_id": 171595,
-  "match_description": "Sauce, tomato chili sauce, bottled, with salt",
-  "data_type": "SR Legacy",
-  "rank_score": 86,
-  "corpus_grams": 150.0
- },
- "corn tortilla strips": {
-  "fdc_id": 2758997,
-  "match_description": "Tortilla, corn, shelf stable",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 150.0
- },
- "broccoli slaw mix": {
-  "fdc_id": 747447,
-  "match_description": "Broccoli, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 150.0
- },
- "ziti pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 150.0
- },
- "acorn squash": {
-  "fdc_id": 168472,
-  "match_description": "Squash, winter, acorn, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 150.0
- },
- "turkey sausage": {
-  "fdc_id": 174617,
-  "match_description": "Sausage, turkey, fresh, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 103,
-  "corpus_grams": 150.0
- },
- "brussels sprouts": {
-  "fdc_id": 2685575,
-  "match_description": "Brussels sprouts, raw",
-  "data_type": "Foundation",
-  "rank_score": 107,
   "corpus_grams": 150.0
  },
  "chili powder": {
@@ -3254,61 +720,12 @@
   "rank_score": 75,
   "corpus_grams": 138.7
  },
- "shortening": {
-  "fdc_id": 173584,
-  "match_description": "Shortening, vegetable, household, composite",
-  "data_type": "SR Legacy",
-  "rank_score": 106,
-  "corpus_grams": 137.7
- },
- "green peas": {
-  "fdc_id": 170419,
-  "match_description": "Peas, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 96,
-  "corpus_grams": 133.3
- },
- "currants": {
-  "fdc_id": 173963,
-  "match_description": "Currants, european black, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 125.0
- },
- "plum tomato": {
-  "fdc_id": 2710837,
-  "match_description": "Plum, black, with skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 125.0
- },
- "graham cracker crust": {
-  "fdc_id": 172750,
-  "match_description": "Cracker, meal",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 125.0
- },
  "basil": {
   "fdc_id": 172232,
   "match_description": "Basil, fresh",
   "data_type": "SR Legacy",
   "rank_score": 108,
   "corpus_grams": 121.1
- },
- "vegetable shortening": {
-  "fdc_id": 173584,
-  "match_description": "Shortening, vegetable, household, composite",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 113.2
- },
- "wheat germ": {
-  "fdc_id": 168892,
-  "match_description": "Wheat germ, crude",
-  "data_type": "SR Legacy",
-  "rank_score": 100,
-  "corpus_grams": 112.5
  },
  "cayenne pepper": {
   "fdc_id": 169394,
@@ -3317,481 +734,12 @@
   "rank_score": 78,
   "corpus_grams": 109.1
  },
- "cooking apples": {
-  "fdc_id": 173929,
-  "match_description": "Apples, raw, without skin, cooked, microwave",
-  "data_type": "SR Legacy",
-  "rank_score": 76,
-  "corpus_grams": 100.0
- },
- "tap water": {
-  "fdc_id": 171890,
-  "match_description": "Beverages, coffee, brewed, prepared with tap water",
-  "data_type": "SR Legacy",
-  "rank_score": 74,
-  "corpus_grams": 100.0
- },
- "apricot brandy": {
-  "fdc_id": 2710815,
-  "match_description": "Apricot, with skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 100.0
- },
- "8-inch graham cracker crust": {
-  "fdc_id": 172750,
-  "match_description": "Cracker, meal",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "italian plum tomatoes": {
-  "fdc_id": 2710837,
-  "match_description": "Plum, black, with skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 100.0
- },
- "grapes": {
-  "fdc_id": 173040,
-  "match_description": "Grapes, muscadine, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 107,
-  "corpus_grams": 100.0
- },
- "boston lettuce": {
-  "fdc_id": 168429,
-  "match_description": "Lettuce, butterhead (includes boston and bibb types), raw",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 100.0
- },
- "papaya": {
-  "fdc_id": 169926,
-  "match_description": "Papayas, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 98,
-  "corpus_grams": 100.0
- },
- "focaccia bread": {
-  "fdc_id": 167945,
-  "match_description": "Focaccia, Italian flatbread, plain",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 100.0
- },
- "chickpea flour": {
-  "fdc_id": 2003586,
-  "match_description": "Flour, 00",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "queso anejo": {
-  "fdc_id": 172201,
-  "match_description": "Cheese, mexican, queso anejo",
-  "data_type": "SR Legacy",
-  "rank_score": 75,
-  "corpus_grams": 100.0
- },
- "turnip": {
-  "fdc_id": 170465,
-  "match_description": "Turnips, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 98,
-  "corpus_grams": 100.0
- },
- "palm sugar": {
-  "fdc_id": 170674,
-  "match_description": "Sugar, turbinado",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "roasted cashew nuts": {
-  "fdc_id": 2515374,
-  "match_description": "Nuts, cashew nuts, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 100.0
- },
- "french fries": {
-  "fdc_id": 169009,
-  "match_description": "APPLEBEE'S, french fries",
-  "data_type": "SR Legacy",
-  "rank_score": 75,
-  "corpus_grams": 100.0
- },
- "chorizo sausage": {
-  "fdc_id": 173859,
-  "match_description": "Sausage, pork, chorizo, link or ground, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 100.0
- },
- "pasta shells": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 100.0
- },
- "portabella mushroom": {
-  "fdc_id": 2003598,
-  "match_description": "Mushroom, portabella",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 100.0
- },
  "bamboo shoots": {
   "fdc_id": 169210,
   "match_description": "Bamboo shoots, raw",
   "data_type": "SR Legacy",
   "rank_score": 108,
   "corpus_grams": 100.0
- },
- "asparagus spear": {
-  "fdc_id": 168389,
-  "match_description": "Asparagus, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 100.0
- },
- "tomatoes with juice": {
-  "fdc_id": 321360,
-  "match_description": "Tomatoes, grape, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 100.0
- },
- "beef mince": {
-  "fdc_id": 170199,
-  "match_description": "Beef, cured, corned beef, brisket, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 100.0
- },
- "rotini pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 100.0
- },
- "israeli couscous": {
-  "fdc_id": 169700,
-  "match_description": "Couscous, cooked",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "chicken breast half": {
-  "fdc_id": 2727569,
-  "match_description": "Chicken, breast, meat and skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 100.0
- },
- "figs": {
-  "fdc_id": 174666,
-  "match_description": "Figs, dried, stewed",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 100.0
- },
- "apricot": {
-  "fdc_id": 2710815,
-  "match_description": "Apricot, with skin, raw",
-  "data_type": "Foundation",
-  "rank_score": 107,
-  "corpus_grams": 100.0
- },
- "pork loin chop": {
-  "fdc_id": 168238,
-  "match_description": "Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 101,
-  "corpus_grams": 100.0
- },
- "white mushroom": {
-  "fdc_id": 169376,
-  "match_description": "Mushroom, white, exposed to ultraviolet light, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 100.0
- },
- "pork sausage link": {
-  "fdc_id": 173859,
-  "match_description": "Sausage, pork, chorizo, link or ground, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 112,
-  "corpus_grams": 100.0
- },
- "corn tortilla chips": {
-  "fdc_id": 2758997,
-  "match_description": "Tortilla, corn, shelf stable",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 100.0
- },
- "self rising flour": {
-  "fdc_id": 2003586,
-  "match_description": "Flour, 00",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "bread machine flour": {
-  "fdc_id": 174102,
-  "match_description": "Bread, gluten-free, whole grain, made with tapioca starch and brown rice flour",
-  "data_type": "SR Legacy",
-  "rank_score": 85,
-  "corpus_grams": 100.0
- },
- "fava beans": {
-  "fdc_id": 168574,
-  "match_description": "Beans, fava, in pod, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 100.0
- },
- "fettuccine pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 100.0
- },
- "-cooking brown rice": {
-  "fdc_id": 2512380,
-  "match_description": "Rice, brown, long grain, unenriched, raw",
-  "data_type": "Foundation",
-  "rank_score": 94,
-  "corpus_grams": 100.0
- },
- "tomatoes with garlic": {
-  "fdc_id": 1104647,
-  "match_description": "Garlic, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 100.0
- },
- "fennel": {
-  "fdc_id": 2747655,
-  "match_description": "Fennel, bulb, raw",
-  "data_type": "Foundation",
-  "rank_score": 108,
-  "corpus_grams": 100.0
- },
- "beef top round steak": {
-  "fdc_id": 173980,
-  "match_description": "Beef, round, top round steak, boneless, separable lean and fat, trimmed to 0\" fat, choice, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 128,
-  "corpus_grams": 100.0
- },
- "romaine lettuce hearts": {
-  "fdc_id": 169247,
-  "match_description": "Lettuce, cos or romaine, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 100.0
- },
- "brussels sprout": {
-  "fdc_id": 2685575,
-  "match_description": "Brussels sprouts, raw",
-  "data_type": "Foundation",
-  "rank_score": 97,
-  "corpus_grams": 100.0
- },
- "deli roast beef": {
-  "fdc_id": 2646174,
-  "match_description": "Beef, chuck, roast, boneless, choice, raw",
-  "data_type": "Foundation",
-  "rank_score": 94,
-  "corpus_grams": 100.0
- },
- "vegan sour cream": {
-  "fdc_id": 171257,
-  "match_description": "Cream, sour, cultured",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 100.0
- },
- "herbed croutons": {
-  "fdc_id": 172751,
-  "match_description": "Croutons, plain",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 100.0
- },
- "red lentils": {
-  "fdc_id": 174284,
-  "match_description": "Lentils, pink or red, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 100.0
- },
- "6-inch corn tortillas": {
-  "fdc_id": 175036,
-  "match_description": "Tortillas, ready-to-bake or -fry, corn",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 100.0
- },
- "sweet potato": {
-  "fdc_id": 170088,
-  "match_description": "Sweet potato, cooked, candied, home-prepared",
-  "data_type": "SR Legacy",
-  "rank_score": 98,
-  "corpus_grams": 100.0
- },
- "pineapple rings": {
-  "fdc_id": 2346398,
-  "match_description": "Pineapple, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 100.0
- },
- "fontina cheese": {
-  "fdc_id": 170843,
-  "match_description": "Cheese, fontina",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 100.0
- },
- "tiny peas": {
-  "fdc_id": 170419,
-  "match_description": "Peas, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 100.0
- },
- "chicken bouillon granule": {
-  "fdc_id": 174551,
-  "match_description": "Soup, chicken broth, canned, prepared with equal volume water",
-  "data_type": "SR Legacy",
-  "rank_score": -30,
-  "corpus_grams": 100.0
- },
- "mushroom cap": {
-  "fdc_id": 2003603,
-  "match_description": "Mushroom, beech",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "broiler-fryer chicken": {
-  "fdc_id": 171057,
-  "match_description": "Chicken, broilers or fryers, giblets, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 76,
-  "corpus_grams": 100.0
- },
- "ham hock": {
-  "fdc_id": 173865,
-  "match_description": "Ham, minced",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "top round steak": {
-  "fdc_id": 167649,
-  "match_description": "Buffalo, free range, top round steak, raw (Shoshone Bannock)",
-  "data_type": "SR Legacy",
-  "rank_score": 99,
-  "corpus_grams": 100.0
- },
- "head broccoli": {
-  "fdc_id": 747447,
-  "match_description": "Broccoli, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 100.0
- },
- "graham cracker crumb crust": {
-  "fdc_id": 172750,
-  "match_description": "Cracker, meal",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "white kidney beans": {
-  "fdc_id": 169885,
-  "match_description": "Beans, liquid from stewed kidney beans",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 100.0
- },
- "frying chicken": {
-  "fdc_id": 169886,
-  "match_description": "Chicken, meatless",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "mushroom pieces": {
-  "fdc_id": 2003603,
-  "match_description": "Mushroom, beech",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "mandarin orange": {
-  "fdc_id": 2710832,
-  "match_description": "Mandarin, seedless, peeled, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 100.0
- },
- "cod fish fillet": {
-  "fdc_id": 171955,
-  "match_description": "Fish, cod, Atlantic, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 100.0
- },
- "spanish rice": {
-  "fdc_id": 167665,
-  "match_description": "Restaurant, Mexican, spanish rice",
-  "data_type": "SR Legacy",
-  "rank_score": 75,
-  "corpus_grams": 100.0
- },
- "sugar-free chocolate pudding mix": {
-  "fdc_id": 168799,
-  "match_description": "Puddings, chocolate, ready-to-eat, fat free",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 100.0
- },
- "buddha's herb mix for mushrooms": {
-  "fdc_id": 168422,
-  "match_description": "Mushrooms, Chanterelle, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 100.0
- },
- "tuna": {
-  "fdc_id": 173706,
-  "match_description": "Fish, tuna, fresh, bluefin, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 73,
-  "corpus_grams": 100.0
- },
- "pesto sauce": {
-  "fdc_id": 171580,
-  "match_description": "Sauce, pesto, ready-to-serve, shelf stable",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 98.6
- },
- "sodium soy sauce": {
-  "fdc_id": 172890,
-  "match_description": "Sauce, teriyaki, ready-to-serve, reduced sodium",
-  "data_type": "SR Legacy",
-  "rank_score": 104,
-  "corpus_grams": 92.0
  },
  "vanilla extract": {
   "fdc_id": 173471,
@@ -3800,47 +748,12 @@
   "rank_score": 100,
   "corpus_grams": 84.2
  },
- "distilled white vinegar": {
-  "fdc_id": 172237,
-  "match_description": "Vinegar, distilled",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 84.0
- },
  "thyme": {
   "fdc_id": 173470,
   "match_description": "Thyme, fresh",
   "data_type": "SR Legacy",
   "rank_score": 108,
   "corpus_grams": 82.1
- },
- "tomatoes in puree": {
-  "fdc_id": 321360,
-  "match_description": "Tomatoes, grape, raw",
-  "data_type": "Foundation",
-  "rank_score": 77,
-  "corpus_grams": 75.0
- },
- "wine vinegar": {
-  "fdc_id": 172240,
-  "match_description": "Vinegar, red wine",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 73.5
- },
- "barbecue sauce": {
-  "fdc_id": 174523,
-  "match_description": "Sauce, barbecue",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 72.0
- },
- "yellow mustard": {
-  "fdc_id": 326698,
-  "match_description": "Mustard, prepared, yellow",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 72.0
  },
  "curry powder": {
   "fdc_id": 170924,
@@ -3849,33 +762,12 @@
   "rank_score": 75,
   "corpus_grams": 71.0
  },
- "sherry wine vinegar": {
-  "fdc_id": 172240,
-  "match_description": "Vinegar, red wine",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 70.0
- },
- "garbanzo flour": {
-  "fdc_id": 2003586,
-  "match_description": "Flour, 00",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 66.7
- },
  "kosher salt": {
   "fdc_id": 173468,
   "match_description": "Salt, table",
   "data_type": "SR Legacy",
   "rank_score": 78,
   "corpus_grams": 65.2
- },
- "horseradish": {
-  "fdc_id": 173472,
-  "match_description": "Horseradish, prepared",
-  "data_type": "SR Legacy",
-  "rank_score": 99,
-  "corpus_grams": 64.0
  },
  "apple cider vinegar": {
   "fdc_id": 173469,
@@ -3884,257 +776,12 @@
   "rank_score": 88,
   "corpus_grams": 59.5
  },
- "lite olive oil": {
-  "fdc_id": 167737,
-  "match_description": "Oil, corn, peanut, and olive",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 56.0
- },
  "basil leaves": {
   "fdc_id": 172232,
   "match_description": "Basil, fresh",
   "data_type": "SR Legacy",
   "rank_score": 78,
   "corpus_grams": 50.2
- },
- "wheat pasta shells": {
-  "fdc_id": 168916,
-  "match_description": "Pasta, whole grain, 51% whole wheat, remaining unenriched semolina, cooked",
-  "data_type": "SR Legacy",
-  "rank_score": 85,
-  "corpus_grams": 50.0
- },
- "sweet italian sausage link": {
-  "fdc_id": 172952,
-  "match_description": "Sausage, Italian, sweet, links",
-  "data_type": "SR Legacy",
-  "rank_score": 105,
-  "corpus_grams": 50.0
- },
- "italian-style tomato paste": {
-  "fdc_id": 1999634,
-  "match_description": "Tomato, roma",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 50.0
- },
- "part- mozzarella cheese": {
-  "fdc_id": 170847,
-  "match_description": "Cheese, mozzarella, part skim milk",
-  "data_type": "SR Legacy",
-  "rank_score": 123,
-  "corpus_grams": 50.0
- },
- "chicken liver": {
-  "fdc_id": 171060,
-  "match_description": "Chicken, liver, all classes, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 50.0
- },
- "-fat cream cheese": {
-  "fdc_id": 172215,
-  "match_description": "Cheese, provolone, reduced fat",
-  "data_type": "SR Legacy",
-  "rank_score": 105,
-  "corpus_grams": 50.0
- },
- "cotija cheese": {
-  "fdc_id": 2647443,
-  "match_description": "Cheese, cotija, solid",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 50.0
- },
- "egg beaters egg substitute": {
-  "fdc_id": 171287,
-  "match_description": "Egg, whole, raw, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 85,
-  "corpus_grams": 50.0
- },
- "white button mushrooms": {
-  "fdc_id": 1999629,
-  "match_description": "Mushrooms, white button",
-  "data_type": "Foundation",
-  "rank_score": 105,
-  "corpus_grams": 50.0
- },
- "chicken cutlet": {
-  "fdc_id": 171116,
-  "match_description": "Chicken, ground, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 50.0
- },
- "10-inch flour tortillas": {
-  "fdc_id": 167535,
-  "match_description": "Tortillas, ready-to-bake or -fry, flour, shelf stable",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 50.0
- },
- "garlic paste": {
-  "fdc_id": 1104647,
-  "match_description": "Garlic, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 50.0
- },
- "curd cottage cheese": {
-  "fdc_id": 172179,
-  "match_description": "Cheese, cottage, creamed, large or small curd",
-  "data_type": "SR Legacy",
-  "rank_score": 104,
-  "corpus_grams": 50.0
- },
- "fava bean flour": {
-  "fdc_id": 2003586,
-  "match_description": "Flour, 00",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 50.0
- },
- "head cauliflower": {
-  "fdc_id": 2685573,
-  "match_description": "Cauliflower, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 50.0
- },
- "pumpkin pie spice": {
-  "fdc_id": 171332,
-  "match_description": "Spices, pumpkin pie spice",
-  "data_type": "SR Legacy",
-  "rank_score": 93,
-  "corpus_grams": 50.0
- },
- "seasoning salt": {
-  "fdc_id": 173468,
-  "match_description": "Salt, table",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 45.0
- },
- "white distilled vinegar": {
-  "fdc_id": 172237,
-  "match_description": "Vinegar, distilled",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 42.0
- },
- "coconut cream": {
-  "fdc_id": 170580,
-  "match_description": "Nuts, coconut cream, raw (liquid expressed from grated meat)",
-  "data_type": "SR Legacy",
-  "rank_score": 81,
-  "corpus_grams": 42.0
- },
- "chives": {
-  "fdc_id": 169994,
-  "match_description": "Chives, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 108,
-  "corpus_grams": 36.8
- },
- "dill": {
-  "fdc_id": 172233,
-  "match_description": "Dill weed, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 36.2
- },
- "non-fat powdered milk": {
-  "fdc_id": 167730,
-  "match_description": "Milk, imitation, non-soy",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 33.3
- },
- "spiral shaped pasta": {
-  "fdc_id": 169727,
-  "match_description": "Pasta, fresh-refrigerated, plain, as purchased",
-  "data_type": "SR Legacy",
-  "rank_score": 84,
-  "corpus_grams": 33.3
- },
- "sriracha sauce": {
-  "fdc_id": 171186,
-  "match_description": "Sauce, hot chile, sriracha",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 32.0
- },
- "tamari soy sauce": {
-  "fdc_id": 174070,
-  "match_description": "Sauce, peanut, made from peanut butter, water, soy sauce",
-  "data_type": "SR Legacy",
-  "rank_score": 86,
-  "corpus_grams": 32.0
- },
- "rosemary": {
-  "fdc_id": 173473,
-  "match_description": "Rosemary, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 30.7
- },
- "walnut oil": {
-  "fdc_id": 171030,
-  "match_description": "Oil, walnut",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 28.0
- },
- "seasoned rice vinegar": {
-  "fdc_id": 172241,
-  "match_description": "Vinegar, balsamic",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 25.7
- },
- "cream sherry": {
-  "fdc_id": 170857,
-  "match_description": "Cream, fluid, light (coffee cream or table cream)",
-  "data_type": "SR Legacy",
-  "rank_score": 76,
-  "corpus_grams": 25.0
- },
- "cashew nuts": {
-  "fdc_id": 2515374,
-  "match_description": "Nuts, cashew nuts, raw",
-  "data_type": "Foundation",
-  "rank_score": 95,
-  "corpus_grams": 25.0
- },
- "turkey carcass": {
-  "fdc_id": 171505,
-  "match_description": "Turkey, Ground, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 25.0
- },
- "enriched flour": {
-  "fdc_id": 790276,
-  "match_description": "Flour, corn, yellow, fine meal, enriched",
-  "data_type": "Foundation",
-  "rank_score": 86,
-  "corpus_grams": 25.0
- },
- "smoked salmon": {
-  "fdc_id": 169813,
-  "match_description": "Salmon, red (sockeye), filets with skin, smoked (Alaska Native)",
-  "data_type": "SR Legacy",
-  "rank_score": 85,
-  "corpus_grams": 25.0
- },
- "white pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 24.9
  },
  "sea salt": {
   "fdc_id": 173468,
@@ -4157,187 +804,12 @@
   "rank_score": 78,
   "corpus_grams": 20.7
  },
- "hellmann's mayonnaise": {
-  "fdc_id": 2758986,
-  "match_description": "Mayonnaise, Regular",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 20.0
- },
- "caraway seed": {
-  "fdc_id": 170918,
-  "match_description": "Spices, caraway seed",
-  "data_type": "SR Legacy",
-  "rank_score": 83,
-  "corpus_grams": 18.5
- },
- "vanilla yogurt": {
-  "fdc_id": 170907,
-  "match_description": "Yogurt, Greek, vanilla, lowfat",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 16.0
- },
- "pesto sauce mix": {
-  "fdc_id": 171580,
-  "match_description": "Sauce, pesto, ready-to-serve, shelf stable",
-  "data_type": "SR Legacy",
-  "rank_score": 94,
-  "corpus_grams": 16.0
- },
- "mustard seeds": {
-  "fdc_id": 170144,
-  "match_description": "Seeds, breadfruit seeds, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 16.0
- },
- "tabasco jalapeno sauce": {
-  "fdc_id": 174528,
-  "match_description": "Sauce, ready-to-serve, pepper, TABASCO",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 16.0
- },
- "cracked black pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 15.5
- },
- "dill pickles": {
-  "fdc_id": 324653,
-  "match_description": "Pickles, cucumber, dill or kosher dill",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 15.0
- },
- "parsley flakes": {
-  "fdc_id": 170416,
-  "match_description": "Parsley, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 14.2
- },
- "fennel seed": {
-  "fdc_id": 2747655,
-  "match_description": "Fennel, bulb, raw",
-  "data_type": "Foundation",
-  "rank_score": 78,
-  "corpus_grams": 14.0
- },
- "cumin seeds": {
-  "fdc_id": 170144,
-  "match_description": "Seeds, breadfruit seeds, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 14.0
- },
- "crisco shortening": {
-  "fdc_id": 173584,
-  "match_description": "Shortening, vegetable, household, composite",
-  "data_type": "SR Legacy",
-  "rank_score": 76,
-  "corpus_grams": 14.0
- },
- "cumin seed": {
-  "fdc_id": 170923,
-  "match_description": "Spices, cumin seed",
-  "data_type": "SR Legacy",
-  "rank_score": 76,
-  "corpus_grams": 12.0
- },
- "bread machine yeast": {
-  "fdc_id": 167935,
-  "match_description": "Bread, pan dulce, sweet yeast bread",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 12.0
- },
- "lemon pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 10.5
- },
- "chili pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 9.5
- },
- "cardamom seeds": {
-  "fdc_id": 170144,
-  "match_description": "Seeds, breadfruit seeds, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 8.0
- },
- "basil pesto": {
-  "fdc_id": 172232,
-  "match_description": "Basil, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 8.0
- },
- "spanish olive oil": {
-  "fdc_id": 167737,
-  "match_description": "Oil, corn, peanut, and olive",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 7.0
- },
- "tarragon vinegar": {
-  "fdc_id": 172241,
-  "match_description": "Vinegar, balsamic",
-  "data_type": "SR Legacy",
-  "rank_score": 70,
-  "corpus_grams": 7.0
- },
- "sun- tomato in oil": {
-  "fdc_id": 169384,
-  "match_description": "Tomatoes, sun-dried, packed in oil, drained",
-  "data_type": "SR Legacy",
-  "rank_score": 88,
-  "corpus_grams": 7.0
- },
  "bay leaf": {
   "fdc_id": 170917,
   "match_description": "Spices, bay leaf",
   "data_type": "SR Legacy",
   "rank_score": 76,
   "corpus_grams": 5.5
- },
- "tomato ketchup": {
-  "fdc_id": 747693,
-  "match_description": "Ketchup, restaurant",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 5.3
- },
- "parsley leaves": {
-  "fdc_id": 170416,
-  "match_description": "Parsley, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 5.2
- },
- "thyme leaves": {
-  "fdc_id": 173470,
-  "match_description": "Thyme, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 5.2
- },
- "flat leaf parsley": {
-  "fdc_id": 170416,
-  "match_description": "Parsley, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 5.0
  },
  "flat-leaf parsley": {
   "fdc_id": 170416,
@@ -4346,270 +818,11 @@
   "rank_score": 78,
   "corpus_grams": 5.0
  },
- "raspberry red wine vinegar": {
-  "fdc_id": 172240,
-  "match_description": "Vinegar, red wine",
-  "data_type": "SR Legacy",
-  "rank_score": 106,
-  "corpus_grams": 4.7
- },
- "table salt": {
-  "fdc_id": 173468,
-  "match_description": "Salt, table",
-  "data_type": "SR Legacy",
-  "rank_score": 96,
-  "corpus_grams": 4.5
- },
  "thai basil": {
   "fdc_id": 172232,
   "match_description": "Basil, fresh",
   "data_type": "SR Legacy",
   "rank_score": 78,
   "corpus_grams": 4.0
- },
- "black mustard seeds": {
-  "fdc_id": 170144,
-  "match_description": "Seeds, breadfruit seeds, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 77,
-  "corpus_grams": 4.0
- },
- "bread machine -acting active yeast": {
-  "fdc_id": 174928,
-  "match_description": "Bread, crumbs, dry, grated, plain",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 4.0
- },
- "oil-cured black olive": {
-  "fdc_id": 167737,
-  "match_description": "Oil, corn, peanut, and olive",
-  "data_type": "SR Legacy",
-  "rank_score": 87,
-  "corpus_grams": 3.5
- },
- "cracked pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 3.0
- },
- "basil leaf": {
-  "fdc_id": 172232,
-  "match_description": "Basil, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 2.6
- },
- "habanero pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 2.5
- },
- "rosemary sprigs": {
-  "fdc_id": 173473,
-  "match_description": "Rosemary, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 2.1
- },
- "sour dill pickles": {
-  "fdc_id": 324653,
-  "match_description": "Pickles, cucumber, dill or kosher dill",
-  "data_type": "Foundation",
-  "rank_score": 87,
-  "corpus_grams": 2.0
- },
- "serrano chili pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 2.0
- },
- "chipotle pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 2.0
- },
- "hawaiian sea salt": {
-  "fdc_id": 173468,
-  "match_description": "Salt, table",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 2.0
- },
- "tomatoes with green pepper and onion": {
-  "fdc_id": 170456,
-  "match_description": "Tomatoes, green, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 95,
-  "corpus_grams": 2.0
- },
- "vanilla-flavored soymilk": {
-  "fdc_id": 172446,
-  "match_description": "Soymilk, original and vanilla, unfortified",
-  "data_type": "SR Legacy",
-  "rank_score": 86,
-  "corpus_grams": 2.0
- },
- "cream of tartar": {
-  "fdc_id": 175041,
-  "match_description": "Leavening agents, cream of tartar",
-  "data_type": "SR Legacy",
-  "rank_score": 93,
-  "corpus_grams": 1.5
- },
- "sweet basil": {
-  "fdc_id": 172232,
-  "match_description": "Basil, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 1.5
- },
- "scotch bonnet pepper": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 1.0
- },
- "thyme sprig": {
-  "fdc_id": 173470,
-  "match_description": "Thyme, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 1.0
- },
- "lemon pepper seasoning": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 1.0
- },
- "gram flour": {
-  "fdc_id": 2003586,
-  "match_description": "Flour, 00",
-  "data_type": "Foundation",
-  "rank_score": 70,
-  "corpus_grams": 0.7
- },
- "rosemary leaf": {
-  "fdc_id": 173473,
-  "match_description": "Rosemary, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 0.5
- },
- "lemon-pepper seasoning": {
-  "fdc_id": 169394,
-  "match_description": "Pepper, banana, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 0.5
- },
- "leaf thyme": {
-  "fdc_id": 173470,
-  "match_description": "Thyme, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 0.2
- },
- "leaf basil": {
-  "fdc_id": 172232,
-  "match_description": "Basil, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 0.2
- },
- "basil sprig": {
-  "fdc_id": 172232,
-  "match_description": "Basil, fresh",
-  "data_type": "SR Legacy",
-  "rank_score": 78,
-  "corpus_grams": 0.2
- },
- "2 milk": {
-  "fdc_id": 171267,
-  "match_description": "Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",
-  "data_type": "SR Legacy",
-  "rank_score": 85,
-  "corpus_grams": 433.3
- },
- "chicken bouillon powder": {
-  "fdc_id": 174551,
-  "match_description": "Soup, chicken broth, canned, prepared with equal volume water",
-  "data_type": "SR Legacy",
-  "rank_score": -30,
-  "corpus_grams": 150.0
- },
- "chicken bouillon granules": {
-  "fdc_id": 174551,
-  "match_description": "Soup, chicken broth, canned, prepared with equal volume water",
-  "data_type": "SR Legacy",
-  "rank_score": -30,
-  "corpus_grams": 850.0
- },
- "triple sec": {
-  "fdc_id": 173665,
-  "match_description": "Alcoholic beverage, liqueur, coffee, 63 proof",
-  "data_type": "SR Legacy",
-  "rank_score": -2,
-  "corpus_grams": 1350.0
- },
- "ahi tuna steaks": {
-  "fdc_id": 175159,
-  "match_description": "Fish, tuna, fresh, yellowfin, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 33,
-  "corpus_grams": 2400.0
- },
- "creme de cacao": {
-  "fdc_id": 173665,
-  "match_description": "Alcoholic beverage, liqueur, coffee, 63 proof",
-  "data_type": "SR Legacy",
-  "rank_score": -2,
-  "corpus_grams": 325.0
- },
- "bourbon": {
-  "fdc_id": 174817,
-  "match_description": "Alcoholic beverage, distilled, rum, 80 proof",
-  "data_type": "SR Legacy",
-  "rank_score": -2,
-  "corpus_grams": 250.0
- },
- "cod steaks": {
-  "fdc_id": 171955,
-  "match_description": "Fish, cod, Atlantic, raw",
-  "data_type": "SR Legacy",
-  "rank_score": 25,
-  "corpus_grams": 3000.0
- },
- "artificial vanilla flavoring": {
-  "fdc_id": 173471,
-  "match_description": "Vanilla extract",
-  "data_type": "SR Legacy",
-  "rank_score": -45,
-  "corpus_grams": 1.0
- },
- "lemon rind of": {
-  "fdc_id": 167749,
-  "match_description": "Lemon peel, raw",
-  "data_type": "SR Legacy",
-  "rank_score": -47,
-  "corpus_grams": 450.0
- },
- "lemon rind": {
-  "fdc_id": 167749,
-  "match_description": "Lemon peel, raw",
-  "data_type": "SR Legacy",
-  "rank_score": -47,
-  "corpus_grams": 1050.0
  }
 }

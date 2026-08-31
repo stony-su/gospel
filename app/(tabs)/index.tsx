@@ -11,11 +11,12 @@
  * had just told them.
  */
 
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useRouter } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
 import { recipesById } from '@/data/recipes';
+import { recipeImage } from '@/data/recipeImages';
 import { CYCLE_LABELS, type CycleLength, type MealSlot } from '@/domain/planner/types';
 import { useGospel, useTargets } from '@/store/useGospel';
 import { grade, radius, space, stroke, surface } from '@/theme/tokens';
@@ -36,7 +37,11 @@ const CYCLE_OPTIONS: { value: CycleLength; label: string }[] = [
 const SLOT_ORDER: MealSlot[] = ['breakfast', 'lunch', 'dinner', 'snack'];
 const DAY_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-/** Small enough that a 28-day cycle is not 84 image requests of consequence. */
+/**
+ * The photographs are bundled, so this is no longer about request count - it
+ * is about how much of a row a picture should take next to the figures that
+ * are the actual point of the row.
+ */
 const PLATE = 44;
 
 export default function PlanTab() {
@@ -63,11 +68,22 @@ export default function PlanTab() {
       }));
   }, [plan]);
 
+  // Targets but no plan is a recoverable state, not a dead end: onboarding is
+  // done, so everything a plan needs is already known. It happens when the
+  // recipe library is replaced under a saved plan and the store drops it on
+  // rehydrate rather than leaving half of it pointing at recipes that no
+  // longer exist. Rebuilding is what the reader would press the button for.
+  useEffect(() => {
+    if (targets && !plan) regeneratePlan();
+  }, [targets, plan, regeneratePlan]);
+
   if (!plan || !targets) {
     return (
       <Screen bottomInset={70}>
         <Header title="No plan" />
-        <Label color={grade[50]}>finish onboarding to resolve targets</Label>
+        <Label color={grade[50]}>
+          {targets ? 'building a plan' : 'finish onboarding to resolve targets'}
+        </Label>
       </Screen>
     );
   }
@@ -149,15 +165,15 @@ export default function PlanTab() {
                 style={styles.meal}
               >
                 <Plate
-                  uri={recipe.image ?? null}
+                  source={recipeImage(recipe.slug)?.thumb ?? null}
                   width={PLATE}
                   height={PLATE}
                   fallbackLabel={meal.slot.slice(0, 3)}
                 />
                 <View style={styles.mealBody}>
-                  {/* The recipe description is never rendered. It is dataset
-                      copy - "simple, easy, and tastes great" - and it says
-                      nothing the name and the figures do not. */}
+                  {/* The description belongs on the recipe screen, not in a
+                      list row: a row is scanned, and a sentence in one is
+                      read past rather than read. */}
                   <Heading numberOfLines={2}>{recipe.name}</Heading>
                   <View style={styles.mealMeta}>
                     <Label color={grade[50]}>{meal.slot.slice(0, 3)}</Label>

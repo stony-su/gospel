@@ -19,6 +19,7 @@ most-specific-first and the first match wins.
 from __future__ import annotations
 
 import re
+import unicodedata
 
 # --- Category defaults -------------------------------------------------------
 # price_per_kg: GBP. shelf_life_days: after opening for perishables.
@@ -107,8 +108,14 @@ PATTERNS: list[tuple[str, str]] = [
     (r"\bbaking (powder|soda)\b|\byeast\b|\bcream of tartar\b|\bgelatin\b", "baking_agent"),
     (r"\bchocolate\b|\bcocoa\b|\bcacao\b", "chocolate"),
 
-    # Fats and acids.
+    # Fats and acids. Rendered animal fats are fats, not meat: duck fat is
+    # 900 kcal per 100 g, which is right for a fat and impossible for poultry.
+    (r"\bduck fat\b|\bgoose fat\b|\bbeef dripping\b|\bbacon fat\b|\btallow\b|\bsuet\b", "oil"),
     (r"\bolive oil\b|\bvegetable oil\b|\bcanola oil\b|\bsesame oil\b|\bsunflower oil\b|\bpeanut oil\b|\bcooking spray\b|\blard\b|\bshortening\b|\boil\b", "oil"),
+    # Starches and tortillas ahead of the produce patterns, or "potato starch"
+    # is a root vegetable and "corn tortillas" are sweetcorn.
+    (r"\bpotato starch\b|\bpotato flour\b|\btapioca\b|\barrowroot\b", "flour"),
+    (r"\btortillas?\b|\btaco shells?\b", "bread"),
     (r"\bvinegar\b", "vinegar"),
     (r"\bmargarine\b|\bbutter\b", "butter"),
 
@@ -121,7 +128,7 @@ PATTERNS: list[tuple[str, str]] = [
     (r"\begg\b|\beggs\b|\begg whites?\b|\begg yolks?\b", "egg"),
 
     # Proteins.
-    (r"\bbacon\b|\bham\b|\bprosciutto\b|\bpancetta\b|\bsalami\b|\bpepperoni\b|\bchorizo\b|\bsausage\b|\bhot dog\b", "meat_cured"),
+    (r"\bbacon\b|\bham\b|\bprosciutto\b|\bpancetta\b|\bpanceta\b|\bguanciale\b|\bsalami\b|\bpepperoni\b|\bchorizo\b|\bsausage\b|\bhot dog\b|\bsalt pork\b|\bmorcilla\b|\blardo\b|\bspeck\b", "meat_cured"),
     (r"\bchicken\b|\bturkey\b|\bduck\b|\bpoultry\b", "meat_poultry"),
     (r"\bbeef\b|\bsteak\b|\bpork\b|\blamb\b|\bveal\b|\bvenison\b|\bground round\b|\bbrisket\b|\bmince\b", "meat_red"),
     (r"\bshrimp\b|\bprawn\b|\bsalmon\b|\btuna\b|\bcod\b|\bhalibut\b|\btilapia\b|\bcrab\b|\blobster\b|\bscallop\b|\bclam\b|\bmussel\b|\banchov\w*\b|\bfish\b|\bsardine\b", "seafood"),
@@ -221,9 +228,20 @@ NOISE_WORDS = re.compile(
 def normalise(name: str) -> str:
     """Lowercase, strip punctuation and descriptive noise, collapse spaces."""
     text = name.lower().strip()
+    # Fold accents to the letters underneath rather than deleting them.
+    # Deleting turned "croutons" into "cro tons" and "jalapeno" into "jalape o",
+    # neither of which is a food FoodData Central has ever heard of.
+    text = unicodedata.normalize("NFKD", text)
+    text = "".join(c for c in text if not unicodedata.combining(c))
     text = re.sub(r"[^a-z0-9'\- ]+", " ", text)
     text = NOISE_WORDS.sub(" ", text)
-    text = re.sub(r"\s+", " ", text).strip()
+    # Removing a noise word can leave the half of a compound that was attached
+    # to it: "medium-sized tomatoes" loses "medium" and keeps "-sized". A
+    # fragment like that is not a food, and searching FoodData Central for one
+    # returns whatever it ranks first - rye flour, in that case.
+    text = re.sub(r"[\s-]-?(?:sized|style|type|like)\b", " ", text)
+    text = re.sub(r"(?:^|\s)-+|-+(?:\s|$)", " ", text)
+    text = re.sub(r"\s+", " ", text).strip(" -")
     return text
 
 

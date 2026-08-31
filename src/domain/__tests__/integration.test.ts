@@ -77,8 +77,17 @@ const preferences = {
 
 describe('bundled data', () => {
   it('ships a usable recipe library', () => {
-    expect(recipes.length).toBeGreaterThan(1000);
-    expect(Object.keys(ingredientsById).length).toBeGreaterThan(500);
+    expect(recipes.length).toBe(100);
+    expect(Object.keys(ingredientsById).length).toBeGreaterThan(300);
+  });
+
+  it('fills every meal slot deeply enough for a monthly cycle', () => {
+    // A 28-day plan asks for one recipe per slot per day. Below about ten in
+    // a slot the same dish comes back every week, which is a plan the reader
+    // will not follow.
+    for (const slot of ['breakfast', 'lunch', 'dinner', 'snack'] as const) {
+      expect(recipes.filter((recipe) => recipe.slot === slot).length).toBeGreaterThanOrEqual(10);
+    }
   });
 
   it('gives every recipe the fields the planner depends on', () => {
@@ -88,6 +97,37 @@ describe('bundled data', () => {
       expect(recipe.instructions.length).toBeGreaterThan(0);
       expect(recipe.servings).toBeGreaterThan(0);
       expect(['breakfast', 'lunch', 'dinner', 'snack']).toContain(recipe.slot);
+    }
+  });
+
+  it('gives every recipe a photograph, credited', () => {
+    // The library's central promise, and the one that is cheapest to break:
+    // a recipe can lose its picture to a renamed Commons file or a build that
+    // skipped the image step, and nothing else would notice.
+    for (const recipe of recipes) {
+      expect(recipe.image.file).toBe(`${recipe.slug}.jpg`);
+      expect(recipe.image.thumb).toBe(`${recipe.slug}-thumb.jpg`);
+      expect(recipe.image.author.length).toBeGreaterThan(0);
+      expect(recipe.image.license.length).toBeGreaterThan(0);
+      expect(recipe.image.source_url).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
+    }
+  });
+
+  it('says where every method came from', () => {
+    for (const recipe of recipes) {
+      expect(['wikibooks', 'authored']).toContain(recipe.method_source.kind);
+      if (recipe.method_source.kind === 'wikibooks') {
+        expect(recipe.method_source.url).toMatch(/^https:\/\/en\.wikibooks\.org\//);
+        expect(recipe.method_source.license).toBe('CC BY-SA 4.0');
+      }
+    }
+  });
+
+  it('computed its nutrition from a real share of each recipe', () => {
+    // A total summed over a third of a recipe's mass is not an understatement,
+    // it is wrong, and the number on screen would not look any different.
+    for (const recipe of recipes) {
+      expect(recipe.nutrition_coverage).toBeGreaterThan(0.55);
     }
   });
 

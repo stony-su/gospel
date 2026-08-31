@@ -38,27 +38,52 @@ export interface RecipeNutrition {
   sugar_g: number;
 }
 
+/**
+ * A dish photograph and the credit it is used under.
+ *
+ * Nearly every one of these is CC BY-SA or CC BY, so naming the author and
+ * the licence is a condition of using it, not a courtesy. Carrying the credit
+ * on the recipe rather than in a separate table is what makes it impossible
+ * to ship a photograph whose attribution got lost.
+ */
+export interface RecipeImage {
+  /** Bundled asset filename; resolve it through `src/data/recipeImages.ts`. */
+  file: string;
+  /** Small square crop, for lists. */
+  thumb: string;
+  author: string;
+  license: string;
+  license_url: string;
+  /** The Wikimedia Commons file page. */
+  source_url: string;
+}
+
+/** Where a recipe's ingredients and method came from. */
+export interface MethodSource {
+  kind: 'wikibooks' | 'authored';
+  url: string | null;
+  license: string | null;
+}
+
 export interface Recipe {
   id: number;
+  /** Stable across rebuilds; the id is derived from it. */
+  slug: string;
   name: string;
+  /** One sentence from the dish's Wikipedia article. */
   description: string;
   /**
-   * First Food.com photograph, or null for the ~7% that have none.
+   * Required, not optional. Every recipe in the library has a photograph and
+   * the build fails if one does not, so a call site never has to handle the
+   * absence - and a fixture that omits it is a fixture that has drifted from
+   * what the data actually guarantees.
    *
-   * Display only - nothing in the planner, resolver or pantry ledger reads
-   * it. Added by scripts/add_recipe_images.py, which looks the id up in the
-   * corpus rather than re-running the subset builder.
-   *
-   * Optional rather than required: a Recipe built in a test has no
-   * photograph, and making the field mandatory would force every fixture to
-   * carry a null it does not care about. Call sites coalesce.
+   * Display only: nothing in the planner, resolver or pantry ledger reads it.
    */
-  image?: string | null;
+  image: RecipeImage;
   minutes: number;
   prep_minutes: number;
   servings: number;
-  rating: number;
-  reviews: number;
   cuisine: string;
   slot: MealSlot;
   difficulty: number;
@@ -66,8 +91,20 @@ export interface Recipe {
   cost_per_serving: number;
   ingredients: RecipeIngredient[];
   instructions: string[];
+  method_source: MethodSource;
+  /** The dish's Wikipedia article, where the description came from. */
+  reference_url: string | null;
   diet: Record<DietType, boolean>;
+  /**
+   * Per serving, computed from FoodData Central panels over the ingredient
+   * weights - not published by any source, because no source publishes it.
+   */
   nutrition: RecipeNutrition;
+  /**
+   * Share of the recipe's mass that carried an FDC energy value. Below 1 the
+   * figures above understate, and by roughly this much.
+   */
+  nutrition_coverage: number;
 }
 
 export interface PlanPreferences {

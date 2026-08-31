@@ -247,7 +247,10 @@ export default function Onboarding() {
                 value={answers.maxMinutes ?? 45}
                 onChange={(value) => setAnswer('maxMinutes', value)}
                 min={10}
-                max={180}
+                // The longest dish in the library is a four-hour one - ribs,
+                // galbi, pho, cassoulet. A ceiling below it would put six
+                // recipes permanently out of reach of every plan.
+                max={240}
                 step={5}
                 unit="min"
                 label="ceiling"

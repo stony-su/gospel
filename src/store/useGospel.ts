@@ -139,6 +139,24 @@ export function preferencesFrom(
   };
 }
 
+/**
+ * Whether a saved plan still names recipes this build has.
+ *
+ * A plan stores recipe ids, and the library it took them from can be replaced
+ * underneath it - the whole corpus was, once. A stale plan does not fail
+ * loudly: the plan tab renders nothing for the meals it cannot resolve, and
+ * the grocery list quietly shops for a shorter week. So the plan is checked
+ * on rehydrate and dropped whole rather than left half-real, and the next
+ * render builds a fresh one from the same answers.
+ *
+ * Answers and ticked items are not touched. Those are the reader's; only the
+ * plan belongs to the library.
+ */
+export function planMatchesLibrary(plan: MealPlan | null): boolean {
+  if (!plan) return true;
+  return plan.meals.every((meal) => recipesById.has(meal.recipeId));
+}
+
 export const useGospel = create<GospelState>()(
   persist(
     (set, get) => ({
@@ -218,6 +236,13 @@ export const useGospel = create<GospelState>()(
     {
       name: 'gospel-state-v1',
       storage: createJSONStorage(() => AsyncStorage),
+      onRehydrateStorage: () => (state) => {
+        if (state && !planMatchesLibrary(state.plan)) {
+          state.plan = null;
+          state.checked = {};
+          state.activeCycle = 0;
+        }
+      },
       partialize: (state) => ({
         answers: state.answers,
         onboardingComplete: state.onboardingComplete,

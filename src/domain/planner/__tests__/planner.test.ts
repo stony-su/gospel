@@ -28,13 +28,20 @@ const preferences: PlanPreferences = {
 
 function makeRecipe(overrides: Partial<Recipe> & { id: number }): Recipe {
   return {
+    slug: `recipe-${overrides.id}`,
     name: `Recipe ${overrides.id}`,
     description: '',
+    image: {
+      file: 'x.jpg',
+      thumb: 'x-thumb.jpg',
+      author: 'Test',
+      license: 'CC BY-SA 4.0',
+      license_url: 'https://creativecommons.org/licenses/by-sa/4.0/',
+      source_url: 'https://commons.wikimedia.org/wiki/File:X.jpg',
+    },
     minutes: 30,
     prep_minutes: 10,
     servings: 2,
-    rating: 4.5,
-    reviews: 40,
     cuisine: 'american',
     slot: 'dinner',
     difficulty: 2,
@@ -44,6 +51,9 @@ function makeRecipe(overrides: Partial<Recipe> & { id: number }): Recipe {
       { id: 'chicken breast', label: 'chicken', quantity: 2, quantity_text: '2', grams: 360 },
     ],
     instructions: ['Cook it.', 'Serve it.'],
+    method_source: { kind: 'authored', url: null, license: null },
+    reference_url: null,
+    nutrition_coverage: 1,
     diet: {
       vegan: false,
       vegetarian: false,

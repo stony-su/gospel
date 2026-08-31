@@ -6,16 +6,22 @@
  * grocery list and the cost. Showing only one would leave either the cook or
  * the shopping unexplained.
  *
- * The recipe's own description is never rendered. It is Food.com corpus copy -
- * "simple, easy, and tastes great", "great for lunches, picnics, cook outs" -
- * which cannot be fixed at the source and says nothing the name, the time and
- * the nutrition do not. The field stays on the type and goes unread.
+ * The description is rendered now, which it was not before. Under the old
+ * corpus it was marketing copy - "simple, easy, and tastes great" - and worth
+ * nothing; it is now one sentence from the dish's Wikipedia article saying
+ * what the dish actually is, which is worth a line at the top of the page.
+ *
+ * The footer carries the photographer, the licence and where the method came
+ * from. Almost every photograph here is CC BY-SA or CC BY, so that credit is a
+ * condition of using it rather than a courtesy, and it belongs on the screen
+ * the photograph is on.
  */
 
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { StyleSheet, View, useWindowDimensions } from 'react-native';
 
 import { cuisineLabels, ingredientsById, recipesById } from '@/data/recipes';
+import { recipeImage } from '@/data/recipeImages';
 import { fatPercentOfEnergy } from '@/domain/planner/coverage';
 import { useGospel } from '@/store/useGospel';
 import { GUTTER, grade, radius, space, stroke, surface } from '@/theme/tokens';
@@ -57,10 +63,11 @@ export default function RecipeDetail() {
       </Press>
 
       <Plate
-        uri={recipe.image ?? null}
+        source={recipeImage(recipe.slug)?.hero ?? null}
         width={width - GUTTER * 2}
         height={(width - GUTTER * 2) * 0.6}
         fallbackLabel="no photograph"
+        accessibilityLabel={recipe.name}
       />
 
       <View style={styles.afterPlate}>
@@ -70,6 +77,12 @@ export default function RecipeDetail() {
         />
       </View>
 
+      {recipe.description ? (
+        <Prose color={grade[70]} style={styles.description}>
+          {recipe.description}
+        </Prose>
+      ) : null}
+
       <Reveal index={0}>
         <Pair>
           <Tile label="time">
@@ -78,9 +91,12 @@ export default function RecipeDetail() {
           <Tile label="difficulty">
             <AnimatedNumber value={recipe.difficulty} color={grade[96]} suffix=" / 5" />
           </Tile>
-          <Tile label="rating">
-            <AnimatedNumber value={recipe.rating} precision={1} color={grade[96]} />
-            <Figure small color={grade[50]}>{`${recipe.reviews} reviews`}</Figure>
+          {/* Where the rating used to be. No source the library is allowed to
+              use publishes ratings, and a number invented to fill the slot
+              would be the only fabricated figure in the app. */}
+          <Tile label="serves">
+            <AnimatedNumber value={recipe.servings} color={grade[96]} />
+            <Figure small color={grade[50]}>as written</Figure>
           </Tile>
           <Tile label="cost">
             <AnimatedNumber
@@ -196,9 +212,21 @@ export default function RecipeDetail() {
         ))}
       </Disclosure>
 
-      <Label color={grade[40]} style={styles.footnote}>
-        {`food.com · recipe ${recipe.id}`}
-      </Label>
+      <View style={styles.credits}>
+        <Label color={grade[50]} style={styles.credit}>
+          {recipe.method_source.kind === 'wikibooks'
+            ? `method · Wikibooks Cookbook · ${recipe.method_source.license}`
+            : 'method · written for Gospel'}
+        </Label>
+        <Label color={grade[50]} style={styles.credit}>
+          {`photograph · ${recipe.image.author} · ${recipe.image.license}`}
+        </Label>
+        <Label color={grade[40]} style={styles.credit}>
+          {`nutrition · USDA FoodData Central · ${Math.round(
+            recipe.nutrition_coverage * 100,
+          )}% of mass matched`}
+        </Label>
+      </View>
     </Screen>
   );
 }
@@ -257,7 +285,15 @@ const styles = StyleSheet.create({
   stepText: {
     flex: 1,
   },
-  footnote: {
-    marginTop: space.lg,
+  description: {
+    marginTop: space.sm,
+    marginBottom: space.md,
+  },
+  credits: {
+    marginTop: space.xl,
+    gap: space.xxs,
+  },
+  credit: {
+    lineHeight: 16,
   },
 });

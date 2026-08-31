@@ -30,7 +30,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -134,6 +136,16 @@ UNAVAILABLE = ["iodine_ug", "chromium_ug", "molybdenum_ug", "biotin_ug", "chlori
 
 # Fat is stored raw because the target is a share of energy, computed later.
 FAT = "204"
+
+# Three nutrients that are not among the workbook's 48 targets but are on every
+# recipe card: saturated fat, cholesterol and sugars. The old corpus published
+# them per serving; this one has to compute them from the same panels as
+# everything else, so they have to come down with the panel.
+LABEL_ONLY: dict[str, tuple[str, float]] = {
+    "606": ("saturated_fat_g", 1.0),
+    "601": ("cholesterol_mg", 1.0),
+    "269": ("sugar_g", 1.0),
+}
 ENERGY_KCAL_UNITS = {"KCAL", "kcal"}
 
 
@@ -156,8 +168,183 @@ def api_key() -> str:
     raise SystemExit("FDC_API_KEY not found in .env")
 
 
+# Foods FoodData Central has, under names it does not.
+#
+# FDC is a US database and indexes US supermarket English. A library built from
+# Italian, Spanish, French and Japanese cooking is full of ingredients it holds
+# a perfectly good panel for and cannot find by the name the recipe uses. Each
+# of these maps to the nearest food FDC actually publishes - a substitution,
+# and named as one, not a translation.
+ALIASES: dict[str, str] = {
+    # Pasta shapes: FDC has "pasta, dry", not the shape.
+    "trofie": "pasta dry enriched",
+    "tonnarelli": "pasta dry enriched",
+    "bucatini": "pasta dry enriched",
+    "orzo": "pasta dry enriched",
+    "lasagne sheets": "pasta dry enriched",
+    # Cured pork. Guanciale and pancetta are closer to streaky bacon than to
+    # ham, and lacon and panceta are the Spanish equivalents.
+    "guanciale": "pork cured bacon raw",
+    "pancetta": "pork cured bacon raw",
+    "panceta": "pork cured bacon raw",
+    "lac n": "pork cured shoulder",
+    "lacon": "pork cured shoulder",
+    "morcilla asturiana": "blood sausage",
+    "morcilla": "blood sausage",
+    "chorizo": "sausage chorizo pork and beef",
+    # British and Commonwealth spellings.
+    "courgette": "squash summer zucchini raw",
+    "courgettes": "squash summer zucchini raw",
+    "aubergine": "eggplant raw",
+    "yoghurt": "yogurt plain whole milk",
+    "coriander leaves": "coriander cilantro leaves raw",
+    "rocket": "arugula raw",
+    "swede": "rutabagas raw",
+    "mangetout": "peas edible-podded raw",
+    "tinned chopped tomatoes": "tomatoes canned",
+    "tinned tomatoes": "tomatoes canned",
+    # Japanese pantry.
+    "panko": "bread crumbs dry grated plain",
+    "panko breadcrumbs": "bread crumbs dry grated plain",
+    "dashi": "fish broth",
+    "mirin": "wine rice cooking",
+    "sake": "wine rice cooking",
+    "shiitake": "mushrooms shiitake raw",
+    "kombu": "seaweed kelp raw",
+    "nori": "seaweed laver raw",
+    "wakame": "seaweed wakame raw",
+    "miso": "miso soybean paste",
+    "gochujang": "sauce chili",
+    "doubanjiang": "sauce chili",
+    # Odds and ends that are a bundle rather than a food.
+    "bouquet garni": "thyme dried",
+    "mixed herbs": "thyme dried",
+    "italian seasoning": "oregano dried",
+
+    # --- Corrections the data audit found ---------------------------------
+    # Each of these was matched by relevance to something that is not the same
+    # food, and the wrong panel does not announce itself - it just supplies
+    # another food's numbers. Every line here names what scripts/audit_data.py
+    # caught it becoming.
+    "garlic": "garlic raw",                       # was: cloves, ground spice
+    "anchovies": "fish anchovy european raw",     # was: ham, minced
+    "black olives": "olives ripe canned",         # was: olive loaf, pork
+    "green olives": "olives pickled canned green",
+    "greek olives": "olives ripe canned",         # was: Greek minestrone soup
+    "artichokes": "artichokes globe french raw",  # was: Jerusalem artichoke
+    "artichoke hearts": "artichokes globe french raw",
+    "ice": "water bottled generic",               # was: dry beef broth cubes
+    "ice cubes": "water bottled generic",
+    "potatoes": "potatoes flesh and skin raw",    # was: potato bread
+    "floury potatoes": "potatoes flesh and skin raw",
+    "waxy potatoes": "potatoes flesh and skin raw",
+    "new potatoes": "potatoes flesh and skin raw",
+    "chicken stock": "soup stock chicken home-prepared",
+    "chicken broth": "soup stock chicken home-prepared",
+    "beef stock": "soup stock beef home-prepared",
+    "beef broth": "soup stock beef home-prepared",
+    "vegetable stock": "soup stock vegetable",
+    "vegetable broth": "soup stock vegetable",
+    "fish stock": "soup stock fish home-prepared",
+    "duck fat": "fat duck",                       # was: duck liver, raw
+    "chicken wingettes": "chicken wing raw",      # was: chicken spread
+    "chicken wings": "chicken wing raw",
+    "beef leg and marrow bones": "beef shank crosscuts raw",
+    "meat": "beef ground raw",
+    "white onions": "onions raw",                 # was: small white beans
+    "tomatoes": "tomatoes red ripe raw",          # was: tomato powder
+    "red tomatoes": "tomatoes red ripe raw",
+    "plum tomatoes": "tomatoes red ripe raw",
+    "red chili pepper flakes": "spices pepper red cayenne",
+    "chili flakes": "spices pepper red cayenne",
+    "poultry shake": "spices poultry seasoning",
+    "comte": "cheese gruyere",
+    "emmental": "cheese swiss",
+    "baguettes": "bread french or vienna",
+    "baguette": "bread french or vienna",
+    # Second pass, after the audit: FDC's relevance ranking answers a plain cut
+    # of meat with the fattiest thing sharing its name, and a fish with its oil.
+    "pork": "pork loin raw",                      # was: pork backfat, 812 kcal
+    "pork cutlets": "pork loin raw",
+    "pork chops": "pork loin raw",
+    "salmon": "fish salmon atlantic raw",         # was: salmon oil, 902 kcal
+    "smoked salmon": "fish salmon smoked",
+    "tuna": "fish tuna yellowfin raw",
+    "potato": "potatoes flesh and skin raw",      # was: potato flour
+    "potato starch": "cornstarch",
+    "spanish onion": "onions raw",                # was: spanish peanuts
+    "mild spanish onion": "onions raw",
+    "black pepper": "spices pepper black",        # was: banana pepper
+    "black peppercorns": "spices pepper black",
+    "white pepper": "spices pepper white",
+    "duck fat": "fat goose",                      # was: duck liver
+    "salt pork": "pork cured bacon raw",
+    # Third pass. Every one of these was carrying real mass in the corpus.
+    "prawns": "crustaceans shrimp raw",            # was: abiyuch, a fruit
+    "prawn": "crustaceans shrimp raw",
+    "shrimp": "crustaceans shrimp raw",
+    "clams": "mollusks clam mixed species raw",    # was: ham, minced
+    "chickpeas": "chickpeas garbanzo beans canned",  # was: chickpea flour
+    "tinned chickpeas": "chickpeas garbanzo beans canned",
+    "canned chickpeas": "chickpeas garbanzo beans canned",
+    "breadcrumbs": "bread crumbs dry grated plain",  # was: dried litchis
+    "fresh breadcrumbs": "bread crumbs dry grated plain",
+    "bean sprouts": "mung beans sprouted raw",     # was: sprouted kidney beans
+    "beansprouts": "mung beans sprouted raw",
+    "fabes de la granja": "beans white mature seeds raw",   # was: dulce de leche
+    "butter beans": "beans lima large mature seeds raw",
+    # The Mediterranean fish a bouillabaisse is made of are not in a US food
+    # database. Scorpionfish and conger were both answered with whole-wheat
+    # crackers, at 427 kcal per 100 g. Cod stands in: a lean white fish is a
+    # lean white fish, and saying so is better than saying biscuit.
+    "scorpionfish": "fish cod atlantic raw",
+    "conger": "fish cod atlantic raw",
+    "red gurnard": "fish cod atlantic raw",
+    "sea robin": "fish cod atlantic raw",
+    "john dory": "fish cod atlantic raw",
+    "lotte": "fish monkfish raw",
+    "monkfish": "fish monkfish raw",
+    "sea urchins": "fish roe mixed species raw",
+    "sea bream": "fish sea bass raw",
+    "turbot": "fish halibut atlantic raw",
+    "nori sheets": "seaweed laver raw",
+    "beni shoga": "ginger root raw",
+    "umeboshi": "plums raw",
+    "shichimi togarashi": "spices pepper red or cayenne",
+}
+
+_ALIAS_KEYS = sorted(ALIASES, key=len, reverse=True)
+
+
+def search_term(name: str) -> str:
+    """An ingredient name FDC's search endpoint will accept.
+
+    The API answers 400 rather than "no results" to a query it cannot parse -
+    non-ASCII characters and stray punctuation both do it, so "Beni shoga" and
+    "minced/ground beef" fail as requests rather than as searches. Folding to
+    plain ASCII words costs nothing: FDC's own descriptions are ASCII, so a
+    character it would have to transliterate anyway was never going to match.
+    """
+    folded = unicodedata.normalize("NFKD", name)
+    folded = folded.encode("ascii", "ignore").decode("ascii")
+    folded = re.sub(r"[^A-Za-z0-9 ]+", " ", folded)
+    folded = re.sub(r"\s+", " ", folded).strip()
+    lowered = folded.lower()
+    if lowered in ALIASES:
+        return ALIASES[lowered][:120]
+    # Otherwise look for an alias inside the name, longest key first, so
+    # "unsweetened yoghurt" and "nori sheets" find "yoghurt" and "nori".
+    for alias in _ALIAS_KEYS:
+        if re.search(rf"\b{re.escape(alias)}\b", lowered):
+            return ALIASES[alias][:120]
+    return folded[:120]
+
+
 def search(term: str, key: str) -> dict | None:
     """Best match for a term, preferring the datasets with fuller panels."""
+    term = search_term(term)
+    if not term:
+        return None
     for tier in DATA_TYPE_TIERS:
         hit = search_tier(term, tier, key)
         if hit:
@@ -274,6 +461,10 @@ def panel(food: dict) -> dict[str, float]:
         parts = [by_number[n] for n in numbers if n in by_number]
         if parts:
             out[nutrient_id] = round(sum(parts) * factor, 6)
+
+    for number, (nutrient_id, factor) in LABEL_ONLY.items():
+        if number in by_number:
+            out[nutrient_id] = round(by_number[number] * factor, 6)
 
     if FAT in by_number:
         out["fat_g"] = round(by_number[FAT], 6)
