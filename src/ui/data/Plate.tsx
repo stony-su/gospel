@@ -1,49 +1,49 @@
 /**
- * A recipe photograph, desaturated.
+ * A recipe photograph.
  *
- * The corpus ships colour food photography and the app has no colour, so the
- * image is run through a luminance matrix before it is drawn. That is a real
- * decision rather than a stylistic tic: a full-colour photograph on a
- * monochrome screen becomes the brightest thing on the page by an enormous
- * margin, and would out-shout every measurement the screen exists to show.
+ * The interface around it has no colour at all - one neutral ramp, and every
+ * state said with fill, weight or inversion. The photograph is the single
+ * exception, and it is deliberate: a plate of food is the one thing on screen
+ * that is not a measurement, and desaturating it threw away the only
+ * information it carries. Whether a curry is deep red or pale yellow is the
+ * point of the picture.
  *
- * React Native has no CSS filter, so this uses react-native-svg's FeColorMatrix
- * with Rec. 709 luma coefficients. True perceptual greyscale, identical on
- * iOS, Android and web, and no new dependency.
+ * It used to run through a Rec. 709 luma matrix in react-native-svg. That is
+ * gone, and with it the last reason for this component to reach for SVG at
+ * all: a plain Image composites faster, decodes progressively, and - because
+ * it resolves under react-native-web - can actually be render-tested.
+ *
+ * The frame is what keeps a colour photograph from shouting down the figures
+ * beside it: a hairline in the ramp's own grey, a small radius, and a fixed
+ * footprint that a missing photograph fills identically so the layout never
+ * shifts.
  */
 
-import { useId } from 'react';
-import { StyleSheet, View } from 'react-native';
-import Svg, { Defs, FeColorMatrix, Filter, Image as SvgImage } from 'react-native-svg';
+import { Image, StyleSheet, View } from 'react-native';
+import type { ImageSourcePropType } from 'react-native';
 
 import { grade, radius, stroke } from '@/theme/tokens';
 import { Label } from '@/ui/text';
 
 interface PlateProps {
-  uri: string | null;
+  /** A bundled asset from `recipeImage()`, or null when there is none. */
+  source: ImageSourcePropType | null;
   width: number;
   height: number;
   /** Shown in place of a missing photograph. */
   fallbackLabel?: string;
+  /** Describes the dish for screen readers. */
+  accessibilityLabel?: string;
 }
 
-/**
- * Rec. 709 luma: 0.2126 R + 0.7152 G + 0.0722 B, written into all three
- * output channels. Averaging the channels instead would make reds too light
- * and greens too dark - which on food photography is most of the frame.
- */
-const LUMA =
-  '0.2126 0.7152 0.0722 0 0 ' +
-  '0.2126 0.7152 0.0722 0 0 ' +
-  '0.2126 0.7152 0.0722 0 0 ' +
-  '0 0 0 1 0';
-
-export function Plate({ uri, width, height, fallbackLabel }: PlateProps) {
-  // Several plates render at once on the plan tab, and a shared filter id
-  // would make them collide.
-  const filterId = `plate-${useId().replace(/:/g, '')}`;
-
-  if (!uri) {
+export function Plate({
+  source,
+  width,
+  height,
+  fallbackLabel,
+  accessibilityLabel,
+}: PlateProps) {
+  if (!source) {
     return (
       <View style={[styles.fallback, { width, height }]}>
         {fallbackLabel ? (
@@ -57,22 +57,13 @@ export function Plate({ uri, width, height, fallbackLabel }: PlateProps) {
 
   return (
     <View style={[styles.frame, { width, height }]}>
-      <Svg width={width} height={height}>
-        <Defs>
-          <Filter id={filterId}>
-            <FeColorMatrix type="matrix" values={LUMA} />
-          </Filter>
-        </Defs>
-        <SvgImage
-          href={{ uri }}
-          x={0}
-          y={0}
-          width={width}
-          height={height}
-          preserveAspectRatio="xMidYMid slice"
-          filter={`url(#${filterId})`}
-        />
-      </Svg>
+      <Image
+        source={source}
+        style={{ width, height }}
+        resizeMode="cover"
+        accessible={accessibilityLabel !== undefined}
+        accessibilityLabel={accessibilityLabel}
+      />
     </View>
   );
 }
