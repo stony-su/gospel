@@ -22,6 +22,7 @@ that covers an encyclopaedia article does not travel to a meal planner.
 
 from __future__ import annotations
 
+import hashlib
 import re
 import threading
 import time
@@ -40,36 +41,55 @@ UA = ("GospelRecipeBuild/1.0 (https://github.com/stony-su/gospel; "
       "taixue@gmail.com) python-urllib")
 
 # Wikimedia asks unregistered clients to keep it to a few requests a second and
-# answers 429 when they do not. One request at a time with a gap is slower than
-# it needs to be and never gets throttled.
-_GATE = threading.Semaphore(1)
+# answers 429 when they do not.
+#
+# Strictly one at a time turned out to be much slower than the gap suggests:
+# throughput is one request per round trip, and a round trip to Wikimedia is a
+# second or more, so the crawl ran at half the rate the throttle allowed. A
+# handful in flight with the *starts* paced holds the same requests-per-second
+# ceiling while actually reaching it.
+CONCURRENCY = 4
+MIN_GAP = 0.25
+
+_GATE = threading.Semaphore(CONCURRENCY)
+_PACE = threading.Lock()
 _LAST = [0.0]
-MIN_GAP = 0.5
+
+
+def _wait_turn() -> None:
+    with _PACE:
+        gap = MIN_GAP - (time.time() - _LAST[0])
+        if gap > 0:
+            time.sleep(gap)
+        _LAST[0] = time.time()
 
 WIKIBOOKS = "https://en.wikibooks.org/wiki/Cookbook:"
 WIKIPEDIA = "https://en.wikipedia.org/wiki/"
 COMMONS_FILE = "https://commons.wikimedia.org/wiki/File:"
 
 
+def _cache_path(url: str) -> Path:
+    # hashlib rather than hash(): the built-in is salted per process, so the
+    # same URL got a different cache file on every run.
+    digest = hashlib.sha1(url.encode("utf-8")).hexdigest()[:10]
+    return CACHE / (re.sub(r"[^A-Za-z0-9]+", "_", url)[:120] + "-" + digest + ".html")
+
+
 def fetch(url: str) -> str | None:
     """Cached GET. None means the page does not exist."""
     CACHE.mkdir(parents=True, exist_ok=True)
-    key = CACHE / (re.sub(r"[^A-Za-z0-9]+", "_", url)[:120]
-                   + "-" + str(abs(hash(url)) % 10**10) + ".html")
+    key = _cache_path(url)
     if key.exists():
         body = key.read_text(encoding="utf-8")
         return body or None
 
     request = urllib.request.Request(url, headers={"User-Agent": UA})
     for attempt in range(6):
-        with _GATE:
-            gap = MIN_GAP - (time.time() - _LAST[0])
-            if gap > 0:
-                time.sleep(gap)
-            _LAST[0] = time.time()
         try:
-            with urllib.request.urlopen(request, timeout=45) as response:
-                body = response.read().decode("utf-8", "replace")
+            with _GATE:
+                _wait_turn()
+                with urllib.request.urlopen(request, timeout=45) as response:
+                    body = response.read().decode("utf-8", "replace")
         except urllib.error.HTTPError as error:
             if error.code == 404:
                 key.write_text("", encoding="utf-8")
@@ -86,8 +106,98 @@ def fetch(url: str) -> str | None:
     raise RuntimeError(f"gave up fetching {url}")
 
 
+def prefetch(urls: list[str], label: str = "") -> None:
+    """Warm the cache for a list of pages, in parallel.
+
+    Discovery has to run in order - the cuisine quotas depend on it - but it
+    does not have to *wait* in order. Filling the cache ahead of the sequential
+    pass turns four thousand round trips taken one at a time into the same four
+    thousand taken four at a time, which is the difference between six hours
+    and one.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    pending = [u for u in urls if not _cache_path(u).exists()]
+    if not pending:
+        return
+    done = 0
+    with ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
+        for _ in pool.map(_fetch_quietly, pending):
+            done += 1
+            if done % 200 == 0:
+                print(f"    prefetched {done}/{len(pending)} {label}", flush=True)
+
+
+def _fetch_quietly(url: str) -> None:
+    try:
+        fetch(url)
+    except Exception:                                   # noqa: BLE001
+        pass
+
+
 def _page_url(base: str, title: str) -> str:
     return base + urllib.parse.quote(title.replace(" ", "_"))
+
+
+CATEGORY = "https://en.wikibooks.org/wiki/Category:"
+
+
+def category_members(title: str) -> tuple[list[str], list[str]]:
+    """Cookbook pages and subcategories in a Wikibooks category.
+
+    The Cookbook files every recipe under Category:Recipes and cross-files it
+    by origin and by course, which is where the library's cuisine and meal-slot
+    labels come from - the Cookbook's own editors decided those, and a scrape
+    guessing at them from the dish name would be inventing metadata.
+
+    Category listings page at 200 entries; this follows the "next page" link to
+    the end.
+    """
+    pages: list[str] = []
+    subcategories: list[str] = []
+    url = _page_url(CATEGORY, title)
+    seen_urls: set[str] = set()
+
+    while url and url not in seen_urls:
+        seen_urls.add(url)
+        html = fetch(url)
+        if not html:
+            break
+        soup = BeautifulSoup(html, "html.parser")
+
+        for anchor in soup.select("#mw-subcategories a[title^='Category:']"):
+            name = anchor["title"].removeprefix("Category:")
+            if name not in subcategories:
+                subcategories.append(name)
+
+        for anchor in soup.select("#mw-pages a[title^='Cookbook:']"):
+            name = anchor["title"].removeprefix("Cookbook:")
+            if name not in pages:
+                pages.append(name)
+
+        url = None
+        for anchor in soup.select("#mw-pages a"):
+            if anchor.get_text(strip=True) == "next page":
+                href = anchor.get("href", "")
+                url = urllib.parse.urljoin("https://en.wikibooks.org", href)
+                break
+
+    return pages, subcategories
+
+
+def category_tree(title: str, depth: int = 3) -> dict[str, list[str]]:
+    """Every category at or under `title`, mapped to its Cookbook pages."""
+    out: dict[str, list[str]] = {}
+    frontier = [(title, 0)]
+    while frontier:
+        name, level = frontier.pop()
+        if name in out:
+            continue
+        pages, subcategories = category_members(name)
+        out[name] = pages
+        if level < depth:
+            frontier.extend((child, level + 1) for child in subcategories)
+    return out
 
 
 def _content(html: str) -> BeautifulSoup | None:
@@ -113,6 +223,7 @@ METHOD_HEAD = re.compile(
 # Vin page calls its equipment list "Special equipment", and anchoring meant
 # the section stayed in ingredients mode and put a skillet and a jug in the
 # recipe.
+EQUIPMENT_HEAD = re.compile(r"\b(equipment|utensils|tools)\b", re.I)
 STOP_HEAD = re.compile(
     r"\b(notes|tips|variations?|see also|references|external links|equipment|"
     r"utensils|nutrition|warnings?|history|categor|storage|serving suggestion)\b",
@@ -124,6 +235,101 @@ class CookbookRecipe:
     url: str
     ingredients: list[str]
     instructions: list[str]
+    meta: dict[str, str] | None = None
+    """Servings, Time, Difficulty and so on, from the page's own infobox."""
+    equipment: list[str] | None = None
+    image_file: str | None = None
+    """A Commons photograph on the Cookbook page itself, if it has one."""
+
+
+INFOBOX_KEYS = {"servings", "yield", "time", "difficulty", "cuisine",
+                "recipe origin", "category"}
+
+
+def cookbook_meta(soup: BeautifulSoup) -> dict[str, str]:
+    """The recipe infobox, as a plain dict.
+
+    Newer Cookbook pages carry a summary table with Servings, Time and
+    Difficulty in it. That is the Cookbook's own answer to three things this
+    library was otherwise estimating by hand for every dish, so it is worth
+    reading before falling back to a guess.
+    """
+    for table in soup.select("#mw-content-text .mw-parser-output table"):
+        found: dict[str, str] = {}
+        for row in table.find_all("tr"):
+            cells = row.find_all(["th", "td"])
+            if len(cells) != 2:
+                continue
+            key = cells[0].get_text(" ", strip=True).lower().rstrip(":")
+            if key in INFOBOX_KEYS:
+                found[key] = cells[1].get_text(" ", strip=True)
+        if "servings" in found or "time" in found:
+            return found
+    return {}
+
+
+HOURS = re.compile(r"(\d+(?:[.½]\d*)?)\s*(?:h\b|hr|hour)", re.IGNORECASE)
+MINUTES = re.compile(r"(\d+)\s*(?:m\b|min)", re.IGNORECASE)
+
+
+def parse_minutes(text: str) -> int | None:
+    """"1hr 30 minutes" -> 90. None when the field says nothing usable.
+
+    Hours and minutes are searched for separately rather than as one optional
+    pair, because in one pattern the engine is free to match the hours and skip
+    the minutes - which read "1hr 30 minutes" as an hour flat.
+    """
+    if not text:
+        return None
+    text = re.sub(r"[‐-―−]", "-", text).replace("½", ".5")
+
+    hours_match = HOURS.search(text)
+    minutes_match = MINUTES.search(text)
+    total = 0.0
+    if hours_match:
+        total += float(hours_match.group(1)) * 60
+    if minutes_match:
+        total += float(minutes_match.group(1))
+
+    if total <= 0:
+        # No unit words at all: read the first bare number as minutes.
+        numbers = [float(n) for n in re.findall(r"\d+(?:\.\d+)?", text)]
+        if not numbers:
+            return None
+        total = numbers[0]
+    return int(round(total)) if 1 <= total <= 1440 else None
+
+
+def parse_servings(text: str) -> int | None:
+    if not text:
+        return None
+    numbers = [int(n) for n in re.findall(r"\d+", text)]
+    numbers = [n for n in numbers if 1 <= n <= 24]
+    if not numbers:
+        return None
+    return round(sum(numbers) / len(numbers))
+
+
+DIFFICULTY_WORDS = [
+    (r"\bvery easy\b|\btrivial\b", 1),
+    (r"\beasy\b|\bsimple\b|\bbeginner\b", 2),
+    (r"\bmedium\b|\bmoderate\b|\bintermediate\b|\baverage\b", 3),
+    (r"\bhard\b|\bdifficult\b|\bchalleng", 4),
+    (r"\bvery hard\b|\bvery difficult\b|\bexpert\b|\badvanced\b", 5),
+]
+
+
+def parse_difficulty(text: str) -> int | None:
+    if not text:
+        return None
+    for pattern, level in reversed(DIFFICULTY_WORDS):
+        if re.search(pattern, text, re.IGNORECASE):
+            return level
+    stars = text.count("★") or text.count("*")
+    if 1 <= stars <= 5:
+        return stars
+    numbers = [int(n) for n in re.findall(r"\b[1-5]\b", text)]
+    return numbers[0] if numbers else None
 
 
 def _ingredient_table(html: str) -> list[str]:
@@ -166,6 +372,20 @@ def _ingredient_table(html: str) -> list[str]:
     return lines
 
 
+def _own_image(soup: BeautifulSoup) -> str | None:
+    """A Commons photograph on the Cookbook page itself.
+
+    Better than the Wikipedia article's lead image when it exists, because it
+    is a picture of this recipe rather than of the dish in general - and it
+    saves a page fetch. About a fifth of Cookbook recipes have one.
+    """
+    for img in soup.select("#mw-content-text .mw-parser-output img"):
+        name = _commons_file(img.get("src", ""))
+        if name:
+            return name
+    return None
+
+
 def cookbook_recipe(title: str) -> CookbookRecipe | None:
     """The Ingredients and Procedure sections of a Cookbook page, verbatim."""
     url = _page_url(WIKIBOOKS, title)
@@ -173,12 +393,16 @@ def cookbook_recipe(title: str) -> CookbookRecipe | None:
     if not html:
         return None
     tabulated = _ingredient_table(html)
+    raw = BeautifulSoup(html, "html.parser")
+    meta = cookbook_meta(raw)
+    own_image = _own_image(raw)
     body = _content(html)
     if body is None:
         return None
 
     ingredients: list[str] = []
     instructions: list[str] = []
+    equipment: list[str] = []
     mode: str | None = None
 
     for node in body.find_all(["h1", "h2", "h3", "h4", "ul", "ol", "p"]):
@@ -188,6 +412,8 @@ def cookbook_recipe(title: str) -> CookbookRecipe | None:
                 mode = "ingredients"
             elif METHOD_HEAD.match(heading):
                 mode = "instructions"
+            elif EQUIPMENT_HEAD.search(heading):
+                mode = "equipment"
             elif STOP_HEAD.search(heading):
                 mode = None
             # A sub-heading inside a section ("For the sauce") keeps the mode.
@@ -199,8 +425,14 @@ def cookbook_recipe(title: str) -> CookbookRecipe | None:
         if node.name in ("ul", "ol"):
             for item in node.find_all("li", recursive=False):
                 text = item.get_text(" ", strip=True)
-                if text:
-                    (ingredients if mode == "ingredients" else instructions).append(text)
+                if not text:
+                    continue
+                if mode == "ingredients":
+                    ingredients.append(text)
+                elif mode == "equipment":
+                    equipment.append(text)
+                else:
+                    instructions.append(text)
         elif node.name == "p" and mode == "instructions":
             # Some pages write the method as prose rather than a list.
             text = node.get_text(" ", strip=True)
@@ -213,7 +445,14 @@ def cookbook_recipe(title: str) -> CookbookRecipe | None:
         ingredients = tabulated
     if not ingredients or not instructions:
         return None
-    return CookbookRecipe(url=url, ingredients=ingredients, instructions=instructions)
+    return CookbookRecipe(
+        url=url,
+        ingredients=ingredients,
+        instructions=instructions,
+        meta=meta,
+        equipment=[e for e in equipment if 2 < len(e) < 40][:6],
+        image_file=own_image,
+    )
 
 
 # --- Wikipedia ---------------------------------------------------------------
@@ -236,6 +475,21 @@ class WikipediaPage:
     image_file: str
     """Commons file name, e.g. "Spaghetti alla Carbonara.jpg"."""
     image_source_url: str
+    categories: tuple[str, ...] = ()
+    """The article's own categories - "Japanese cuisine", "Italian desserts".
+
+    Two thirds of the Cookbook's recipes are in no origin category at all, and
+    a scraper guessing their cuisine from the dish name would be inventing the
+    one piece of metadata the reader filters on. Wikipedia has already
+    answered the question for most of them.
+    """
+
+
+def page_categories(soup: BeautifulSoup) -> tuple[str, ...]:
+    return tuple(
+        anchor.get_text(" ", strip=True)
+        for anchor in soup.select("#mw-normal-catlinks ul a, #catlinks ul a")
+    )
 
 
 def _lead_paragraph(soup: BeautifulSoup) -> str:
@@ -289,7 +543,7 @@ def wikipedia_page(title: str) -> WikipediaPage | None:
     candidates += [img.get("src", "") for img in
                    soup.select("#mw-content-text .mw-parser-output img")]
 
-    image_file = None
+    image_file = ""
     for src in candidates:
         if not src:
             continue
@@ -297,14 +551,17 @@ def wikipedia_page(title: str) -> WikipediaPage | None:
         if name:
             image_file = name
             break
-    if image_file is None:
-        return None
+    # An article with no freely-licensed photograph is still worth returning:
+    # its categories say whose food this is, and the Cookbook page may have a
+    # picture of its own. Only a missing article is a None.
 
     return WikipediaPage(
         url=url,
         description=_lead_paragraph(soup),
         image_file=image_file,
-        image_source_url=COMMONS_FILE + urllib.parse.quote(image_file.replace(" ", "_")),
+        image_source_url=(COMMONS_FILE + urllib.parse.quote(image_file.replace(" ", "_"))
+                          if image_file else ""),
+        categories=page_categories(soup),
     )
 
 

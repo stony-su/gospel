@@ -15,6 +15,7 @@
  * drift out of step with what it backs.
  */
 
+import { useState } from 'react';
 import { Linking, StyleSheet, View } from 'react-native';
 
 import { grade, space } from '@/theme/tokens';
@@ -24,11 +25,13 @@ import {
   photographCredits,
 } from '@/ui/data/attribution';
 import { citationText, hostOf, orderedSources, referenceIndex } from '@/ui/data/citation';
-import { Disclosure, Divider, Header, Screen, Section } from '@/ui/layout';
+import { Divider, Header, Screen, Section } from '@/ui/layout';
 import { Press, Reveal } from '@/ui/motion';
 import { Figure, Label, Prose } from '@/ui/text';
 
 export default function References() {
+  const [creditsOpen, setCreditsOpen] = useState(false);
+
   return (
     <Screen>
       <Header title="References" right={<Label>{`${orderedSources.length} sources`}</Label>} />
@@ -88,15 +91,30 @@ export default function References() {
         ))}
       </Section>
 
-      {/* A hundred credits is a lot of page for something most readers will
-          never need, and dropping it is not an option: the licences require
-          it. Behind a disclosure it is present without being in the way. */}
-      <Disclosure
-        label="Photographs"
-        meta={licenceSummary.map((entry) => `${entry.count} ${entry.license}`).join(' · ')}
-        index={orderedSources.length + 1}
-      >
-        {photographCredits.map((credit) => (
+      {/* Five hundred credits is a lot of page for something most readers will
+          never open, and dropping it is not an option: the licences require
+          it. Not a Disclosure, though - that lays its content out once to
+          measure the height it animates to, which for five hundred rows is
+          five hundred rows mounted on every visit to a page nobody came here
+          for. This renders nothing until it is asked to. */}
+      <Reveal index={orderedSources.length + 1}>
+        <Press
+          onPress={() => setCreditsOpen((wasOpen) => !wasOpen)}
+          plain
+          accessibilityLabel={`${photographCredits.length} photograph credits`}
+          style={styles.creditsHead}
+        >
+          <Label color={grade[80]}>Photographs</Label>
+          <Figure small color={grade[60]}>
+            {creditsOpen
+              ? licenceSummary.map((entry) => `${entry.count} ${entry.license}`).join(' · ')
+              : `${photographCredits.length} · show`}
+          </Figure>
+        </Press>
+      </Reveal>
+
+      {creditsOpen &&
+        photographCredits.map((credit) => (
           <Press
             key={credit.slug}
             onPress={() => {
@@ -115,7 +133,6 @@ export default function References() {
             </Figure>
           </Press>
         ))}
-      </Disclosure>
     </Screen>
   );
 }
@@ -142,6 +159,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: space.sm,
     paddingVertical: space.xs,
+  },
+  creditsHead: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    justifyContent: 'space-between',
+    paddingVertical: 12,
   },
   creditDish: {
     flexShrink: 1,

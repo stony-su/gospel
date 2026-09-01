@@ -39,7 +39,7 @@ import wikimedia  # noqa: E402
 from authored import load as load_authored  # noqa: E402
 from ingredient_taxonomy import describe  # noqa: E402
 from measures import parse as parse_line, quantity_text  # noqa: E402
-from recipe_sources import CUISINE_LABELS, SOURCES, check  # noqa: E402
+from recipe_sources import CUISINE_LABELS, check, load_all  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 GENERATED = ROOT / "src" / "data" / "generated"
@@ -82,7 +82,8 @@ def main() -> int:
     problems: list[str] = []
     notes: list[str] = []
 
-    for source in SOURCES:
+    sources = load_all()
+    for source in sources:
         # --- method ---------------------------------------------------------
         if source.authored:
             written = authored.get(source.slug)
@@ -275,8 +276,8 @@ def main() -> int:
         for line in problems:
             print(f"  {line}")
         return 1
-    if len(recipes) != len(SOURCES):
-        print(f"\nbuilt {len(recipes)} of {len(SOURCES)}")
+    if len(recipes) != len(sources):
+        print(f"\nbuilt {len(recipes)} of {len(sources)}")
         return 1
     print("\nnext: scripts/fetch_fdc_nutrition.py, then scripts/attach_recipe_nutrition.py")
     return 0

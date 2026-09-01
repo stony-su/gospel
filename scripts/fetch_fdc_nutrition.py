@@ -54,10 +54,22 @@ DETAIL_API = "https://api.nal.usda.gov/fdc/v1/foods"
 # costs ~56 requests for the whole taxonomy rather than another 1,104.
 DETAIL_BATCH = 20
 
-# Pace under 1,000/hour without crawling. A 429 backs off hard; the cache means
-# an interrupted run loses nothing.
-DELAY_SECONDS = 1.0
-RATE_LIMIT_BACKOFF = 300
+# FDC turns away roughly half of all requests with a 400 and an nginx error
+# page, and it does so whether they arrive one a second or one every nine.
+# Measured: eight requests at a 5 s gap and eight at a 9 s gap both got three
+# through. So this is not a rate limit to pace under - it is an unreliable
+# endpoint to retry at.
+#
+# Retrying quickly is what works. Ten ingredients took twenty-three requests
+# and sixty-six seconds; backing off for five minutes on each refusal took
+# half an hour to resolve one.
+DELAY_SECONDS = 1.5
+RATE_LIMIT_BACKOFF = 60
+BACKOFF_STEPS = [3, 3, 5, 5, 8, 12]
+
+# Consecutive unanswered searches before the run stops rather than burning
+# an hour of backoffs. Nothing is lost: the cache holds what did answer.
+MAX_STALLED = 5
 
 # Searched in order, stopping at the first that has anything.
 #
@@ -251,6 +263,7 @@ ALIASES: dict[str, str] = {
     "chicken wings": "chicken wing raw",
     "beef leg and marrow bones": "beef shank crosscuts raw",
     "meat": "beef ground raw",
+    "beef": "beef ground raw",                    # was: canned corned beef
     "white onions": "onions raw",                 # was: small white beans
     "tomatoes": "tomatoes red ripe raw",          # was: tomato powder
     "red tomatoes": "tomatoes red ripe raw",
@@ -293,6 +306,42 @@ ALIASES: dict[str, str] = {
     "beansprouts": "mung beans sprouted raw",
     "fabes de la granja": "beans white mature seeds raw",   # was: dulce de leche
     "butter beans": "beans lima large mature seeds raw",
+    # Fourth pass, over the heaviest ingredients the five-hundred-recipe
+    # library left unmatched.
+    "turkey stock": "soup stock turkey home-prepared",
+    "siling labuyo": "peppers hot chili red raw",
+    "stockfish": "fish cod atlantic dried salted",
+    "cannellini beans": "beans white mature seeds canned",
+    "white house honey": "honey",
+    "seitan": "wheat gluten vital",
+    "sultanas": "raisins seedless",
+    "brandy": "alcoholic beverage distilled all 80 proof",
+    "banana ketchup": "catsup",
+    "bicarbonate of soda": "leavening agents baking soda",
+    "caster sugar": "sugars granulated",
+    "double cream": "cream fluid heavy whipping",
+    "single cream": "cream fluid light",
+    "soured cream": "cream sour cultured",
+    "plain flour": "wheat flour white all-purpose enriched",
+    "strong white flour": "wheat flour white bread enriched",
+    "self-raising flour": "wheat flour white all-purpose self-rising",
+    "cornflour": "cornstarch",
+    "golden syrup": "syrups corn light",
+    "mixed spice": "spices allspice ground",
+    "spring onions": "onions spring or scallions raw",
+    "mangetout": "peas edible-podded raw",
+    "swede": "rutabagas raw",
+    "gram flour": "chickpea flour besan",
+    "semolina": "wheat flour semolina enriched",
+    "gochugaru": "spices pepper red cayenne",
+    "aekjeot": "fish sauce",
+    "yufka": "phyllo dough",
+    "mostarda": "conserve fruit",
+    "full-fat milk": "milk whole 3.25% milkfat",     # was: acorn flour
+    "full fat milk": "milk whole 3.25% milkfat",
+    "whole milk": "milk whole 3.25% milkfat",
+    "malt extract": "syrups malt",                   # was: vanilla extract
+    "amber crystal malt": "barley malt flour",
     # The Mediterranean fish a bouillabaisse is made of are not in a US food
     # database. Scorpionfish and conger were both answered with whole-wheat
     # crackers, at 427 kcal per 100 g. Cod stands in: a lean white fish is a
@@ -335,40 +384,67 @@ def search_term(name: str) -> str:
     # Otherwise look for an alias inside the name, longest key first, so
     # "unsweetened yoghurt" and "nori sheets" find "yoghurt" and "nori".
     for alias in _ALIAS_KEYS:
-        if re.search(rf"\b{re.escape(alias)}\b", lowered):
+        # The trailing s? is what makes "aubergines" find the "aubergine"
+        # alias. Without it the plural falls through to FDC, which has never
+        # heard the word.
+        if re.search(rf"\b{re.escape(alias)}s?\b", lowered):
             return ALIASES[alias][:120]
     return folded[:120]
 
 
 def search(term: str, key: str) -> dict | None:
-    """Best match for a term, preferring the datasets with fuller panels."""
+    """Best match for a term, preferring the datasets with fuller panels.
+
+    One request, not three. Asking each tier in turn cost an extra request for
+    every ingredient SR Legacy did not have, and at five hundred recipes the
+    API's thousand-an-hour ceiling is what the build waits on rather than the
+    network. Asking for all three data types at once and picking the tier
+    afterwards keeps exactly the same preference order for a third of the
+    requests.
+
+    The preference is not cosmetic: SR Legacy carries the amino acid panel and
+    Survey does not, so letting FDC's relevance ranking choose between them
+    silently loses nine of the forty-eight targets.
+    """
     term = search_term(term)
     if not term:
-        return None
+        return []
+    foods = search_all_tiers(term, key)
+    if foods is None:
+        return None                      # unknown, not "no match"
     for tier in DATA_TYPE_TIERS:
-        hit = search_tier(term, tier, key)
-        if hit:
-            return hit
-        time.sleep(DELAY_SECONDS)
-    return None
+        for food in foods:
+            if food.get("dataType") in tier:
+                return food
+    return foods[0] if foods else []
 
 
-def search_tier(term: str, data_types: list[str], key: str) -> dict | None:
+def search_all_tiers(term: str, key: str) -> list[dict] | None:
+    """One search across every tier, ranked by FDC's own relevance.
+
+    None means the API never answered; an empty list means it answered with
+    nothing. The difference decides whether the miss gets cached.
+    """
+    types = [t for tier in DATA_TYPE_TIERS for t in tier]
+    return search_tier(term, types, key, page_size=10)
+
+
+def search_tier(term: str, data_types: list[str], key: str,
+                page_size: int = 1) -> list[dict] | None:
     params = {
         "query": term,
         "dataType": ",".join(data_types),
-        "pageSize": 1,
+        "pageSize": page_size,
         "api_key": key,
     }
     url = f"{SEARCH_API}?{urllib.parse.urlencode(params)}"
     request = urllib.request.Request(url, headers={"User-Agent": "gospel/1.0"})
 
-    for attempt in range(4):
+    for attempt in range(len(BACKOFF_STEPS)):
         try:
             with urllib.request.urlopen(request, timeout=45) as response:
                 payload = json.load(response)
-            foods = payload.get("foods") or []
-            return foods[0] if foods else None
+            return payload.get("foods") or []
         except urllib.error.HTTPError as error:
             if error.code == 429:
                 print(f"  rate limited, waiting {RATE_LIMIT_BACKOFF}s", flush=True)
@@ -377,14 +453,26 @@ def search_tier(term: str, data_types: list[str], key: str) -> dict | None:
             if error.code >= 500:
                 time.sleep(5 * (attempt + 1))
                 continue
-            # Anything else is a request the API refused. Say what and why
-            # rather than surfacing a bare HTTPError from inside urllib.
             body = error.read()[:300].decode("utf-8", errors="replace")
+            # FDC answers a rate limit with 400 and an nginx error page as
+            # often as it does with 429. Treating that as "this food does not
+            # exist" is how a burst of throttling turns into a few hundred
+            # ingredients permanently marked unmatched.
+            if error.code == 400 and "<html" in body.lower():
+                wait = BACKOFF_STEPS[min(attempt, len(BACKOFF_STEPS) - 1)]
+                if attempt >= 3:
+                    print(f"  retrying {term!r} ({attempt + 1})", flush=True)
+                time.sleep(wait)
+                continue
+            # Anything else is a request the API genuinely refused. Say what
+            # and why rather than surfacing a bare HTTPError from urllib.
             print(f"  HTTP {error.code} for {term!r}: {body}", flush=True)
-            return None
+            return []
         except (urllib.error.URLError, TimeoutError):
             time.sleep(5 * (attempt + 1))
 
+    # Out of attempts without an answer either way. None means "do not know",
+    # which the caller must not cache as "no match".
     return None
 
 
@@ -486,6 +574,7 @@ def main() -> None:
 
     # --- Phase 1: one search per ingredient, to find its fdcId --------------
     fetched = 0
+    stalled = 0
     for index, ingredient in enumerate(ingredients):
         path = CACHE / f"{slug(ingredient['id'])}.json"
         if path.exists():
@@ -496,6 +585,16 @@ def main() -> None:
         # The display name searches better than the id, which is normalised
         # and often truncated.
         food = search(ingredient["name"], key)
+        if food is None:
+            # The API never answered. Leave no cache entry, so the next run
+            # asks again rather than treating a throttle as a verdict.
+            stalled += 1
+            if stalled >= MAX_STALLED:
+                print(f"  giving up after {stalled} unanswered searches; "
+                      f"re-run to continue", flush=True)
+                break
+            continue
+        stalled = 0
         path.write_text(json.dumps(food or {}, ensure_ascii=False), encoding="utf-8")
         fetched += 1
 

@@ -34,7 +34,9 @@ These are cook's estimates, and the README says so.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+import json
+from dataclasses import dataclass
+from pathlib import Path
 
 
 @dataclass(frozen=True)
@@ -87,10 +89,14 @@ CUISINE_LABELS: dict[str, str] = {
     "mediterranean": "Mediterranean",
     "british": "British & Irish",
     "eastern_european": "Eastern European",
+    "german": "German & Austrian",
+    "northern_european": "Northern European",
     "african": "African",
     "latin_american": "Latin American",
+    "caribbean": "Caribbean",
     "canadian": "Canadian",
     "hawaiian": "Hawaiian",
+    "oceanian": "Australian & Pacific",
 }
 
 SOURCES: list[Source] = [
@@ -402,6 +408,54 @@ SOURCES: list[Source] = [
 
 
 BY_SLUG: dict[str, Source] = {source.slug: source for source in SOURCES}
+
+# --- The discovered four hundred ---------------------------------------------
+
+DISCOVERED = Path(__file__).resolve().parent / "discovered.json"
+
+
+def load_all() -> list[Source]:
+    """The hundred chosen by hand, then everything scripts/discover_recipes.py
+    found in the Cookbook.
+
+    The curated hundred come first and win every collision, because they are
+    the dishes the library exists to have and their metadata was set by hand
+    against the actual recipe. A discovered row that names a dish already in
+    the list is dropped rather than merged - there is nothing to merge, it is
+    the same dish twice.
+    """
+    sources = list(SOURCES)
+    if not DISCOVERED.exists():
+        return sources
+
+    seen_slugs = {s.slug for s in sources}
+    seen_titles = {s.wikibooks for s in sources if s.wikibooks}
+
+    for row in json.loads(DISCOVERED.read_text(encoding="utf-8")):
+        if row["slug"] in seen_slugs or row["wikibooks"] in seen_titles:
+            continue
+        assert row["cuisine"] in CUISINE_LABELS, row
+        assert row["slot"] in {"breakfast", "lunch", "dinner", "snack"}, row
+        assert 1 <= row["difficulty"] <= 5, row
+        assert row["prep"] <= row["minutes"], row
+        assert row["servings"] >= 1, row
+        seen_slugs.add(row["slug"])
+        seen_titles.add(row["wikibooks"])
+        sources.append(Source(
+            slug=row["slug"],
+            name=row["name"],
+            cuisine=row["cuisine"],
+            slot=row["slot"],
+            wikipedia=row["wikipedia"],
+            minutes=row["minutes"],
+            prep=row["prep"],
+            servings=row["servings"],
+            difficulty=row["difficulty"],
+            equipment=tuple(row["equipment"]),
+            wikibooks=row["wikibooks"],
+            image_file=row["image_file"],
+        ))
+    return sources
 
 
 def check() -> None:

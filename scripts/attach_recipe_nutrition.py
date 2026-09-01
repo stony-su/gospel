@@ -57,6 +57,15 @@ KETO_CARB_G = 15.0
 MIN_KCAL_PER_SERVING = 40
 MAX_KCAL_PER_SERVING = 1600
 
+# What a portion is re-derived to when the stated serving count cannot be
+# right. The Cookbook's infobox says "4" for a whole challah and a whole
+# sachertorte alike, which reads as 3,400 kcal a head; a cake weighing 1.6 kg
+# serves twelve, and saying so is arithmetic rather than invention. Recipes
+# corrected this way carry servings_source: "derived", so the substitution is
+# visible in the data rather than hidden in it.
+DERIVED_KCAL_TARGET = 700
+MAX_DERIVED_SERVINGS = 24
+
 # Nothing edible is denser in energy than pure fat.
 MAX_KCAL_PER_100G = 900
 
@@ -72,6 +81,7 @@ def main() -> int:
 
     thin: list[str] = []
     implausible: list[str] = []
+    rescaled: list[str] = []
     unmatched: dict[str, float] = {}
 
     for recipe in recipes:
@@ -96,6 +106,18 @@ def main() -> int:
                     totals[key] += value * grams / 100.0
 
         coverage = covered / mass if mass else 0.0
+
+        # A serving count that puts a portion above every plausible meal is
+        # not a serving count. Re-derive it from the energy the recipe makes.
+        if totals["energy_kcal"] / servings > MAX_KCAL_PER_SERVING:
+            derived = min(MAX_DERIVED_SERVINGS,
+                          max(1, round(totals["energy_kcal"] / DERIVED_KCAL_TARGET)))
+            if derived > servings:
+                servings = derived
+                recipe["servings"] = derived
+                recipe["servings_source"] = "derived"
+                rescaled.append(recipe["slug"])
+
         recipe["nutrition"] = {
             key: round(totals[key] / servings, 1) for key in CARD
         }
@@ -126,6 +148,8 @@ def main() -> int:
     print(f"  mean mass coverage   "
           f"{sum(r['nutrition_coverage'] for r in recipes) / len(recipes):.0%}")
     print(f"  keto-compatible      {sum(1 for r in recipes if r['diet']['keto'])}")
+    if rescaled:
+        print(f"  servings re-derived  {len(rescaled)} (a whole cake is not four meals)")
 
     if unmatched:
         worst = sorted(unmatched.items(), key=lambda kv: -kv[1])[:15]

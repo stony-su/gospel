@@ -16,7 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import wikimedia  # noqa: E402
-from recipe_sources import SOURCES, check  # noqa: E402
+from recipe_sources import check, load_all  # noqa: E402
 
 
 def main() -> int:
@@ -24,7 +24,8 @@ def main() -> int:
     problems: list[str] = []
     thin: list[str] = []
 
-    for index, source in enumerate(SOURCES, 1):
+    sources = load_all()
+    for index, source in enumerate(sources, 1):
         page = wikimedia.wikipedia_page(source.wikipedia)
         if page is None:
             problems.append(f"{source.slug}: no Commons image on {source.wikipedia}")
@@ -61,7 +62,7 @@ def main() -> int:
         for line in problems:
             print(f"  {line}")
         return 1
-    print(f"all {len(SOURCES)} dishes have a photograph and a method")
+    print(f"all {len(sources)} dishes have a photograph and a method")
     return 0
 
 

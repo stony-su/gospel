@@ -110,11 +110,17 @@ PATTERNS: list[tuple[str, str]] = [
 
     # Fats and acids. Rendered animal fats are fats, not meat: duck fat is
     # 900 kcal per 100 g, which is right for a fat and impossible for poultry.
-    (r"\bduck fat\b|\bgoose fat\b|\bbeef dripping\b|\bbacon fat\b|\btallow\b|\bsuet\b", "oil"),
+    (r"\bduck fat\b|\bgoose fat\b|\bchicken fat\b|\bschmaltz\b|\bbeef dripping\b"
+     r"|\bbacon fat\b|\btallow\b|\bsuet\b", "oil"),
     (r"\bolive oil\b|\bvegetable oil\b|\bcanola oil\b|\bsesame oil\b|\bsunflower oil\b|\bpeanut oil\b|\bcooking spray\b|\blard\b|\bshortening\b|\boil\b", "oil"),
     # Starches and tortillas ahead of the produce patterns, or "potato starch"
     # is a root vegetable and "corn tortillas" are sweetcorn.
-    (r"\bpotato starch\b|\bpotato flour\b|\btapioca\b|\barrowroot\b", "flour"),
+    (r"\bpotato starch\b|\bpotato flour\b|\btapioca\b|\barrowroot\b"
+     r"|\bcorn masa\b|\bmasa harina\b", "flour"),
+    # A seed sold as a spice is a spice, not the vegetable it came from:
+    # celery seed is 392 kcal per 100 g and a stick of celery is 16.
+    (r"\b(celery|fennel|mustard|caraway|cumin|coriander|dill|poppy|sesame|"
+     r"nigella|ajwain) seeds?\b", "spice"),
     (r"\btortillas?\b|\btaco shells?\b", "bread"),
     (r"\bvinegar\b", "vinegar"),
     (r"\bmargarine\b|\bbutter\b", "butter"),

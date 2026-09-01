@@ -273,8 +273,18 @@ PREP_TAIL = re.compile(
 )
 
 LEADING_NOISE = re.compile(
-    r"^(?:about|approximately|roughly|around|a|an|some|of|each of|per pound of|"
-    r"per lb of|per kg of|assorted)\s+", re.IGNORECASE
+    r"^(?:about|approximately|approx\.?|roughly|around|a|an|some|of|each of|"
+    r"per pound of|per lb of|per kg of|assorted)\s+", re.IGNORECASE
+)
+
+# A measurement of size rather than of amount: "1/2-inch cubed pork butt",
+# "8-inch soft taco-size flour tortillas". It sits where the ingredient name
+# should start, and the taxonomy turns the fraction into digits - which is how
+# "1/2 tsp nutmeg" ends up as an ingredient called "1 2 tsp nutmeg".
+DIMENSION = re.compile(
+    r"^(?:[\d\s/" + "".join(FRACTIONS) + r"-]{1,8}"
+    r"(?:inch|inches|in\.|cm|mm|centimetres?|centimeters?|millimetres?)\b[\s-]*)+",
+    re.IGNORECASE,
 )
 
 # A line that is a heading or an instruction rather than an ingredient.
@@ -282,6 +292,7 @@ NOT_AN_INGREDIENT = re.compile(
     r"^(?:for the\b|to serve\b|to garnish\b|optional\b|note[s]?\b|"
     r"see also\b|ingredients?\b|equipment\b|variations?\b|"
     r"aromatics?$|seasonings?$|toppings?$|fillings?$|garnish(?:es)?$|"
+    r"as needed$|as required$|to taste$|optional extras?$|"
     r"vegetables?$|spices?$|sauce$|marinade$|dressing$|batter$|dough$)",
     re.IGNORECASE,
 )
@@ -303,7 +314,7 @@ PARTICIPLES = (
     r"cut|sliced|chopped|diced|torn|broken|halved|quartered|cored|peeled|"
     r"trimmed|shelled|deveined|julienned|grated|crushed|beaten|cleaned|"
     r"scrubbed|bearded|rinsed|drained|soaked|toasted|roasted|juiced|zested|"
-    r"mixed|seasoned|flavored|flavoured|separated|crisped|bashed|baked|"
+    r"mixed|seasoned|flavored|flavoured|separated|crisped|bashed|baked|cubed|"
     r"shredded|minced|melted|softened|whisked|sifted"
 )
 
@@ -536,6 +547,10 @@ def parse(line: str) -> Measured | None:
         return None
 
     text = _strip_parentheticals(label)
+    # "~1 cup water" and "scant 1/2 cup olive oil" both hide the quantity
+    # behind something that is not a number, so the head parse never sees it.
+    text = re.sub(r"^[~≈]\s*", "", text)
+    text = SIZE_WORDS.sub("", text)
     text = LEADING_NOISE.sub("", text)
 
     quantity: float | None = None
@@ -572,6 +587,7 @@ def parse(line: str) -> Measured | None:
             text = conjoined
 
     name = LEADING_NOISE.sub("", PREP_TAIL.sub("", text)).strip(" ,;.")
+    name = DIMENSION.sub("", name)
     name = _resolve_choice(name)
     name = SLASH_CHOICE.sub(r"\1", name)
     name = TRAILING_CLAUSE.sub("", name)

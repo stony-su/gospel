@@ -77,17 +77,34 @@ const preferences = {
 
 describe('bundled data', () => {
   it('ships a usable recipe library', () => {
-    expect(recipes.length).toBe(100);
-    expect(Object.keys(ingredientsById).length).toBeGreaterThan(300);
+    expect(recipes.length).toBe(500);
+    expect(Object.keys(ingredientsById).length).toBeGreaterThan(1000);
   });
 
   it('fills every meal slot deeply enough for a monthly cycle', () => {
-    // A 28-day plan asks for one recipe per slot per day. Below about ten in
-    // a slot the same dish comes back every week, which is a plan the reader
-    // will not follow.
+    // A 28-day plan asks for one recipe per slot per day, so a slot with
+    // fewer than 28 in it repeats inside a single cycle.
     for (const slot of ['breakfast', 'lunch', 'dinner', 'snack'] as const) {
-      expect(recipes.filter((recipe) => recipe.slot === slot).length).toBeGreaterThanOrEqual(10);
+      expect(recipes.filter((recipe) => recipe.slot === slot).length).toBeGreaterThanOrEqual(28);
     }
+  });
+
+  it('is built around the five cuisines it says it is', () => {
+    const counts = new Map<string, number>();
+    for (const recipe of recipes) {
+      counts.set(recipe.cuisine, (counts.get(recipe.cuisine) ?? 0) + 1);
+    }
+    const focus = ['japanese', 'italian', 'american', 'french', 'spanish'];
+    const ranked = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+
+    // Not a proportion - the Cookbook simply does not hold enough Japanese
+    // recipes for one - but the five should still be the five largest, and
+    // no single other cuisine should rival them.
+    const biggestOther = ranked.find(([cuisine]) => !focus.includes(cuisine));
+    for (const cuisine of focus) {
+      expect(counts.get(cuisine) ?? 0).toBeGreaterThan(20);
+    }
+    expect(biggestOther?.[1] ?? 0).toBeLessThanOrEqual(counts.get('japanese') ?? 0);
   });
 
   it('gives every recipe the fields the planner depends on', () => {

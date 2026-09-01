@@ -63,12 +63,14 @@ src/
 
 scripts/
   build_nutrient_data.py     xlsx -> nutrition.json + golden_vectors.json
-  recipe_sources.py          the hundred dishes, and where each comes from
+  recipe_sources.py          the curated hundred, and where each comes from
   wikimedia.py               Cookbook, Wikipedia and Commons scraping
   measures.py                "3-4 tbsp olive oil" -> 41 g
+  cookbook_index.py          the Cookbook by cuisine, course and difficulty
+  discover_recipes.py        3,792 Cookbook pages -> the other 400 dishes
   authored/                  the 29 recipes no permitted source publishes
   build_recipe_library.py    the above -> recipes.json + ingredients.json
-  fetch_recipe_images.py     100 photographs -> assets/recipes/
+  fetch_recipe_images.py     500 photographs -> assets/recipes/
   ingredient_taxonomy.py     Prices, shelf lives, pack sizes, diet flags
   build_app_icon.py          the app icon, drawn rather than painted
 ```
@@ -92,16 +94,16 @@ excluded from `rules_applied`.
 
 ### The recipe library
 
-One hundred dishes, chosen rather than sampled: Japanese, Italian, American,
-French and Spanish carry the library, with a scattering of everyday dishes from
-elsewhere. `scripts/recipe_sources.py` is that decision in one table.
+Five hundred dishes. Japanese, Italian, American, French and Spanish carry the
+library — they are its five largest cuisines and no other comes close — with a
+scattering of everyday cooking from seventeen more.
 
 Nothing is bought or downloaded as a dataset. Each dish is assembled from three
 public Wikimedia pages:
 
 | | source | licence |
 |---|---|---|
-| ingredients and method, 71 of 100 | Wikibooks Cookbook | CC BY-SA 4.0 |
+| ingredients and method, 471 of 500 | Wikibooks Cookbook | CC BY-SA 4.0 |
 | description | Wikipedia | CC BY-SA 4.0 |
 | photograph | Wikimedia Commons | per file, credited in-app |
 
@@ -111,15 +113,47 @@ method. Those recipes are written in `scripts/authored/` and every one is
 labelled `authored` on screen, so a reader can tell which of the two they are
 looking at.
 
+**Chosen, then found.** The first hundred are one hand-written row of
+`scripts/recipe_sources.py` each: the dishes an everyday meal planner looks
+broken without. Four hundred more cannot be picked that way, so
+`scripts/discover_recipes.py` walks the Cookbook's own `Category:Recipes` —
+3,792 pages — and keeps what survives four questions:
+
+- **Is it a recipe?** Ingredients and Procedure sections that parse into at
+  least four weighed ingredients and three steps. 412 pages failed this.
+- **Is it a meal?** 90–1400 g a serving, which is what separates a dish from a
+  spice rub or a bottle of cordial. Sauces, doughs and stocks are excluded by
+  name as well: pesto is an ingredient of a plate of trofie, and a plan that
+  schedules a jar of it for dinner is wrong in a way no nutrition figure would
+  reveal.
+- **Is there a picture?** No photograph, no recipe.
+- **Whose food is it?** The Cookbook's own origin categories first, then the
+  page's `Cuisine` field, then the categories on the dish's Wikipedia article.
+  Two thirds of the Cookbook is in no origin category at all, and a scraper
+  guessing cuisine from the dish name would be inventing the one field the
+  reader filters on.
+
+The five are taken to exhaustion in a first pass and everything else is capped
+in a second, which is what stops the 219 Nigerian recipes in the Cookbook from
+becoming a fifth of the library on their own.
+
+Servings, cooking time and difficulty come from the Cookbook where it says:
+192 serving counts and 214 times from the recipe infobox, and 385 of the 400
+difficulties from the Cookbook's own `Easy`/`Medium`/`Difficult` categories.
+The rest are estimated from the shape of the recipe, and `discovered.json`
+records which is which.
+
 **NYT Cooking is deliberately absent.** It was the first source asked for. Its
 `robots.txt` disallows `anthropic-ai` and `ClaudeBot` outright, and its terms
 prohibit scraping, text-and-data-mining and dataset creation. Nothing here
 touches it.
 
 Photographs are downloaded, resized and **bundled** rather than hotlinked, at
-1000×600 for the recipe screen and 240×240 for the plan list — 12 MB for the
-hundred. That keeps the app's no-network-calls claim true and means a recipe
-cannot lose its picture to someone else's outage.
+1000×600 for the recipe screen and 240×240 for the plan list — 60 MB for the
+five hundred. That keeps the app's no-network-calls claim true and means a
+recipe cannot lose its picture to someone else's outage. It is also the single
+biggest thing in the app; `HERO` in `scripts/fetch_recipe_images.py` is the
+dial if that trade ever stops being worth it.
 
 ### Regenerating the data
 
@@ -136,6 +170,8 @@ which is:
 
 ```bash
 python scripts/build_nutrient_data.py       # xlsx -> targets
+python scripts/cookbook_index.py            # the Cookbook's own categories
+python scripts/discover_recipes.py          # -> scripts/discovered.json
 python scripts/fetch_recipe_images.py       # Commons -> assets/recipes/
 python scripts/build_recipe_library.py      # -> recipes.json, ingredients.json
 python scripts/fetch_fdc_nutrition.py       # -> ingredient_nutrition.json

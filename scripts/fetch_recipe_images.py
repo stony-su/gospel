@@ -27,8 +27,10 @@ from __future__ import annotations
 import argparse
 import io
 import json
+import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -37,7 +39,7 @@ from PIL import Image, ImageOps
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import wikimedia  # noqa: E402
-from recipe_sources import SOURCES  # noqa: E402
+from recipe_sources import load_all  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "assets" / "recipes"
@@ -48,7 +50,25 @@ THUMB = (240, 240)
 QUALITY = 82
 
 
+BYTES_CACHE = ROOT / "cache" / "images"
+
+
 def download(url: str) -> bytes:
+    """The original bytes, cached, so re-rendering costs no bandwidth.
+
+    Changing a crop or a quality setting should not mean asking Wikimedia for
+    five hundred photographs again.
+    """
+    BYTES_CACHE.mkdir(parents=True, exist_ok=True)
+    key = BYTES_CACHE / re.sub(r"[^A-Za-z0-9._-]+", "_", url.rsplit("/", 1)[-1])[:120]
+    if key.exists() and key.stat().st_size > 0:
+        return key.read_bytes()
+    data = _download(url)
+    key.write_bytes(data)
+    return data
+
+
+def _download(url: str) -> bytes:
     request = urllib.request.Request(url, headers={"User-Agent": wikimedia.UA})
     for attempt in range(5):
         try:
@@ -64,6 +84,31 @@ def download(url: str) -> bytes:
             import time
             time.sleep(3 * (attempt + 1))
     raise RuntimeError(f"could not download {url}")
+
+
+def predownload(urls: list[str]) -> None:
+    """Fill the byte cache in parallel. Rendering afterwards is pure CPU."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    pending = [u for u in dict.fromkeys(urls)
+               if not (BYTES_CACHE / re.sub(r"[^A-Za-z0-9._-]+", "_",
+                                            u.rsplit("/", 1)[-1])[:120]).exists()]
+    if not pending:
+        return
+    print(f"downloading {len(pending)} photographs", flush=True)
+    done = 0
+    with ThreadPoolExecutor(max_workers=wikimedia.CONCURRENCY) as pool:
+        for _ in pool.map(_quiet_download, pending):
+            done += 1
+            if done % 100 == 0:
+                print(f"    downloaded {done}/{len(pending)}", flush=True)
+
+
+def _quiet_download(url: str) -> None:
+    try:
+        download(url)
+    except Exception:                                   # noqa: BLE001
+        pass
 
 
 def render(data: bytes, size: tuple[int, int], path: Path) -> None:
@@ -144,7 +189,41 @@ def main() -> int:
     missing: list[str] = []
     total_bytes = 0
 
-    for index, source in enumerate(SOURCES, 1):
+    sources = load_all()
+
+    # Warm the Commons file pages first, four at a time. Sequentially this is
+    # five hundred round trips taken one after another for no reason: nothing
+    # about reading a licence depends on having read the previous one.
+    todo = [s for s in sources
+            if args.force or s.slug not in manifest
+            or not (OUT_DIR / f"{s.slug}.jpg").exists()]
+    if todo:
+        print(f"resolving {len(todo)} photographs", flush=True)
+        named = [s.image_file for s in todo if s.image_file]
+        wikimedia.prefetch(
+            [wikimedia.COMMONS_FILE + urllib.parse.quote(f.replace(" ", "_"))
+             for f in named], "commons")
+        wikimedia.prefetch(
+            [wikimedia._page_url(wikimedia.WIKIPEDIA, s.wikipedia)
+             for s in todo if not s.image_file and s.wikipedia], "wikipedia")
+
+        # And then the photographs themselves. Resolving a credit is free now
+        # that its page is cached, so this can work out every download URL up
+        # front and fetch them in parallel.
+        urls = []
+        for source in todo:
+            chosen = source.image_file
+            if chosen is None and source.wikipedia:
+                page = wikimedia.wikipedia_page(source.wikipedia)
+                chosen = page.image_file if page else None
+            if not chosen:
+                continue
+            credit = wikimedia.image_credit(chosen)
+            if credit:
+                urls.append(credit.download_url)
+        predownload(urls)
+
+    for index, source in enumerate(sources, 1):
         hero = OUT_DIR / f"{source.slug}.jpg"
         thumb = OUT_DIR / f"{source.slug}-thumb.jpg"
         done = hero.exists() and thumb.exists() and source.slug in manifest
@@ -189,7 +268,7 @@ def main() -> int:
               f"{credit.license[:14]:<14} {credit.author[:34]}", flush=True)
 
     # Anything the spec dropped should not leave an orphan on disk.
-    wanted = {s.slug for s in SOURCES}
+    wanted = {s.slug for s in sources}
     for slug in sorted(set(manifest) - wanted):
         del manifest[slug]
     for stale in sorted(OUT_DIR.glob("*.jpg")):
@@ -211,8 +290,8 @@ def main() -> int:
         for line in missing:
             print(f"  {line}")
         return 1
-    if len(manifest) != len(SOURCES):
-        print(f"\nexpected {len(SOURCES)} images, have {len(manifest)}")
+    if len(manifest) != len(sources):
+        print(f"\nexpected {len(sources)} images, have {len(manifest)}")
         return 1
     print("every recipe has a photograph")
     return 0

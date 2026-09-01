@@ -1,0 +1,7838 @@
+[
+ {
+  "slug": "agedashi-tofu",
+  "name": "Agedashi Tofu",
+  "cuisine": "japanese",
+  "slot": "dinner",
+  "wikibooks": "Agedashi Tofu",
+  "wikipedia": "Agedashi Tofu",
+  "image_file": "Agedashi.jpg",
+  "minutes": 44,
+  "prep": 14,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "arancini",
+  "name": "Arancini",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Arancini (Italian Fried Rice Balls)",
+  "wikipedia": "Arancini",
+  "image_file": "Arancini_002.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "arroz-negro",
+  "name": "Arroz Negro",
+  "cuisine": "spanish",
+  "slot": "dinner",
+  "wikibooks": "Arroz Negro (Valencian Squid Rice)",
+  "wikipedia": "Arroz Negro",
+  "image_file": "Arroz_negro_02.JPG",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 6,
+  "difficulty": 3,
+  "equipment": [
+   "15- inch (38- centimeter ) paellera",
+   "2-gallon pot",
+   "Rice skimmer",
+   "Sharp chopping knife",
+   "Large serving spoon",
+   "Potato masher"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "baguette",
+  "name": "Baguette",
+  "cuisine": "french",
+  "slot": "snack",
+  "wikibooks": "Baguette",
+  "wikipedia": "Baguette",
+  "image_file": "Baguette.png",
+  "minutes": 420,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "baked-ziti",
+  "name": "Baked Ziti",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Baked Ziti",
+  "wikipedia": "Baked Ziti",
+  "image_file": "Baked_Ziti.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "barbecued-spare-ribs",
+  "name": "Barbecued Spare Ribs",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Barbecued Spare Ribs",
+  "wikipedia": "Barbecued Spare Ribs",
+  "image_file": "Spare_ribs_with_Chinese_barbecue_sauce_cropped.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "bell-pepper-chili",
+  "name": "Bell Pepper Chili",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Bell Pepper Chili",
+  "wikipedia": "Bell Pepper Chili",
+  "image_file": "Chili_con_carne_7.jpg",
+  "minutes": 80,
+  "prep": 26,
+  "servings": 12,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "buckwheat-crepes",
+  "name": "Buckwheat Crêpes",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Buckwheat Crêpes",
+  "wikipedia": "Buckwheat Crêpes",
+  "image_file": "Galette_de_sarrasin_complète_bretonne.jpg",
+  "minutes": 56,
+  "prep": 18,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "calzone",
+  "name": "Calzone",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Calzone",
+  "wikipedia": "Calzone",
+  "image_file": "20000227--calzone.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "corn-chowder",
+  "name": "Corn Chowder",
+  "cuisine": "american",
+  "slot": "lunch",
+  "wikibooks": "Corn Chowder I",
+  "wikipedia": "Corn Chowder",
+  "image_file": "Corn_chowder_bowl.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 6,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "cornbread",
+  "name": "Cornbread",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Cornbread I",
+  "wikipedia": "Cornbread",
+  "image_file": "Cornbread_2.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "deep-dish-pizza",
+  "name": "Deep Dish Pizza",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Deep Dish Pizza",
+  "wikipedia": "Deep Dish Pizza",
+  "image_file": "Pepperoni_pizza.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "eggplant-parmesan",
+  "name": "Eggplant Parmesan (Melanzane alla Parmigiana)",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Eggplant Parmesan (Melanzane alla Parmigiana) I",
+  "wikipedia": "Eggplant Parmesan (Melanzane alla Parmigiana)",
+  "image_file": "Melanzane_alla_Parmigiana.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "fabes-con-almejas",
+  "name": "Fabes con Almejas",
+  "cuisine": "spanish",
+  "slot": "dinner",
+  "wikibooks": "Fabes con Almejas (Spanish Beans with Clams)",
+  "wikipedia": "Fabes con Almejas",
+  "image_file": "Fabes_con_almejas_-_Jlastras.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "fleischnacka",
+  "name": "Fleischnacka",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Fleischnacka (Alsatian Meat and Pasta Roll)",
+  "wikipedia": "Fleischnacka",
+  "image_file": "Fleischschnacka.JPG",
+  "minutes": 44,
+  "prep": 14,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "focaccia",
+  "name": "Focaccia",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Focaccia I",
+  "wikipedia": "Focaccia",
+  "image_file": "Focaccia.jpg",
+  "minutes": 240,
+  "prep": 60,
+  "servings": 12,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "fresh-mozzarella-bruschetta",
+  "name": "Fresh Mozzarella Bruschetta",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Fresh Mozzarella Bruschetta",
+  "wikipedia": "Fresh Mozzarella Bruschetta",
+  "image_file": "FreshMozzarellaBruschetta.jpg",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "grilled-aubergine",
+  "name": "Grilled Aubergine",
+  "cuisine": "japanese",
+  "slot": "snack",
+  "wikibooks": "Grilled Aubergine",
+  "wikipedia": "Grilled Aubergine",
+  "image_file": "Grilled_Aubergine_and_Pesto_Sandwich03.jpg",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 2,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "gunkanmaki",
+  "name": "Gunkanmaki",
+  "cuisine": "japanese",
+  "slot": "snack",
+  "wikibooks": "Gunkanmaki (Topped Oval Sushi)",
+  "wikipedia": "Gunkanmaki",
+  "image_file": "Sushi_Nemuro_Hanamaru_Tokei_Dai_(184517515).jpeg",
+  "minutes": 48,
+  "prep": 16,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "inarizushi",
+  "name": "Inarizushi",
+  "cuisine": "japanese",
+  "slot": "dinner",
+  "wikibooks": "Inarizushi (Stuffed Sushi)",
+  "wikipedia": "Inarizushi",
+  "image_file": "Kantofu_Inarizushi.jpg",
+  "minutes": 64,
+  "prep": 21,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Mixing bowl"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "jalapeno-sausage-and-bacon-appetizers",
+  "name": "Jalapeno Sausage and Bacon Appetizers",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Jalapeno Sausage and Bacon Appetizers (Atomic Buffalo Turds)",
+  "wikipedia": "Jalapeno Sausage and Bacon Appetizers",
+  "image_file": "ABT_Uncooked.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "lady-finger-cookies",
+  "name": "Lady Finger Cookies",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Lady Finger Cookies (Savoiardi)",
+  "wikipedia": "Lady Finger Cookies",
+  "image_file": "Bizcochos_de_soletilla.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "lemon-mille-feuille",
+  "name": "Lemon Mille-feuille",
+  "cuisine": "french",
+  "slot": "snack",
+  "wikibooks": "Lemon Mille-feuille",
+  "wikipedia": "Lemon Mille-feuille",
+  "image_file": "Mille-feuille_01.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 10,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "makizushi",
+  "name": "Makizushi",
+  "cuisine": "japanese",
+  "slot": "dinner",
+  "wikibooks": "Makizushi (Maki Roll)",
+  "wikipedia": "Makizushi",
+  "image_file": "Makizushi2.jpg",
+  "minutes": 56,
+  "prep": 18,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [
+   "Sushi roller ( makisu )"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "manhattan-clam-chowder",
+  "name": "Manhattan Clam Chowder",
+  "cuisine": "american",
+  "slot": "lunch",
+  "wikibooks": "Manhattan Clam Chowder I",
+  "wikipedia": "Manhattan Clam Chowder",
+  "image_file": "ManhattanClamChowder.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 6,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "meat-and-shrimp-potstickers",
+  "name": "Meat and Shrimp Potstickers",
+  "cuisine": "japanese",
+  "slot": "dinner",
+  "wikibooks": "Meat and Shrimp Potstickers",
+  "wikipedia": "Meat and Shrimp Potstickers",
+  "image_file": "Potstickers_RTE.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "new-england-potato-salad",
+  "name": "New England Potato Salad",
+  "cuisine": "american",
+  "slot": "lunch",
+  "wikibooks": "New England Potato Salad",
+  "wikipedia": "New England Potato Salad",
+  "image_file": "Homemade_potato_salad.jpg",
+  "minutes": 89,
+  "prep": 29,
+  "servings": 10,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "omelette-of-breadcrumbs",
+  "name": "Omelette of Breadcrumbs",
+  "cuisine": "spanish",
+  "slot": "breakfast",
+  "wikibooks": "Omelette of Breadcrumbs",
+  "wikipedia": "Omelette of Breadcrumbs",
+  "image_file": "Tortilla_de_pan_rallado.jpg",
+  "minutes": 10,
+  "prep": 5,
+  "servings": 2,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "ossobuco-alla-milanese",
+  "name": "Ossobuco Alla Milanese",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Ossobuco Alla Milanese",
+  "wikipedia": "Ossobuco Alla Milanese",
+  "image_file": "Ossobuco.jpg",
+  "minutes": 165,
+  "prep": 55,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "paella-de-marisco",
+  "name": "Paella de Marisco",
+  "cuisine": "spanish",
+  "slot": "dinner",
+  "wikibooks": "Paella de Marisco",
+  "wikipedia": "Paella de Marisco",
+  "image_file": "Paella_de_marisco_01.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 6,
+  "difficulty": 4,
+  "equipment": [
+   "38 centimeters (15 in) paellera",
+   "4 liters (4.2 US qt) pot",
+   "Rice skimmer",
+   "Large serving spoon",
+   "Potato masher",
+   "Charcoal grill"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "pizza-vanegas",
+  "name": "Pizza Vanegas",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Pizza Vanegas",
+  "wikipedia": "Pizza Vanegas",
+  "image_file": "PeperonniPizza.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "pork-gyoza",
+  "name": "Pork Gyoza",
+  "cuisine": "japanese",
+  "slot": "snack",
+  "wikibooks": "Pork Gyoza",
+  "wikipedia": "Pork Gyoza",
+  "image_file": "Japanese_pan_fried_gyoza.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "pot-au-feu",
+  "name": "Pot-au-feu",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Pot-au-feu (Boiled Meat and Vegetables)",
+  "wikipedia": "Pot-au-feu",
+  "image_file": "Pot-au-feu2.jpg",
+  "minutes": 80,
+  "prep": 26,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "ratatouille",
+  "name": "Ratatouille",
+  "cuisine": "french",
+  "slot": "snack",
+  "wikibooks": "Ratatouille I",
+  "wikipedia": "Ratatouille",
+  "image_file": "Ratatouille.jpg",
+  "minutes": 56,
+  "prep": 18,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "ravioli",
+  "name": "Ravioli",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Ravioli",
+  "wikipedia": "Ravioli",
+  "image_file": "Ravioli.jpg",
+  "minutes": 70,
+  "prep": 23,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "estimated",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "reuben-sandwich",
+  "name": "Reuben Sandwich",
+  "cuisine": "american",
+  "slot": "lunch",
+  "wikibooks": "Reuben Sandwich",
+  "wikipedia": "Reuben Sandwich",
+  "image_file": "Ruben_sandwich.jpg",
+  "minutes": 5,
+  "prep": 5,
+  "servings": 1,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "risotto",
+  "name": "Risotto",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Risotto (Basic)",
+  "wikipedia": "Risotto",
+  "image_file": "Risotto_bowl.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "risotto-ai-funghi",
+  "name": "Risotto ai Funghi",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Risotto ai Funghi",
+  "wikipedia": "Risotto ai Funghi",
+  "image_file": "Steinpilzrisotto.jpg",
+  "minutes": 56,
+  "prep": 18,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "roast-turkey-with-stuffing",
+  "name": "Roast Turkey with Stuffing",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Roast Turkey with Stuffing",
+  "wikipedia": "Roast Turkey with Stuffing",
+  "image_file": "RoastTurkey.jpg",
+  "minutes": 240,
+  "prep": 60,
+  "servings": 6,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "seafood-risotto",
+  "name": "Seafood Risotto",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Seafood Risotto",
+  "wikipedia": "Seafood Risotto",
+  "image_file": "Risotto_alla_marinara.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "simple-spaghetti",
+  "name": "Simple Spaghetti",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Simple Spaghetti",
+  "wikipedia": "Simple Spaghetti",
+  "image_file": "Spaghetti_served_with_meat_sauce.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "simple-tarragon-quiche",
+  "name": "Simple Tarragon Quiche",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Simple Tarragon Quiche",
+  "wikipedia": "Simple Tarragon Quiche",
+  "image_file": "Quiche_Lorraine.jpg",
+  "minutes": 75,
+  "prep": 25,
+  "servings": 6,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "spaghetti-with-clams",
+  "name": "Spaghetti with Clams",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Spaghetti with Clams",
+  "wikipedia": "Spaghetti with Clams",
+  "image_file": "Spaghetti_vongole_2.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 6,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "spanish-omelet",
+  "name": "Spanish Omelet",
+  "cuisine": "spanish",
+  "slot": "breakfast",
+  "wikibooks": "Spanish Omelet",
+  "wikipedia": "Spanish Omelet",
+  "image_file": "Tortilla_patatas.jpg",
+  "minutes": 64,
+  "prep": 21,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "stracciatella",
+  "name": "Stracciatella",
+  "cuisine": "italian",
+  "slot": "lunch",
+  "wikibooks": "Stracciatella I",
+  "wikipedia": "Stracciatella",
+  "image_file": "Straciatella_-_bowl.JPG",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "tartiflette",
+  "name": "Tartiflette",
+  "cuisine": "french",
+  "slot": "snack",
+  "wikibooks": "Tartiflette",
+  "wikipedia": "Tartiflette",
+  "image_file": "Tartiflette_and_Fried_Ham.jpg",
+  "minutes": 117,
+  "prep": 39,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "tempura",
+  "name": "Tempura",
+  "cuisine": "japanese",
+  "slot": "snack",
+  "wikibooks": "Tempura",
+  "wikipedia": "Tempura",
+  "image_file": "Tempura_02.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "tonkotsu-ramen",
+  "name": "Tonkotsu Ramen",
+  "cuisine": "japanese",
+  "slot": "dinner",
+  "wikibooks": "Tonkotsu Ramen",
+  "wikipedia": "Tonkotsu Ramen",
+  "image_file": "Tonkotsu_Ramen_Special,_Hakata_Choten,_Paris_001.jpg",
+  "minutes": 161,
+  "prep": 53,
+  "servings": 6,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "twice-baked-potatoes",
+  "name": "Twice-Baked Potatoes",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Twice-Baked Potatoes I",
+  "wikipedia": "Twice-Baked Potatoes",
+  "image_file": "Twice-baked_potatoes,_plated,_with_red_bell_peppers_and_green_onions,_better_lighting.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 6,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "valencian-inspired-paella",
+  "name": "Valencian-Inspired Paella",
+  "cuisine": "spanish",
+  "slot": "dinner",
+  "wikibooks": "Valencian-Inspired Paella",
+  "wikipedia": "Valencian-Inspired Paella",
+  "image_file": "A_Valencian_paella_with_red_bell_peppers.jpg",
+  "minutes": 300,
+  "prep": 60,
+  "servings": 6,
+  "difficulty": 4,
+  "equipment": [
+   "38-centimeter (15-inch) paellera",
+   "7.6-liter (two-gallon) pot",
+   "Rice skimmer",
+   "Sharp chopping knife",
+   "Large serving spoon",
+   "A charcoal barbecue"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "wakeup-sausage-casserole",
+  "name": "Wakeup Sausage Casserole",
+  "cuisine": "american",
+  "slot": "breakfast",
+  "wikibooks": "Wakeup Sausage Casserole",
+  "wikipedia": "Wakeup Sausage Casserole",
+  "image_file": "Finished_sausage_breakfast_casserole.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 10,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "baked-beans",
+  "name": "Baked Beans",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Baked Beans",
+  "wikipedia": "Baked Beans",
+  "image_file": "Baked_beans_in_tomato_sauce.jpg",
+  "minutes": 150,
+  "prep": 50,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "biscotti",
+  "name": "Biscotti",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Biscotti",
+  "wikipedia": "Biscotti",
+  "image_file": "Cantuccini-Toscani.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chicken-marsala",
+  "name": "Chicken Marsala",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Chicken Marsala II",
+  "wikipedia": "Chicken Marsala",
+  "image_file": "Flickr_preppybyday_4843102799--Chicken_marsala.jpg",
+  "minutes": 85,
+  "prep": 28,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "estimated",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chicken-parmesan",
+  "name": "Chicken Parmesan",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Chicken Parmesan",
+  "wikipedia": "Chicken Parmesan",
+  "image_file": "Chicken_parm_at_a_diner.jpg",
+  "minutes": 105,
+  "prep": 35,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chicken-riggies",
+  "name": "Chicken Riggies",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Chicken Riggies",
+  "wikipedia": "Chicken Riggies",
+  "image_file": "Chicken_Riggies1.jpg",
+  "minutes": 69,
+  "prep": 23,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chicken-and-dumplings",
+  "name": "Chicken and Dumplings",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Chicken and Dumplings",
+  "wikipedia": "Chicken and Dumplings",
+  "image_file": "Mmm..._chicken_dumplings_(7867591472).jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "choucroute",
+  "name": "Choucroute",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Choucroute (Sauerkraut with Meat and Potatoes)",
+  "wikipedia": "Choucroute",
+  "image_file": "2021-01-10_13-08-38_ILCE-6500_DSC01353_DxO_(50958169387).jpg",
+  "minutes": 89,
+  "prep": 29,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "denver-omelet",
+  "name": "Denver Omelet",
+  "cuisine": "american",
+  "slot": "breakfast",
+  "wikibooks": "Denver Omelet",
+  "wikipedia": "Denver Omelet",
+  "image_file": "Gorgonzola_+_Bacon_Omelette_@_Omelegg_@_Amsterdam_(16600947041).jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 2,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "flammekueche",
+  "name": "Flammekueche",
+  "cuisine": "french",
+  "slot": "snack",
+  "wikibooks": "Flammekueche (Bacon and Onion Flatbread)",
+  "wikipedia": "Flammekueche",
+  "image_file": "Flameukeusche_2.jpg",
+  "minutes": 105,
+  "prep": 35,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "hoppin-john",
+  "name": "Hoppin John",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Hoppin John",
+  "wikipedia": "Hoppin John",
+  "image_file": "Hoppin-john-bowl.JPG",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "le-tourin",
+  "name": "Le Tourin",
+  "cuisine": "french",
+  "slot": "lunch",
+  "wikibooks": "Le Tourin (Garlic Soup)",
+  "wikipedia": "Le Tourin",
+  "image_file": "Tourin.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 2,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "lobster-thermidor",
+  "name": "Lobster Thermidor",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Lobster Thermidor",
+  "wikipedia": "Lobster Thermidor",
+  "image_file": "Lobster_Thermidor_entree.jpg",
+  "minutes": 52,
+  "prep": 17,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "mato-de-pedralbes",
+  "name": "Mató de Pedralbes",
+  "cuisine": "spanish",
+  "slot": "snack",
+  "wikibooks": "Mató de Pedralbes (Spanish Maize Custard)",
+  "wikipedia": "Mató de Pedralbes",
+  "image_file": "Romesco.jpg",
+  "minutes": 77,
+  "prep": 25,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "monkey-bread",
+  "name": "Monkey Bread",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Monkey Bread II",
+  "wikipedia": "Monkey Bread",
+  "image_file": "Monkey_Bread.jpg",
+  "minutes": 77,
+  "prep": 25,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "no-knead-bread",
+  "name": "No-Knead Bread",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "No-Knead Bread",
+  "wikipedia": "No-Knead Bread",
+  "image_file": "Bread_baked_in_my_home_using_the_'no-knead'_baking_method.jpg",
+  "minutes": 480,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "pain-au-levain-naturel",
+  "name": "Pain au Levain Naturel",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Pain au Levain Naturel",
+  "wikipedia": "Pain au Levain Naturel",
+  "image_file": "Mother-culture.png",
+  "minutes": 125,
+  "prep": 41,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "philly-cheesesteak",
+  "name": "Philly Cheesesteak",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Philly Cheesesteak",
+  "wikipedia": "Philly Cheesesteak",
+  "image_file": "PatsCheesesteak.jpg",
+  "minutes": 24,
+  "prep": 8,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "piadina",
+  "name": "Piadina",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Piadina (Thin Italian Flatbread)",
+  "wikipedia": "Piadina",
+  "image_file": "Piadina_romagnola_2.jpg",
+  "minutes": 68,
+  "prep": 22,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "polvorones",
+  "name": "Polvorones",
+  "cuisine": "spanish",
+  "slot": "snack",
+  "wikibooks": "Polvorones (Spanish Shortbread)",
+  "wikipedia": "Polvorones",
+  "image_file": "MedinaSidonia-P1060062_(cropped).JPG",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "potage-parmentier",
+  "name": "Potage Parmentier",
+  "cuisine": "french",
+  "slot": "lunch",
+  "wikibooks": "Potage Parmentier",
+  "wikipedia": "Potage Parmentier",
+  "image_file": "Vichyssoise.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "sangria",
+  "name": "Sangría",
+  "cuisine": "spanish",
+  "slot": "dinner",
+  "wikibooks": "Sangría",
+  "wikipedia": "Sangría",
+  "image_file": "Red_Wine_Sangria_with_lemon,_lime,_apple,_and_orange_served_in_a_glass_-_Evan_Swigart.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 6,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "struffoli",
+  "name": "Struffoli",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Struffoli (Neapolitan Honey Fried Dough)",
+  "wikipedia": "Struffoli",
+  "image_file": "Struffoli2.JPG",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "teurgoule",
+  "name": "Teurgoule",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Teurgoule (Norman Cinnamon Rice Pudding)",
+  "wikipedia": "Teurgoule",
+  "image_file": "Teurgoule.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "tripes-a-la-mode-de-caen",
+  "name": "Tripes à la mode de Caen",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Tripes à la mode de Caen (Norman Stewed Tripe)",
+  "wikipedia": "Tripes à la mode de Caen",
+  "image_file": "Tripe_à_la_mode_de_Caen_2.jpg",
+  "minutes": 25,
+  "prep": 8,
+  "servings": 13,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "ume-shu",
+  "name": "Ume-shu",
+  "cuisine": "japanese",
+  "slot": "dinner",
+  "wikibooks": "Ume-shu (Japanese Plum Juice)",
+  "wikipedia": "Ume-shu",
+  "image_file": "Umeshu_on_the_rocks.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "waldorf-salad",
+  "name": "Waldorf Salad",
+  "cuisine": "american",
+  "slot": "lunch",
+  "wikibooks": "Waldorf Salad",
+  "wikipedia": "Waldorf Salad",
+  "image_file": "Waldorfsalat.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "yubeshi",
+  "name": "Yubeshi",
+  "cuisine": "japanese",
+  "slot": "dinner",
+  "wikibooks": "Yubeshi (Japanese Walnut Mochi Confection)",
+  "wikipedia": "Yubeshi",
+  "image_file": "Yubesi08120531.jpg",
+  "minutes": 44,
+  "prep": 14,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "apple-pie",
+  "name": "Apple Pie",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Apple Pie I",
+  "wikipedia": "Apple Pie",
+  "image_file": "Apple_pie.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 7,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "banana-split",
+  "name": "Banana Split",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Banana Split I",
+  "wikipedia": "Banana Split",
+  "image_file": "Bananasplit3015.JPG",
+  "minutes": 5,
+  "prep": 5,
+  "servings": 1,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "blueberry-muffin",
+  "name": "Blueberry Muffin",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Blueberry Muffin",
+  "wikipedia": "Blueberry Muffin",
+  "image_file": "Blueberry_muffins.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "bread-pudding",
+  "name": "Bread Pudding",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Bread Pudding",
+  "wikipedia": "Bread Pudding",
+  "image_file": "A_slice_of_bread_pudding.JPG",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 12,
+  "difficulty": 2,
+  "equipment": [
+   "Mixing bowl",
+   "Whisk"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "carrot-cake",
+  "name": "Carrot Cake",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Carrot Cake I",
+  "wikipedia": "Carrot Cake",
+  "image_file": "0112_Karottenkuchen,_ciasto_marchwiowe.JPG",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "estimated",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "ciabatta",
+  "name": "Ciabatta",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Ciabatta",
+  "wikipedia": "Ciabatta",
+  "image_file": "Ciabatta_cut.JPG",
+  "minutes": 18,
+  "prep": 6,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "cioppino",
+  "name": "Cioppino",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Cioppino (Italian Seafood Stew)",
+  "wikipedia": "Cioppino",
+  "image_file": "Cioppino.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 7,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "coleslaw",
+  "name": "Coleslaw",
+  "cuisine": "american",
+  "slot": "lunch",
+  "wikibooks": "Coleslaw I",
+  "wikipedia": "Coleslaw",
+  "image_file": "Bowl'o'Coleslaw_modified.jpg",
+  "minutes": 10,
+  "prep": 5,
+  "servings": 6,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "consomme",
+  "name": "Consommé",
+  "cuisine": "french",
+  "slot": "lunch",
+  "wikibooks": "Consommé",
+  "wikipedia": "Consommé",
+  "image_file": "Consomme_de_volaille.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Colander",
+   "3-quart (2.9 litre) bowl",
+   "Ladle",
+   "2½-quart (2.3 litre) saucepan"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "cupcakes",
+  "name": "Cupcakes",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Cupcakes (Plain)",
+  "wikipedia": "Cupcakes",
+  "image_file": "Fairy_cakes_close_up_on_tray.jpg",
+  "minutes": 85,
+  "prep": 28,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "dolma",
+  "name": "Dolma",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Dolma (Stuffed Grape Leaves)",
+  "wikipedia": "Dolma",
+  "image_file": "DOLMA-5-1.jpg",
+  "minutes": 240,
+  "prep": 60,
+  "servings": 7,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "fried-green-tomatoes",
+  "name": "Fried Green Tomatoes",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Fried Green Tomatoes",
+  "wikipedia": "Fried Green Tomatoes",
+  "image_file": "Fried_green_tomatoes.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "gallo-pinto",
+  "name": "Gallo Pinto",
+  "cuisine": "spanish",
+  "slot": "snack",
+  "wikibooks": "Gallo Pinto (Costa Rican Rice and Beans)",
+  "wikipedia": "Gallo Pinto",
+  "image_file": "Gallo_pinto_(4711592666).jpg",
+  "minutes": 48,
+  "prep": 16,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "gingerbread",
+  "name": "Gingerbread",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Gingerbread",
+  "wikipedia": "Gingerbread",
+  "image_file": "GingerbreadCake.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 10,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "hallaca",
+  "name": "Hallaca",
+  "cuisine": "spanish",
+  "slot": "dinner",
+  "wikibooks": "Hallaca (Venezuelan Stuffed Corn Dough)",
+  "wikipedia": "Hallaca",
+  "image_file": "Hallacabaq.jpg",
+  "minutes": 5,
+  "prep": 5,
+  "servings": 20,
+  "difficulty": 4,
+  "equipment": [
+   "1 roll of kitchen string",
+   "1 kg banana leaves"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "estimated",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "kesra",
+  "name": "Kesra",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Kesra (Algerian Semolina Flatbread)",
+  "wikipedia": "Kesra",
+  "image_file": "Khobz_Kesra_algérien.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "lemon-meringue-pie",
+  "name": "Lemon Meringue Pie",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Lemon Meringue Pie (American)",
+  "wikipedia": "Lemon Meringue Pie",
+  "image_file": "Lemon_Meringue_Pie_1.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 7,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "masa",
+  "name": "Masa",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Masa (Hausa Rice Pancake)",
+  "wikipedia": "Masa",
+  "image_file": "Masa_(Waina).jpg",
+  "minutes": 44,
+  "prep": 14,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Blender",
+   "Mixing bowl",
+   "Spoon or ladle",
+   "Non-stick frying pan or masa pan",
+   "Stove",
+   "Sieve (optional)"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "meatballs",
+  "name": "Meatballs",
+  "cuisine": "japanese",
+  "slot": "dinner",
+  "wikibooks": "Meatballs (Vegetarian)",
+  "wikipedia": "Meatballs",
+  "image_file": "Vegetarian_Meatballs.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "msemmen",
+  "name": "Msemmen",
+  "cuisine": "french",
+  "slot": "breakfast",
+  "wikibooks": "Msemmen",
+  "wikipedia": "Msemmen",
+  "image_file": "Msemmen.JPG",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "ndole",
+  "name": "Ndole",
+  "cuisine": "french",
+  "slot": "lunch",
+  "wikibooks": "Ndole (Cameroonian Bitter Leaf and Peanut Soup)",
+  "wikipedia": "Ndole",
+  "image_file": "Plat_de_Ndolè_avec_Plantains_Tapés_Frits_+Poisson_Frit.jpg",
+  "minutes": 70,
+  "prep": 23,
+  "servings": 6,
+  "difficulty": 3,
+  "equipment": [
+   "Pot",
+   "Bowl",
+   "Stovetop",
+   "Knife",
+   "Cooking spoon",
+   "Blender /grinder"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "onion-rings",
+  "name": "Onion Rings",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Onion Rings",
+  "wikipedia": "Onion Rings",
+  "image_file": "OnionRings.JPG",
+  "minutes": 101,
+  "prep": 33,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "pecan-pie",
+  "name": "Pecan Pie",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Pecan Pie",
+  "wikipedia": "Pecan Pie",
+  "image_file": "Pecan_pie.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "po-boy",
+  "name": "Po' Boy",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Po' Boy",
+  "wikipedia": "Po' Boy",
+  "image_file": "Poboy.jpg",
+  "minutes": 5,
+  "prep": 5,
+  "servings": 1,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "potato-gratin",
+  "name": "Potato Gratin",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Potato Gratin",
+  "wikipedia": "Potato Gratin",
+  "image_file": "Potato_gratin_on_stove.jpg",
+  "minutes": 110,
+  "prep": 36,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "pumpkin-pie",
+  "name": "Pumpkin Pie",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Pumpkin Pie I",
+  "wikipedia": "Pumpkin Pie",
+  "image_file": "Pumpkin_Pie.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "pupusas",
+  "name": "Pupusas",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Pupusas",
+  "wikipedia": "Pupusas",
+  "image_file": "Pupusas.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "sachertorte",
+  "name": "Sachertorte",
+  "cuisine": "japanese",
+  "slot": "snack",
+  "wikibooks": "Sachertorte (Original Version)",
+  "wikipedia": "Sachertorte",
+  "image_file": "Wien_-_Sachertorte.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "snickerdoodles",
+  "name": "Snickerdoodles",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Snickerdoodles IV",
+  "wikipedia": "Snickerdoodles",
+  "image_file": "Snickerdoodles.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "speculaas",
+  "name": "Speculaas",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Speculaas (Dutch Spiced Cookies)",
+  "wikipedia": "Speculaas",
+  "image_file": "Speculaas_biscuit_in_windmill_design.jpg",
+  "minutes": 93,
+  "prep": 31,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "tamina",
+  "name": "Tamina",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Tamina (Algerian Semolina Honey Dessert)",
+  "wikipedia": "Tamina",
+  "image_file": "Tamena.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "yeung-chow-fried-rice",
+  "name": "Yeung Chow Fried Rice",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Yeung Chow Fried Rice",
+  "wikipedia": "Yeung Chow Fried Rice",
+  "image_file": "Chinese_fried_rice_by_stu_spivack_in_Cleveland,_OH.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 7,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "zippuli",
+  "name": "Zippuli",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Zippuli (Italian Potato Cheese Fritters)",
+  "wikipedia": "Zippuli",
+  "image_file": "Zippule.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "albanian-vegetable-pie",
+  "name": "Albanian Vegetable Pie",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Albanian Vegetable Pie",
+  "wikipedia": "Albanian Vegetable Pie",
+  "image_file": "Lakror_me_qepë_e_domate.jpg",
+  "minutes": 77,
+  "prep": 25,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "apple-brown-betty",
+  "name": "Apple Brown Betty",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Apple Brown Betty",
+  "wikipedia": "Apple Brown Betty",
+  "image_file": "Brown_Betty_serving.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "apple-cobbler",
+  "name": "Apple Cobbler",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Apple Cobbler",
+  "wikipedia": "Apple Cobbler",
+  "image_file": "Cobbler_(7303683612).jpg",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "baby-back-ribs",
+  "name": "Baby Back Ribs",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Baby Back Ribs",
+  "wikipedia": "Baby Back Ribs",
+  "image_file": "Balinese_Roasted_Pork_Ribs_-_Iga_Babi_Panggang_Bali.JPG",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "banana-bread",
+  "name": "Banana Bread",
+  "cuisine": "american",
+  "slot": "breakfast",
+  "wikibooks": "Banana Bread I",
+  "wikipedia": "Banana Bread",
+  "image_file": "Banana_bread_slices.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "estimated",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "banana-cream-pie",
+  "name": "Banana Cream Pie",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Banana Cream Pie I",
+  "wikipedia": "Banana Cream Pie",
+  "image_file": "Frank_Fat's_banana_cream_pie.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 7,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "benachin",
+  "name": "Benachin",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Benachin (Gambian Rice with Meat and Vegetables)",
+  "wikipedia": "Benachin",
+  "image_file": "Jollof_Rice_with_Stew.jpg",
+  "minutes": 56,
+  "prep": 18,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Large pot or saucepan with a lid",
+   "Wooden spoon or spatula for stirring",
+   "Knife",
+   "Cutting board",
+   "Measuring cups and spoons",
+   "Fork"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "biscuits",
+  "name": "Biscuits",
+  "cuisine": "french",
+  "slot": "breakfast",
+  "wikibooks": "Biscuits I",
+  "wikipedia": "Biscuits",
+  "image_file": "Bourbon_and_Custard_Cream.jpeg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "braai",
+  "name": "Braai",
+  "cuisine": "japanese",
+  "slot": "dinner",
+  "wikibooks": "Braai (Zambian Barbecue)",
+  "wikipedia": "Braai",
+  "image_file": "Barbecue_barbecook.JPG",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [
+   "Grill or braai stand",
+   "Mixing bowl",
+   "Cutting board",
+   "Knife",
+   "Wooden or metal skewers",
+   "Plastic wrap"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "burple-nurples",
+  "name": "Burple Nurples",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Burple Nurples",
+  "wikipedia": "Burple Nurples",
+  "image_file": "C._H._Greenblatt_SDCC_2009_(crop_2).jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "cheeseburgers",
+  "name": "Cheeseburgers",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Cheeseburgers",
+  "wikipedia": "Cheeseburgers",
+  "image_file": "Cheeseburger.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chicken-alfredo",
+  "name": "Chicken Alfredo",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Chicken Alfredo",
+  "wikipedia": "Chicken Alfredo",
+  "image_file": "Fettuccine_Alfredo_originals.jpg",
+  "minutes": 89,
+  "prep": 29,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chicken-soup",
+  "name": "Chicken Soup",
+  "cuisine": "italian",
+  "slot": "lunch",
+  "wikibooks": "Chicken Soup I",
+  "wikipedia": "Chicken Soup",
+  "image_file": "Chicken_Noodle_Soup.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chicken-tetrazzini",
+  "name": "Chicken Tetrazzini",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Chicken Tetrazzini",
+  "wikipedia": "Chicken Tetrazzini",
+  "image_file": "Turkey_Tetrazzini.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [
+   "Oven",
+   "Stockpot",
+   "Skillet",
+   "9 x 13-inch baking dish",
+   "Whisk"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chicken-a-la-king",
+  "name": "Chicken à la King",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Chicken à la King",
+  "wikipedia": "Chicken à la King",
+  "image_file": "Chicken-a-la-King.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 2,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chivito",
+  "name": "Chivito",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Chivito (Uruguayan Beef Sandwich)",
+  "wikipedia": "Chivito",
+  "image_file": "Locro_(served_in_Recoleta,_Buenos_Aires,_Argentina).jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chocolate-mousse",
+  "name": "Chocolate Mousse",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Chocolate Mousse",
+  "wikipedia": "Chocolate Mousse",
+  "image_file": "Chocolate_coffee_mousse.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "christmas-cake",
+  "name": "Christmas Cake",
+  "cuisine": "japanese",
+  "slot": "snack",
+  "wikibooks": "Christmas Cake",
+  "wikipedia": "Christmas Cake",
+  "image_file": "Christmas_cake_(6954064737).jpg",
+  "minutes": 5,
+  "prep": 5,
+  "servings": 10,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chupaqueso",
+  "name": "Chupaqueso",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Chupaqueso",
+  "wikipedia": "Chupaqueso",
+  "image_file": "Howard_Tayler_at_CONduit_2007.png",
+  "minutes": 10,
+  "prep": 5,
+  "servings": 1,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "cinnamon-bun",
+  "name": "Cinnamon Bun",
+  "cuisine": "american",
+  "slot": "breakfast",
+  "wikibooks": "Cinnamon Bun",
+  "wikipedia": "Cinnamon Bun",
+  "image_file": "Cinnamon_roll_in_Stockholm.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "cola",
+  "name": "Cola",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Cola I",
+  "wikipedia": "Cola",
+  "image_file": "Glass_of_Cola.jpg",
+  "minutes": 100,
+  "prep": 33,
+  "servings": 6,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "cream-puff",
+  "name": "Cream Puff",
+  "cuisine": "french",
+  "slot": "snack",
+  "wikibooks": "Cream Puff",
+  "wikipedia": "Cream Puff",
+  "image_file": "Profiteroles_by_Star5112.jpg",
+  "minutes": 117,
+  "prep": 39,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "curtido",
+  "name": "Curtido",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Curtido (Spicy Cabbage Slaw)",
+  "wikipedia": "Curtido",
+  "image_file": "Condiments_for_Pupusas_in_El_Salvador_2012.jpg",
+  "minutes": 24,
+  "prep": 8,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "dirty-rice",
+  "name": "Dirty Rice",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Dirty Rice",
+  "wikipedia": "Dirty Rice",
+  "image_file": "Pork_chop_and_dirty_rice.jpg",
+  "minutes": 56,
+  "prep": 18,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "domoda",
+  "name": "Domoda",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Domoda (Gambian Peanut Stew)",
+  "wikipedia": "Domoda",
+  "image_file": "Domoda_Senegal.jpg",
+  "minutes": 89,
+  "prep": 29,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "saucepan",
+   "Cutting board",
+   "knife",
+   "spatula",
+   "Measuring cups and spoons",
+   "Grater"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "duck-a-l-orange",
+  "name": "Duck à l'Orange",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Duck à l'Orange",
+  "wikipedia": "Duck à l'Orange",
+  "image_file": "Canard_à_l'orange_01.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "eclairs",
+  "name": "Eclairs",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Eclairs",
+  "wikipedia": "Eclairs",
+  "image_file": "Two_Safeway_Chocolate_Eclairs_(19043880936).jpg",
+  "minutes": 133,
+  "prep": 44,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "english-muffins",
+  "name": "English Muffins",
+  "cuisine": "american",
+  "slot": "breakfast",
+  "wikibooks": "English Muffins",
+  "wikipedia": "English Muffins",
+  "image_file": "Harborview_Bistro_&_Bar_-_January_2024_-_Sarah_Stierch_08.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "figgy-pudding",
+  "name": "Figgy Pudding",
+  "cuisine": "french",
+  "slot": "snack",
+  "wikibooks": "Figgy Pudding",
+  "wikipedia": "Figgy Pudding",
+  "image_file": "Figgy_Pudding_with_flaming_brandy.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "fried-eggs",
+  "name": "Fried Eggs",
+  "cuisine": "italian",
+  "slot": "breakfast",
+  "wikibooks": "Fried Eggs",
+  "wikipedia": "Fried Eggs",
+  "image_file": "Fried_egg,_sunny_side_up.jpg",
+  "minutes": 5,
+  "prep": 5,
+  "servings": 1,
+  "difficulty": 2,
+  "equipment": [
+   "Small (10- inch ) frying pan",
+   "Spatula",
+   "Gas ring, at medium heat"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "gooey-butter-cake",
+  "name": "Gooey Butter Cake",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Gooey Butter Cake",
+  "wikipedia": "Gooey Butter Cake",
+  "image_file": "Gooey_Butter_Cake_Photo.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 12,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "green-eggs-and-ham",
+  "name": "Green Eggs and Ham",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Green Eggs and Ham",
+  "wikipedia": "Green Eggs and Ham",
+  "image_file": "USMC-120302-M-PG598-001.jpg",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "halva",
+  "name": "Halva",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Halva (Wheat-based)",
+  "wikipedia": "Halva",
+  "image_file": "Orient_sweets_(special_halva)_Samarkand,_Siyab.jpg",
+  "minutes": 73,
+  "prep": 24,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "hominy-grits",
+  "name": "Hominy Grits",
+  "cuisine": "american",
+  "slot": "breakfast",
+  "wikibooks": "Hominy Grits",
+  "wikipedia": "Hominy Grits",
+  "image_file": "Grits1.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "hush-puppies",
+  "name": "Hush Puppies",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Hush Puppies",
+  "wikipedia": "Hush Puppies",
+  "image_file": "Hush_Puppy_shoe.jpg",
+  "minutes": 7,
+  "prep": 5,
+  "servings": 9,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "ifisashi",
+  "name": "Ifisashi",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Ifisashi (Zambian Peanut and Spinach Stew)",
+  "wikipedia": "Ifisashi",
+  "image_file": "Ifisashi.jpg",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Large pot",
+   "Blender or food processor",
+   "Cutting board",
+   "Knife"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "lemon-squares",
+  "name": "Lemon Squares",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Lemon Squares",
+  "wikipedia": "Lemon Squares",
+  "image_file": "Lemon_Bar.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "limoncello",
+  "name": "Limoncello",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Limoncello",
+  "wikipedia": "Limoncello",
+  "image_file": "Homemade_limoncello.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "lo-mein",
+  "name": "Lo Mein",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Lo Mein",
+  "wikipedia": "Lo Mein",
+  "image_file": "Lo_Mein_American_Style.JPG",
+  "minutes": 25,
+  "prep": 8,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "lumberjacks",
+  "name": "Lumberjacks",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Lumberjacks",
+  "wikipedia": "Lumberjacks",
+  "image_file": "A_lumberjack_standing_at_the_base_of_a_huge_tree_showing_a_cut_in_the_tree,_ca.1900_(CHS-3368).jpg",
+  "minutes": 93,
+  "prep": 31,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "m-semen",
+  "name": "M'semen",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "M'semen (Layered Algerian Flatbread)",
+  "wikipedia": "M'semen",
+  "image_file": "مسمن.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "marshmallows",
+  "name": "Marshmallows",
+  "cuisine": "japanese",
+  "slot": "dinner",
+  "wikibooks": "Marshmallows",
+  "wikipedia": "Marshmallows",
+  "image_file": "White_Marshmallows.jpg",
+  "minutes": 210,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "meatloaf",
+  "name": "Meatloaf",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Meatloaf I",
+  "wikipedia": "Meatloaf",
+  "image_file": "MeatloafWithSauce.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "mhadjeb",
+  "name": "Mhadjeb",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Mhadjeb (Algerian Stuffed Flatbread)",
+  "wikipedia": "Mhadjeb",
+  "image_file": "Mhajeb1.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "minestra",
+  "name": "Minestra",
+  "cuisine": "italian",
+  "slot": "dinner",
+  "wikibooks": "Minestra",
+  "wikipedia": "Minestra",
+  "image_file": "Minestrone_soup_(5).jpg",
+  "minutes": 77,
+  "prep": 25,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "nachos",
+  "name": "Nachos",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Nachos",
+  "wikipedia": "Nachos",
+  "image_file": "Nachos-cheese.jpg",
+  "minutes": 69,
+  "prep": 23,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "panna-cotta",
+  "name": "Panna Cotta",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Panna Cotta (Basic)",
+  "wikipedia": "Panna Cotta",
+  "image_file": "Panna_Cotta_with_cream_and_garnish.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "panocha",
+  "name": "Panocha",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Panocha (Sprouted Wheat Pudding)",
+  "wikipedia": "Panocha",
+  "image_file": "Panocha_New_Mexico1.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "picadillo",
+  "name": "Picadillo",
+  "cuisine": "spanish",
+  "slot": "dinner",
+  "wikibooks": "Picadillo (Beef with Potatoes and Tomatoes)",
+  "wikipedia": "Picadillo",
+  "image_file": "Picadillo_and_rice.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 6,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "potato-candy-pinwheel",
+  "name": "Potato Candy Pinwheel",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Potato Candy Pinwheel",
+  "wikipedia": "Potato Candy Pinwheel",
+  "image_file": "2008_12_26_-_Altoona_-_Potato_Candy.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "potato-salad",
+  "name": "Potato Salad",
+  "cuisine": "japanese",
+  "slot": "lunch",
+  "wikibooks": "Potato Salad (Southern Ontario Style)",
+  "wikipedia": "Potato Salad",
+  "image_file": "Potato_salad_(1).jpg",
+  "minutes": 77,
+  "prep": 25,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "pretzels",
+  "name": "Pretzels",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Pretzels (Soft)",
+  "wikipedia": "Pretzels",
+  "image_file": "BrezelnSalz02_(cropped).JPG",
+  "minutes": 89,
+  "prep": 29,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "rice-pudding",
+  "name": "Rice Pudding",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Rice Pudding",
+  "wikipedia": "Rice Pudding",
+  "image_file": "Kheer_with_condensed_milk..JPG",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "rolex",
+  "name": "Rolex",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Rolex (Ugandan Flatbread-Rolled Omelet)",
+  "wikipedia": "Rolex",
+  "image_file": "Rolex_Geneva_13.jpg",
+  "minutes": 44,
+  "prep": 14,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "sloppy-joes",
+  "name": "Sloppy Joes",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Sloppy Joes",
+  "wikipedia": "Sloppy Joes",
+  "image_file": "Sloppy_Joe_\"homemade\".jpg",
+  "minutes": 10,
+  "prep": 5,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "soda-bread",
+  "name": "Soda Bread",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Soda Bread",
+  "wikipedia": "Soda Bread",
+  "image_file": "Ben_W_Bell_Soda_Bread_Farl_05_June_2007.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 16,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "sopaipillas",
+  "name": "Sopaipillas",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Sopaipillas (Latin American Fried Dough)",
+  "wikipedia": "Sopaipillas",
+  "image_file": "Sopapillas.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "soup-joumou",
+  "name": "Soup Joumou",
+  "cuisine": "french",
+  "slot": "lunch",
+  "wikibooks": "Soup Joumou (Haitian Beef and Squash Soup)",
+  "wikipedia": "Soup Joumou",
+  "image_file": "Soup_Joumou.jpg",
+  "minutes": 77,
+  "prep": 25,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "sponge-cake",
+  "name": "Sponge Cake",
+  "cuisine": "japanese",
+  "slot": "snack",
+  "wikibooks": "Sponge Cake II",
+  "wikipedia": "Sponge Cake",
+  "image_file": "Victoria_Sponges.jpg",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "1 large mixing bowl",
+   "1 set of scales",
+   "1 wooden spoon"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "spoonbread",
+  "name": "Spoonbread",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Spoonbread",
+  "wikipedia": "Spoonbread",
+  "image_file": "Boone_Tavern_-_October_2023_-_Sarah_Stierch_03.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 5,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "steak-tartare",
+  "name": "Steak Tartare",
+  "cuisine": "italian",
+  "slot": "snack",
+  "wikibooks": "Steak Tartare",
+  "wikipedia": "Steak Tartare",
+  "image_file": "Classic_steak_tartare.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "steak-au-poivre",
+  "name": "Steak au Poivre",
+  "cuisine": "french",
+  "slot": "dinner",
+  "wikibooks": "Steak au Poivre (Pepper Steak)",
+  "wikipedia": "Steak au Poivre",
+  "image_file": "Steak_au_poivre_2025.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "strawberry-shortcake",
+  "name": "Strawberry Shortcake",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Strawberry Shortcake",
+  "wikipedia": "Strawberry Shortcake",
+  "image_file": "EC1835_C_cut.jpg",
+  "minutes": 105,
+  "prep": 35,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "stuffed-peppers",
+  "name": "Stuffed Peppers",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Stuffed Peppers",
+  "wikipedia": "Stuffed Peppers",
+  "image_file": "Quinoa_stuffed_peppers.jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "tabbouleh",
+  "name": "Tabbouleh",
+  "cuisine": "spanish",
+  "slot": "dinner",
+  "wikibooks": "Tabbouleh IV",
+  "wikipedia": "Tabbouleh",
+  "image_file": "Tabouleh_1.JPG",
+  "minutes": 77,
+  "prep": 25,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "tequenos",
+  "name": "Tequeños",
+  "cuisine": "spanish",
+  "slot": "snack",
+  "wikibooks": "Tequeños (Venezuelan Breaded Cheese Sticks)",
+  "wikipedia": "Tequeños",
+  "image_file": "Tequeños_vénézuéliens_à_Arepado_(Lyon),_avril_2019_(2).jpg",
+  "minutes": 56,
+  "prep": 18,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "tres-leches-cake",
+  "name": "Tres Leches Cake",
+  "cuisine": "spanish",
+  "slot": "snack",
+  "wikibooks": "Tres Leches Cake I",
+  "wikipedia": "Tres Leches Cake",
+  "image_file": "Pastel_de_Tres_Leches.jpg",
+  "minutes": 121,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "tuna-salad",
+  "name": "Tuna Salad",
+  "cuisine": "american",
+  "slot": "lunch",
+  "wikibooks": "Tuna Salad (1940)",
+  "wikipedia": "Tuna Salad",
+  "image_file": "Tuna_fish_sandwiches_for_the_National_School_Lunch_Program_(1).jpg",
+  "minutes": 73,
+  "prep": 24,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "vanilla-fudge",
+  "name": "Vanilla Fudge",
+  "cuisine": "american",
+  "slot": "snack",
+  "wikibooks": "Vanilla Fudge I",
+  "wikipedia": "Vanilla Fudge",
+  "image_file": "Vanilla_Fudge_early_1968.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "white-house-honey-ale",
+  "name": "White House Honey Ale",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "White House Honey Ale",
+  "wikipedia": "White House Honey Ale",
+  "image_file": "White_House_Honey_Ale.jpg",
+  "minutes": 64,
+  "prep": 21,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "xocolatl",
+  "name": "Xocolatl",
+  "cuisine": "american",
+  "slot": "dinner",
+  "wikibooks": "Xocolatl (Aztec Chocolate Beverage)",
+  "wikipedia": "Xocolatl",
+  "image_file": "Aztec_shared_meal.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Blender",
+   "Skillet",
+   "Saucepan"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "abacha",
+  "name": "Abacha",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Abacha",
+  "wikipedia": "Abacha",
+  "image_file": "Native_Eastern_Nigeria_African_Salad_(cropped).JPG",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 5,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "abak-atama-soup",
+  "name": "Abak Atama Soup",
+  "cuisine": "african",
+  "slot": "lunch",
+  "wikibooks": "Abak Atama Soup",
+  "wikipedia": "Abak Atama Soup",
+  "image_file": "Abak_soup_02.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 5,
+  "difficulty": 4,
+  "equipment": [
+   "Large cooking pot",
+   "Knife",
+   "Chopping board",
+   "Bowl",
+   "Blender or grinding stone",
+   "Wooden spoon"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "adobo-chicken",
+  "name": "Adobo Chicken",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Adobo Chicken (Philippine)",
+  "wikipedia": "Adobo Chicken",
+  "image_file": "Chicken_Adobo.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "aji-de-gallina",
+  "name": "Ají de Gallina",
+  "cuisine": "latin_american",
+  "slot": "dinner",
+  "wikibooks": "Ají de Gallina (Peruvian Chili Chicken)",
+  "wikipedia": "Ají de Gallina",
+  "image_file": "Ají_de_gallina_(gourmet)-b.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "akamu",
+  "name": "Akamu",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Akamu (Nigerian Pudding)",
+  "wikipedia": "Akamu",
+  "image_file": "Akamu_(Pap)_(Ogi)_(cropped).jpg",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 2,
+  "difficulty": 2,
+  "equipment": [
+   "Big bowl",
+   "Stovetop",
+   "Pot",
+   "Water",
+   "Spoon"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "anzac-biscuits",
+  "name": "Anzac Biscuits",
+  "cuisine": "oceanian",
+  "slot": "snack",
+  "wikibooks": "Anzac Biscuits I",
+  "wikipedia": "Anzac Biscuits",
+  "image_file": "Single_ANZAC_biscuit.jpg",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "apple-strudel",
+  "name": "Apple Strudel",
+  "cuisine": "german",
+  "slot": "snack",
+  "wikibooks": "Apple Strudel",
+  "wikipedia": "Apple Strudel",
+  "image_file": "Aufgeschnittener_Strudel.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 10,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "arroz-con-pollo",
+  "name": "Arroz con Pollo",
+  "cuisine": "caribbean",
+  "slot": "dinner",
+  "wikibooks": "Arroz con Pollo (Rice and Chicken)",
+  "wikipedia": "Arroz con Pollo",
+  "image_file": "Arroz-con-Pollo.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "asun",
+  "name": "Asun",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Asun (Goat in Pepper Sauce)",
+  "wikipedia": "Asun",
+  "image_file": "Goat_meat_Asun.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "austrian-napkin-dumpling",
+  "name": "Austrian Napkin Dumpling",
+  "cuisine": "german",
+  "slot": "snack",
+  "wikibooks": "Austrian Napkin Dumpling (Serviettenknödel)",
+  "wikipedia": "Austrian Napkin Dumpling",
+  "image_file": "Serviettenknoedel_bread-log.jpg",
+  "minutes": 100,
+  "prep": 33,
+  "servings": 7,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "awug",
+  "name": "Awug",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Awug",
+  "wikipedia": "Awug",
+  "image_file": "Dodongkal_Makanan_Khas_Sunda.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Steamer setup",
+   "Molds for steaming, such as ramekins"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "baingan-bartha",
+  "name": "Baingan Bartha (South Indian Eggplant with Coconut and Chili)",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Baingan Bartha (South Indian Eggplant with Coconut and Chili) I",
+  "wikipedia": "Baingan Bartha (South Indian Eggplant with Coconut and Chili)",
+  "image_file": "Baigan_(_Brinjal_)_Bharta.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "baklava",
+  "name": "Baklava",
+  "cuisine": "middle_eastern",
+  "slot": "snack",
+  "wikibooks": "Baklava I",
+  "wikipedia": "Baklava",
+  "image_file": "Baklava(RobertK).jpg",
+  "minutes": 101,
+  "prep": 33,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "banga-soup",
+  "name": "Banga Soup",
+  "cuisine": "african",
+  "slot": "lunch",
+  "wikibooks": "Banga Soup",
+  "wikipedia": "Banga Soup",
+  "image_file": "Banga_Soup.jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "bangers-and-mash",
+  "name": "Bangers and Mash",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Bangers and Mash",
+  "wikipedia": "Bangers and Mash",
+  "image_file": "Bangers_and_mash_1.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 2,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "baozi",
+  "name": "Baozi",
+  "cuisine": "chinese",
+  "slot": "dinner",
+  "wikibooks": "Baozi (Steamed Yeasted Dumplings)",
+  "wikipedia": "Baozi",
+  "image_file": "Nangua_Baozi_(chinese_dumplings).jpg",
+  "minutes": 150,
+  "prep": 50,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "basbousa",
+  "name": "Basbousa",
+  "cuisine": "african",
+  "slot": "snack",
+  "wikibooks": "Basbousa (Egyptian Semolina Cake)",
+  "wikipedia": "Basbousa",
+  "image_file": "Revane.jpg",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [
+   "Mixing bowl",
+   "9x9-inch baking pan",
+   "Knife",
+   "Measuring cups and spoons",
+   "Saucepan",
+   "Oven"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "beef-heart-kabobs",
+  "name": "Beef Heart Kabobs",
+  "cuisine": "latin_american",
+  "slot": "dinner",
+  "wikibooks": "Beef Heart Kabobs (Anticuchos)",
+  "wikipedia": "Beef Heart Kabobs",
+  "image_file": "Peru_Anticuchos.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 5,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "estimated",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "bicol-express",
+  "name": "Bicol Express",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Bicol Express",
+  "wikipedia": "Bicol Express",
+  "image_file": "Bicol_Express.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "binagoongan",
+  "name": "Binagoongan",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Binagoongan (Sautéed Pork with Shrimp Paste)",
+  "wikipedia": "Binagoongan",
+  "image_file": "4336Cuisine_and_foods_of_Baliuag,_Bulacan_08.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "bint-as-sahn",
+  "name": "Bint as-Saḥn",
+  "cuisine": "middle_eastern",
+  "slot": "dinner",
+  "wikibooks": "Bint as-Saḥn (Yemenite Layered Pastry)",
+  "wikipedia": "Bint as-Saḥn",
+  "image_file": "Bint_al_Sahn.png",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 10,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "black-forest-cake",
+  "name": "Black Forest Cake",
+  "cuisine": "german",
+  "slot": "snack",
+  "wikibooks": "Black Forest Cake",
+  "wikipedia": "Black Forest Cake",
+  "image_file": "Black_Forest_gateau.jpg",
+  "minutes": 180,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "bobotie",
+  "name": "Bobotie",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Bobotie",
+  "wikipedia": "Bobotie",
+  "image_file": "Bobotie_South_Africa.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 6,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "boliche",
+  "name": "Boliche",
+  "cuisine": "caribbean",
+  "slot": "dinner",
+  "wikibooks": "Boliche (Cuban Chorizo-Stuffed Roast)",
+  "wikipedia": "Boliche",
+  "image_file": "Boliche.jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 7,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "estimated",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "bonda",
+  "name": "Bonda",
+  "cuisine": "south_asian",
+  "slot": "snack",
+  "wikibooks": "Bonda (South Indian Vegetable Fritter)",
+  "wikipedia": "Bonda",
+  "image_file": "Bonda2.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "buchteln",
+  "name": "Buchteln",
+  "cuisine": "german",
+  "slot": "snack",
+  "wikibooks": "Buchteln (Austrian Sweet Buns)",
+  "wikipedia": "Buchteln",
+  "image_file": "Buchteln_on_plate.jpg",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "bulgarian-tripe-soup",
+  "name": "Bulgarian Tripe Soup",
+  "cuisine": "eastern_european",
+  "slot": "lunch",
+  "wikibooks": "Bulgarian Tripe Soup (Shkembe Chorba)",
+  "wikipedia": "Bulgarian Tripe Soup",
+  "image_file": "Shkembe-chorba.jpg",
+  "minutes": 44,
+  "prep": 14,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "bulgogi",
+  "name": "Bulgogi",
+  "cuisine": "korean",
+  "slot": "dinner",
+  "wikibooks": "Bulgogi",
+  "wikipedia": "Bulgogi",
+  "image_file": "Korean.food-Bulgogi-01.jpg",
+  "minutes": 24,
+  "prep": 8,
+  "servings": 6,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "bunny-chow",
+  "name": "Bunny Chow",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Bunny Chow",
+  "wikipedia": "Bunny Chow",
+  "image_file": "Quarter_Mutton_Bunny_Chow.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "burrito",
+  "name": "Burrito",
+  "cuisine": "mexican",
+  "slot": "dinner",
+  "wikibooks": "Burrito",
+  "wikipedia": "Burrito",
+  "image_file": "Papa_chevos_burrito.jpg",
+  "minutes": 137,
+  "prep": 45,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "estimated",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "banh-chung",
+  "name": "Bánh chưng",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Bánh chưng",
+  "wikipedia": "Bánh chưng",
+  "image_file": "Nguyen_lieu_banh_chung.jpg",
+  "minutes": 480,
+  "prep": 60,
+  "servings": 12,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "bo-bia",
+  "name": "Bò bía",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Bò bía",
+  "wikipedia": "Bò bía",
+  "image_file": "Bo_Bia_Jicama_Rolls.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 9,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "calamansi-juice-drink",
+  "name": "Calamansi Juice Drink",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Calamansi Juice Drink",
+  "wikipedia": "Calamansi Juice Drink",
+  "image_file": "Calamansi_juice_(Filipino_lemonade).jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "camotes-enmielados",
+  "name": "Camotes Enmielados",
+  "cuisine": "mexican",
+  "slot": "snack",
+  "wikibooks": "Camotes Enmielados (Mexican Sweet Yams)",
+  "wikipedia": "Camotes Enmielados",
+  "image_file": "CandiedCamotesMX.JPG",
+  "minutes": 69,
+  "prep": 23,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "cantonese-crispy-fried-chicken",
+  "name": "Cantonese Crispy Fried Chicken",
+  "cuisine": "chinese",
+  "slot": "dinner",
+  "wikibooks": "Cantonese Crispy Fried Chicken",
+  "wikipedia": "Cantonese Crispy Fried Chicken",
+  "image_file": "Crispyfriedchicken.jpg",
+  "minutes": 133,
+  "prep": 44,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "caramel-squares",
+  "name": "Caramel Squares",
+  "cuisine": "british",
+  "slot": "snack",
+  "wikibooks": "Caramel Squares",
+  "wikipedia": "Caramel Squares",
+  "image_file": "Millionaire's_shortbread.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 10,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "cazuela-gallega",
+  "name": "Cazuela Gallega",
+  "cuisine": "latin_american",
+  "slot": "breakfast",
+  "wikibooks": "Cazuela Gallega (Egg, Ham, and Cheese Casserole)",
+  "wikipedia": "Cazuela Gallega",
+  "image_file": "Cazuela_Gallega.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 1,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chakalaka",
+  "name": "Chakalaka",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Chakalaka (South African Vegetable Stew)",
+  "wikipedia": "Chakalaka",
+  "image_file": "Chakalaka.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [
+   "Large saucepan or Dutch oven",
+   "Cooking Spoon",
+   "Stove or Cooking gas"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "challah",
+  "name": "Challah",
+  "cuisine": "middle_eastern",
+  "slot": "snack",
+  "wikibooks": "Challah",
+  "wikipedia": "Challah",
+  "image_file": "Cookbookchallah4.jpg",
+  "minutes": 300,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "estimated",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "champorado",
+  "name": "Champorado",
+  "cuisine": "southeast_asian",
+  "slot": "snack",
+  "wikibooks": "Champorado (Chocolate Rice Porridge)",
+  "wikipedia": "Champorado",
+  "image_file": "Champorado.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chapati",
+  "name": "Chapati",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Chapati",
+  "wikipedia": "Chapati",
+  "image_file": "Baking_Chapatis.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chicken-biryani",
+  "name": "Chicken Biryani",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Chicken Biryani",
+  "wikipedia": "Chicken Biryani",
+  "image_file": "Chicken_Dum_Biriyani.JPG",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 2,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chicken-curry",
+  "name": "Chicken Curry",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Chicken Curry",
+  "wikipedia": "Chicken Curry",
+  "image_file": "Chicken_Karaage_Curry,_Y.Izakaya,_Paris_001.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chicken-sopas",
+  "name": "Chicken Sopas",
+  "cuisine": "southeast_asian",
+  "slot": "lunch",
+  "wikibooks": "Chicken Sopas",
+  "wikipedia": "Chicken Sopas",
+  "image_file": "8475Photos_taken_2020_coronavirus_pandemic_Baliuag,_Bulacan_17.jpg",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chicken-tikka",
+  "name": "Chicken Tikka",
+  "cuisine": "south_asian",
+  "slot": "snack",
+  "wikibooks": "Chicken Tikka",
+  "wikipedia": "Chicken Tikka",
+  "image_file": "Chicken_Tikka_with_some_salad.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chicken-vindaloo",
+  "name": "Chicken Vindaloo",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Chicken Vindaloo",
+  "wikipedia": "Chicken Vindaloo",
+  "image_file": "Chicken_Vindaloo.jpeg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chimichurri",
+  "name": "Chimichurri",
+  "cuisine": "latin_american",
+  "slot": "dinner",
+  "wikibooks": "Chimichurri",
+  "wikipedia": "Chimichurri",
+  "image_file": "Chimichurri3.jpg",
+  "minutes": 75,
+  "prep": 25,
+  "servings": 2,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chokladboll",
+  "name": "Chokladboll",
+  "cuisine": "northern_european",
+  "slot": "snack",
+  "wikibooks": "Chokladboll (Swedish Chocolate Balls)",
+  "wikipedia": "Chokladboll",
+  "image_file": "Chokladbollar.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "cholley",
+  "name": "Cholley",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Cholley (Chickpea Curry)",
+  "wikipedia": "Cholley",
+  "image_file": "Chana_masala.jpg",
+  "minutes": 480,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chow-mein",
+  "name": "Chow Mein",
+  "cuisine": "chinese",
+  "slot": "dinner",
+  "wikibooks": "Chow Mein",
+  "wikipedia": "Chow Mein",
+  "image_file": "Chow_mein_1_by_yuen.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "christmas-pudding",
+  "name": "Christmas Pudding",
+  "cuisine": "british",
+  "slot": "snack",
+  "wikibooks": "Christmas Pudding I",
+  "wikipedia": "Christmas Pudding",
+  "image_file": "Christmas-pudding-flames.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 10,
+  "difficulty": 4,
+  "equipment": [
+   "1.5 L pudding basin",
+   "Large mixing bowl",
+   "3 medium mixing bowls",
+   "1 mixing spoon",
+   "Baking paper",
+   "Kitchen foil"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "coconut-chicken",
+  "name": "Coconut Chicken",
+  "cuisine": "caribbean",
+  "slot": "dinner",
+  "wikibooks": "Coconut Chicken",
+  "wikipedia": "Coconut Chicken",
+  "image_file": "Coconut_Curried_Chicken_(5813459348).jpg",
+  "minutes": 48,
+  "prep": 16,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "coconut-rice",
+  "name": "Coconut Rice",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Coconut Rice (Nasi Lemak)",
+  "wikipedia": "Coconut Rice",
+  "image_file": "Nasi_Lemak,_Mamak,_Sydney.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "com-chien",
+  "name": "Com Chien",
+  "cuisine": "southeast_asian",
+  "slot": "snack",
+  "wikibooks": "Com Chien (Vietnamese Fried Rice)",
+  "wikipedia": "Com Chien",
+  "image_file": "Com_chien.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 5,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "corned-beef-pie",
+  "name": "Corned Beef Pie",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Corned Beef Pie",
+  "wikipedia": "Corned Beef Pie",
+  "image_file": "Corned_beef_pie.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 7,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "estimated",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "coronation-chicken",
+  "name": "Coronation Chicken",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Coronation Chicken",
+  "wikipedia": "Coronation Chicken",
+  "image_file": "Coronation_Chicken.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "dal-makhani",
+  "name": "Dal Makhani",
+  "cuisine": "south_asian",
+  "slot": "snack",
+  "wikibooks": "Dal Makhani (Black Gram with Cream)",
+  "wikipedia": "Dal Makhani",
+  "image_file": "Punjabi_style_Dal_Makhani.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "deep-fried-chiles-stuffed-with-potato",
+  "name": "Deep Fried Chiles Stuffed with Potato",
+  "cuisine": "south_asian",
+  "slot": "snack",
+  "wikibooks": "Deep Fried Chiles Stuffed with Potato (Mirchi Bada)",
+  "wikipedia": "Deep Fried Chiles Stuffed with Potato",
+  "image_file": "Mirchi_Bada_2.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "dhokla",
+  "name": "Dhokla",
+  "cuisine": "south_asian",
+  "slot": "snack",
+  "wikibooks": "Dhokla (Steamed Black Gram Bread)",
+  "wikipedia": "Dhokla",
+  "image_file": "Khaman_dhokla.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "dinuguan",
+  "name": "Dinuguan",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Dinuguan (Pork Blood Stew)",
+  "wikipedia": "Dinuguan",
+  "image_file": "Dinuguan_and_Puto.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 10,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "dutch-apple-fritters",
+  "name": "Dutch Apple Fritters",
+  "cuisine": "northern_european",
+  "slot": "snack",
+  "wikibooks": "Dutch Apple Fritters (Oliebollen)",
+  "wikipedia": "Dutch Apple Fritters",
+  "image_file": "Oliebollen.jpg",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "doner-kebab",
+  "name": "Döner Kebab",
+  "cuisine": "middle_eastern",
+  "slot": "dinner",
+  "wikibooks": "Döner Kebab",
+  "wikipedia": "Döner Kebab",
+  "image_file": "Döner_kebab.jpg",
+  "minutes": 300,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "estimated",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "egg-roll",
+  "name": "Egg Roll",
+  "cuisine": "chinese",
+  "slot": "snack",
+  "wikibooks": "Egg Roll",
+  "wikipedia": "Egg Roll",
+  "image_file": "CookbookEggrollOpen.jpg",
+  "minutes": 152,
+  "prep": 50,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "egusi-soup",
+  "name": "Egusi soup",
+  "cuisine": "african",
+  "slot": "lunch",
+  "wikibooks": "Egusi soup",
+  "wikipedia": "Egusi soup",
+  "image_file": "Egusi_soup_with_ponmo_and_beef.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Large cooking pot",
+   "Knife",
+   "Chopping board",
+   "Mixing bowls",
+   "Measuring cups and spoons",
+   "Wooden spoon or ladle"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "egyptian-cabbage-rolls",
+  "name": "Egyptian Cabbage Rolls",
+  "cuisine": "african",
+  "slot": "snack",
+  "wikibooks": "Egyptian Cabbage Rolls (Mahshi Malfoof)",
+  "wikipedia": "Egyptian Cabbage Rolls",
+  "image_file": "Mahshi_koromb.jpg",
+  "minutes": 85,
+  "prep": 28,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Large pot",
+   "Mixing bowl",
+   "Knife",
+   "Cutting board",
+   "Toothpicks or cooking twine"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "egyptian-grilled-pigeon",
+  "name": "Egyptian Grilled Pigeon",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Egyptian Grilled Pigeon (Fattah Meshaltet)",
+  "wikipedia": "Egyptian Grilled Pigeon",
+  "image_file": "2_of_grilled_pigeon_at_KC_Seafood_Restaurtant.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [
+   "Grill or barbecue",
+   "Mixing bowl",
+   "Knife for mincing",
+   "Measuring spoons",
+   "Plastic wrap"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "egyptian-lentil-soup",
+  "name": "Egyptian Lentil Soup",
+  "cuisine": "african",
+  "slot": "lunch",
+  "wikibooks": "Egyptian Lentil Soup",
+  "wikipedia": "Egyptian Lentil Soup",
+  "image_file": "EgFoodLentilSoup.jpg",
+  "minutes": 105,
+  "prep": 35,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [
+   "Large pot or Dutch oven",
+   "Wooden spoon or spatula for stirring",
+   "Knife for chopping",
+   "Measuring cups and spoons",
+   "Immersion or full-size blender"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "egyptian-meatballs",
+  "name": "Egyptian Meatballs",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Egyptian Meatballs (Kofta)",
+  "wikipedia": "Egyptian Meatballs",
+  "image_file": "Kofta.jpg",
+  "minutes": 48,
+  "prep": 16,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Mixing bowl",
+   "Skewers (metal or wooden)",
+   "Grill or stovetop grill pan",
+   "Knife",
+   "Brush"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "egyptian-milk-pudding",
+  "name": "Egyptian Milk Pudding",
+  "cuisine": "african",
+  "slot": "snack",
+  "wikibooks": "Egyptian Milk Pudding (Mahalabiya)",
+  "wikipedia": "Egyptian Milk Pudding",
+  "image_file": "Mhallabiyyeh_(Arabic_milk_pudding).jpg",
+  "minutes": 85,
+  "prep": 28,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [
+   "Saucepan",
+   "Whisk or spoon",
+   "Serving bowls or dessert cups"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "egyptian-okra-stew",
+  "name": "Egyptian Okra Stew",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Egyptian Okra Stew",
+  "wikipedia": "Egyptian Okra Stew",
+  "image_file": "Bamya_stew_at_Ankara.jpg",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [
+   "Large saucepan with a lid",
+   "Knife for chopping",
+   "Wooden spoon or spatula",
+   "Measuring spoons"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "egyptian-stuffed-grape-leaves",
+  "name": "Egyptian Stuffed Grape Leaves",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Egyptian Stuffed Grape Leaves (Warak Enab Mahshi)",
+  "wikipedia": "Egyptian Stuffed Grape Leaves",
+  "image_file": "Mahshi.JPG",
+  "minutes": 64,
+  "prep": 21,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Large pot",
+   "Mixing bowl",
+   "Knife for chopping",
+   "Wooden spoon or spatula"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "ekpang-nkukwo",
+  "name": "Ekpang Nkukwo",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Ekpang Nkukwo",
+  "wikipedia": "Ekpang Nkukwo",
+  "image_file": "Ekpang.png",
+  "minutes": 180,
+  "prep": 60,
+  "servings": 5,
+  "difficulty": 5,
+  "equipment": [
+   "Grater",
+   "Knife",
+   "Bowl",
+   "Cooking pot",
+   "Wooden spatula",
+   "Cutting board"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "farofa",
+  "name": "Farofa",
+  "cuisine": "latin_american",
+  "slot": "dinner",
+  "wikibooks": "Farofa",
+  "wikipedia": "Farofa",
+  "image_file": "Farofa_de_cebola.jpg",
+  "minutes": 10,
+  "prep": 5,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "filipino-style-spaghetti",
+  "name": "Filipino-style Spaghetti",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Filipino-style Spaghetti",
+  "wikipedia": "Filipino-style Spaghetti",
+  "image_file": "Spaghetti_Filipino_Recipe.jpg",
+  "minutes": 64,
+  "prep": 21,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Stovetop",
+   "Frying pan or large cast-iron pan",
+   "Slotted spoon",
+   "Spatula or cooking spoon",
+   "Large pot",
+   "Colander"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "fleischkrapfen",
+  "name": "Fleischkrapfen",
+  "cuisine": "german",
+  "slot": "dinner",
+  "wikibooks": "Fleischkrapfen (Austrian Meat Pasties)",
+  "wikipedia": "Fleischkrapfen",
+  "image_file": "Fleischkrapfen_on_plate.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "french-canadian-shepherd-s-pie",
+  "name": "French Canadian Shepherd's Pie",
+  "cuisine": "canadian",
+  "slot": "snack",
+  "wikibooks": "French Canadian Shepherd's Pie (Pâté Chinois)",
+  "wikipedia": "French Canadian Shepherd's Pie",
+  "image_file": "Chinese_pie.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "frijoles-antioquenos",
+  "name": "Frijoles Antioqueños",
+  "cuisine": "latin_american",
+  "slot": "lunch",
+  "wikibooks": "Frijoles Antioqueños (Colombian Bean Stew)",
+  "wikipedia": "Frijoles Antioqueños",
+  "image_file": "Frijoles_Vanegas.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 6,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "frikadeller",
+  "name": "Frikadeller",
+  "cuisine": "northern_european",
+  "slot": "dinner",
+  "wikibooks": "Frikadeller (Danish Meatballs)",
+  "wikipedia": "Frikadeller",
+  "image_file": "Frikadeller.jpg",
+  "minutes": 24,
+  "prep": 8,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "frittaten-soup",
+  "name": "Frittaten Soup",
+  "cuisine": "german",
+  "slot": "lunch",
+  "wikibooks": "Frittaten Soup",
+  "wikipedia": "Frittaten Soup",
+  "image_file": "Frittaten_soup.jpg",
+  "minutes": 135,
+  "prep": 45,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "ful-medames",
+  "name": "Ful Medames",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Ful Medames (Egyptian Fava Beans)",
+  "wikipedia": "Ful Medames",
+  "image_file": "Ful_medames_(arabic_meal).jpg",
+  "minutes": 85,
+  "prep": 28,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [
+   "Saucepan",
+   "Colander",
+   "Mixing bowl",
+   "Wooden spoon or spatula",
+   "Knife",
+   "Cutting board"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "gajjar-halwa",
+  "name": "Gajjar Halwa",
+  "cuisine": "south_asian",
+  "slot": "snack",
+  "wikibooks": "Gajjar Halwa (Carrot Pudding)",
+  "wikipedia": "Gajjar Halwa",
+  "image_file": "Gajjar_ka_halwa_(carrot_halwa).JPG",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "galaktoboureko",
+  "name": "Galaktoboureko",
+  "cuisine": "mediterranean",
+  "slot": "snack",
+  "wikibooks": "Galaktoboureko (Greek Semolina Custard Pastry)",
+  "wikipedia": "Galaktoboureko",
+  "image_file": "Galaktoboureko.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "germknodel",
+  "name": "Germknödel",
+  "cuisine": "german",
+  "slot": "snack",
+  "wikibooks": "Germknödel (Plum and Poppy Seed Dumpling)",
+  "wikipedia": "Germknödel",
+  "image_file": "Germknödel.JPG",
+  "minutes": 109,
+  "prep": 36,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "ghavoot",
+  "name": "Ghavoot",
+  "cuisine": "middle_eastern",
+  "slot": "snack",
+  "wikibooks": "Ghavoot (Iranian Nut and Seed Powder)",
+  "wikipedia": "Ghavoot",
+  "image_file": "Ghovvatoo.jpg",
+  "minutes": 69,
+  "prep": 23,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "ghevar",
+  "name": "Ghevar",
+  "cuisine": "south_asian",
+  "slot": "snack",
+  "wikibooks": "Ghevar (Rajasthani Honeycomb Fritter)",
+  "wikipedia": "Ghevar",
+  "image_file": "Paneer_ghevar.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "ghormeh-sabzi",
+  "name": "Ghormeh Sabzi",
+  "cuisine": "middle_eastern",
+  "slot": "dinner",
+  "wikibooks": "Ghormeh Sabzi (Iranian Herb Stew)",
+  "wikipedia": "Ghormeh Sabzi",
+  "image_file": "Ghormeh_sabzi.jpg",
+  "minutes": 300,
+  "prep": 60,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "gimbap",
+  "name": "Gimbap",
+  "cuisine": "korean",
+  "slot": "snack",
+  "wikibooks": "Gimbap",
+  "wikipedia": "Gimbap",
+  "image_file": "Korean_food_7.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "gravlax",
+  "name": "Gravlax",
+  "cuisine": "northern_european",
+  "slot": "snack",
+  "wikibooks": "Gravlax",
+  "wikipedia": "Gravlax",
+  "image_file": "Gravlax_on_bread.jpg",
+  "minutes": 10,
+  "prep": 5,
+  "servings": 5,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "green-mango-and-cumin-drink",
+  "name": "Green Mango and Cumin Drink",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Green Mango and Cumin Drink (Aam Panna)",
+  "wikipedia": "Green Mango and Cumin Drink",
+  "image_file": "Keri_Ka_Sharbat.JPG",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "gozleme",
+  "name": "Gözleme",
+  "cuisine": "middle_eastern",
+  "slot": "snack",
+  "wikibooks": "Gözleme (Turkish Flatbread)",
+  "wikipedia": "Gözleme",
+  "image_file": "Gözleme.JPG",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 10,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "haggis",
+  "name": "Haggis",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Haggis",
+  "wikipedia": "Haggis",
+  "image_file": "Haggis,_neeps_an_tatties.jpg",
+  "minutes": 240,
+  "prep": 60,
+  "servings": 3,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "halo-halo",
+  "name": "Halo-Halo",
+  "cuisine": "southeast_asian",
+  "slot": "snack",
+  "wikibooks": "Halo-Halo (Filipino Layered Dessert)",
+  "wikipedia": "Halo-Halo",
+  "image_file": "Halo-Halo.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "haupia",
+  "name": "Haupia",
+  "cuisine": "hawaiian",
+  "slot": "snack",
+  "wikibooks": "Haupia (Hawaiian Coconut Pudding)",
+  "wikipedia": "Haupia",
+  "image_file": "Haupia.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "henry-thiele-s-pancake",
+  "name": "Henry Thiele's Pancake",
+  "cuisine": "german",
+  "slot": "breakfast",
+  "wikibooks": "Henry Thiele's Pancake",
+  "wikipedia": "Henry Thiele's Pancake",
+  "image_file": "Henry_Thiele's_Pancake.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "homemade-tempeh",
+  "name": "Homemade Tempeh",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Homemade Tempeh",
+  "wikipedia": "Homemade Tempeh",
+  "image_file": "Tempeh_fava.jpg",
+  "minutes": 480,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "homemade-wheat-tortillas",
+  "name": "Homemade Wheat Tortillas",
+  "cuisine": "mexican",
+  "slot": "snack",
+  "wikibooks": "Homemade Wheat Tortillas",
+  "wikipedia": "Homemade Wheat Tortillas",
+  "image_file": "NCI_flour_tortillas.jpg",
+  "minutes": 48,
+  "prep": 16,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "huevos-rancheros",
+  "name": "Huevos Rancheros",
+  "cuisine": "mexican",
+  "slot": "breakfast",
+  "wikibooks": "Huevos Rancheros",
+  "wikipedia": "Huevos Rancheros",
+  "image_file": "Ela_huevos_rancheros.jpg",
+  "minutes": 77,
+  "prep": 25,
+  "servings": 2,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "indian-butter-chicken",
+  "name": "Indian Butter Chicken",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Indian Butter Chicken I",
+  "wikipedia": "Indian Butter Chicken",
+  "image_file": "Butter_Chicken_with_Naan.JPG",
+  "minutes": 85,
+  "prep": 28,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "estimated",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "indian-hard-tack",
+  "name": "Indian Hard Tack",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Indian Hard Tack (Baati)",
+  "wikipedia": "Indian Hard Tack",
+  "image_file": "Baati.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 5,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "injera",
+  "name": "Injera",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Injera (Ethiopian Teff Flatbread)",
+  "wikipedia": "Injera",
+  "image_file": "Alicha_1.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 7,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "estimated",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "jigarthanda-milk",
+  "name": "Jigarthanda Milk",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Jigarthanda Milk",
+  "wikipedia": "Jigarthanda Milk",
+  "image_file": "HomemadeJigarthanda.jpg",
+  "minutes": 112,
+  "prep": 37,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "ka-ak",
+  "name": "Ka'ak",
+  "cuisine": "middle_eastern",
+  "slot": "dinner",
+  "wikibooks": "Ka'ak (Savory Ring-Shaped Biscuit)",
+  "wikipedia": "Ka'ak",
+  "image_file": "Ka'ak_bi_ajwa_كعك_بعجوة.jpg",
+  "minutes": 50,
+  "prep": 16,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "kanafeh",
+  "name": "Kanafeh",
+  "cuisine": "african",
+  "slot": "snack",
+  "wikibooks": "Kanafeh (Egyptian Sweet Cheese Pastry)",
+  "wikipedia": "Kanafeh",
+  "image_file": "Kanafeh_Nabulsieh.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 2,
+  "difficulty": 2,
+  "equipment": [
+   "10-inch cast iron skillet",
+   "Oven"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "kare-kare",
+  "name": "Kare-Kare",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Kare-Kare (Oxtail and Vegetables in Peanut Sauce)",
+  "wikipedia": "Kare-Kare",
+  "image_file": "Mac_MG_5939.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "karelian-pasties",
+  "name": "Karelian Pasties",
+  "cuisine": "northern_european",
+  "slot": "dinner",
+  "wikibooks": "Karelian Pasties (Karjalanpiirakat)",
+  "wikipedia": "Karelian Pasties",
+  "image_file": "Karjalanpiirakka-20060227.jpg",
+  "minutes": 117,
+  "prep": 39,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "kari-ayam",
+  "name": "Kari Ayam",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Kari Ayam (Indonesian Chicken Curry)",
+  "wikipedia": "Kari Ayam",
+  "image_file": "Kari_ayam_di_Makassar.JPG",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "kasnocken",
+  "name": "Kasnocken",
+  "cuisine": "german",
+  "slot": "dinner",
+  "wikibooks": "Kasnocken (Austrian Cheese Dumplings)",
+  "wikipedia": "Kasnocken",
+  "image_file": "Kasnocken.JPG",
+  "minutes": 25,
+  "prep": 8,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "kedgeree",
+  "name": "Kedgeree",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Kedgeree (Rice and Smoked Fish)",
+  "wikipedia": "Kedgeree",
+  "image_file": "Kedgeree.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "kitfo",
+  "name": "Kitfo",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Kitfo (Ethiopian Minced Raw Meat)",
+  "wikipedia": "Kitfo",
+  "image_file": "Kitfo.jpg",
+  "minutes": 52,
+  "prep": 17,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [
+   "Large bowl",
+   "Sharp knife",
+   "Cutting board",
+   "Mixing spoon or spatula",
+   "Skillet"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "koesisters-with-coconut",
+  "name": "Koesisters with Coconut",
+  "cuisine": "african",
+  "slot": "dinner",
+  "wikibooks": "Koesisters with Coconut",
+  "wikipedia": "Koesisters with Coconut",
+  "image_file": "Koesisters_Cape_Malay_South_Africa.jpg",
+  "minutes": 89,
+  "prep": 29,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "kubaneh",
+  "name": "Kubaneh",
+  "cuisine": "middle_eastern",
+  "slot": "dinner",
+  "wikibooks": "Kubaneh (Yemenite Pull-Apart Bread)",
+  "wikipedia": "Kubaneh",
+  "image_file": "Kubaneh_bread.jpg",
+  "minutes": 180,
+  "prep": 60,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "kuih-lapis",
+  "name": "Kuih Lapis",
+  "cuisine": "southeast_asian",
+  "slot": "snack",
+  "wikibooks": "Kuih Lapis (Malaysian Layered Steamed Confection)",
+  "wikipedia": "Kuih Lapis",
+  "image_file": "Kue_lapis_-_driekleur_en_rozen.jpg",
+  "minutes": 44,
+  "prep": 14,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "kwek-kwek",
+  "name": "Kwek-Kwek",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Kwek-Kwek (Deep-Fried Quail Eggs)",
+  "wikipedia": "Kwek-Kwek",
+  "image_file": "05223jfPhilippine_cuisine_dishes_Bulacafvf_10.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Pot and stove or electric fryer",
+   "Whisk or other stirring implement",
+   "Slotted spoon or tongs"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "kyopulo",
+  "name": "Kyopulo",
+  "cuisine": "eastern_european",
+  "slot": "dinner",
+  "wikibooks": "Kyopulo (Eggplant with Peppers and Tomatoes)",
+  "wikipedia": "Kyopulo",
+  "image_file": "Kyopoolu_bg.jpg",
+  "minutes": 73,
+  "prep": 24,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "kyselo",
+  "name": "Kyselo",
+  "cuisine": "eastern_european",
+  "slot": "lunch",
+  "wikibooks": "Kyselo (Czech Sourdough Mushroom Soup)",
+  "wikipedia": "Kyselo",
+  "image_file": "Krkonošské_kyselo.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 5,
+  "difficulty": 2,
+  "equipment": [
+   "Stockpots",
+   "Bowls",
+   "Frying pan",
+   "Mixing spoon"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "lahoh",
+  "name": "Lahoh (Spongy Flatbread)",
+  "cuisine": "middle_eastern",
+  "slot": "snack",
+  "wikibooks": "Lahoh (Spongy Flatbread) I",
+  "wikipedia": "Lahoh (Spongy Flatbread)",
+  "image_file": "LahohS.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 9,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "lancashire-corned-beef-hash",
+  "name": "Lancashire Corned Beef Hash",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Lancashire Corned Beef Hash",
+  "wikipedia": "Lancashire Corned Beef Hash",
+  "image_file": "Corned_beef_hash_at_the_Creamery_(Nina's_breakfast).jpg",
+  "minutes": 70,
+  "prep": 23,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "lancashire-hotpot",
+  "name": "Lancashire Hotpot",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Lancashire Hotpot",
+  "wikipedia": "Lancashire Hotpot",
+  "image_file": "Lancashire_Hotpot_square.jpg",
+  "minutes": 80,
+  "prep": 26,
+  "servings": 5,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "lapis-legit",
+  "name": "Lapis Legit",
+  "cuisine": "southeast_asian",
+  "slot": "snack",
+  "wikibooks": "Lapis Legit (Many-Layered Spiced Cake)",
+  "wikipedia": "Lapis Legit",
+  "image_file": "Spekkoek_naturel_en_pandan.jpg",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "latino-scramble",
+  "name": "Latino Scramble",
+  "cuisine": "latin_american",
+  "slot": "breakfast",
+  "wikibooks": "Latino Scramble",
+  "wikipedia": "Latino Scramble",
+  "image_file": "Latino_Scramble.jpg",
+  "minutes": 10,
+  "prep": 5,
+  "servings": 6,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "lefse",
+  "name": "Lefse",
+  "cuisine": "northern_european",
+  "slot": "dinner",
+  "wikibooks": "Lefse (Norwegian Potato Flatbread)",
+  "wikipedia": "Lefse",
+  "image_file": "Lefse_on_a_griddle.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Large pot for boiling potatoes",
+   "Rolling pin",
+   "Potato masher"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "liverpool-lamb-and-vegetable-soup",
+  "name": "Liverpool Lamb and Vegetable Soup",
+  "cuisine": "british",
+  "slot": "lunch",
+  "wikibooks": "Liverpool Lamb and Vegetable Soup (Scouse)",
+  "wikipedia": "Liverpool Lamb and Vegetable Soup",
+  "image_file": "Posh_Scouse_at_Liverpool_Maritime_Museum_-_Flickr_-_Radarsmum67.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "lolly-cake",
+  "name": "Lolly Cake",
+  "cuisine": "oceanian",
+  "slot": "snack",
+  "wikibooks": "Lolly Cake",
+  "wikipedia": "Lolly Cake",
+  "image_file": "Lolly_cake_(2792116118).jpg",
+  "minutes": 93,
+  "prep": 31,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "lomo-saltado",
+  "name": "Lomo Saltado",
+  "cuisine": "latin_american",
+  "slot": "dinner",
+  "wikibooks": "Lomo Saltado (Peruvian Steak Stir-fry)",
+  "wikipedia": "Lomo Saltado",
+  "image_file": "Lomo_saltado.JPG",
+  "minutes": 80,
+  "prep": 26,
+  "servings": 6,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "loukoumas",
+  "name": "Loukoumas (Greek Donuts with Honey)",
+  "cuisine": "mediterranean",
+  "slot": "snack",
+  "wikibooks": "Loukoumas (Greek Donuts with Honey) II",
+  "wikipedia": "Loukoumas (Greek Donuts with Honey)",
+  "image_file": "Loukoumades.jpg",
+  "minutes": 44,
+  "prep": 14,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "luciabullar",
+  "name": "Luciabullar",
+  "cuisine": "northern_european",
+  "slot": "dinner",
+  "wikibooks": "Luciabullar (Scandinavian Saffron Buns)",
+  "wikipedia": "Luciabullar",
+  "image_file": "2005_baking_of_saffron_buns_04.jpg",
+  "minutes": 109,
+  "prep": 36,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "lumpiang-shanghai",
+  "name": "Lumpiang Shanghai",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Lumpiang Shanghai (Filipino Pork Spring Rolls)",
+  "wikipedia": "Lumpiang Shanghai",
+  "image_file": "100Cuisine_of_Bulacan_06.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 7,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "machacado-con-huevo",
+  "name": "Machacado con Huevo",
+  "cuisine": "mexican",
+  "slot": "breakfast",
+  "wikibooks": "Machacado con Huevo (Eggs with Shredded Beef)",
+  "wikipedia": "Machacado con Huevo",
+  "image_file": "Machacado_con_huevo.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 10,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "maja-blanca",
+  "name": "Maja Blanca",
+  "cuisine": "southeast_asian",
+  "slot": "snack",
+  "wikibooks": "Maja Blanca (Coconut Milk Pudding)",
+  "wikipedia": "Maja Blanca",
+  "image_file": "Majablanca.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "malawach",
+  "name": "Malawach",
+  "cuisine": "middle_eastern",
+  "slot": "dinner",
+  "wikibooks": "Malawach (Flaky Flatbread)",
+  "wikipedia": "Malawach",
+  "image_file": "Malawach.jpg",
+  "minutes": 5,
+  "prep": 5,
+  "servings": 12,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "malvani-chicken-curry",
+  "name": "Malvani Chicken Curry",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Malvani Chicken Curry",
+  "wikipedia": "Malvani Chicken Curry",
+  "image_file": "Chickenmalvani.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "matar-paneer",
+  "name": "Matar Paneer",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Matar Paneer",
+  "wikipedia": "Matar Paneer",
+  "image_file": "Matar_Panir_mit_Chapati_-_Mutter_Paneer_with_chapati.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 3,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "mazorca-desgranada",
+  "name": "Mazorca Desgranada",
+  "cuisine": "latin_american",
+  "slot": "dinner",
+  "wikibooks": "Mazorca Desgranada (Colombian Beef Salad)",
+  "wikipedia": "Mazorca Desgranada",
+  "image_file": "Mazorca_Desgranada.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "mediterranean-grilled-tuna",
+  "name": "Mediterranean Grilled Tuna",
+  "cuisine": "mediterranean",
+  "slot": "dinner",
+  "wikibooks": "Mediterranean Grilled Tuna",
+  "wikipedia": "Mediterranean Grilled Tuna",
+  "image_file": "Tuna_steak.JPG",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "menudo",
+  "name": "Menudo",
+  "cuisine": "mexican",
+  "slot": "lunch",
+  "wikibooks": "Menudo (Mexican Tripe and Hominy Soup)",
+  "wikipedia": "Menudo",
+  "image_file": "Menudo_soup_Ortegas_La_Jolla_20050220.jpg",
+  "minutes": 181,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "mukimo",
+  "name": "Mukimo",
+  "cuisine": "south_asian",
+  "slot": "snack",
+  "wikibooks": "Mukimo",
+  "wikipedia": "Mukimo",
+  "image_file": "Mukimo_&_Beef_Stew.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 6,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "mushy-peas",
+  "name": "Mushy Peas",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Mushy Peas",
+  "wikipedia": "Mushy Peas",
+  "image_file": "Mushy_peas_19_july_05.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "naan",
+  "name": "Naan",
+  "cuisine": "south_asian",
+  "slot": "snack",
+  "wikibooks": "Naan",
+  "wikipedia": "Naan",
+  "image_file": "Naan_shiva.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "nanaimo-bars",
+  "name": "Nanaimo Bars",
+  "cuisine": "canadian",
+  "slot": "snack",
+  "wikibooks": "Nanaimo Bars I",
+  "wikipedia": "Nanaimo Bars",
+  "image_file": "Nanaimo_bar.JPG",
+  "minutes": 48,
+  "prep": 16,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "nuremberg-gingerbread",
+  "name": "Nuremberg Gingerbread",
+  "cuisine": "german",
+  "slot": "snack",
+  "wikibooks": "Nuremberg Gingerbread",
+  "wikipedia": "Nuremberg Gingerbread",
+  "image_file": "Lebkuchen-pile.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 15,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "paella-roja",
+  "name": "Paella Roja",
+  "cuisine": "mediterranean",
+  "slot": "dinner",
+  "wikibooks": "Paella Roja",
+  "wikipedia": "Paella Roja",
+  "image_file": "Red_paella_with_mussels.jpg",
+  "minutes": 180,
+  "prep": 60,
+  "servings": 6,
+  "difficulty": 4,
+  "equipment": [
+   "38-centimeter (15-inch) paellera",
+   "7.6-liter (2-gallon) pot",
+   "Rice skimmer",
+   "Large serving spoon",
+   "Potato masher",
+   "Charcoal grill"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "paprika-chicken",
+  "name": "Paprika Chicken",
+  "cuisine": "eastern_european",
+  "slot": "dinner",
+  "wikibooks": "Paprika Chicken",
+  "wikipedia": "Paprika Chicken",
+  "image_file": "Paprikás_Csirke_Galuskával.jpg",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 7,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "pasta-casserole",
+  "name": "Pasta Casserole",
+  "cuisine": "mediterranean",
+  "slot": "dinner",
+  "wikibooks": "Pasta Casserole (Pastitsio)",
+  "wikipedia": "Pasta Casserole",
+  "image_file": "Pastitsio.jpg",
+  "minutes": 149,
+  "prep": 49,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "pastry-for-cornish-pasties",
+  "name": "Pastry for Cornish Pasties",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Pastry for Cornish Pasties",
+  "wikipedia": "Pastry for Cornish Pasties",
+  "image_file": "Cornish_pasty.jpeg",
+  "minutes": 35,
+  "prep": 11,
+  "servings": 2,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "estimated",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "pavlova",
+  "name": "Pavlova",
+  "cuisine": "oceanian",
+  "slot": "dinner",
+  "wikibooks": "Pavlova",
+  "wikipedia": "Pavlova",
+  "image_file": "Pavlova_cake_-_Down_under_dessert.jpg",
+  "minutes": 77,
+  "prep": 25,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "pierogi",
+  "name": "Pierogi",
+  "cuisine": "eastern_european",
+  "slot": "snack",
+  "wikibooks": "Pierogi I",
+  "wikipedia": "Pierogi",
+  "image_file": "Ruskie.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "pigeon-pea-and-fenugreek-curry",
+  "name": "Pigeon Pea and Fenugreek Curry",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Pigeon Pea and Fenugreek Curry (Methi Tadka Dal)",
+  "wikipedia": "Pigeon Pea and Fenugreek Curry",
+  "image_file": "Dal_Tadka.jpg",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 5,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "pita",
+  "name": "Pita",
+  "cuisine": "middle_eastern",
+  "slot": "snack",
+  "wikibooks": "Pita",
+  "wikipedia": "Pita",
+  "image_file": "Pita_Bread.jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "pohe",
+  "name": "Pohe",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Pohe (Spiced Flattened Rice)",
+  "wikipedia": "Pohe",
+  "image_file": "Poha_or_Pauva_or_Spicy_Rice_Flakes_WLF15.jpg",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 2,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "polish-doughnuts",
+  "name": "Polish Doughnuts",
+  "cuisine": "eastern_european",
+  "slot": "snack",
+  "wikibooks": "Polish Doughnuts (Paczki)",
+  "wikipedia": "Polish Doughnuts",
+  "image_file": "Pączki_final_product.png",
+  "minutes": 89,
+  "prep": 29,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "potato-casserole",
+  "name": "Potato Casserole",
+  "cuisine": "eastern_european",
+  "slot": "dinner",
+  "wikibooks": "Potato Casserole (Rakott Krumpli)",
+  "wikipedia": "Potato Casserole",
+  "image_file": "Rakott_krumpli.jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "potato-samosas",
+  "name": "Potato Samosas",
+  "cuisine": "caribbean",
+  "slot": "dinner",
+  "wikibooks": "Potato Samosas (Aloo Pies)",
+  "wikipedia": "Potato Samosas",
+  "image_file": "Samosas_(with_potato-_peas_stuffing).jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 7,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "potato-soup",
+  "name": "Potato Soup",
+  "cuisine": "eastern_european",
+  "slot": "lunch",
+  "wikibooks": "Potato Soup",
+  "wikipedia": "Potato Soup",
+  "image_file": "Three_bowls_of_potato_soup.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "potato-and-sausage-casserole",
+  "name": "Potato and Sausage Casserole",
+  "cuisine": "latin_american",
+  "slot": "dinner",
+  "wikibooks": "Potato and Sausage Casserole (Papa Turmada)",
+  "wikipedia": "Potato and Sausage Casserole",
+  "image_file": "Papa_Turmada.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 6,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "queen-of-puddings",
+  "name": "Queen of Puddings",
+  "cuisine": "british",
+  "slot": "snack",
+  "wikibooks": "Queen of Puddings",
+  "wikipedia": "Queen of Puddings",
+  "image_file": "Queen_of_Puddings.jpg",
+  "minutes": 80,
+  "prep": 26,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "reindling",
+  "name": "Reindling",
+  "cuisine": "german",
+  "slot": "dinner",
+  "wikibooks": "Reindling (Austrian Yeasted Easter Cake)",
+  "wikipedia": "Reindling",
+  "image_file": "Kaerntner_Reindling_03092013_033.jpg",
+  "minutes": 93,
+  "prep": 31,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "rhubarb-crumble",
+  "name": "Rhubarb Crumble",
+  "cuisine": "british",
+  "slot": "snack",
+  "wikibooks": "Rhubarb Crumble I",
+  "wikipedia": "Rhubarb Crumble",
+  "image_file": "Crumble_à_la_rhubarbe.jpg",
+  "minutes": 75,
+  "prep": 25,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "rhubarb-fool",
+  "name": "Rhubarb Fool",
+  "cuisine": "northern_european",
+  "slot": "snack",
+  "wikibooks": "Rhubarb Fool",
+  "wikipedia": "Rhubarb Fool",
+  "image_file": "Rhubarb_fool.jpg",
+  "minutes": 10,
+  "prep": 5,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "rice-tamale",
+  "name": "Rice Tamale",
+  "cuisine": "latin_american",
+  "slot": "dinner",
+  "wikibooks": "Rice Tamale (Pastel de Arroz)",
+  "wikipedia": "Rice Tamale",
+  "image_file": "Pastel_Arroz.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 6,
+  "difficulty": 4,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "rice-and-lentils",
+  "name": "Rice and Lentils",
+  "cuisine": "middle_eastern",
+  "slot": "dinner",
+  "wikibooks": "Rice and Lentils (Mejadra)",
+  "wikipedia": "Rice and Lentils",
+  "image_file": "Mejadrah.s.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "roast-beef",
+  "name": "Roast Beef",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Roast Beef",
+  "wikipedia": "Roast Beef",
+  "image_file": "Sunday_roast_-_roast_beef_1.jpg",
+  "minutes": 90,
+  "prep": 30,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "ropa-vieja",
+  "name": "Ropa Vieja",
+  "cuisine": "caribbean",
+  "slot": "dinner",
+  "wikibooks": "Ropa Vieja (Caribbean Shredded Beef)",
+  "wikipedia": "Ropa Vieja",
+  "image_file": "Cubanfood.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "russian-style-waffle-cake",
+  "name": "Russian-style Waffle Cake",
+  "cuisine": "eastern_european",
+  "slot": "snack",
+  "wikibooks": "Russian-style Waffle Cake",
+  "wikipedia": "Russian-style Waffle Cake",
+  "image_file": "Waffle_Cake.jpg",
+  "minutes": 180,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [
+   "Mixing bowl",
+   "Ladle"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "salata-de-boeuf",
+  "name": "Salată de Boeuf",
+  "cuisine": "eastern_european",
+  "slot": "lunch",
+  "wikibooks": "Salată de Boeuf (Romanian Beef Salad)",
+  "wikipedia": "Salată de Boeuf",
+  "image_file": "Salată_de_boeuf.png",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 7,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "salsa",
+  "name": "Salsa",
+  "cuisine": "mexican",
+  "slot": "dinner",
+  "wikibooks": "Salsa (Fermented)",
+  "wikipedia": "Salsa",
+  "image_file": "Salsa_ferment.jpg",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "estimated",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "salzburger-nockerl",
+  "name": "Salzburger Nockerl",
+  "cuisine": "german",
+  "slot": "snack",
+  "wikibooks": "Salzburger Nockerl (Sweet Austrian Soufflé)",
+  "wikipedia": "Salzburger Nockerl",
+  "image_file": "SN1.JPG",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "sandwich-layer-cake",
+  "name": "Sandwich Layer-Cake",
+  "cuisine": "northern_european",
+  "slot": "snack",
+  "wikibooks": "Sandwich Layer-Cake",
+  "wikipedia": "Sandwich Layer-Cake",
+  "image_file": "Smorgatarta.JPG",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 12,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "schwarzwalder-kirschtorte",
+  "name": "Schwarzwälder Kirschtorte",
+  "cuisine": "german",
+  "slot": "snack",
+  "wikibooks": "Schwarzwälder Kirschtorte (Black Forest Cake)",
+  "wikipedia": "Schwarzwälder Kirschtorte",
+  "image_file": "Foret_noire_mel0.jpg",
+  "minutes": 180,
+  "prep": 60,
+  "servings": 12,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "shopska-salata",
+  "name": "Shopska Salata",
+  "cuisine": "eastern_european",
+  "slot": "lunch",
+  "wikibooks": "Shopska Salata (Tomato, Cucumber, and Bell Pepper Salad)",
+  "wikipedia": "Shopska Salata",
+  "image_file": "Za_shopska_salata.JPG",
+  "minutes": 24,
+  "prep": 8,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "soft-sugar-cookies",
+  "name": "Soft Sugar Cookies",
+  "cuisine": "canadian",
+  "slot": "snack",
+  "wikibooks": "Soft Sugar Cookies",
+  "wikipedia": "Soft Sugar Cookies",
+  "image_file": "Grannie_Gilbert's_Sugar_Cookies.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "spaetzle",
+  "name": "Spaetzle",
+  "cuisine": "german",
+  "slot": "snack",
+  "wikibooks": "Spaetzle",
+  "wikipedia": "Spaetzle",
+  "image_file": "Spätzlepresse2.jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "spanakopita",
+  "name": "Spanakopita",
+  "cuisine": "mediterranean",
+  "slot": "snack",
+  "wikibooks": "Spanakopita",
+  "wikipedia": "Spanakopita",
+  "image_file": "Spanokopita_cropped.jpg",
+  "minutes": 93,
+  "prep": 31,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "springerle",
+  "name": "Springerle",
+  "cuisine": "german",
+  "slot": "dinner",
+  "wikibooks": "Springerle",
+  "wikipedia": "Springerle",
+  "image_file": "Springerle_with_typical_foot_swabian_Fuessle.jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "spritzgeback",
+  "name": "Spritzgeback",
+  "cuisine": "german",
+  "slot": "snack",
+  "wikibooks": "Spritzgeback (German Spritz Butter Cookies)",
+  "wikipedia": "Spritzgeback",
+  "image_file": "Spritz_with_no_coloring.JPG",
+  "minutes": 225,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "steak-and-ale-pie",
+  "name": "Steak and Ale Pie",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Steak and Ale Pie",
+  "wikipedia": "Steak and Ale Pie",
+  "image_file": "Making_Steak_and_Ale_pies_for_the_weekend_events_(7318950220).jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "steamed-tuna-bao-buns",
+  "name": "Steamed Tuna Bao Buns",
+  "cuisine": "chinese",
+  "slot": "snack",
+  "wikibooks": "Steamed Tuna Bao Buns",
+  "wikipedia": "Steamed Tuna Bao Buns",
+  "image_file": "Steamed_Buns_(4650154698).jpg",
+  "minutes": 117,
+  "prep": 39,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "strawberry-and-yogurt-eton-mess",
+  "name": "Strawberry and Yogurt Eton Mess",
+  "cuisine": "british",
+  "slot": "snack",
+  "wikibooks": "Strawberry and Yogurt Eton Mess",
+  "wikipedia": "Strawberry and Yogurt Eton Mess",
+  "image_file": "Etonmess.jpg",
+  "minutes": 10,
+  "prep": 5,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "stroopwafels",
+  "name": "Stroopwafels",
+  "cuisine": "northern_european",
+  "slot": "snack",
+  "wikibooks": "Stroopwafels",
+  "wikipedia": "Stroopwafels",
+  "image_file": "Gaufre_biscuit.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 12,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "stuffed-crabs",
+  "name": "Stuffed Crabs",
+  "cuisine": "latin_american",
+  "slot": "snack",
+  "wikibooks": "Stuffed Crabs (Casquinha de Siri)",
+  "wikipedia": "Stuffed Crabs",
+  "image_file": "Casquinha_de_siri.jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "stuffed-duck-breast-with-cabbage-and-dumplings",
+  "name": "Stuffed Duck Breast with Cabbage and Dumplings",
+  "cuisine": "german",
+  "slot": "dinner",
+  "wikibooks": "Stuffed Duck Breast with Cabbage and Dumplings",
+  "wikipedia": "Stuffed Duck Breast with Cabbage and Dumplings",
+  "image_file": "Duck_with_side_dishes.JPG",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "stuffed-grape-leaves",
+  "name": "Stuffed Grape Leaves",
+  "cuisine": "middle_eastern",
+  "slot": "dinner",
+  "wikibooks": "Stuffed Grape Leaves",
+  "wikipedia": "Stuffed Grape Leaves",
+  "image_file": "Sarma.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "summer-pudding",
+  "name": "Summer Pudding",
+  "cuisine": "british",
+  "slot": "snack",
+  "wikibooks": "Summer Pudding",
+  "wikipedia": "Summer Pudding",
+  "image_file": "Summer_pudding.jpg",
+  "minutes": 120,
+  "prep": 40,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "szegedin-goulash",
+  "name": "Szegedin Goulash",
+  "cuisine": "eastern_european",
+  "slot": "dinner",
+  "wikibooks": "Szegedin Goulash",
+  "wikipedia": "Szegedin Goulash",
+  "image_file": "Bon_appetit_goulash.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "tattie-scones",
+  "name": "Tattie Scones",
+  "cuisine": "british",
+  "slot": "breakfast",
+  "wikibooks": "Tattie Scones",
+  "wikipedia": "Tattie Scones",
+  "image_file": "Potato_scone_with_vegetable_bake.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "traditional-finnish-lemon-mead",
+  "name": "Traditional Finnish Lemon Mead",
+  "cuisine": "northern_european",
+  "slot": "dinner",
+  "wikibooks": "Traditional Finnish Lemon Mead (Sima)",
+  "wikipedia": "Traditional Finnish Lemon Mead",
+  "image_file": "Sima.jpg",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 8,
+  "difficulty": 2,
+  "equipment": [
+   "Empty bottles",
+   "Funnel"
+  ],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "trifle",
+  "name": "Trifle",
+  "cuisine": "british",
+  "slot": "snack",
+  "wikibooks": "Trifle",
+  "wikipedia": "Trifle",
+  "image_file": "Trifle.jpg",
+  "minutes": 25,
+  "prep": 8,
+  "servings": 6,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "turkish-delight",
+  "name": "Turkish Delight",
+  "cuisine": "middle_eastern",
+  "slot": "snack",
+  "wikibooks": "Turkish Delight",
+  "wikipedia": "Turkish Delight",
+  "image_file": "Turkish_Delight.JPG",
+  "minutes": 30,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "tzatziki",
+  "name": "Tzatziki",
+  "cuisine": "mediterranean",
+  "slot": "snack",
+  "wikibooks": "Tzatziki",
+  "wikipedia": "Tzatziki",
+  "image_file": "Tzatziki01.jpg",
+  "minutes": 77,
+  "prep": 25,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "vanillekipferl",
+  "name": "Vanillekipferl",
+  "cuisine": "german",
+  "slot": "dinner",
+  "wikibooks": "Vanillekipferl (Almond Crescent Cookies)",
+  "wikipedia": "Vanillekipferl",
+  "image_file": "Vanillekipferl_VK11.jpg",
+  "minutes": 45,
+  "prep": 15,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "vegemite-sandwich",
+  "name": "Vegemite Sandwich",
+  "cuisine": "oceanian",
+  "slot": "lunch",
+  "wikibooks": "Vegemite Sandwich",
+  "wikipedia": "Vegemite Sandwich",
+  "image_file": "Vegemiteontoast_large.jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "welsh-fruit-bread",
+  "name": "Welsh Fruit Bread (Bara Brith)",
+  "cuisine": "british",
+  "slot": "snack",
+  "wikibooks": "Welsh Fruit Bread (Bara Brith) I",
+  "wikipedia": "Welsh Fruit Bread (Bara Brith)",
+  "image_file": "Bara_Brith.jpg",
+  "minutes": 89,
+  "prep": 29,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "welsh-rarebit",
+  "name": "Welsh Rarebit",
+  "cuisine": "british",
+  "slot": "dinner",
+  "wikibooks": "Welsh Rarebit",
+  "wikipedia": "Welsh Rarebit",
+  "image_file": "Welsh_Rarebit.jpg",
+  "minutes": 10,
+  "prep": 5,
+  "servings": 2,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "white-fish-ceviche",
+  "name": "White Fish Ceviche",
+  "cuisine": "latin_american",
+  "slot": "snack",
+  "wikibooks": "White Fish Ceviche (Cebiche de Pescado)",
+  "wikipedia": "White Fish Ceviche",
+  "image_file": "Ceviche.png",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 7,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "yeasted-vanilla-sponge-cake",
+  "name": "Yeasted Vanilla Sponge Cake",
+  "cuisine": "british",
+  "slot": "snack",
+  "wikibooks": "Yeasted Vanilla Sponge Cake",
+  "wikipedia": "Yeasted Vanilla Sponge Cake",
+  "image_file": "Making_sponge_cake_at_home_16.jpg",
+  "minutes": 97,
+  "prep": 32,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [
+   "1 large mixing bowl",
+   "1 shallow baking tray",
+   "1 cake pan",
+   "Whisk",
+   "Sieve",
+   "Baking paper"
+  ],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "zacusca",
+  "name": "Zacusca",
+  "cuisine": "eastern_european",
+  "slot": "snack",
+  "wikibooks": "Zacusca (Romanian Vegetable Spread)",
+  "wikipedia": "Zacusca",
+  "image_file": "Zacuscă_bgiu.jpg",
+  "minutes": 180,
+  "prep": 60,
+  "servings": 15,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "zupa-ogorkowa",
+  "name": "Zupa Ogórkowa",
+  "cuisine": "eastern_european",
+  "slot": "dinner",
+  "wikibooks": "Zupa Ogórkowa (Polish Cucumber Soup)",
+  "wikipedia": "Zupa Ogórkowa",
+  "image_file": "Cucumber_soup.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "bleskiver",
+  "name": "Æbleskiver",
+  "cuisine": "northern_european",
+  "slot": "dinner",
+  "wikibooks": "Æbleskiver (Danish Spherical Pancakes)",
+  "wikipedia": "Æbleskiver",
+  "image_file": "Aebleskiver.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "alfajores",
+  "name": "Alfajores",
+  "cuisine": "latin_american",
+  "slot": "snack",
+  "wikibooks": "Alfajores (Latin American Sandwich Cookies)",
+  "wikipedia": "Alfajores",
+  "image_file": "AlfajoresP1115215_02.jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "arambasici",
+  "name": "Arambasici",
+  "cuisine": "eastern_european",
+  "slot": "snack",
+  "wikibooks": "Arambasici (Croatian Sour Cabbage Rolls)",
+  "wikipedia": "Arambasici",
+  "image_file": "Yaprak_sarma,_Kayseri_style.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "bliny",
+  "name": "Bliny",
+  "cuisine": "eastern_european",
+  "slot": "dinner",
+  "wikibooks": "Bliny",
+  "wikipedia": "Bliny",
+  "image_file": "50_блінкоў_на_талерцы_240_мм.jpg",
+  "minutes": 44,
+  "prep": 14,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "bltkake",
+  "name": "Bløtkake",
+  "cuisine": "northern_european",
+  "slot": "snack",
+  "wikibooks": "Bløtkake (Norwegian Berries and Cream Cake)",
+  "wikipedia": "Bløtkake",
+  "image_file": "Bringebærbløtkake.JPG",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "bunuelos",
+  "name": "Buñuelos",
+  "cuisine": "mexican",
+  "slot": "snack",
+  "wikibooks": "Buñuelos (Sweet Fried Pastry)",
+  "wikipedia": "Buñuelos",
+  "image_file": "Bunyol_de_carabassa.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "callaloo",
+  "name": "Callaloo",
+  "cuisine": "caribbean",
+  "slot": "lunch",
+  "wikibooks": "Callaloo (Caribbean Stewed Greens)",
+  "wikipedia": "Callaloo",
+  "image_file": "Callaloo.jpg",
+  "minutes": 60,
+  "prep": 20,
+  "servings": 8,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "carpetbag-steak",
+  "name": "Carpetbag Steak",
+  "cuisine": "oceanian",
+  "slot": "dinner",
+  "wikibooks": "Carpetbag Steak",
+  "wikipedia": "Carpetbag Steak",
+  "image_file": "FoodMeat-white.png",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chalupa",
+  "name": "Chalupa",
+  "cuisine": "mexican",
+  "slot": "snack",
+  "wikibooks": "Chalupa",
+  "wikipedia": "Chalupa",
+  "image_file": "Chalupas_(food).jpg",
+  "minutes": 28,
+  "prep": 9,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "chilaquiles",
+  "name": "Chilaquiles",
+  "cuisine": "mexican",
+  "slot": "breakfast",
+  "wikibooks": "Chilaquiles",
+  "wikipedia": "Chilaquiles",
+  "image_file": "Chilaquiles_at_the_Grand_Cantina,_Windsor,_Ontario,_2025-09-01_04.jpg",
+  "minutes": 93,
+  "prep": 31,
+  "servings": 1,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "chraime",
+  "name": "Chraime",
+  "cuisine": "middle_eastern",
+  "slot": "dinner",
+  "wikibooks": "Chraime (Sephardic Fish and Vegetable Casserole)",
+  "wikipedia": "Chraime",
+  "image_file": "צלחת_חריימה.png",
+  "minutes": 73,
+  "prep": 24,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "erwtensoep",
+  "name": "Erwtensoep",
+  "cuisine": "northern_european",
+  "slot": "lunch",
+  "wikibooks": "Erwtensoep (Split Pea Soup)",
+  "wikipedia": "Erwtensoep",
+  "image_file": "Hernekeitto.jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "euneo-juk",
+  "name": "Euneo-juk",
+  "cuisine": "korean",
+  "slot": "lunch",
+  "wikibooks": "Euneo-juk (Korean Sweetfish Porridge)",
+  "wikipedia": "Euneo-juk",
+  "image_file": "Korean_abalone_porridge-Jeonbokjuk-02.jpg",
+  "minutes": 44,
+  "prep": 14,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "farikal",
+  "name": "Fårikål",
+  "cuisine": "northern_european",
+  "slot": "dinner",
+  "wikibooks": "Fårikål (Norwegian Lamb and Cabbage Stew)",
+  "wikipedia": "Fårikål",
+  "image_file": "Får_i_kål.jpg",
+  "minutes": 240,
+  "prep": 60,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "general-tso-s-chicken",
+  "name": "General Tso's Chicken",
+  "cuisine": "chinese",
+  "slot": "dinner",
+  "wikibooks": "General Tso's Chicken",
+  "wikipedia": "General Tso's Chicken",
+  "image_file": "Flickr_preppybyday_4665999863--General_Tso's_Chicken.jpg",
+  "minutes": 15,
+  "prep": 5,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "hachee",
+  "name": "Hachee",
+  "cuisine": "northern_european",
+  "slot": "dinner",
+  "wikibooks": "Hachee (Dutch Beef Stew)",
+  "wikipedia": "Hachee",
+  "image_file": "Hachee_met_rode_kool_en_aardappelpuree.jpg",
+  "minutes": 40,
+  "prep": 13,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "hot-and-sour-soup",
+  "name": "Hot and Sour Soup",
+  "cuisine": "chinese",
+  "slot": "lunch",
+  "wikibooks": "Hot and Sour Soup",
+  "wikipedia": "Hot and Sour Soup",
+  "image_file": "Ping_SJ_hot_&_sour_soup.JPG",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "israeli-salad",
+  "name": "Israeli Salad",
+  "cuisine": "middle_eastern",
+  "slot": "lunch",
+  "wikibooks": "Israeli Salad",
+  "wikipedia": "Israeli Salad",
+  "image_file": "Salad.jpg",
+  "minutes": 24,
+  "prep": 8,
+  "servings": 4,
+  "difficulty": 1,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "jamaican-jerk-chicken",
+  "name": "Jamaican Jerk Chicken",
+  "cuisine": "caribbean",
+  "slot": "snack",
+  "wikibooks": "Jamaican Jerk Chicken",
+  "wikipedia": "Jamaican Jerk Chicken",
+  "image_file": "BBQJerk_Chicken.jpg",
+  "minutes": 69,
+  "prep": 23,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "kabab-barg",
+  "name": "Kabab Barg",
+  "cuisine": "middle_eastern",
+  "slot": "dinner",
+  "wikibooks": "Kabab Barg (Persian Grilled Meat)",
+  "wikipedia": "Kabab Barg",
+  "image_file": "Kababi_alborz2.jpg",
+  "minutes": 73,
+  "prep": 24,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "loco-moco",
+  "name": "Loco Moco",
+  "cuisine": "hawaiian",
+  "slot": "dinner",
+  "wikibooks": "Loco Moco (Rice with Egg and Hamburger)",
+  "wikipedia": "Loco Moco",
+  "image_file": "Loco_moco_(32605169782).jpg",
+  "minutes": 36,
+  "prep": 12,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "langos",
+  "name": "Lángos",
+  "cuisine": "eastern_european",
+  "slot": "dinner",
+  "wikibooks": "Lángos (Hungarian Fried Flatbread)",
+  "wikipedia": "Lángos",
+  "image_file": "Merry_Christmas_from_Budapest!_(42).jpg",
+  "minutes": 93,
+  "prep": 31,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ }
+]
