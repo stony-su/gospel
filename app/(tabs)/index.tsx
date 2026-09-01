@@ -44,6 +44,15 @@ const DAY_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
  */
 const PLATE = 44;
 
+/**
+ * Room the swap control is given at the right of every meal row.
+ *
+ * A fixed width rather than the text's own: the meal beside it is what gives
+ * way when a dish has a long name, and it can only do that if the control's
+ * width is not part of the negotiation.
+ */
+const SWAP_WIDTH = 46;
+
 export default function PlanTab() {
   const router = useRouter();
   const plan = useGospel((state) => state.plan);
@@ -157,37 +166,51 @@ export default function PlanTab() {
             const recipe = recipesById.get(meal.recipeId);
             if (!recipe) return null;
             return (
-              <Press
-                key={`${meal.dayIndex}-${meal.slot}`}
-                onPress={() => router.push(`/recipe/${recipe.id}`)}
-                plain
-                accessibilityLabel={recipe.name}
-                style={styles.meal}
-              >
-                <Plate
-                  source={recipeImage(recipe.slug)?.thumb ?? null}
-                  width={PLATE}
-                  height={PLATE}
-                  fallbackLabel={meal.slot.slice(0, 3)}
-                />
-                <View style={styles.mealBody}>
-                  {/* The description belongs on the recipe screen, not in a
-                      list row: a row is scanned, and a sentence in one is
-                      read past rather than read. */}
-                  <Heading numberOfLines={2}>{recipe.name}</Heading>
-                  <View style={styles.mealMeta}>
-                    <Label color={grade[50]}>{meal.slot.slice(0, 3)}</Label>
-                    <Figure small color={grade[60]}>{`${recipe.minutes} min`}</Figure>
-                    <Figure small color={grade[60]}>{`L${recipe.difficulty}`}</Figure>
-                    <Figure small color={grade[60]}>
-                      {`${Math.round(recipe.nutrition.energy_kcal * meal.servings)} kcal`}
-                    </Figure>
-                    {meal.servings !== 1 && (
-                      <Figure small color={grade[96]}>{`×${meal.servings}`}</Figure>
-                    )}
+              <View key={`${meal.dayIndex}-${meal.slot}`} style={styles.meal}>
+                <Press
+                  grow
+                  onPress={() => router.push(`/recipe/${recipe.id}`)}
+                  plain
+                  accessibilityLabel={recipe.name}
+                  style={styles.mealMain}
+                >
+                  <Plate
+                    source={recipeImage(recipe.slug)?.thumb ?? null}
+                    width={PLATE}
+                    height={PLATE}
+                    fallbackLabel={meal.slot.slice(0, 3)}
+                  />
+                  <View style={styles.mealBody}>
+                    {/* The description belongs on the recipe screen, not in a
+                        list row: a row is scanned, and a sentence in one is
+                        read past rather than read. */}
+                    <Heading numberOfLines={2}>{recipe.name}</Heading>
+                    <View style={styles.mealMeta}>
+                      <Label color={grade[50]}>{meal.slot.slice(0, 3)}</Label>
+                      <Figure small color={grade[60]}>{`${recipe.minutes} min`}</Figure>
+                      <Figure small color={grade[60]}>{`L${recipe.difficulty}`}</Figure>
+                      <Figure small color={grade[60]}>
+                        {`${Math.round(recipe.nutrition.energy_kcal * meal.servings)} kcal`}
+                      </Figure>
+                      {meal.servings !== 1 && (
+                        <Figure small color={grade[96]}>{`×${meal.servings}`}</Figure>
+                      )}
+                    </View>
                   </View>
-                </View>
-              </Press>
+                </Press>
+
+                {/* Its own target rather than a gesture on the row: the row
+                    already opens the recipe, and a plan you cannot argue with
+                    is one you stop following in week two. */}
+                <Press
+                  onPress={() => router.push(`/swap/${meal.dayIndex}/${meal.slot}`)}
+                  plain
+                  accessibilityLabel={`Replace ${recipe.name}`}
+                  style={styles.swap}
+                >
+                  <Label color={grade[60]}>swap</Label>
+                </Press>
+              </View>
             );
           })}
         </Reveal>
@@ -228,20 +251,39 @@ const styles = StyleSheet.create({
   },
   meal: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     backgroundColor: surface.row,
     borderRadius: radius.sm,
     padding: space.sm,
     marginBottom: space.xxs,
     gap: space.sm,
   },
+  mealMain: {
+    flex: 1,
+    // A flex child will not shrink below its content unless it is told it
+    // may. Without this the plate and the figures set the row's minimum
+    // width and push the swap control past the card's right edge.
+    minWidth: 0,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: space.sm,
+  },
+  swap: {
+    width: SWAP_WIDTH,
+    alignItems: 'flex-end',
+    paddingVertical: space.sm,
+  },
   mealBody: {
     flex: 1,
+    // Without this the meta row's figures set the row's minimum width and
+    // push the swap control off the right edge rather than wrapping.
+    minWidth: 0,
     gap: space.xxs,
   },
   mealMeta: {
     flexDirection: 'row',
     alignItems: 'baseline',
+    flexWrap: 'wrap',
     gap: space.sm,
   },
   regenerate: {

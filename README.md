@@ -18,7 +18,7 @@ npm run android      # or: npm start, then scan the QR code
 ```
 
 ```bash
-npm test             # 202 tests across two projects
+npm test             # 223 tests across two projects
 python -m pytest scripts/   # 58 tests for the unit parser
 npm run typecheck    # tsc --noEmit
 ```
@@ -32,6 +32,16 @@ per meal, weekly budget, and how often the plan repeats.
 
 **The plan** is solved on-device against your resolved targets, then repeats.
 Same seed, same plan; regenerating is a deliberate act.
+
+**Any meal can be swapped.** A solver optimising forty-eight targets will
+sooner or later put something on a Tuesday you will not cook, and one such dish
+is enough to stop you following the plan at all. `swap` on a meal row opens
+every recipe that could take the slot, ranked by the planner's own objective —
+so the top of the list is what the solver would have chosen if it had looked
+harder, not a second opinion from a different measure. Each card opens onto a
+radar of the dish against its fair share of the day, the figures behind it, and
+the price, time and difficulty. Choosing one rescales that day's portions so it
+still lands on its energy target; the other six days are left alone.
 
 **Nutrition** shows 43 of the workbook's 48 targets against what the plan
 delivers, each one summed from USDA FoodData Central panels over the plan's
@@ -51,12 +61,14 @@ app/                      Expo Router routes
   onboarding/index.tsx    Twelve-step stepper
   (tabs)/                 Plan · Nutrition · Grocery · Pantry
   recipe/[id].tsx         Ingredients, quantities, method
+  swap/[day]/[slot].tsx   Ranked replacements for one meal
   nutrient/[id].tsx       Derivation, upper limits, citations
 
 src/
   domain/
     nutrition/resolver.ts   48 targets from 6 inputs
     planner/planner.ts      Greedy fill + best-of-K hill climb
+    planner/swap.ts         Ranked replacements for one meal, same objective
     pantry/depletion.ts     Quantity and shelf-life simulation
   data/generated/           Committed JSON, built by scripts/
   components/, theme/       UI and design tokens

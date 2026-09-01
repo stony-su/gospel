@@ -32,6 +32,7 @@ import {
   consumptionForPlan,
   equipmentForPlan,
 } from '@/domain/planner/planner';
+import { applySwap } from '@/domain/planner/swap';
 import type {
   CycleLength,
   MealPlan,
@@ -94,6 +95,8 @@ interface GospelState {
   setMealsPerDay: (slots: MealSlot[]) => void;
   completeOnboarding: () => void;
   regeneratePlan: (seed?: number) => void;
+  /** Replace one meal in the plan, keeping the rest of the cycle. */
+  replaceMeal: (dayIndex: number, slot: MealSlot, recipeId: number) => void;
   toggleChecked: (scope: number | string, itemId: string) => void;
   clearChecked: (cycleIndex: number) => void;
   setActiveCycle: (cycleIndex: number) => void;
@@ -203,6 +206,34 @@ export const useGospel = create<GospelState>()(
         // A new plan invalidates the old shopping ticks.
         set({ plan, checked: {}, activeCycle: 0 });
       },
+
+      /**
+       * Swap one meal for another the reader picked themselves.
+       *
+       * The ticks go with it. A grocery list is the difference between what a
+       * plan needs and what the cupboard holds, so changing a meal changes
+       * what is on the list, and a tick against a line that is no longer
+       * there is worse than no tick at all.
+       */
+      replaceMeal: (dayIndex, slot, recipeId) =>
+        set((state) => {
+          if (!state.plan) return {};
+          const profile = profileFrom(state.answers);
+          if (!profile) return {};
+          if (!recipesById.has(recipeId)) return {};
+
+          return {
+            plan: applySwap(
+              state.plan,
+              recipesById,
+              resolveTargets(profile),
+              dayIndex,
+              slot,
+              recipeId,
+            ),
+            checked: {},
+          };
+        }),
 
       // Scope is a cycle index for weekly lines, or 'setup' / 'equipment'
       // for the one-time lists, which are not tied to any single cycle.

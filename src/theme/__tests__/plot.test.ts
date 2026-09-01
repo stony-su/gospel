@@ -8,7 +8,7 @@
  * float artefact to the user.
  */
 
-import { linearScale, niceTicks } from '@/theme/plot';
+import { linearScale, niceTicks, radarPoint } from '@/theme/plot';
 
 describe('linearScale', () => {
   it('maps the domain onto the range', () => {
@@ -68,5 +68,52 @@ describe('niceTicks', () => {
     const ticks = niceTicks(3, 97, 5);
     expect(ticks[0]).toBeLessThanOrEqual(3);
     expect(ticks[ticks.length - 1]).toBeGreaterThanOrEqual(97);
+  });
+});
+
+describe('radarPoint', () => {
+  const CENTRE = 100;
+  const RADIUS = 80;
+
+  it('puts the first axis at twelve o’clock', () => {
+    const [x, y] = radarPoint(0, 6, 2, 2, RADIUS, CENTRE);
+    expect(x).toBeCloseTo(CENTRE, 6);
+    expect(y).toBeCloseTo(CENTRE - RADIUS, 6);
+  });
+
+  it('runs clockwise', () => {
+    // A quarter of the way round a four-axis chart is three o'clock.
+    const [x, y] = radarPoint(1, 4, 2, 2, RADIUS, CENTRE);
+    expect(x).toBeCloseTo(CENTRE + RADIUS, 6);
+    expect(y).toBeCloseTo(CENTRE, 6);
+  });
+
+  it('puts the reference ring at half the radius when the ceiling is two', () => {
+    const [, y] = radarPoint(0, 6, 1, 2, RADIUS, CENTRE);
+    expect(CENTRE - y).toBeCloseTo(RADIUS / 2, 6);
+  });
+
+  it('clamps beyond the ceiling rather than drawing off the canvas', () => {
+    const far = radarPoint(0, 6, 9, 2, RADIUS, CENTRE);
+    const edge = radarPoint(0, 6, 2, 2, RADIUS, CENTRE);
+    expect(far).toEqual(edge);
+  });
+
+  it('puts a zero at the centre, not behind it', () => {
+    expect(radarPoint(0, 6, 0, 2, RADIUS, CENTRE)).toEqual([CENTRE, CENTRE]);
+    expect(radarPoint(0, 6, -3, 2, RADIUS, CENTRE)).toEqual([CENTRE, CENTRE]);
+  });
+
+  it('spaces the axes evenly all the way round', () => {
+    const count = 6;
+    const angles = Array.from({ length: count }, (_, index) => {
+      const [x, y] = radarPoint(index, count, 2, 2, RADIUS, CENTRE);
+      return Math.atan2(y - CENTRE, x - CENTRE);
+    });
+    for (let index = 1; index < count; index += 1) {
+      const step = angles[index] - angles[index - 1];
+      const normalised = ((step % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
+      expect(normalised).toBeCloseTo((Math.PI * 2) / count, 6);
+    }
   });
 });

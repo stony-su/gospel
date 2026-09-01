@@ -87,6 +87,10 @@ export default function RootLayout() {
             options={{ presentation: 'modal', animation: 'slide_from_bottom' }}
           />
           <Stack.Screen name="nutrition/[category]" />
+          <Stack.Screen
+            name="swap/[day]/[slot]"
+            options={{ presentation: 'modal', animation: 'slide_from_bottom' }}
+          />
         </Stack>
       </SafeAreaProvider>
     </GestureHandlerRootView>

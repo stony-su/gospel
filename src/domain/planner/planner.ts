@@ -76,7 +76,7 @@ function mulberry32(seed: number): () => number {
   };
 }
 
-interface DayTotals {
+export interface DayTotals {
   energy_kcal: number;
   protein_g: number;
   carbohydrate_g: number;
@@ -86,7 +86,7 @@ interface DayTotals {
   cost: number;
 }
 
-const EMPTY_TOTALS: DayTotals = {
+export const EMPTY_TOTALS: DayTotals = {
   energy_kcal: 0,
   protein_g: 0,
   carbohydrate_g: 0,
@@ -96,7 +96,7 @@ const EMPTY_TOTALS: DayTotals = {
   cost: 0,
 };
 
-function addRecipe(totals: DayTotals, recipe: Recipe, servings: number): DayTotals {
+export function addRecipe(totals: DayTotals, recipe: Recipe, servings: number): DayTotals {
   return {
     energy_kcal: totals.energy_kcal + recipe.nutrition.energy_kcal * servings,
     protein_g: totals.protein_g + recipe.nutrition.protein_g * servings,
@@ -128,7 +128,7 @@ export function eligibleRecipes(
  * Everything is expressed as a fraction of target, so nutrients measured in
  * milligrams do not drown out ones measured in grams.
  */
-function scoreDay(
+export function scoreDay(
   totals: DayTotals,
   targets: ResolvedTargets,
   servingScale: number,
@@ -186,7 +186,7 @@ function scoreRecipeDay(dayRecipes: Recipe[], targets: ResolvedTargets): number 
 }
 
 /** The portion multiplier that puts a day closest to its energy target. */
-function servingScaleFor(totals: DayTotals, targets: ResolvedTargets): number {
+export function servingScaleFor(totals: DayTotals, targets: ResolvedTargets): number {
   const energyTarget = targets.byId.energy_kcal?.value ?? 2000;
   if (totals.energy_kcal <= 0) return 1;
   const ideal = energyTarget / totals.energy_kcal;

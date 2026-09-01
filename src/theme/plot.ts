@@ -82,3 +82,28 @@ export function niceTicks(min: number, max: number, count = 5): number[] {
 
   return ticks;
 }
+
+/**
+ * A vertex on a radar chart.
+ *
+ * `magnitude` is in units of the reference ring: 1 sits exactly on it. Values
+ * beyond `ceiling` are clamped to the outer edge rather than allowed off the
+ * canvas - one dish with five times its share of sodium would otherwise
+ * squash every other axis on every other card into the middle.
+ *
+ * The first axis is at twelve o'clock and they run clockwise, so a chart is
+ * read in the order its axes are listed.
+ */
+export function radarPoint(
+  index: number,
+  count: number,
+  magnitude: number,
+  ceiling: number,
+  radius: number,
+  centre: number,
+): readonly [number, number] {
+  const angle = (Math.PI * 2 * index) / count - Math.PI / 2;
+  const clamped = Math.max(0, Math.min(magnitude, ceiling));
+  const distance = (clamped / ceiling) * radius;
+  return [centre + Math.cos(angle) * distance, centre + Math.sin(angle) * distance];
+}

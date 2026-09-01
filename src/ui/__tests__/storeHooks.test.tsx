@@ -90,3 +90,69 @@ describe('planMatchesLibrary', () => {
     expect(planMatchesLibrary(planWith([known, -1]))).toBe(false);
   });
 });
+
+/**
+ * Replacing a meal.
+ *
+ * The store's job here is narrow but easy to get wrong: swap the recipe,
+ * rescale the day, and throw away the grocery ticks, because a tick against a
+ * line the plan no longer buys is worse than no tick at all.
+ */
+describe('replaceMeal', () => {
+  function seededPlan() {
+    useGospel.setState({
+      answers: {
+        ...useGospel.getState().answers,
+        sex: 'male',
+        weight_kg: 78,
+        age_years: 31,
+        diet_type: 'iifym',
+        activity_level: 'moderate',
+        sun_zone: 'temperate',
+        cuisines: [],
+        maxDifficulty: 5,
+        maxMinutes: 240,
+        weeklyBudget: 120,
+      },
+      onboardingComplete: true,
+      cycleDays: 7,
+      mealsPerDay: ['breakfast', 'lunch', 'dinner'],
+      checked: {},
+    });
+    useGospel.getState().regeneratePlan(11);
+    return useGospel.getState().plan!;
+  }
+
+  it('puts the chosen recipe in the slot', () => {
+    const plan = seededPlan();
+    const before = plan.meals.find((m) => m.dayIndex === 1 && m.slot === 'dinner')!;
+    const other = recipes.find(
+      (recipe) => recipe.slot === 'dinner' && recipe.id !== before.recipeId,
+    )!;
+
+    useGospel.getState().replaceMeal(1, 'dinner', other.id);
+
+    const after = useGospel
+      .getState()
+      .plan!.meals.find((m) => m.dayIndex === 1 && m.slot === 'dinner')!;
+    expect(after.recipeId).toBe(other.id);
+  });
+
+  it('clears the grocery ticks, which the swap invalidated', () => {
+    const plan = seededPlan();
+    useGospel.setState({ checked: { '0:butter': true } });
+    const before = plan.meals.find((m) => m.dayIndex === 0 && m.slot === 'lunch')!;
+    const other = recipes.find(
+      (recipe) => recipe.slot === 'lunch' && recipe.id !== before.recipeId,
+    )!;
+
+    useGospel.getState().replaceMeal(0, 'lunch', other.id);
+    expect(useGospel.getState().checked).toEqual({});
+  });
+
+  it('ignores a recipe the library does not have', () => {
+    const plan = seededPlan();
+    useGospel.getState().replaceMeal(0, 'lunch', -1);
+    expect(useGospel.getState().plan!.meals).toEqual(plan.meals);
+  });
+});

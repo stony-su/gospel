@@ -27,6 +27,16 @@ interface PressProps {
   /** Hides the selection rule entirely, for surfaces that are not choices. */
   plain?: boolean;
   style?: StyleProp<ViewStyle>;
+  /**
+   * Lets the pressable take part in its parent's flex row.
+   *
+   * `style` is applied to the inner animated view, because that is the thing
+   * that scales on press and the padding has to scale with it. The Pressable
+   * outside it therefore stays `flex: 0 0 auto`, which is invisible until a
+   * caller puts one in a row and expects it to give way - at which point it
+   * silently overflows instead.
+   */
+  grow?: boolean;
   accessibilityLabel?: string;
   accessibilityRole?: 'button' | 'tab' | 'link' | 'checkbox' | 'radio';
   disabled?: boolean;
@@ -43,6 +53,7 @@ export function Press({
   accessibilityLabel,
   accessibilityRole = 'button',
   disabled = false,
+  grow = false,
 }: PressProps) {
   const motion = useMotion();
   const scale = useSharedValue(1);
@@ -86,6 +97,7 @@ export function Press({
       accessibilityRole={accessibilityRole}
       accessibilityLabel={accessibilityLabel}
       accessibilityState={{ selected, disabled }}
+      style={grow ? styles.grow : undefined}
     >
       <Animated.View style={[styles.row, style, body]}>
         <Animated.View style={[styles.lift, liftStyle]} />
@@ -99,6 +111,12 @@ export function Press({
 const styles = StyleSheet.create({
   row: {
     position: 'relative',
+  },
+  grow: {
+    flex: 1,
+    // Without this the pressable will not shrink below the width of the text
+    // inside it, which is the whole point of asking it to grow.
+    minWidth: 0,
   },
   lift: {
     position: 'absolute',
