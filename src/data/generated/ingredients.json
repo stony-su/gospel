@@ -661,17 +661,6 @@
    "unit_g": 100.0
   },
   {
-   "id": "badam pisin",
-   "name": "badam pisin",
-   "category": "other",
-   "aisle": "Other",
-   "price_per_kg": 5.0,
-   "shelf_life_days": 90,
-   "pack_g": 300,
-   "staple": false,
-   "unit_g": 100.0
-  },
-  {
    "id": "badia cilantro",
    "name": "Badia cilantro",
    "category": "herb_dry",
@@ -1092,6 +1081,17 @@
   {
    "id": "beef of cumin",
    "name": "beef of cumin",
+   "category": "meat_red",
+   "aisle": "Meat & Fish",
+   "price_per_kg": 11.0,
+   "shelf_life_days": 3,
+   "pack_g": 500,
+   "staple": false,
+   "unit_g": 100.0
+  },
+  {
+   "id": "beef ribs",
+   "name": "beef ribs",
    "category": "meat_red",
    "aisle": "Meat & Fish",
    "price_per_kg": 11.0,
@@ -2355,6 +2355,17 @@
    "unit_g": 100.0
   },
   {
+   "id": "cauliflower",
+   "name": "cauliflower",
+   "category": "produce_veg",
+   "aisle": "Produce",
+   "price_per_kg": 2.6,
+   "shelf_life_days": 10,
+   "pack_g": 500,
+   "staple": false,
+   "unit_g": 100.0
+  },
+  {
    "id": "cayenne pepper",
    "name": "cayenne pepper",
    "category": "spice",
@@ -2445,6 +2456,17 @@
   {
    "id": "chaat masala",
    "name": "Chaat masala",
+   "category": "other",
+   "aisle": "Other",
+   "price_per_kg": 5.0,
+   "shelf_life_days": 90,
+   "pack_g": 300,
+   "staple": false,
+   "unit_g": 100.0
+  },
+  {
+   "id": "chana dhal",
+   "name": "chana dhal",
    "category": "other",
    "aisle": "Other",
    "price_per_kg": 5.0,
@@ -2817,17 +2839,6 @@
    "unit_g": 100.0
   },
   {
-   "id": "chile",
-   "name": "chile",
-   "category": "other",
-   "aisle": "Other",
-   "price_per_kg": 5.0,
-   "shelf_life_days": 90,
-   "pack_g": 300,
-   "staple": false,
-   "unit_g": 100.0
-  },
-  {
    "id": "chile pepper",
    "name": "chile pepper",
    "category": "spice",
@@ -2938,6 +2949,17 @@
    "unit_g": 100.0
   },
   {
+   "id": "chilli",
+   "name": "ground chilli",
+   "category": "other",
+   "aisle": "Other",
+   "price_per_kg": 5.0,
+   "shelf_life_days": 90,
+   "pack_g": 300,
+   "staple": false,
+   "unit_g": 100.0
+  },
+  {
    "id": "chilli flakes",
    "name": "chilli flakes",
    "category": "other",
@@ -2967,6 +2989,17 @@
    "price_per_kg": 5.0,
    "shelf_life_days": 90,
    "pack_g": 300,
+   "staple": false,
+   "unit_g": 100.0
+  },
+  {
+   "id": "chinese cabbage",
+   "name": "Chinese cabbage",
+   "category": "produce_leafy",
+   "aisle": "Produce",
+   "price_per_kg": 6.0,
+   "shelf_life_days": 5,
+   "pack_g": 150,
    "staple": false,
    "unit_g": 100.0
   },
@@ -3719,6 +3752,17 @@
    "unit_g": 100.0
   },
   {
+   "id": "corn cob",
+   "name": "corn cob",
+   "category": "produce_veg",
+   "aisle": "Produce",
+   "price_per_kg": 2.6,
+   "shelf_life_days": 10,
+   "pack_g": 500,
+   "staple": false,
+   "unit_g": 100.0
+  },
+  {
    "id": "corn cobs",
    "name": "corn cobs",
    "category": "produce_veg",
@@ -4277,6 +4321,17 @@
    "shelf_life_days": 365,
    "pack_g": 1000,
    "staple": true,
+   "unit_g": 100.0
+  },
+  {
+   "id": "curcuma",
+   "name": "ground curcuma",
+   "category": "other",
+   "aisle": "Other",
+   "price_per_kg": 5.0,
+   "shelf_life_days": 90,
+   "pack_g": 300,
+   "staple": false,
    "unit_g": 100.0
   },
   {
@@ -5182,6 +5237,17 @@
    "unit_g": 100.0
   },
   {
+   "id": "few drops rum",
+   "name": "few drops rum",
+   "category": "alcohol",
+   "aisle": "Drinks",
+   "price_per_kg": 9.0,
+   "shelf_life_days": 90,
+   "pack_g": 750,
+   "staple": false,
+   "unit_g": 100.0
+  },
+  {
    "id": "fideua",
    "name": "Fideua",
    "category": "other",
@@ -5809,17 +5875,6 @@
    "unit_g": 100.0
   },
   {
-   "id": "full-fat milk",
-   "name": "full-fat milk",
-   "category": "dairy_milk",
-   "aisle": "Dairy",
-   "price_per_kg": 1.3,
-   "shelf_life_days": 7,
-   "pack_g": 1000,
-   "staple": false,
-   "unit_g": 100.0
-  },
-  {
    "id": "galangal root",
    "name": "galangal root",
    "category": "other",
@@ -6081,17 +6136,6 @@
    "shelf_life_days": 90,
    "pack_g": 750,
    "staple": false,
-   "unit_g": 100.0
-  },
-  {
-   "id": "glass water",
-   "name": "glass cold water",
-   "category": "water",
-   "aisle": "Free",
-   "price_per_kg": 0.0,
-   "shelf_life_days": 9999,
-   "pack_g": 1000,
-   "staple": true,
    "unit_g": 100.0
   },
   {
@@ -6515,17 +6559,6 @@
   {
    "id": "green herbs",
    "name": "green herbs",
-   "category": "other",
-   "aisle": "Other",
-   "price_per_kg": 5.0,
-   "shelf_life_days": 90,
-   "pack_g": 300,
-   "staple": false,
-   "unit_g": 100.0
-  },
-  {
-   "id": "green mangoes",
-   "name": "medium-sized green mangoes",
    "category": "other",
    "aisle": "Other",
    "price_per_kg": 5.0,
@@ -7195,17 +7228,6 @@
    "unit_g": 100.0
   },
   {
-   "id": "indian sarsaparilla root",
-   "name": "Indian sarsaparilla root",
-   "category": "other",
-   "aisle": "Other",
-   "price_per_kg": 5.0,
-   "shelf_life_days": 90,
-   "pack_g": 300,
-   "staple": false,
-   "unit_g": 100.0
-  },
-  {
    "id": "injera",
    "name": "Injera",
    "category": "other",
@@ -7533,17 +7555,6 @@
    "shelf_life_days": 180,
    "pack_g": 300,
    "staple": true,
-   "unit_g": 100.0
-  },
-  {
-   "id": "khova",
-   "name": "khova",
-   "category": "other",
-   "aisle": "Other",
-   "price_per_kg": 5.0,
-   "shelf_life_days": 90,
-   "pack_g": 300,
-   "staple": false,
    "unit_g": 100.0
   },
   {
@@ -8196,17 +8207,6 @@
    "unit_g": 100.0
   },
   {
-   "id": "lots of ice",
-   "name": "Lots of ice",
-   "category": "water",
-   "aisle": "Free",
-   "price_per_kg": 0.0,
-   "shelf_life_days": 9999,
-   "pack_g": 1000,
-   "staple": true,
-   "unit_g": 100.0
-  },
-  {
    "id": "lovage",
    "name": "Lovage",
    "category": "other",
@@ -8702,6 +8702,17 @@
    "unit_g": 100.0
   },
   {
+   "id": "mineral water",
+   "name": "Mineral water",
+   "category": "water",
+   "aisle": "Free",
+   "price_per_kg": 0.0,
+   "shelf_life_days": 9999,
+   "pack_g": 1000,
+   "staple": true,
+   "unit_g": 100.0
+  },
+  {
    "id": "mint",
    "name": "fresh mint",
    "category": "herb_dry",
@@ -8714,7 +8725,7 @@
   },
   {
    "id": "mint leaves",
-   "name": "fresh mint leaves",
+   "name": "Dried mint leaves",
    "category": "herb_dry",
    "aisle": "Spices & Herbs",
    "price_per_kg": 45.0,
@@ -8968,6 +8979,17 @@
   {
    "id": "mustard",
    "name": "prepared mustard",
+   "category": "condiment",
+   "aisle": "Condiments",
+   "price_per_kg": 5.5,
+   "shelf_life_days": 180,
+   "pack_g": 300,
+   "staple": true,
+   "unit_g": 100.0
+  },
+  {
+   "id": "mustard seed",
+   "name": "mustard seed",
    "category": "condiment",
    "aisle": "Condiments",
    "price_per_kg": 5.5,
@@ -9362,6 +9384,17 @@
    "unit_g": 150
   },
   {
+   "id": "onion chives",
+   "name": "onion chives",
+   "category": "herb_dry",
+   "aisle": "Spices & Herbs",
+   "price_per_kg": 45.0,
+   "shelf_life_days": 550,
+   "pack_g": 15,
+   "staple": true,
+   "unit_g": 100.0
+  },
+  {
    "id": "onion confit",
    "name": "onion confit",
    "category": "produce_root",
@@ -9424,17 +9457,6 @@
    "price_per_kg": 1.6,
    "shelf_life_days": 30,
    "pack_g": 1000,
-   "staple": false,
-   "unit_g": 100.0
-  },
-  {
-   "id": "or 4 calamansi",
-   "name": "or 4 calamansi",
-   "category": "other",
-   "aisle": "Other",
-   "price_per_kg": 5.0,
-   "shelf_life_days": 90,
-   "pack_g": 300,
    "staple": false,
    "unit_g": 100.0
   },
@@ -11991,6 +12013,17 @@
    "unit_g": 100.0
   },
   {
+   "id": "saba",
+   "name": "saba",
+   "category": "other",
+   "aisle": "Other",
+   "price_per_kg": 5.0,
+   "shelf_life_days": 90,
+   "pack_g": 300,
+   "staple": false,
+   "unit_g": 100.0
+  },
+  {
    "id": "sachet fruit-flavoured jelly",
    "name": "/sachet fruit-flavoured jelly",
    "category": "other",
@@ -13323,7 +13356,7 @@
   },
   {
    "id": "spices",
-   "name": "Spices",
+   "name": "spices",
    "category": "other",
    "aisle": "Other",
    "price_per_kg": 5.0,
@@ -13384,6 +13417,17 @@
    "price_per_kg": 1.3,
    "shelf_life_days": 7,
    "pack_g": 1000,
+   "staple": false,
+   "unit_g": 100.0
+  },
+  {
+   "id": "split green chillies",
+   "name": "split green chillies",
+   "category": "other",
+   "aisle": "Other",
+   "price_per_kg": 5.0,
+   "shelf_life_days": 90,
+   "pack_g": 300,
    "staple": false,
    "unit_g": 100.0
   },
@@ -15425,17 +15469,6 @@
   {
    "id": "vegetables",
    "name": "vegetables",
-   "category": "other",
-   "aisle": "Other",
-   "price_per_kg": 5.0,
-   "shelf_life_days": 90,
-   "pack_g": 300,
-   "staple": false,
-   "unit_g": 100.0
-  },
-  {
-   "id": "very spicy chile peppers",
-   "name": "Very spicy chile peppers",
    "category": "other",
    "aisle": "Other",
    "price_per_kg": 5.0,

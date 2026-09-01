@@ -73,7 +73,7 @@ NOT_A_MEAL = re.compile(
     r"\b(chai|lassi|horchata|atole|kombucha|sharbat|eggnog|boba|ayran|kvass|"
     # "Soda" only where it is the drink rather than the raising agent, which
     # is to say at the end of the name: Pepper Soda, not Soda Bread.
-    r"agua fresca|hot chocolate)\b|\bsoda$|"
+    r"agua fresca|hot chocolate|xocolatl|jigarthanda|drink)\b|\bsoda$|\bjuice$|"
     r"\b(tea|coffee|cocktail|martini|liqueur|punch|smoothie|milkshake|lemonade|"
     r"cordial|syrup|wine|beer|cider|sangria|margarita|mojito|julep|toddy|"
     r"marinade|spice (?:rub|mix|blend)|seasoning (?:mix|blend|salt)|rub\b|"

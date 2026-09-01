@@ -330,10 +330,6 @@ export const recipeImages: Record<string, RecipeImageAssets> = {
     hero: require('../../assets/recipes/caesar-salad.jpg'),
     thumb: require('../../assets/recipes/caesar-salad-thumb.jpg'),
   },
-  'calamansi-juice-drink': {
-    hero: require('../../assets/recipes/calamansi-juice-drink.jpg'),
-    thumb: require('../../assets/recipes/calamansi-juice-drink-thumb.jpg'),
-  },
   'callaloo': {
     hero: require('../../assets/recipes/callaloo.jpg'),
     thumb: require('../../assets/recipes/callaloo-thumb.jpg'),
@@ -918,10 +914,6 @@ export const recipeImages: Record<string, RecipeImageAssets> = {
     hero: require('../../assets/recipes/green-eggs-and-ham.jpg'),
     thumb: require('../../assets/recipes/green-eggs-and-ham-thumb.jpg'),
   },
-  'green-mango-and-cumin-drink': {
-    hero: require('../../assets/recipes/green-mango-and-cumin-drink.jpg'),
-    thumb: require('../../assets/recipes/green-mango-and-cumin-drink-thumb.jpg'),
-  },
   'grilled-aubergine': {
     hero: require('../../assets/recipes/grilled-aubergine.jpg'),
     thumb: require('../../assets/recipes/grilled-aubergine-thumb.jpg'),
@@ -1045,10 +1037,6 @@ export const recipeImages: Record<string, RecipeImageAssets> = {
   'japanese-curry': {
     hero: require('../../assets/recipes/japanese-curry.jpg'),
     thumb: require('../../assets/recipes/japanese-curry-thumb.jpg'),
-  },
-  'jigarthanda-milk': {
-    hero: require('../../assets/recipes/jigarthanda-milk.jpg'),
-    thumb: require('../../assets/recipes/jigarthanda-milk-thumb.jpg'),
   },
   'jollof-rice': {
     hero: require('../../assets/recipes/jollof-rice.jpg'),
@@ -1358,6 +1346,10 @@ export const recipeImages: Record<string, RecipeImageAssets> = {
     hero: require('../../assets/recipes/new-england-potato-salad.jpg'),
     thumb: require('../../assets/recipes/new-england-potato-salad-thumb.jpg'),
   },
+  'nilagang-baka': {
+    hero: require('../../assets/recipes/nilagang-baka.jpg'),
+    thumb: require('../../assets/recipes/nilagang-baka-thumb.jpg'),
+  },
   'no-knead-bread': {
     hero: require('../../assets/recipes/no-knead-bread.jpg'),
     thumb: require('../../assets/recipes/no-knead-bread-thumb.jpg'),
@@ -1409,6 +1401,10 @@ export const recipeImages: Record<string, RecipeImageAssets> = {
   'pain-au-levain-naturel': {
     hero: require('../../assets/recipes/pain-au-levain-naturel.jpg'),
     thumb: require('../../assets/recipes/pain-au-levain-naturel-thumb.jpg'),
+  },
+  'palatschinken': {
+    hero: require('../../assets/recipes/palatschinken.jpg'),
+    thumb: require('../../assets/recipes/palatschinken-thumb.jpg'),
   },
   'pan-con-tomate': {
     hero: require('../../assets/recipes/pan-con-tomate.jpg'),
@@ -1526,6 +1522,10 @@ export const recipeImages: Record<string, RecipeImageAssets> = {
     hero: require('../../assets/recipes/potage-parmentier.jpg'),
     thumb: require('../../assets/recipes/potage-parmentier-thumb.jpg'),
   },
+  'potato-and-cauliflower-curry': {
+    hero: require('../../assets/recipes/potato-and-cauliflower-curry.jpg'),
+    thumb: require('../../assets/recipes/potato-and-cauliflower-curry-thumb.jpg'),
+  },
   'potato-and-sausage-casserole': {
     hero: require('../../assets/recipes/potato-and-sausage-casserole.jpg'),
     thumb: require('../../assets/recipes/potato-and-sausage-casserole-thumb.jpg'),
@@ -1537,6 +1537,10 @@ export const recipeImages: Record<string, RecipeImageAssets> = {
   'potato-casserole': {
     hero: require('../../assets/recipes/potato-casserole.jpg'),
     thumb: require('../../assets/recipes/potato-casserole-thumb.jpg'),
+  },
+  'potato-curry': {
+    hero: require('../../assets/recipes/potato-curry.jpg'),
+    thumb: require('../../assets/recipes/potato-curry-thumb.jpg'),
   },
   'potato-gratin': {
     hero: require('../../assets/recipes/potato-gratin.jpg'),
@@ -1989,10 +1993,6 @@ export const recipeImages: Record<string, RecipeImageAssets> = {
   'white-house-honey-ale': {
     hero: require('../../assets/recipes/white-house-honey-ale.jpg'),
     thumb: require('../../assets/recipes/white-house-honey-ale-thumb.jpg'),
-  },
-  'xocolatl': {
-    hero: require('../../assets/recipes/xocolatl.jpg'),
-    thumb: require('../../assets/recipes/xocolatl-thumb.jpg'),
   },
   'yakitori': {
     hero: require('../../assets/recipes/yakitori.jpg'),

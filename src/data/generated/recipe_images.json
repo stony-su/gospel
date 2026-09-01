@@ -692,15 +692,6 @@
   "license_url": "https://creativecommons.org/licenses/by/2.0/",
   "source_url": "https://commons.wikimedia.org/wiki/File:Caesar_salad_%282%29.jpg"
  },
- "calamansi-juice-drink": {
-  "file": "calamansi-juice-drink.jpg",
-  "thumb": "calamansi-juice-drink-thumb.jpg",
-  "commons_file": "Calamansi_juice_(Filipino_lemonade).jpg",
-  "author": "Obsidian Soul",
-  "license": "CC0",
-  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Calamansi_juice_%28Filipino_lemonade%29.jpg"
- },
  "callaloo": {
   "file": "callaloo.jpg",
   "thumb": "callaloo-thumb.jpg",
@@ -2015,15 +2006,6 @@
   "license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
   "source_url": "https://commons.wikimedia.org/wiki/File:USMC-120302-M-PG598-001.jpg"
  },
- "green-mango-and-cumin-drink": {
-  "file": "green-mango-and-cumin-drink.jpg",
-  "thumb": "green-mango-and-cumin-drink-thumb.jpg",
-  "commons_file": "Keri_Ka_Sharbat.JPG",
-  "author": "Miansari66",
-  "license": "CC0",
-  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Keri_Ka_Sharbat.JPG"
- },
  "grilled-aubergine": {
   "file": "grilled-aubergine.jpg",
   "thumb": "grilled-aubergine-thumb.jpg",
@@ -2302,15 +2284,6 @@
   "license": "CC0",
   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "source_url": "https://commons.wikimedia.org/wiki/File:Beef_curry_rice_003.jpg"
- },
- "jigarthanda-milk": {
-  "file": "jigarthanda-milk.jpg",
-  "thumb": "jigarthanda-milk-thumb.jpg",
-  "commons_file": "HomemadeJigarthanda.jpg",
-  "author": "Safeena Haslyn",
-  "license": "CC BY-SA 4.0",
-  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-  "source_url": "https://commons.wikimedia.org/wiki/File:HomemadeJigarthanda.jpg"
  },
  "jollof-rice": {
   "file": "jollof-rice.jpg",
@@ -3005,6 +2978,15 @@
   "license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
   "source_url": "https://commons.wikimedia.org/wiki/File:Homemade_potato_salad.jpg"
  },
+ "nilagang-baka": {
+  "file": "nilagang-baka.jpg",
+  "thumb": "nilagang-baka-thumb.jpg",
+  "commons_file": "NilagangBaka.jpg",
+  "author": "Televido",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source_url": "https://commons.wikimedia.org/wiki/File:NilagangBaka.jpg"
+ },
  "no-knead-bread": {
   "file": "no-knead-bread.jpg",
   "thumb": "no-knead-bread-thumb.jpg",
@@ -3121,6 +3103,15 @@
   "license": "Public domain",
   "license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
   "source_url": "https://commons.wikimedia.org/wiki/File:Mother-culture.png"
+ },
+ "palatschinken": {
+  "file": "palatschinken.jpg",
+  "thumb": "palatschinken-thumb.jpg",
+  "commons_file": "Pfannkuchen_mit_Zucker.jpg",
+  "author": "Jan Homann",
+  "license": "Public domain",
+  "license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Pfannkuchen_mit_Zucker.jpg"
  },
  "pan-con-tomate": {
   "file": "pan-con-tomate.jpg",
@@ -3383,6 +3374,15 @@
   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
   "source_url": "https://commons.wikimedia.org/wiki/File:Vichyssoise.jpg"
  },
+ "potato-and-cauliflower-curry": {
+  "file": "potato-and-cauliflower-curry.jpg",
+  "thumb": "potato-and-cauliflower-curry-thumb.jpg",
+  "commons_file": "Aloo_gobi.jpg",
+  "author": "Unknown",
+  "license": "CC BY-SA 2.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Aloo_gobi.jpg"
+ },
  "potato-and-sausage-casserole": {
   "file": "potato-and-sausage-casserole.jpg",
   "thumb": "potato-and-sausage-casserole-thumb.jpg",
@@ -3409,6 +3409,15 @@
   "license": "CC BY 2.0",
   "license_url": "https://creativecommons.org/licenses/by/2.0/",
   "source_url": "https://commons.wikimedia.org/wiki/File:Rakott_krumpli.jpg"
+ },
+ "potato-curry": {
+  "file": "potato-curry.jpg",
+  "thumb": "potato-curry-thumb.jpg",
+  "commons_file": "An_Aesthetic_Potato_Masala.jpg",
+  "author": "Thamizhpparithi Maari",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source_url": "https://commons.wikimedia.org/wiki/File:An_Aesthetic_Potato_Masala.jpg"
  },
  "potato-gratin": {
   "file": "potato-gratin.jpg",
@@ -4426,15 +4435,6 @@
   "license": "Public domain",
   "license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
   "source_url": "https://commons.wikimedia.org/wiki/File:White_House_Honey_Ale.jpg"
- },
- "xocolatl": {
-  "file": "xocolatl.jpg",
-  "thumb": "xocolatl-thumb.jpg",
-  "commons_file": "Aztec_shared_meal.jpg",
-  "author": "Unknown",
-  "license": "Public domain",
-  "license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
-  "source_url": "https://commons.wikimedia.org/wiki/File:Aztec_shared_meal.jpg"
  },
  "yakitori": {
   "file": "yakitori.jpg",

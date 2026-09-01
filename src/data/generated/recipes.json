@@ -14434,111 +14434,6 @@
   "nutrition_coverage": 0.975
  },
  {
-  "id": 122134386,
-  "slug": "xocolatl",
-  "name": "Xocolatl",
-  "description": "Aztec cuisine is the cuisine of the former Aztec Empire and the Nahua peoples of the Valley of Mexico prior to European contact in 1519.",
-  "image": {
-   "file": "xocolatl.jpg",
-   "thumb": "xocolatl-thumb.jpg",
-   "author": "Unknown",
-   "license": "Public domain",
-   "license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
-   "source_url": "https://commons.wikimedia.org/wiki/File:Aztec_shared_meal.jpg"
-  },
-  "minutes": 36,
-  "prep_minutes": 12,
-  "servings": 4,
-  "cuisine": "american",
-  "slot": "dinner",
-  "difficulty": 3,
-  "equipment": [
-   "Blender",
-   "Skillet",
-   "Saucepan"
-  ],
-  "cost_per_serving": 2.728,
-  "ingredients": [
-   {
-    "id": "cornmeal",
-    "label": "½ cup cornmeal",
-    "quantity": 0.5,
-    "quantity_text": "0.5 cup",
-    "grams": 62.8
-   },
-   {
-    "id": "very spicy chile peppers",
-    "label": "Very spicy chile peppers (e.g. habaneros)",
-    "quantity": null,
-    "quantity_text": "to taste",
-    "grams": 180.0
-   },
-   {
-    "id": "vanilla extract",
-    "label": "Vanilla extract (or vanilla beans, but extract is more convenient)",
-    "quantity": null,
-    "quantity_text": "to taste",
-    "grams": 48.0
-   },
-   {
-    "id": "spices",
-    "label": "Spices such as cloves, cinnamon, or annatto",
-    "quantity": null,
-    "quantity_text": "to taste",
-    "grams": 180.0
-   },
-   {
-    "id": "honey",
-    "label": "Honey or sugar",
-    "quantity": null,
-    "quantity_text": "to taste",
-    "grams": 48.0
-   },
-   {
-    "id": "lots of ice",
-    "label": "Lots of ice",
-    "quantity": null,
-    "quantity_text": "to taste",
-    "grams": 180.0
-   }
-  ],
-  "instructions": [
-   "Toast cornmeal in dry skillet over medium-high heat, stirring frequently. When cornmeal turns a dark tan or light brown color, add 2 cups water, stir, and remove from heat. Let cornmeal soak in water overnight.",
-   "Grind cornmeal in blender until it forms a smooth paste. Filter or strain the paste to remove the coarse corn mush. The goal is to make a smooth but thick gel to be used as an emulsifier and thickener. It may be possible to substitute something made of cornstarch instead. Discard the mush and set aside the strained gel.",
-   "Bring 2 cups of water to a boil in a saucepan . Meanwhile, cut open the chili peppers and remove the seeds. Add the peppers to the boiling water and boil them until the amount of liquid is reduced to 1 cup. The liquid should be pale yellow and taste very spicy. Discard peppers and set aside liquid.",
-   "Add chocolate and 1 cup water to saucepan. Stir frequently over medium heat until chocolate is melted. Slowly add cornmeal gel (you might want to decant it so that any settled lumps or grit remain at the bottom). Add vanilla, spices, and sweetener if desired. Slowly add pepper liquid until the desired spiciness is reached.",
-   "Transfer mixture to blender , add lots of ice cubes, and blend until smooth and frothy.",
-   "The Aztec Xocoatl, the Spanish Chocolatl, the English Chocolate."
-  ],
-  "method_source": {
-   "kind": "wikibooks",
-   "url": "https://en.wikibooks.org/wiki/Cookbook:Xocolatl_%28Aztec_Chocolate_Beverage%29",
-   "license": "CC BY-SA 4.0"
-  },
-  "reference_url": "https://en.wikipedia.org/wiki/Xocolatl",
-  "diet": {
-   "vegan": true,
-   "vegetarian": true,
-   "paleo": false,
-   "iifym": true,
-   "keto": false,
-   "carnivore": false
-  },
-  "nutrition": {
-   "energy_kcal": 433.2,
-   "protein_g": 9.0,
-   "fat_g": 9.1,
-   "saturated_fat_g": 3.4,
-   "cholesterol_mg": 0.0,
-   "sodium_mg": 67.9,
-   "carbohydrate_g": 86.1,
-   "fiber_g": 21.0,
-   "sugar_g": 33.6
-  },
-  "nutrition_source": "fdc",
-  "nutrition_coverage": 1.0
- },
- {
   "id": 242891919,
   "slug": "yeung-chow-fried-rice",
   "name": "Yeung Chow Fried Rice",
@@ -22445,6 +22340,107 @@
    "carbohydrate_g": 109.5,
    "fiber_g": 25.4,
    "sugar_g": 1.0
+  },
+  "nutrition_source": "fdc",
+  "nutrition_coverage": 1.0
+ },
+ {
+  "id": 173121276,
+  "slug": "palatschinken",
+  "name": "Palatschinken",
+  "description": "Palatschinke is a thin crêpe -like variety of pancake of Greco-Roman origin.",
+  "image": {
+   "file": "palatschinken.jpg",
+   "thumb": "palatschinken-thumb.jpg",
+   "author": "Jan Homann",
+   "license": "Public domain",
+   "license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Pfannkuchen_mit_Zucker.jpg"
+  },
+  "minutes": 20,
+  "prep_minutes": 6,
+  "servings": 4,
+  "cuisine": "eastern_european",
+  "slot": "snack",
+  "difficulty": 2,
+  "equipment": [],
+  "cost_per_serving": 0.725,
+  "ingredients": [
+   {
+    "id": "milk",
+    "label": "250 ml milk",
+    "quantity": 250.0,
+    "quantity_text": "250 ml",
+    "grams": 250.0
+   },
+   {
+    "id": "flour",
+    "label": "150 g flour ( wheat or spelt )",
+    "quantity": 150.0,
+    "quantity_text": "150 g",
+    "grams": 150.0
+   },
+   {
+    "id": "eggs",
+    "label": "3 eggs",
+    "quantity": 3.0,
+    "quantity_text": "3",
+    "grams": 165.0
+   },
+   {
+    "id": "salt",
+    "label": "1 pinch salt",
+    "quantity": 1.0,
+    "quantity_text": "1 pinch",
+    "grams": 4.5
+   },
+   {
+    "id": "few drops rum",
+    "label": "A few drops rum (optional)",
+    "quantity": null,
+    "quantity_text": "to taste",
+    "grams": 180.0
+   },
+   {
+    "id": "mineral water",
+    "label": "Mineral water (optional, makes the dough more fluffy)",
+    "quantity": null,
+    "quantity_text": "to taste",
+    "grams": 250.0
+   }
+  ],
+  "instructions": [
+   "Mix the flour with the milk, stirring thoroughly. Mix in the eggs one-by-one, then stir in the salt and rum. If desired, thin the batter with a bit of mineral water.",
+   "Heat the pan well. Add a drop of oil and rub it over the pan with a kitchen towel .",
+   "Ladle a dipperful of the batter into the pan, tilting the pan so that the batter spreads as evenly as possible over the whole pan. Alternatively, you can accomplish this by using a special wooden tool used to spread crêpes.",
+   "Let cook about 45 seconds to 1 minute until the top of the palatschinke is dry.",
+   "Flip the pancake over, and allow it to brown for about 30 seconds on the other side. Remove from the pan, and set aside.",
+   "Repeat the cooking process until you have used up all the batter."
+  ],
+  "method_source": {
+   "kind": "wikibooks",
+   "url": "https://en.wikibooks.org/wiki/Cookbook:Palatschinken_%28Czech/Austrian_Crepes%29",
+   "license": "CC BY-SA 4.0"
+  },
+  "reference_url": "https://en.wikipedia.org/wiki/Palatschinken",
+  "diet": {
+   "vegan": false,
+   "vegetarian": true,
+   "paleo": false,
+   "iifym": true,
+   "keto": false,
+   "carnivore": false
+  },
+  "nutrition": {
+   "energy_kcal": 354.2,
+   "protein_g": 12.8,
+   "fat_g": 7.0,
+   "saturated_fat_g": 2.5,
+   "cholesterol_mg": 160.3,
+   "sodium_mg": 561.8,
+   "carbohydrate_g": 33.5,
+   "fiber_g": 4.0,
+   "sugar_g": 6.6
   },
   "nutrition_source": "fdc",
   "nutrition_coverage": 1.0
@@ -57929,111 +57925,6 @@
   "nutrition_coverage": 1.0
  },
  {
-  "id": 79000954,
-  "slug": "green-mango-and-cumin-drink",
-  "name": "Green Mango and Cumin Drink",
-  "description": "",
-  "image": {
-   "file": "green-mango-and-cumin-drink.jpg",
-   "thumb": "green-mango-and-cumin-drink-thumb.jpg",
-   "author": "Miansari66",
-   "license": "CC0",
-   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-   "source_url": "https://commons.wikimedia.org/wiki/File:Keri_Ka_Sharbat.JPG"
-  },
-  "minutes": 97,
-  "prep_minutes": 32,
-  "servings": 4,
-  "cuisine": "south_asian",
-  "slot": "dinner",
-  "difficulty": 2,
-  "equipment": [],
-  "cost_per_serving": 0.771,
-  "ingredients": [
-   {
-    "id": "green mangoes",
-    "label": "4 medium-sized green mangoes",
-    "quantity": 4.0,
-    "quantity_text": "4",
-    "grams": 360.0
-   },
-   {
-    "id": "sugar",
-    "label": "½ cup (120 ml ) sugar",
-    "quantity": 0.5,
-    "quantity_text": "0.5 cup",
-    "grams": 100.7
-   },
-   {
-    "id": "rock salt",
-    "label": "2 level tablespoons (30 ml) rock salt",
-    "quantity": 2.0,
-    "quantity_text": "2 tablespoons",
-    "grams": 36.0
-   },
-   {
-    "id": "cumin seeds",
-    "label": "1 level teaspoon (5 ml) roasted cumin seeds",
-    "quantity": 1.0,
-    "quantity_text": "1 teaspoon",
-    "grams": 2.5
-   },
-   {
-    "id": "chile",
-    "label": "1 roasted chile (optional)",
-    "quantity": 1.0,
-    "quantity_text": "1",
-    "grams": 8.0
-   },
-   {
-    "id": "mint leaves",
-    "label": "1 handful of fresh mint leaves",
-    "quantity": 1.0,
-    "quantity_text": "1 handful",
-    "grams": 1.0
-   }
-  ],
-  "instructions": [
-   "Cut mangoes into 3 slices each—2 from either side of the seed and 1 with the seed in it.",
-   "Pressure cook mangoes with one small cup of water. Turn off heat as soon as the pressure cooker whistles once.",
-   "Open cooker after 5–7 minutes and leave to cool.",
-   "Grind sugar and roasted cumin seeds using a food processor . If using chilli, grind that too.",
-   "Mince mint leaves in a food processor.",
-   "When cool, squeeze pulp of mangoes into a blender using hands. Discard skin and seeds.",
-   "Purée mango pulp until smooth.",
-   "Add ground sugar, rock salt, roasted cumin seeds, chilli powder, and minced mint leaves. Blend well.",
-   "Store in clean plastic or glass bottle. Refrigerate.",
-   "To serve, add 4–5 teaspoons of the mango mixture to a glass of water. Enjoy!"
-  ],
-  "method_source": {
-   "kind": "wikibooks",
-   "url": "https://en.wikibooks.org/wiki/Cookbook:Green_Mango_and_Cumin_Drink_%28Aam_Panna%29",
-   "license": "CC BY-SA 4.0"
-  },
-  "reference_url": null,
-  "diet": {
-   "vegan": true,
-   "vegetarian": true,
-   "paleo": true,
-   "iifym": true,
-   "keto": false,
-   "carnivore": false
-  },
-  "nutrition": {
-   "energy_kcal": 223.3,
-   "protein_g": 1.0,
-   "fat_g": 7.8,
-   "saturated_fat_g": 4.7,
-   "cholesterol_mg": 19.4,
-   "sodium_mg": 103.1,
-   "carbohydrate_g": 39.3,
-   "fiber_g": 1.6,
-   "sugar_g": 37.6
-  },
-  "nutrition_source": "fdc",
-  "nutrition_coverage": 1.0
- },
- {
   "id": 25032685,
   "slug": "indian-butter-chicken",
   "name": "Indian Butter Chicken",
@@ -58279,159 +58170,6 @@
   },
   "nutrition_source": "fdc",
   "nutrition_coverage": 1.0
- },
- {
-  "id": 96383195,
-  "slug": "jigarthanda-milk",
-  "name": "Jigarthanda Milk",
-  "description": "",
-  "image": {
-   "file": "jigarthanda-milk.jpg",
-   "thumb": "jigarthanda-milk-thumb.jpg",
-   "author": "Safeena Haslyn",
-   "license": "CC BY-SA 4.0",
-   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-   "source_url": "https://commons.wikimedia.org/wiki/File:HomemadeJigarthanda.jpg"
-  },
-  "minutes": 112,
-  "prep_minutes": 37,
-  "servings": 4,
-  "cuisine": "south_asian",
-  "slot": "dinner",
-  "difficulty": 3,
-  "equipment": [],
-  "cost_per_serving": 1.126,
-  "ingredients": [
-   {
-    "id": "badam pisin",
-    "label": "2 tbsp badam pisin ( almond gum )",
-    "quantity": 2.0,
-    "quantity_text": "2 tbsp",
-    "grams": 21.0
-   },
-   {
-    "id": "water",
-    "label": "1 cup (250 ml ) water",
-    "quantity": 1.0,
-    "quantity_text": "1 cup",
-    "grams": 237.0
-   },
-   {
-    "id": "indian sarsaparilla root",
-    "label": "25 g Indian sarsaparilla root",
-    "quantity": 25.0,
-    "quantity_text": "25 g",
-    "grams": 25.0
-   },
-   {
-    "id": "water",
-    "label": "300 ml water",
-    "quantity": 300.0,
-    "quantity_text": "300 ml",
-    "grams": 300.0
-   },
-   {
-    "id": "sugar",
-    "label": "150 g sugar",
-    "quantity": 150.0,
-    "quantity_text": "150 g",
-    "grams": 150.0
-   },
-   {
-    "id": "full-fat milk",
-    "label": "1 ½ L full-fat milk",
-    "quantity": 1.5,
-    "quantity_text": "1.5 l",
-    "grams": 1500.0
-   },
-   {
-    "id": "sugar",
-    "label": "¼ cup sugar",
-    "quantity": 0.25,
-    "quantity_text": "0.25 cup",
-    "grams": 50.4
-   },
-   {
-    "id": "sugar",
-    "label": "2 tbsp sugar",
-    "quantity": 2.0,
-    "quantity_text": "2 tbsp",
-    "grams": 25.5
-   },
-   {
-    "id": "khova",
-    "label": "3 tbsp khova (milk solids)",
-    "quantity": 3.0,
-    "quantity_text": "3 tbsp",
-    "grams": 31.5
-   },
-   {
-    "id": "cream",
-    "label": "½ cup cream",
-    "quantity": 0.5,
-    "quantity_text": "0.5 cup",
-    "grams": 118.5
-   },
-   {
-    "id": "full-fat milk",
-    "label": "1 L full-fat milk",
-    "quantity": 1.0,
-    "quantity_text": "1 l",
-    "grams": 1000.0
-   },
-   {
-    "id": "sugar",
-    "label": "¼ cup sugar",
-    "quantity": 0.25,
-    "quantity_text": "0.25 cup",
-    "grams": 50.4
-   }
-  ],
-  "instructions": [
-   "Wash and soak almond gum in the water for 3–4 hours or overnight. It should expand in size and form a jelly.",
-   "Keep it in an airtight container in the fridge.",
-   "Wash and crush the sarsaparilla root.",
-   "Bring the water to a boil in a saucepan , then add the sarsaparilla.",
-   "Reduce the heat, and simmer until the water is reduced by half.",
-   "Add the sugar, and cook until you get a one-string syrup .",
-   "Cool the syrup , then store in air-tight container.",
-   "Boil the milk, stirring continuously until it is frothy. Collect the malai (thick cream) that forms.",
-   "Beat the fresh cream, and stir it into the milk. Reduce the heat to medium-low.",
-   "Stir in the ¼ cup sugar until completely dissolved.",
-   "Add the milk solids, and mix well. Let cool slightly.",
-   "Heat the 2 tbsp sugar in a heavy-bottomed saucepan over low heat until it melts and caramelizes .",
-   "Quickly and carefully add the hot milk mixture. It will sizzle. If the caramel seizes, keep heating it and it will melt in slowly.",
-   "Let cool, then pour into an airtight container and cover it with cling wrap . Freeze for 4–5 hours.",
-   "Once it sets, beat it well using a whisk or a blender . Repeat 3–4 times for creamier ice cream.",
-   "Freeze for 5–6 hours."
-  ],
-  "method_source": {
-   "kind": "wikibooks",
-   "url": "https://en.wikibooks.org/wiki/Cookbook:Jigarthanda_Milk",
-   "license": "CC BY-SA 4.0"
-  },
-  "reference_url": null,
-  "diet": {
-   "vegan": false,
-   "vegetarian": true,
-   "paleo": false,
-   "iifym": true,
-   "keto": false,
-   "carnivore": false
-  },
-  "nutrition": {
-   "energy_kcal": 720.7,
-   "protein_g": 20.8,
-   "fat_g": 26.4,
-   "saturated_fat_g": 15.0,
-   "cholesterol_mg": 81.2,
-   "sodium_mg": 298.1,
-   "carbohydrate_g": 100.3,
-   "fiber_g": 0.0,
-   "sugar_g": 101.2
-  },
-  "nutrition_source": "fdc",
-  "nutrition_coverage": 0.985
  },
  {
   "id": 69739280,
@@ -59422,6 +59160,272 @@
   },
   "nutrition_source": "fdc",
   "nutrition_coverage": 0.998
+ },
+ {
+  "id": 194954683,
+  "slug": "potato-and-cauliflower-curry",
+  "name": "Potato and Cauliflower Curry",
+  "description": "",
+  "image": {
+   "file": "potato-and-cauliflower-curry.jpg",
+   "thumb": "potato-and-cauliflower-curry-thumb.jpg",
+   "author": "Unknown",
+   "license": "CC BY-SA 2.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Aloo_gobi.jpg"
+  },
+  "minutes": 81,
+  "prep_minutes": 27,
+  "servings": 4,
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "difficulty": 3,
+  "equipment": [],
+  "cost_per_serving": 2.486,
+  "ingredients": [
+   {
+    "id": "tomatoes",
+    "label": "800 g (6.5 ea.) medium tomatoes, diced or puréed",
+    "quantity": 800.0,
+    "quantity_text": "800 g",
+    "grams": 800.0
+   },
+   {
+    "id": "cauliflower",
+    "label": "2 big cauliflower cut into chunks",
+    "quantity": 2.0,
+    "quantity_text": "2",
+    "grams": 180.0
+   },
+   {
+    "id": "potatoes",
+    "label": "4-5 potatoes, peeled and cut into cubes",
+    "quantity": 4.5,
+    "quantity_text": "4.5",
+    "grams": 810.0
+   },
+   {
+    "id": "lemon",
+    "label": "1 lemon, juiced",
+    "quantity": 1.0,
+    "quantity_text": "1",
+    "grams": 85.0
+   },
+   {
+    "id": "ghee",
+    "label": "3-5 tablespoons of ghee or vegetable oil",
+    "quantity": 4.0,
+    "quantity_text": "4 tablespoons",
+    "grams": 42.0
+   },
+   {
+    "id": "cumin seeds",
+    "label": "1 teaspoon cumin seeds (jeera)",
+    "quantity": 1.0,
+    "quantity_text": "1 teaspoon",
+    "grams": 2.5
+   },
+   {
+    "id": "salt",
+    "label": "5 tablespoons salt",
+    "quantity": 5.0,
+    "quantity_text": "5 tablespoons",
+    "grams": 90.0
+   },
+   {
+    "id": "curcuma",
+    "label": "1 tablespoon ground curcuma (turmeric)",
+    "quantity": 1.0,
+    "quantity_text": "1 tablespoon",
+    "grams": 10.5
+   },
+   {
+    "id": "coriander",
+    "label": "2 tablespoons ground coriander",
+    "quantity": 2.0,
+    "quantity_text": "2 tablespoons",
+    "grams": 15.0
+   },
+   {
+    "id": "chilli",
+    "label": "1-2 tablespoons ground chilli",
+    "quantity": 1.5,
+    "quantity_text": "1.5 tablespoons",
+    "grams": 15.7
+   },
+   {
+    "id": "garam masala",
+    "label": "2-4 tablespoons garam masala",
+    "quantity": 3.0,
+    "quantity_text": "3 tablespoons",
+    "grams": 31.5
+   },
+   {
+    "id": "mint",
+    "label": "5 sprigs of mint",
+    "quantity": 5.0,
+    "quantity_text": "5 sprigs",
+    "grams": 90.0
+   }
+  ],
+  "instructions": [
+   "Heat the ghee/oil in frying pan , wok , or karahi (an Indian utensil specially used for frying purposes)",
+   "Add cumin seeds and wait until they turn a light brown color.",
+   "Add the spices (except for garam masala) and the tomatoes.",
+   "When the mixture turns oily, add the vegetables.",
+   "Roast the cauliflower and the potatoes until they turn soft. Stir occasionally.",
+   "Add the garam masala, mint, and lemon juice."
+  ],
+  "method_source": {
+   "kind": "wikibooks",
+   "url": "https://en.wikibooks.org/wiki/Cookbook:Potato_and_Cauliflower_Curry_%28Aloo_Gobi%29",
+   "license": "CC BY-SA 4.0"
+  },
+  "reference_url": null,
+  "diet": {
+   "vegan": true,
+   "vegetarian": true,
+   "paleo": true,
+   "iifym": true,
+   "keto": false,
+   "carnivore": false
+  },
+  "nutrition": {
+   "energy_kcal": 392.7,
+   "protein_g": 12.4,
+   "fat_g": 13.6,
+   "saturated_fat_g": 6.9,
+   "cholesterol_mg": 31.5,
+   "sodium_mg": 8844.1,
+   "carbohydrate_g": 63.5,
+   "fiber_g": 16.8,
+   "sugar_g": 8.6
+  },
+  "nutrition_source": "fdc",
+  "nutrition_coverage": 0.993
+ },
+ {
+  "id": 127269867,
+  "slug": "potato-curry",
+  "name": "Potato Curry",
+  "description": "",
+  "image": {
+   "file": "potato-curry.jpg",
+   "thumb": "potato-curry-thumb.jpg",
+   "author": "Thamizhpparithi Maari",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "source_url": "https://commons.wikimedia.org/wiki/File:An_Aesthetic_Potato_Masala.jpg"
+  },
+  "minutes": 20,
+  "prep_minutes": 6,
+  "servings": 5,
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "difficulty": 3,
+  "equipment": [],
+  "cost_per_serving": 0.365,
+  "ingredients": [
+   {
+    "id": "oil",
+    "label": "1 tablespoon oil",
+    "quantity": 1.0,
+    "quantity_text": "1 tablespoon",
+    "grams": 13.8
+   },
+   {
+    "id": "mustard seed",
+    "label": "½ teaspoon mustard seed",
+    "quantity": 0.5,
+    "quantity_text": "0.5 teaspoon",
+    "grams": 1.8
+   },
+   {
+    "id": "chana dhal",
+    "label": "½ tablespoon chana dhal (optional)",
+    "quantity": 0.5,
+    "quantity_text": "0.5 tablespoon",
+    "grams": 5.2
+   },
+   {
+    "id": "curry leaves",
+    "label": "5 curry leaves",
+    "quantity": 5.0,
+    "quantity_text": "5",
+    "grams": 1.5
+   },
+   {
+    "id": "onion",
+    "label": "1 medium onion, chopped thin",
+    "quantity": 1.0,
+    "quantity_text": "1",
+    "grams": 150.0
+   },
+   {
+    "id": "split green chillies",
+    "label": "4-5 split green chillies",
+    "quantity": 4.5,
+    "quantity_text": "4.5",
+    "grams": 36.0
+   },
+   {
+    "id": "potatoes",
+    "label": "4 large potatoes, cubed and par-boiled",
+    "quantity": 4.0,
+    "quantity_text": "4",
+    "grams": 720.0
+   },
+   {
+    "id": "turmeric powder",
+    "label": "1 pinch of turmeric powder",
+    "quantity": 1.0,
+    "quantity_text": "1 pinch",
+    "grams": 4.5
+   },
+   {
+    "id": "salt",
+    "label": "½ teaspoon salt",
+    "quantity": 0.5,
+    "quantity_text": "0.5 teaspoon",
+    "grams": 3.0
+   }
+  ],
+  "instructions": [
+   "Heat oil.",
+   "Sautée the mustard seed first, then add chana dhal, curry leaves, onion and chillies.",
+   "Fry until the onions begin to change color.",
+   "Add potatoes.",
+   "Sprinkle the turmeric evenly and stir well to mix all the ingredients",
+   "Cover and cook on a medium flame for about 5 minutes, stirring well, until the potatoes become very soft and somewhat mashed.",
+   "Season with salt to taste."
+  ],
+  "method_source": {
+   "kind": "wikibooks",
+   "url": "https://en.wikibooks.org/wiki/Cookbook:Potato_Curry_%28Aloo_Masala%29",
+   "license": "CC BY-SA 4.0"
+  },
+  "reference_url": null,
+  "diet": {
+   "vegan": true,
+   "vegetarian": true,
+   "paleo": true,
+   "iifym": true,
+   "keto": false,
+   "carnivore": false
+  },
+  "nutrition": {
+   "energy_kcal": 179.2,
+   "protein_g": 5.2,
+   "fat_g": 3.4,
+   "saturated_fat_g": 0.3,
+   "cholesterol_mg": 0.0,
+   "sodium_mg": 245.9,
+   "carbohydrate_g": 33.2,
+   "fiber_g": 5.4,
+   "sugar_g": 2.8
+  },
+  "nutrition_source": "fdc",
+  "nutrition_coverage": 1.0
  },
  {
   "id": 156779083,
@@ -60526,92 +60530,6 @@
    "carbohydrate_g": 47.7,
    "fiber_g": 7.8,
    "sugar_g": 18.9
-  },
-  "nutrition_source": "fdc",
-  "nutrition_coverage": 1.0
- },
- {
-  "id": 219488360,
-  "slug": "calamansi-juice-drink",
-  "name": "Calamansi Juice Drink",
-  "description": "",
-  "image": {
-   "file": "calamansi-juice-drink.jpg",
-   "thumb": "calamansi-juice-drink-thumb.jpg",
-   "author": "Obsidian Soul",
-   "license": "CC0",
-   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-   "source_url": "https://commons.wikimedia.org/wiki/File:Calamansi_juice_%28Filipino_lemonade%29.jpg"
-  },
-  "minutes": 32,
-  "prep_minutes": 10,
-  "servings": 4,
-  "cuisine": "southeast_asian",
-  "slot": "dinner",
-  "difficulty": 3,
-  "equipment": [],
-  "cost_per_serving": 0.339,
-  "ingredients": [
-   {
-    "id": "or 4 calamansi",
-    "label": "3 or 4 calamansi",
-    "quantity": 3.0,
-    "quantity_text": "3",
-    "grams": 270.0
-   },
-   {
-    "id": "glass water",
-    "label": "1 glass cold water",
-    "quantity": 1.0,
-    "quantity_text": "1",
-    "grams": 90.0
-   },
-   {
-    "id": "sugar",
-    "label": "½ tablespoon granulated sugar",
-    "quantity": 0.5,
-    "quantity_text": "0.5 tablespoon",
-    "grams": 6.4
-   },
-   {
-    "id": "ice cubes",
-    "label": "Ice cubes (optional)",
-    "quantity": null,
-    "quantity_text": "to taste",
-    "grams": 180.0
-   }
-  ],
-  "instructions": [
-   "Halve the calamansi with a sharp knife.",
-   "Use your hands to squeeze the juice from the calamansi.",
-   "Combine the juice with the cold water in a glass.",
-   "Stir in sugar until dissolved.",
-   "Add ice cubes."
-  ],
-  "method_source": {
-   "kind": "wikibooks",
-   "url": "https://en.wikibooks.org/wiki/Cookbook:Calamansi_Juice_Drink",
-   "license": "CC BY-SA 4.0"
-  },
-  "reference_url": null,
-  "diet": {
-   "vegan": true,
-   "vegetarian": true,
-   "paleo": true,
-   "iifym": true,
-   "keto": true,
-   "carnivore": false
-  },
-  "nutrition": {
-   "energy_kcal": 287.0,
-   "protein_g": 14.3,
-   "fat_g": 25.2,
-   "saturated_fat_g": 3.0,
-   "cholesterol_mg": 39.8,
-   "sodium_mg": 46.2,
-   "carbohydrate_g": 1.7,
-   "fiber_g": 0.0,
-   "sugar_g": 1.6
   },
   "nutrition_source": "fdc",
   "nutrition_coverage": 1.0
@@ -62591,6 +62509,134 @@
   },
   "nutrition_source": "fdc",
   "nutrition_coverage": 1.0
+ },
+ {
+  "id": 17599729,
+  "slug": "nilagang-baka",
+  "name": "Nilagang Baka",
+  "description": "Nilaga is a traditional meat stew or soup from the Philippines, made with boiled beef or pork mixed with various vegetables such as sweet corn, potatoes, kale, string beans, cabbage and bok choy.",
+  "image": {
+   "file": "nilagang-baka.jpg",
+   "thumb": "nilagang-baka-thumb.jpg",
+   "author": "Televido",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "source_url": "https://commons.wikimedia.org/wiki/File:NilagangBaka.jpg"
+  },
+  "minutes": 32,
+  "prep_minutes": 10,
+  "servings": 4,
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "difficulty": 2,
+  "equipment": [],
+  "cost_per_serving": 11.073,
+  "ingredients": [
+   {
+    "id": "beef ribs",
+    "label": "2½ kg beef ribs",
+    "quantity": 2.5,
+    "quantity_text": "2.5 kg",
+    "grams": 2500.0
+   },
+   {
+    "id": "black peppercorns",
+    "label": "½ teaspoon black peppercorns",
+    "quantity": 0.5,
+    "quantity_text": "0.5 teaspoon",
+    "grams": 1.2
+   },
+   {
+    "id": "onion",
+    "label": "1 onion, quartered",
+    "quantity": 1.0,
+    "quantity_text": "1",
+    "grams": 150.0
+   },
+   {
+    "id": "potato",
+    "label": "1 potato, quartered",
+    "quantity": 1.0,
+    "quantity_text": "1",
+    "grams": 180.0
+   },
+   {
+    "id": "cabbage",
+    "label": "1 cabbage, quartered",
+    "quantity": 1.0,
+    "quantity_text": "1",
+    "grams": 90.0
+   },
+   {
+    "id": "chinese cabbage",
+    "label": "2 pieces of Chinese cabbage",
+    "quantity": 2.0,
+    "quantity_text": "2 pieces",
+    "grams": 180.0
+   },
+   {
+    "id": "corn cob",
+    "label": "1 corn cob, quarter-sliced",
+    "quantity": 1.0,
+    "quantity_text": "1",
+    "grams": 90.0
+   },
+   {
+    "id": "salt",
+    "label": "½ teaspoon salt",
+    "quantity": 0.5,
+    "quantity_text": "0.5 teaspoon",
+    "grams": 3.0
+   },
+   {
+    "id": "onion chives",
+    "label": "2 onion chives",
+    "quantity": 2.0,
+    "quantity_text": "2",
+    "grams": 300.0
+   },
+   {
+    "id": "saba",
+    "label": "2 pieces of saba",
+    "quantity": 2.0,
+    "quantity_text": "2 pieces",
+    "grams": 180.0
+   }
+  ],
+  "instructions": [
+   "Boil beef, peppercorns, onion, salt, corn, and potato until tender.",
+   "Slice onion chives into 3- inch strips. Add to the boiling beef.",
+   "Slice saba into half. Add to the boiling beef.",
+   "Serve in one large bowl or individual serving bowls.",
+   "Serve with rice on the side."
+  ],
+  "method_source": {
+   "kind": "wikibooks",
+   "url": "https://en.wikibooks.org/wiki/Cookbook:Nilagang_Baka_%28Boiled_Beef_and_Vegetables_in_Broth%29",
+   "license": "CC BY-SA 4.0"
+  },
+  "reference_url": "https://en.wikipedia.org/wiki/Nilagang_Baka",
+  "diet": {
+   "vegan": false,
+   "vegetarian": false,
+   "paleo": true,
+   "iifym": true,
+   "keto": false,
+   "carnivore": false
+  },
+  "nutrition": {
+   "energy_kcal": 1343.7,
+   "protein_g": 126.9,
+   "fat_g": 80.5,
+   "saturated_fat_g": 33.5,
+   "cholesterol_mg": 387.5,
+   "sodium_mg": 756.6,
+   "carbohydrate_g": 22.3,
+   "fiber_g": 5.1,
+   "sugar_g": 3.9
+  },
+  "nutrition_source": "fdc",
+  "nutrition_coverage": 0.951
  },
  {
   "id": 69543986,

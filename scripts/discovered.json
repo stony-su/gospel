@@ -3529,29 +3529,6 @@
   }
  },
  {
-  "slug": "xocolatl",
-  "name": "Xocolatl",
-  "cuisine": "american",
-  "slot": "dinner",
-  "wikibooks": "Xocolatl (Aztec Chocolate Beverage)",
-  "wikipedia": "Xocolatl",
-  "image_file": "Aztec_shared_meal.jpg",
-  "minutes": 36,
-  "prep": 12,
-  "servings": 4,
-  "difficulty": 3,
-  "equipment": [
-   "Blender",
-   "Skillet",
-   "Saucepan"
-  ],
-  "metadata_source": {
-   "minutes": "estimated",
-   "difficulty": "cookbook",
-   "servings": "estimated"
-  }
- },
- {
   "slug": "abacha",
   "name": "Abacha",
   "cuisine": "african",
@@ -4180,25 +4157,6 @@
    "minutes": "cookbook",
    "difficulty": "cookbook",
    "servings": "cookbook"
-  }
- },
- {
-  "slug": "calamansi-juice-drink",
-  "name": "Calamansi Juice Drink",
-  "cuisine": "southeast_asian",
-  "slot": "dinner",
-  "wikibooks": "Calamansi Juice Drink",
-  "wikipedia": "Calamansi Juice Drink",
-  "image_file": "Calamansi_juice_(Filipino_lemonade).jpg",
-  "minutes": 32,
-  "prep": 10,
-  "servings": 4,
-  "difficulty": 3,
-  "equipment": [],
-  "metadata_source": {
-   "minutes": "estimated",
-   "difficulty": "cookbook",
-   "servings": "estimated"
   }
  },
  {
@@ -5324,25 +5282,6 @@
   }
  },
  {
-  "slug": "green-mango-and-cumin-drink",
-  "name": "Green Mango and Cumin Drink",
-  "cuisine": "south_asian",
-  "slot": "dinner",
-  "wikibooks": "Green Mango and Cumin Drink (Aam Panna)",
-  "wikipedia": "Green Mango and Cumin Drink",
-  "image_file": "Keri_Ka_Sharbat.JPG",
-  "minutes": 97,
-  "prep": 32,
-  "servings": 4,
-  "difficulty": 2,
-  "equipment": [],
-  "metadata_source": {
-   "minutes": "estimated",
-   "difficulty": "cookbook",
-   "servings": "estimated"
-  }
- },
- {
   "slug": "gozleme",
   "name": "Gözleme",
   "cuisine": "middle_eastern",
@@ -5549,25 +5488,6 @@
    "minutes": "estimated",
    "difficulty": "estimated",
    "servings": "cookbook"
-  }
- },
- {
-  "slug": "jigarthanda-milk",
-  "name": "Jigarthanda Milk",
-  "cuisine": "south_asian",
-  "slot": "dinner",
-  "wikibooks": "Jigarthanda Milk",
-  "wikipedia": "Jigarthanda Milk",
-  "image_file": "HomemadeJigarthanda.jpg",
-  "minutes": 112,
-  "prep": 37,
-  "servings": 4,
-  "difficulty": 3,
-  "equipment": [],
-  "metadata_source": {
-   "minutes": "estimated",
-   "difficulty": "cookbook",
-   "servings": "estimated"
   }
  },
  {
@@ -6315,6 +6235,25 @@
   }
  },
  {
+  "slug": "nilagang-baka",
+  "name": "Nilagang Baka",
+  "cuisine": "southeast_asian",
+  "slot": "dinner",
+  "wikibooks": "Nilagang Baka (Boiled Beef and Vegetables in Broth)",
+  "wikipedia": "Nilagang Baka",
+  "image_file": "NilagangBaka.jpg",
+  "minutes": 32,
+  "prep": 10,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
   "slug": "nuremberg-gingerbread",
   "name": "Nuremberg Gingerbread",
   "cuisine": "german",
@@ -6550,6 +6489,25 @@
   }
  },
  {
+  "slug": "potato-curry",
+  "name": "Potato Curry",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Potato Curry (Aloo Masala)",
+  "wikipedia": "Potato Curry",
+  "image_file": "An_Aesthetic_Potato_Masala.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 5,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
+   "difficulty": "cookbook",
+   "servings": "cookbook"
+  }
+ },
+ {
   "slug": "potato-samosas",
   "name": "Potato Samosas",
   "cuisine": "caribbean",
@@ -6585,6 +6543,25 @@
    "minutes": "cookbook",
    "difficulty": "cookbook",
    "servings": "cookbook"
+  }
+ },
+ {
+  "slug": "potato-and-cauliflower-curry",
+  "name": "Potato and Cauliflower Curry",
+  "cuisine": "south_asian",
+  "slot": "dinner",
+  "wikibooks": "Potato and Cauliflower Curry (Aloo Gobi)",
+  "wikipedia": "Potato and Cauliflower Curry",
+  "image_file": "Aloo_gobi.jpg",
+  "minutes": 81,
+  "prep": 27,
+  "servings": 4,
+  "difficulty": 3,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
   }
  },
  {
@@ -7831,6 +7808,25 @@
   "equipment": [],
   "metadata_source": {
    "minutes": "estimated",
+   "difficulty": "cookbook",
+   "servings": "estimated"
+  }
+ },
+ {
+  "slug": "palatschinken",
+  "name": "Palatschinken",
+  "cuisine": "eastern_european",
+  "slot": "snack",
+  "wikibooks": "Palatschinken (Czech/Austrian Crepes)",
+  "wikipedia": "Palatschinken",
+  "image_file": "Pfannkuchen_mit_Zucker.jpg",
+  "minutes": 20,
+  "prep": 6,
+  "servings": 4,
+  "difficulty": 2,
+  "equipment": [],
+  "metadata_source": {
+   "minutes": "cookbook",
    "difficulty": "cookbook",
    "servings": "estimated"
   }
