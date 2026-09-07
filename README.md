@@ -237,8 +237,15 @@ unit, so a figure always reads as a measurement.
 
 `site/` is a static page under the same rules as the app: the grade ramp, the
 three registers, and no colour but the photographs on the phones. It is plain
-HTML and CSS with one small script, so any static host serves it as is; open
+HTML and CSS with one script, so any static host serves it as is; open
 `site/index.html` from disk and it works.
+
+The centrepiece is the app icon brought to life. A day's meals type into a
+ledger, the plate fills with their energy, and the forty-eight targets around
+the bezel tick over as they are met; a dinner is swapped for a better fit,
+the last two close, and the drawing settles into the icon. It is one SVG
+drawn and driven by `site/main.js` from the same timeline every loop, so it
+can be parked at any moment from the console with `gospelMeasure.hold(ms)`.
 
 The pictures are the renders in `screenshots/mockups/`, which are 16000 × 12000
 and mostly empty. `python scripts/build_site_assets.py` crops each to its

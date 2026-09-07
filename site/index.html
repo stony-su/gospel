@@ -39,6 +39,7 @@
       <a href="#download" class="masthead__download">Download</a>
     </nav>
   </div>
+  <div class="masthead__progress" aria-hidden="true"></div>
 </header>
 
 <main id="top">
@@ -76,16 +77,155 @@
           </div>
         </div>
 
-        <figure class="shot shot--hero">
-          <img
-            src="assets/recipe-and-swap@1x.webp"
-            srcset="assets/recipe-and-swap@1x.webp 1200w, assets/recipe-and-swap@2x.webp 2400w"
-            sizes="(min-width: 960px) 56vw, 100vw"
-            width="2400" height="1562"
-            alt="Two phones. One shows a recipe for tamagoyaki with its photograph, time, cost and per-portion figures. The other, tilted, shows a swap card with a radar of shakshouka against its share of the day."
-            fetchpriority="high">
+        <!-- The instrument. Drawn and driven by main.js: a day's meals land,
+             the plate fills to its line, and forty-eight targets tick over. -->
+        <figure class="measure" aria-label="A day being planned: three meals fill the plate to its line and forty-eight nutrient targets are met one by one.">
+          <svg class="measure__svg" viewBox="0 0 640 760" role="img" aria-hidden="true"></svg>
         </figure>
       </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="Dishes in the library">
+    <div class="ticker__track">
+      <div class="ticker__row">
+        <span class="ticker__item"><b>Tamagoyaki</b>Japanese</span>
+        <span class="ticker__item"><b>Shakshouka</b>Middle Eastern</span>
+        <span class="ticker__item"><b>Erwtensoep</b>Northern European</span>
+        <span class="ticker__item"><b>Miso Soup</b>Japanese</span>
+        <span class="ticker__item"><b>Paella Valenciana</b>Spanish</span>
+        <span class="ticker__item"><b>Onigiri</b>Japanese</span>
+        <span class="ticker__item"><b>Arancini</b>Italian</span>
+        <span class="ticker__item"><b>Cassoulet</b>French</span>
+        <span class="ticker__item"><b>Jambalaya</b>American</span>
+        <span class="ticker__item"><b>Matar Paneer</b>South Asian</span>
+        <span class="ticker__item"><b>Egusi soup</b>African</span>
+        <span class="ticker__item"><b>Ramen</b>Japanese</span>
+        <span class="ticker__item"><b>Pizza Margherita</b>Italian</span>
+        <span class="ticker__item"><b>Pan con Tomate</b>Spanish</span>
+        <span class="ticker__item"><b>Risotto</b>Italian</span>
+        <span class="ticker__item"><b>Bouillabaisse</b>French</span>
+        <span class="ticker__item"><b>Gazpacho</b>Spanish</span>
+        <span class="ticker__item"><b>Okonomiyaki</b>Japanese</span>
+        <span class="ticker__item"><b>Oyakodon</b>Japanese</span>
+        <span class="ticker__item"><b>Bibimbap</b>Korean</span>
+        <span class="ticker__item"><b>Goulash</b>Eastern European</span>
+        <span class="ticker__item"><b>Pierogi</b>Eastern European</span>
+        <span class="ticker__item"><b>Borscht</b>Eastern European</span>
+        <span class="ticker__item"><b>Falafel</b>Middle Eastern</span>
+        <span class="ticker__item"><b>Hummus</b>Middle Eastern</span>
+        <span class="ticker__item"><b>Moussaka</b>Mediterranean</span>
+        <span class="ticker__item"><b>Coq au Vin</b>French</span>
+        <span class="ticker__item"><b>Croque Monsieur</b>French</span>
+        <span class="ticker__item"><b>Quiche Lorraine</b>French</span>
+        <span class="ticker__item"><b>Cornbread</b>American</span>
+        <span class="ticker__item"><b>Tacos</b>Mexican</span>
+        <span class="ticker__item"><b>Guacamole</b>Mexican</span>
+        <span class="ticker__item"><b>Pad Thai</b>Southeast Asian</span>
+        <span class="ticker__item"><b>Kedgeree</b>South Asian</span>
+        <span class="ticker__item"><b>Fish and Chips</b>British</span>
+        <span class="ticker__item"><b>Empanadas</b>Latin American</span>
+        <span class="ticker__item"><b>Feijoada</b>Latin American</span>
+        <span class="ticker__item"><b>Tempura</b>Japanese</span>
+        <span class="ticker__item"><b>Minestrone</b>Italian</span>
+        <span class="ticker__item"><b>Focaccia</b>Italian</span>
+        <span class="ticker__item"><b>Bruschetta</b>Italian</span>
+        <span class="ticker__item"><b>Tiramisu</b>Italian</span>
+        <span class="ticker__item"><b>Gyudon</b>Japanese</span>
+        <span class="ticker__item"><b>Yakitori</b>Japanese</span>
+        <span class="ticker__item"><b>Salmorejo</b>Spanish</span>
+        <span class="ticker__item"><b>Gambas al Ajillo</b>Spanish</span>
+        <span class="ticker__item"><b>Porridge</b>British</span>
+        <span class="ticker__item"><b>Shepherd's Pie</b>British</span>
+        <span class="ticker__item"><b>Chapati</b>South Asian</span>
+        <span class="ticker__item"><b>Bobotie</b>African</span>
+        <span class="ticker__item"><b>Chakalaka</b>African</span>
+        <span class="ticker__item"><b>Bunny Chow</b>African</span>
+        <span class="ticker__item"><b>French Omelette</b>French</span>
+        <span class="ticker__item"><b>Piadina</b>Italian</span>
+        <span class="ticker__item"><b>Chicken and Dumplings</b>American</span>
+        <span class="ticker__item"><b>Tuna Salad</b>American</span>
+        <span class="ticker__item"><b>Arroz Negro</b>Spanish</span>
+        <span class="ticker__item"><b>Ratatouille</b>French</span>
+      </div>
+      <div class="ticker__row" aria-hidden="true">
+        <span class="ticker__item"><b>Tamagoyaki</b>Japanese</span>
+        <span class="ticker__item"><b>Shakshouka</b>Middle Eastern</span>
+        <span class="ticker__item"><b>Erwtensoep</b>Northern European</span>
+        <span class="ticker__item"><b>Miso Soup</b>Japanese</span>
+        <span class="ticker__item"><b>Paella Valenciana</b>Spanish</span>
+        <span class="ticker__item"><b>Onigiri</b>Japanese</span>
+        <span class="ticker__item"><b>Arancini</b>Italian</span>
+        <span class="ticker__item"><b>Cassoulet</b>French</span>
+        <span class="ticker__item"><b>Jambalaya</b>American</span>
+        <span class="ticker__item"><b>Matar Paneer</b>South Asian</span>
+        <span class="ticker__item"><b>Egusi soup</b>African</span>
+        <span class="ticker__item"><b>Ramen</b>Japanese</span>
+        <span class="ticker__item"><b>Pizza Margherita</b>Italian</span>
+        <span class="ticker__item"><b>Pan con Tomate</b>Spanish</span>
+        <span class="ticker__item"><b>Risotto</b>Italian</span>
+        <span class="ticker__item"><b>Bouillabaisse</b>French</span>
+        <span class="ticker__item"><b>Gazpacho</b>Spanish</span>
+        <span class="ticker__item"><b>Okonomiyaki</b>Japanese</span>
+        <span class="ticker__item"><b>Oyakodon</b>Japanese</span>
+        <span class="ticker__item"><b>Bibimbap</b>Korean</span>
+        <span class="ticker__item"><b>Goulash</b>Eastern European</span>
+        <span class="ticker__item"><b>Pierogi</b>Eastern European</span>
+        <span class="ticker__item"><b>Borscht</b>Eastern European</span>
+        <span class="ticker__item"><b>Falafel</b>Middle Eastern</span>
+        <span class="ticker__item"><b>Hummus</b>Middle Eastern</span>
+        <span class="ticker__item"><b>Moussaka</b>Mediterranean</span>
+        <span class="ticker__item"><b>Coq au Vin</b>French</span>
+        <span class="ticker__item"><b>Croque Monsieur</b>French</span>
+        <span class="ticker__item"><b>Quiche Lorraine</b>French</span>
+        <span class="ticker__item"><b>Cornbread</b>American</span>
+        <span class="ticker__item"><b>Tacos</b>Mexican</span>
+        <span class="ticker__item"><b>Guacamole</b>Mexican</span>
+        <span class="ticker__item"><b>Pad Thai</b>Southeast Asian</span>
+        <span class="ticker__item"><b>Kedgeree</b>South Asian</span>
+        <span class="ticker__item"><b>Fish and Chips</b>British</span>
+        <span class="ticker__item"><b>Empanadas</b>Latin American</span>
+        <span class="ticker__item"><b>Feijoada</b>Latin American</span>
+        <span class="ticker__item"><b>Tempura</b>Japanese</span>
+        <span class="ticker__item"><b>Minestrone</b>Italian</span>
+        <span class="ticker__item"><b>Focaccia</b>Italian</span>
+        <span class="ticker__item"><b>Bruschetta</b>Italian</span>
+        <span class="ticker__item"><b>Tiramisu</b>Italian</span>
+        <span class="ticker__item"><b>Gyudon</b>Japanese</span>
+        <span class="ticker__item"><b>Yakitori</b>Japanese</span>
+        <span class="ticker__item"><b>Salmorejo</b>Spanish</span>
+        <span class="ticker__item"><b>Gambas al Ajillo</b>Spanish</span>
+        <span class="ticker__item"><b>Porridge</b>British</span>
+        <span class="ticker__item"><b>Shepherd's Pie</b>British</span>
+        <span class="ticker__item"><b>Chapati</b>South Asian</span>
+        <span class="ticker__item"><b>Bobotie</b>African</span>
+        <span class="ticker__item"><b>Chakalaka</b>African</span>
+        <span class="ticker__item"><b>Bunny Chow</b>African</span>
+        <span class="ticker__item"><b>French Omelette</b>French</span>
+        <span class="ticker__item"><b>Piadina</b>Italian</span>
+        <span class="ticker__item"><b>Chicken and Dumplings</b>American</span>
+        <span class="ticker__item"><b>Tuna Salad</b>American</span>
+        <span class="ticker__item"><b>Arroz Negro</b>Spanish</span>
+        <span class="ticker__item"><b>Ratatouille</b>French</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="showcase">
+    <div class="container">
+      <div class="showcase__head">
+        <h2 class="feature__title">Every dish photographed, priced and&nbsp;weighed.</h2>
+        <p class="showcase__caption">Five hundred recipes from twenty-two cuisines. Each one carries its time, its cost per portion and its figures.</p>
+      </div>
+      <figure class="shot shot--showcase">
+        <img
+          src="assets/recipe-and-swap@1x.webp"
+          srcset="assets/recipe-and-swap@1x.webp 1200w, assets/recipe-and-swap@2x.webp 2400w"
+          sizes="(min-width: 1320px) 1240px, 100vw"
+          width="2400" height="1562"
+          alt="Two phones. One shows a recipe for tamagoyaki with its photograph, time, cost and per-portion figures. The other, tilted, shows a swap card with a radar of shakshouka against its share of the day."
+          loading="lazy" decoding="async">
+      </figure>
     </div>
   </section>
 
@@ -97,12 +237,17 @@
           Every week, fortnight or month, the same meals come round again,
           and the plan stays put until you change it.
         </p>
+        <dl class="tiles">
+          <div class="tile"><dt>Cycle</dt><dd>7 to 28<span>days, then it repeats</span></dd></div>
+          <div class="tile"><dt>Per day</dt><dd>2755 kcal<span>sized to you</span></dd></div>
+          <div class="tile"><dt>Cost</dt><dd>£83<span>per week</span></dd></div>
+        </dl>
       </div>
       <figure class="shot feature__shot">
         <img
           src="assets/plan-and-nutrition@1x.webp"
           srcset="assets/plan-and-nutrition@1x.webp 902w, assets/plan-and-nutrition@2x.webp 1804w"
-          sizes="(min-width: 960px) 46vw, calc(100vw - 2 * clamp(24px, 5vw, 64px))"
+          sizes="(min-width: 960px) 44vw, calc(100vw - 2 * clamp(24px, 5vw, 64px))"
           width="1804" height="2400"
           alt="Two phones. The weekly plan lists Monday's meals with a swap button on each. The nutrition tab charts energy across the week and lists each nutrient group with how many targets it meets."
           loading="lazy" decoding="async">
@@ -118,12 +263,17 @@
           Every replacement is ranked by how well it keeps the day on
           target, and the portions adjust themselves.
         </p>
+        <dl class="tiles">
+          <div class="tile"><dt>Options</dt><dd>4<span>ranked by fit</span></dd></div>
+          <div class="tile"><dt>Best fit</dt><dd>100 %<span>shakshouka</span></dd></div>
+          <div class="tile"><dt>Portion</dt><dd>×1.47<span>rescaled</span></dd></div>
+        </dl>
       </div>
       <figure class="shot feature__shot">
         <img
           src="assets/nutrient-and-options@1x.webp"
           srcset="assets/nutrient-and-options@1x.webp 909w, assets/nutrient-and-options@2x.webp 1818w"
-          sizes="(min-width: 960px) 46vw, calc(100vw - 2 * clamp(24px, 5vw, 64px))"
+          sizes="(min-width: 960px) 44vw, calc(100vw - 2 * clamp(24px, 5vw, 64px))"
           width="1818" height="2400"
           alt="Two tilted phones. One shows the protein target and where it comes from. The other lists four breakfast options for Monday, ranked by fit."
           loading="lazy" decoding="async">
@@ -139,12 +289,17 @@
           Tell it what you already have and it comes off the list, until it
           runs out or goes off.
         </p>
+        <dl class="tiles">
+          <div class="tile"><dt>Estimated</dt><dd>£138.43<span>for the week</span></dd></div>
+          <div class="tile"><dt>Items</dt><dd>55<span>across 7 aisles</span></dd></div>
+          <div class="tile"><dt>Sour cream</dt><dd>21 days<span>back in cycle 4</span></dd></div>
+        </dl>
       </div>
       <figure class="shot feature__shot feature__shot--wide">
         <img
           src="assets/grocery-and-references@1x.webp"
           srcset="assets/grocery-and-references@1x.webp 993w, assets/grocery-and-references@2x.webp 1985w"
-          sizes="(min-width: 960px) 52vw, calc(100vw - 2 * clamp(24px, 5vw, 64px))"
+          sizes="(min-width: 960px) 50vw, calc(100vw - 2 * clamp(24px, 5vw, 64px))"
           width="1985" height="2400"
           alt="Three phones. The shopping list for the week, grouped by aisle and priced. The macronutrient targets, each with a bar. The references page, listing the studies behind the targets."
           loading="lazy" decoding="async">
