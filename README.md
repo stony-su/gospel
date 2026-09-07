@@ -267,8 +267,11 @@ the script re-signs.
 The APK itself is gitignored too, at 116 MB, because GitHub refuses any file
 over 100 MB. Serving `site/` from a host with no such limit works as is. To
 serve it from the repository instead, attach the APK to a GitHub Release, put
-that asset's address in `.env` as `GOSPEL_APK_URL`, and run `npm run apk`
-again: `build.js` then carries the address and the page links there.
+that asset's address in `.env` as `GOSPEL_APK_URL`, and run
+`npm run apk -- --manifest`: that rewrites `build.js` from the APK already on
+disk, so the page links to the release and its checksum still describes the
+file that was uploaded. Two builds are not byte-identical, which is why the
+manifest is refreshed rather than the build repeated.
 
 ## Known limits
 

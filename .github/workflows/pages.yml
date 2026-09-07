@@ -1,0 +1,45 @@
+# Publishes site/ to GitHub Pages.
+#
+# Pages can only serve a branch's root or its docs/ folder on its own, and
+# docs/ here is design notes, so the landing page goes up as an artifact
+# instead. One-time setup in the repository: Settings > Pages > Source, set
+# to "GitHub Actions". After that every push that touches site/ deploys it.
+#
+# The APK is not in the repository (it is over GitHub's 100 MB file limit),
+# so the page links to a release asset instead. See README, "The landing
+# page": set GOSPEL_APK_URL, run `npm run apk -- --manifest`, and commit the
+# site/download/build.js it writes.
+
+name: Landing page
+
+on:
+  push:
+    branches: [ui-rebuild]
+    paths:
+      - 'site/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

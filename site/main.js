@@ -46,6 +46,8 @@
 
   // ---- the build ------------------------------------------------------------------
 
+  // The file name, size and floor, and the address to fetch it from when it
+  // is hosted elsewhere than download/.
   const build = window.GOSPEL_BUILD;
   if (!build || !build.file) return;
 
@@ -59,24 +61,12 @@
   const android = build.minSdk && ANDROID[build.minSdk]
     ? `Android ${ANDROID[build.minSdk]} and up`
     : null;
-  const androidLong = build.minSdk && ANDROID[build.minSdk]
-    ? `Android ${ANDROID[build.minSdk]} (API ${build.minSdk}) and up`
-    : null;
-  const built = build.builtAt
-    ? new Date(build.builtAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
-    : null;
 
   const values = {
     href: build.url || `download/${build.file}`,
     file: build.file,
-    version: build.version ?? null,
     size: mb,
-    bytes: mb && build.bytes ? `${mb} (${build.bytes.toLocaleString('en-GB')} bytes)` : mb,
     android,
-    'android-long': androidLong,
-    abis: Array.isArray(build.abis) ? build.abis.join(', ') : null,
-    built,
-    sha256: build.sha256 ?? null,
   };
 
   for (const el of document.querySelectorAll('[data-build]')) {
