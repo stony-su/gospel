@@ -42,6 +42,10 @@ yarn-error.*
 
 # Gospel
 data-source/
+credentials/
+# The APK is over GitHub's 100 MB file limit; the site links to a release asset.
+site/download/*.apk
+site/download/*.idsig
 *.xlsx
 *.parquet
 recipes.csv

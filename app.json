@@ -10,6 +10,7 @@
     "backgroundColor": "#08090B",
     "newArchEnabled": true,
     "splash": {
+      "image": "./assets/splash-icon.png",
       "backgroundColor": "#08090B",
       "resizeMode": "contain"
     },
@@ -36,6 +37,8 @@
       [
         "expo-splash-screen",
         {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
           "backgroundColor": "#08090B",
           "resizeMode": "contain"
         }

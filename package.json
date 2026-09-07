@@ -12,7 +12,9 @@
     "typecheck": "tsc --noEmit",
     "data": "python scripts/build_nutrient_data.py && python scripts/fetch_recipe_images.py && python scripts/build_recipe_library.py && python scripts/fetch_fdc_nutrition.py && python scripts/attach_recipe_nutrition.py",
     "data:check": "python scripts/check_sources.py && python scripts/check_authored.py && python -m pytest scripts/test_measures.py -q",
-    "icon": "python scripts/build_app_icon.py"
+    "icon": "python scripts/build_app_icon.py",
+    "screenshots": "node scripts/screenshots.mjs",
+    "apk": "node scripts/build_apk.mjs"
   },
   "jest": {
     "projects": [

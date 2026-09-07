@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gospel · a meal plan that repeats</title>
+  <meta name="description" content="Gospel is an Android app that builds a repeating meal plan sized to your body from published dietary reference intakes, shopped for by a list that knows your cupboard. No account, no server, nothing leaves the phone.">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:title" content="Gospel">
+  <meta property="og:description" content="A meal plan that repeats, sized to your body from published intake standards. Android, no account, nothing leaves the phone.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="mark" href="#top" aria-label="Gospel">
+      <svg class="mark__ring" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+        <defs><clipPath id="level"><rect x="0" y="14.85" width="32" height="17.15"/></clipPath></defs>
+        <line x1="0" y1="14.85" x2="6" y2="14.85" class="mark__rule"/>
+        <line x1="26" y1="14.85" x2="32" y2="14.85" class="mark__rule"/>
+        <circle cx="16" cy="16" r="10" class="mark__fill" clip-path="url(#level)"/>
+        <circle cx="16" cy="16" r="10" class="mark__stroke"/>
+      </svg>
+      <span class="mark__word">Gospel</span>
+    </a>
+    <nav class="masthead__nav" aria-label="Site">
+      <a href="https://github.com/stony-su/gospel">Source</a>
+      <a href="#download" class="masthead__download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="doctrine">Let science be my gospel<br> and life be my&nbsp;creed.</h1>
+
+      <div class="hero__row">
+        <div class="hero__copy">
+          <p class="lede">
+            Gospel builds a meal plan that repeats: the same dishes every week,
+            fortnight or month, sized to your body from published dietary
+            reference intakes and shopped for by a list that knows what is
+            already in your cupboard. It runs on the phone alone. No account,
+            no server, nothing leaves the device.
+          </p>
+
+          <dl class="figures" aria-label="What the app holds">
+            <div class="figure">
+              <dt class="figure__label">Nutrient targets</dt>
+              <dd class="figure__value" data-count="48">48</dd>
+            </div>
+            <div class="figure">
+              <dt class="figure__label">Recipes</dt>
+              <dd class="figure__value" data-count="500">500</dd>
+            </div>
+          </dl>
+
+          <div class="cta">
+            <a class="button" href="download/gospel-1.0.0.apk" data-build="href" download>Download for Android</a>
+            <p class="cta__meta">
+              <span data-build="file">gospel-1.0.0.apk</span>
+              <span class="sep">·</span>
+              <span data-build="size">115.6 MB</span>
+              <span class="sep">·</span>
+              <span data-build="android">Android 7.0 and up</span>
+            </p>
+          </div>
+        </div>
+
+        <figure class="shot shot--hero">
+          <img
+            src="assets/recipe-and-swap@1x.webp"
+            srcset="assets/recipe-and-swap@1x.webp 1200w, assets/recipe-and-swap@2x.webp 2400w"
+            sizes="(min-width: 960px) 56vw, 100vw"
+            width="2400" height="1562"
+            alt="Two phones. One shows a recipe for tamagoyaki with its photograph, time, cost and per-portion figures. The other, tilted, shows a swap card with a radar of shakshouka against its share of the day."
+            fetchpriority="high">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature feature--plan">
+    <div class="container feature__grid">
+      <div class="feature__copy">
+        <h2 class="feature__title">Solved once, then&nbsp;repeated.</h2>
+        <p>
+          Twelve questions. Six of them, sex, age, weight, diet, activity and
+          sun, resolve forty-eight targets from published dietary reference
+          intakes. The other six shape the cooking: cuisines, difficulty,
+          minutes per meal, weekly budget, and how often the plan repeats.
+        </p>
+        <p>
+          The plan is solved on the phone against those targets, and then it
+          stays put. Same answers, same plan. Regenerating is a deliberate act.
+        </p>
+        <ul class="tabs" aria-label="The four tabs">
+          <li><b>Plan</b> Every meal of the cycle, with the portion that lands the day on its energy target.</li>
+          <li><b>Nutrition</b> Forty-three targets against what the plan delivers, each summed from USDA FoodData Central over the ingredient weights.</li>
+          <li><b>Grocery</b> One list for the cycle, by aisle, with the estimate.</li>
+          <li><b>Pantry</b> What you already own, and when it runs out.</li>
+        </ul>
+      </div>
+      <figure class="shot feature__shot">
+        <img
+          src="assets/plan-and-nutrition@1x.webp"
+          srcset="assets/plan-and-nutrition@1x.webp 902w, assets/plan-and-nutrition@2x.webp 1804w"
+          sizes="(min-width: 960px) 46vw, calc(100vw - 2 * clamp(24px, 5vw, 64px))"
+          width="1804" height="2400"
+          alt="Two phones. The weekly plan lists Monday's tamagoyaki, erwtensoep and limoncello with a swap button on each row. The nutrition tab charts energy across the cycle and lists each nutrient group with how many targets it meets."
+          loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <section class="feature feature--swap">
+    <div class="container feature__grid feature__grid--flip">
+      <div class="feature__copy">
+        <h2 class="feature__title">Any meal can be&nbsp;swapped.</h2>
+        <p>
+          A solver optimising forty-eight targets will sooner or later put
+          something on a Tuesday you will not cook, and one such dish is
+          enough to stop you following the plan at all. Swap opens every
+          recipe that could take the slot, ranked by the planner's own
+          objective, so the top of the list is what the solver would have
+          chosen if it had looked harder.
+        </p>
+        <p>
+          Each card opens onto a radar of the dish against its share of the
+          day. Choosing one rescales that day's portions so it still lands on
+          its energy target. The other six days are left alone.
+        </p>
+        <p>
+          Every target shows its working: the rule that set it, how settled
+          the standard is, and the papers it rests on. Twenty sources, cited
+          in full.
+        </p>
+      </div>
+      <figure class="shot feature__shot">
+        <img
+          src="assets/nutrient-and-options@1x.webp"
+          srcset="assets/nutrient-and-options@1x.webp 909w, assets/nutrient-and-options@2x.webp 1818w"
+          sizes="(min-width: 960px) 46vw, calc(100vw - 2 * clamp(24px, 5vw, 64px))"
+          width="1818" height="2400"
+          alt="Two tilted phones. One shows the protein target, 74 grams a day, with the rule that set it and its sources. The other lists four breakfast options for Monday, ranked by fit, with tamagoyaki marked as the one in the plan."
+          loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <section class="feature feature--grocery">
+    <div class="container feature__grid">
+      <div class="feature__copy">
+        <h2 class="feature__title">A list that knows your&nbsp;cupboard.</h2>
+        <p>
+          The grocery list is priced, sorted by aisle, and ticks off what the
+          pantry already holds. A 300&nbsp;g tub of sour cream against
+          60&nbsp;g a week is covered on quantity for five weeks, but its
+          21-day shelf life expires first, so it returns to the list in cycle
+          four, and the pantry says why.
+        </p>
+        <p>
+          Prices, shelf lives and pack sizes are estimates by ingredient
+          category. They are good enough to rank options and pace a shopping
+          list, not to quote a bill, and the app says so.
+        </p>
+      </div>
+      <figure class="shot feature__shot feature__shot--wide">
+        <img
+          src="assets/grocery-and-references@1x.webp"
+          srcset="assets/grocery-and-references@1x.webp 993w, assets/grocery-and-references@2x.webp 1985w"
+          sizes="(min-width: 960px) 52vw, calc(100vw - 2 * clamp(24px, 5vw, 64px))"
+          width="1985" height="2400"
+          alt="Three phones. The grocery list for cycle one, estimated at £138.43, grouped by aisle. The macronutrient targets, six of eight met, each with a bar. The references page, twenty sources with journal, year and identifier."
+          loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <section class="sources">
+    <div class="container sources__grid">
+      <div class="feature__copy">
+        <h2 class="feature__title">Five hundred dishes, from public&nbsp;pages.</h2>
+        <p>
+          Nothing is bought or downloaded as a dataset. Each dish is
+          assembled from three public Wikimedia pages, and the photographs
+          are bundled rather than fetched, so a recipe cannot lose its
+          picture to someone else's outage. Japanese, Italian, American,
+          French and Spanish carry the library, with everyday cooking from
+          seventeen more cuisines.
+        </p>
+        <p>
+          No recipe publishes its own nutrition, so every figure on a card is
+          computed from FoodData Central panels over the ingredient weights.
+          Each recipe carries the share of its mass that matched a panel, and
+          shows it.
+        </p>
+      </div>
+      <table class="ledger">
+        <caption class="visually-hidden">Where each part of a recipe comes from</caption>
+        <thead>
+          <tr><th scope="col">Part</th><th scope="col">Source</th><th scope="col">Licence</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Ingredients and method</td><td>Wikibooks Cookbook</td><td>CC BY-SA 4.0</td></tr>
+          <tr><td>Description</td><td>Wikipedia</td><td>CC BY-SA 4.0</td></tr>
+          <tr><td>Photograph</td><td>Wikimedia Commons</td><td>Per file, credited in the app</td></tr>
+          <tr><td>Nutrition</td><td>USDA FoodData Central</td><td>Public domain</td></tr>
+          <tr><td>Intake targets</td><td>Published dietary reference intakes</td><td>Cited, twenty sources</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="design">
+    <div class="container">
+      <div class="design__grid">
+        <div class="feature__copy">
+          <h2 class="feature__title">The interface has no&nbsp;colour.</h2>
+          <p>
+            The palette is one neutral ramp from black to white, and
+            everything the app needs to say, a target met, a limit breached,
+            a selection, a threshold, is said with fill, weight, hatch or
+            inversion instead. Form survives a greyscale screenshot, a
+            colour-blind reader and direct sunlight. Depth does the work
+            colour would: four surface levels, near-black, and a level means
+            the same thing everywhere.
+          </p>
+          <p>
+            The photographs are the one exception, and they are in full
+            colour. A plate of food is the only thing on screen that is not
+            a measurement, and whether a curry is deep red or pale yellow is
+            the point of the picture.
+          </p>
+        </div>
+
+        <div class="design__specimens">
+          <div class="ramp" role="img" aria-label="The palette: twenty-two greys from black to white, numbered by lightness">
+            <div class="ramp__swatches">
+              <i style="--g:#000000"></i><i style="--g:#040404"></i><i style="--g:#060606"></i><i style="--g:#0A0A0A"></i><i style="--g:#0D0D0D"></i><i style="--g:#101010"></i><i style="--g:#131313"></i><i style="--g:#171717"></i><i style="--g:#1A1A1A"></i><i style="--g:#212121"></i><i style="--g:#262626"></i><i style="--g:#303030"></i><i style="--g:#3D3D3D"></i><i style="--g:#565656"></i><i style="--g:#6E6E6E"></i><i style="--g:#909090"></i><i style="--g:#B4B4B4"></i><i style="--g:#C4C4C4"></i><i style="--g:#D6D6D6"></i><i style="--g:#E2E2E2"></i><i style="--g:#F1F1F1"></i><i style="--g:#FFFFFF"></i>
+            </div>
+            <div class="ramp__scale" aria-hidden="true">
+              <span>0</span><span>3</span><span>5</span><span>8</span><span>10</span><span>12</span><span>15</span><span>18</span><span>20</span><span>25</span><span>30</span><span>35</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>85</span><span>90</span><span>92</span><span>96</span><span>100</span>
+            </div>
+          </div>
+
+          <dl class="registers">
+            <div class="register register--serif">
+              <dt>Newsreader italic</dt>
+              <dd>for doctrine</dd>
+            </div>
+            <div class="register register--sans">
+              <dt>IBM Plex Sans</dt>
+              <dd>for the rare running sentence</dd>
+            </div>
+            <div class="register register--mono">
+              <dt>IBM Plex Mono</dt>
+              <dd>for every numeral and unit, so a figure always reads as a measurement: 2755 kcal, 74.0 g, £1.12</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="download" id="download">
+    <div class="container">
+      <div class="download__panel">
+        <div class="download__lead">
+          <h2 class="feature__title">Install it.</h2>
+          <p>
+            Gospel is an Android app and is not on Google Play. Download the
+            file on your phone, open it, and allow the install when Android
+            asks. It runs offline from the first screen, so there is nothing
+            to sign in to.
+          </p>
+          <a class="button button--large" href="download/gospel-1.0.0.apk" data-build="href" download>Download for Android</a>
+          <p class="cta__meta">
+            <span data-build="file">gospel-1.0.0.apk</span>
+            <span class="sep">·</span>
+            <span data-build="size">115.6 MB</span>
+            <span class="sep">·</span>
+            <span data-build="android">Android 7.0 and up</span>
+          </p>
+        </div>
+
+        <div class="download__details">
+          <ol class="steps">
+            <li>Open the file once it has downloaded.</li>
+            <li>Android asks, once, to allow installs from your browser. Allow it.</li>
+            <li>Install, then open Gospel. It asks its twelve questions and builds the plan.</li>
+          </ol>
+
+          <dl class="spec">
+            <div><dt>Version</dt><dd data-build="version">1.0.0</dd></div>
+            <div><dt>Size</dt><dd data-build="bytes">115.6 MB (121,183,221 bytes)</dd></div>
+            <div><dt>Runs on</dt><dd data-build="android-long">Android 7.0 (API 24) and up</dd></div>
+            <div><dt>Built</dt><dd data-build="built">7 September 2026</dd></div>
+            <div><dt>Native code</dt><dd data-build="abis">arm64-v8a, armeabi-v7a</dd></div>
+            <div><dt>Signed by</dt><dd>Gospel's release key, RSA 4096</dd></div>
+            <div class="spec__wide"><dt>SHA-256</dt><dd class="spec__hash" data-build="sha256">a9eafb0911c90f452ed262cb61331b701e9ab8ff88629b09c031613507684a38</dd></div>
+          </dl>
+          <p class="spec__note">
+            To check the download, compare its SHA-256 with the one above.
+            The file is signed with Gospel's own release key, so a later
+            version installs over this one without losing your plan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="container colophon__grid">
+    <p>
+      Recipes from the Wikibooks Cookbook and Wikipedia under CC&nbsp;BY-SA&nbsp;4.0.
+      Photographs from Wikimedia Commons, each credited in the app. Nutrition from
+      USDA FoodData Central.
+    </p>
+    <p>
+      Gospel implements published intake guidance. It is not medical advice,
+      and it does not model pregnancy, lactation, medication or disease.
+    </p>
+    <p class="colophon__links">
+      <a href="https://github.com/stony-su/gospel">Source on GitHub</a>
+    </p>
+  </div>
+</footer>
+
+<script src="download/build.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

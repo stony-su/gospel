@@ -21,6 +21,7 @@ npm run android      # or: npm start, then scan the QR code
 npm test             # 223 tests across two projects
 python -m pytest scripts/   # 58 tests for the unit parser
 npm run typecheck    # tsc --noEmit
+npm run apk          # a signed release APK, into site/download/
 ```
 
 ## What it does
@@ -85,6 +86,14 @@ scripts/
   fetch_recipe_images.py     500 photographs -> assets/recipes/
   ingredient_taxonomy.py     Prices, shelf lives, pack sizes, diet flags
   build_app_icon.py          the app icon, drawn rather than painted
+  screenshots.mjs            every page, captured from the web build
+  build_site_assets.py       the phone renders, cropped and sized for the web
+  build_apk.mjs              a signed release APK, into site/download/
+
+site/                     The landing page, static
+  index.html, styles.css, main.js
+  assets/                 the renders as WebP, the link-preview card
+  download/               the APK, its checksum, and build.js for the page
 ```
 
 ### The nutrition engine
@@ -223,6 +232,43 @@ it makes the Android monochrome variant free.
 Three type registers for the three things the app is: Newsreader italic for
 doctrine, IBM Plex Sans for interface, IBM Plex Mono for **every** numeral and
 unit, so a figure always reads as a measurement.
+
+## The landing page
+
+`site/` is a static page under the same rules as the app: the grade ramp, the
+three registers, and no colour but the photographs on the phones. It is plain
+HTML and CSS with one small script, so any static host serves it as is; open
+`site/index.html` from disk and it works.
+
+The pictures are the renders in `screenshots/mockups/`, which are 16000 × 12000
+and mostly empty. `python scripts/build_site_assets.py` crops each to its
+phones and writes it twice as WebP, for 1x and 2x screens, along with the
+favicon and a link-preview card.
+
+The download is a release APK, built and signed locally:
+
+```bash
+npm run apk
+```
+
+which runs `expo prebuild`, Gradle's `assembleRelease` for the two ARM ABIs,
+and `apksigner`, and writes `site/download/gospel-<version>.apk` with its
+SHA-256 beside it and a `build.js` the page reads for the file name, size and
+checksum. Real phones are ARM, so the x86 emulator ABIs are left out; that is
+most of the difference against a universal build.
+
+The first run makes the signing key, `credentials/gospel-release.jks`, and
+writes its password to `.env` as `GOSPEL_KEYSTORE_PASSWORD`. Both are
+gitignored, and both are the app's identity: an APK signed with any other key
+will not install over one signed with this, so back them up. Expo's own
+template signs release builds with the shared Android debug key, which is why
+the script re-signs.
+
+The APK itself is gitignored too, at 116 MB, because GitHub refuses any file
+over 100 MB. Serving `site/` from a host with no such limit works as is. To
+serve it from the repository instead, attach the APK to a GitHub Release, put
+that asset's address in `.env` as `GOSPEL_APK_URL`, and run `npm run apk`
+again: `build.js` then carries the address and the page links there.
 
 ## Known limits
 
